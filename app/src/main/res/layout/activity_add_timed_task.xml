@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <com.nodepp.smartnode.view.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleMessage="@string/add_timed_task"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_start_time"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="时间"
+            android:textColor="@color/text_color2"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="20:18"
+            android:textColor="@color/text_color"
+            android:textSize="26sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp">
+
+            <CheckBox
+                android:id="@+id/cb_open"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/selector_switch"
+                android:button="@null"
+                android:checked="false" />
+
+            <TextView
+                android:id="@+id/tv_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="开启"
+                android:textColor="@color/text_color"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/cb_close"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/selector_switch"
+                android:button="@null" />
+
+            <TextView
+                android:id="@+id/tv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="关闭"
+                android:textColor="@color/text_color"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView style="@style/spilt_line" />
+
+    <LinearLayout
+        android:id="@+id/ll_repeat"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="5dp">
+
+        <CheckBox
+            android:id="@+id/cb_repeat"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/selector_switch"
+            android:button="@null" />
+
+        <TextView
+            android:id="@+id/tv_repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:text="每周重复"
+            android:textColor="@color/text_color"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_Sunday"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <CheckBox
+                android:id="@+id/cb_Sunday"
+                style="@style/cb_time"
+                android:checked="false"
+                android:text="日" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_Monday"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <CheckBox
+                android:id="@+id/cb_Monday"
+                style="@style/cb_time"
+                android:text="一" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_Tuesday"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <CheckBox
+                android:id="@+id/cb_Tuesday"
+                style="@style/cb_time"
+                android:text="二" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_Wednesday"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <CheckBox
+                android:id="@+id/cb_Wednesday"
+                style="@style/cb_time"
+                android:checked="false"
+                android:text="三" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_Thursday"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <CheckBox
+                android:id="@+id/cb_Thursday"
+                style="@style/cb_time"
+                android:text="四" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_Friday"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <CheckBox
+                android:id="@+id/cb_Friday"
+                style="@style/cb_time"
+                android:text="五" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_Saturday"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <CheckBox
+                android:id="@+id/cb_Saturday"
+                style="@style/cb_time"
+                android:text="六" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        style="@style/spilt_line"
+        android:layout_marginTop="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="#FBFBFB"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_cancle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/text_color2"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tv_ok"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/title_bar"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <com.nodepp.smartnode.view.TimePickerLayout
+        android:id="@+id/time_picker"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"></com.nodepp.smartnode.view.TimePickerLayout>
+</LinearLayout>

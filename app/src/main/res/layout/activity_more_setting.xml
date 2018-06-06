@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context="com.nodepp.smartnode.activity.MoreSettingActivity">
+    <com.nodepp.smartnode.view.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleMessage="@string/more_setting"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_change_device_name"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/text_color"
+            android:layout_marginLeft="15dp"
+            android:text="修改设备名称"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/text_color2"/>
+    <LinearLayout
+        android:id="@+id/ll_share_device"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/text_color"
+            android:layout_marginLeft="15dp"
+            android:text="分享设备"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/text_color2"/>
+    <LinearLayout
+        android:id="@+id/ll_firmware_ver"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/text_color"
+            android:layout_marginLeft="15dp"
+            android:text="固件版本号:v"/>
+        <TextView
+            android:id="@+id/tv_fimeware_ver"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/text_color"
+            android:layout_marginLeft="3dp"
+            android:text="10000"/>
+        <ImageView
+            android:id="@+id/iv_new_version"
+            android:layout_width="10dp"
+            android:visibility="invisible"
+            android:layout_height="10dp"
+            android:background="@mipmap/ic_new"/>
+        <TextView
+            android:id="@+id/tv_new_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/text_color"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:text="已经是最新版本"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/text_color2"/>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ll_create_group"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:text="创建群组控制"
+            android:textColor="@color/text_color"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/text_color2"/>
+
+    <LinearLayout
+        android:id="@+id/ll_change_device_lebel"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/text_color"
+            android:layout_marginLeft="15dp"
+            android:text="设备电平反转"/>
+        <ToggleButton
+            android:id="@+id/tb_switch_lebel"
+            android:layout_width="54dp"
+            android:layout_height="28dp"
+            android:layout_marginRight="15dp"
+            android:text=""
+            android:textOff=""
+            android:focusable="false"
+            android:textOn=""
+            android:button="@null"
+            android:checked="false"
+            android:background="@drawable/selector_toggle_switch"
+            />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_change_lebel_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/text_color2"/>
+    <LinearLayout
+        android:id="@+id/ll_deice_mode"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/text_color"
+            android:layout_marginLeft="15dp"
+            android:text="模式"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp">
+
+            <CheckBox
+                android:id="@+id/cb_mode_one"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/selector_switch"
+                android:button="@null"
+                android:checked="false" />
+
+            <TextView
+                android:id="@+id/tv_mode_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="自锁"
+                android:textColor="@color/text_color"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/cb_mode_two"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/selector_switch"
+                android:button="@null" />
+
+            <TextView
+                android:id="@+id/tv_mode_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="点动"
+                android:textColor="@color/text_color"
+                android:textSize="14sp" />
+            <CheckBox
+                android:id="@+id/cb_mode_three"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/selector_switch"
+                android:button="@null" />
+
+            <TextView
+                android:id="@+id/tv_mode_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="互锁"
+                android:textColor="@color/text_color"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_line_deice_mode"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/text_color2"/>
+</LinearLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.nodepp.smartnode.view.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleMessage="@string/device" />
+
+    <LinearLayout
+        android:id="@+id/ll_no_network"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffd0d2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:background="@mipmap/ic_warning" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="无法连接到互联网，请检查网络"
+            android:textColor="@color/text_color" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--显示设备-->
+        <com.nodepp.smartnode.view.pullToRefresh.PullToRefreshLayout
+            android:id="@+id/refresh_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+            <include layout="@layout/refresh_head" />
+
+            <com.nodepp.smartnode.view.pullToRefresh.pullableview.PullableListView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f5f5f5"
+                android:divider="#f5f5f5"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:dividerHeight="10dp"
+                android:fadeScrollbars="false"
+                android:scrollbars="none"
+              ></com.nodepp.smartnode.view.pullToRefresh.pullableview.PullableListView>
+
+            <include layout="@layout/load_more" />
+        </com.nodepp.smartnode.view.pullToRefresh.PullToRefreshLayout>
+        <!--没有设备-->
+        <LinearLayout
+            android:id="@+id/ll_nothing"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="103dp"
+                android:layout_height="127dp"
+                android:layout_marginTop="108dp"
+                android:src="@mipmap/no_socket" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="暂无设备接入"
+                android:textColor="@color/text_color2"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/selector_add_device"
+                android:text="添加设备"
+                android:textColor="@drawable/selector_add_socket_text"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    tools:context="com.nodepp.smartnode.activity.ColorControlActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.nodepp.smartnode.view.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleMessage="@string/color_light"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_control"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/fl_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"></FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/edit_hint" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <RadioButton
+                            android:id="@+id/rb_set_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="47.3dp"
+                            style="@style/main_tab_bottom"
+                            android:textColor="@color/text_color"
+                            android:visibility="visible"
+                            android:drawableTop="@mipmap/ic_timmer_n"
+                            android:text="定时" />
+                        <RadioGroup
+                            android:id="@+id/main_radio"
+                            android:layout_width="match_parent"
+                            android:layout_height="47.3dp"
+                            android:layout_gravity="bottom"
+                            android:background="#f9f9f9"
+                            android:visibility="gone"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_normal_light"
+                                style="@style/main_tab_bottom"
+                                android:checked="false"
+                                android:drawableTop="@drawable/selector_normal_light"
+                                android:text="白光" />
+
+                            <RadioButton
+                                android:id="@+id/rb_color_light"
+                                style="@style/main_tab_bottom"
+                                android:drawableTop="@drawable/selector_color_light"
+                                android:text="彩光" />
+
+                            <RadioButton
+                                android:id="@+id/rb_scent"
+                                style="@style/main_tab_bottom"
+                                android:drawableTop="@drawable/selector_scene"
+                                android:text="场景" />
+
+                            <RadioButton
+                                android:id="@+id/rb_time"
+                                style="@style/main_tab_bottom"
+                                android:drawableTop="@drawable/selector_timmer"
+                                android:text="定时" />
+
+                        </RadioGroup>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_no_device"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="160dp"
+                    android:background="@mipmap/no_device" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="设备不在线"
+                    android:textColor="@color/light_text_color"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_voice"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10sp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/selector_voice_control2" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

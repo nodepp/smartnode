@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="match_parent"
+        android:text="接收的信息"
+        android:padding="10dp"
+        android:textSize="10sp"
+        android:textColor="@color/grey_deep"
+        android:layout_height="150dp" />
+
+    <TextView style="@style/spilt_line" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="20dp"
+        android:gravity="center_vertical"
+       >
+        <CheckBox
+            android:id="@+id/cb_char"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/selector_switch"
+            android:button="@null"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/tv_char"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="字符串"
+            android:textColor="@color/text_color"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/cb_hex"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/selector_switch"
+            android:button="@null" />
+
+        <TextView
+            android:id="@+id/tv_hex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="十六进制"
+            android:textColor="@color/text_color"
+            android:textSize="16sp" />
+         <Button
+             android:id="@+id/btn_send"
+             android:layout_width="60dp"
+             android:layout_marginLeft="10dp"
+             android:layout_height="40dp"
+             android:textColor="@color/white"
+             android:textSize="18sp"
+             android:background="@drawable/btn_ok_selector"
+             android:text="发送"/>
+        <Button
+            android:id="@+id/btn_receive"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@drawable/btn_ok_selector"
+            android:text="接收"/>
+    </LinearLayout>
+    <TextView style="@style/spilt_line" />
+    <EditText
+        android:id="@+id/et_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey_deep"
+        android:textSize="18sp"
+        android:hint="请输入要发送的信息"
+        android:inputType="textMultiLine"
+        />
+</LinearLayout>

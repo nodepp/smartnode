@@ -1,0 +1,32 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- 加载框. -->
+    <dimen name="spot_size">6dp</dimen>
+    <dimen name="title_margin">10dp</dimen>
+    <dimen name="progress_margin">24dp</dimen>
+    <dimen name="progress_width">200dp</dimen>
+    <dimen name="progress_height">150dp</dimen>
+    <dimen name="slidingmenu_offset">120dp</dimen>
+    <dimen name="list_padding">10dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+    <!-- wheel -->
+    <dimen name="color_wheel_radius">135dp</dimen>
+    <dimen name="color_wheel_thickness">16dp</dimen>
+    <dimen name="color_center_halo_radius">45dp</dimen>
+    <dimen name="color_center_radius">50dp</dimen>
+    <dimen name="color_pointer_halo_radius">16dp</dimen>
+    <dimen name="color_pointer_radius">12dp</dimen>
+
+    <!-- the bars -->
+    <dimen name="bar_thickness">3dp</dimen>
+    <dimen name="bar_length">230dp</dimen>
+    <dimen name="bar_pointer_radius">9dp</dimen>
+    <dimen name="bar_pointer_halo_radius">12dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="cardPadding">2px</dimen>
+    <dimen name="cardRadius">2dp</dimen>
+    <dimen name="borderRadius">20dp</dimen>
+</resources>

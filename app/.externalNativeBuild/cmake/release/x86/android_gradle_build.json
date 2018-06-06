@@ -1,0 +1,522 @@
+
+{
+	"buildFiles" : 
+	[
+		"/Users/nodepp/Documents/workspace/android /smartplug/app/CMakeLists.txt",
+		"/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/CMakeLists.txt"
+	],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"/Users/nodepp/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/nodepp/Documents/workspace/android\\ /smartplug/app/.externalNativeBuild/cmake/release/x86 --target clean"
+	],
+	"libraries" : 
+	{
+		"mbedcrypto-Release-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "mbedcrypto",
+			"buildCommand" : "/Users/nodepp/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/nodepp/Documents/workspace/android\\ /smartplug/app/.externalNativeBuild/cmake/release/x86 --target mbedcrypto",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/aes.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/aesni.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/arc4.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/asn1parse.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/asn1write.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/base64.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/bignum.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/blowfish.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/camellia.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ccm.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/cipher.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/cipher_wrap.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/cmac.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ctr_drbg.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/des.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/dhm.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ecdh.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ecdsa.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ecjpake.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ecp.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ecp_curves.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/entropy.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/entropy_poll.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/error.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/gcm.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/havege.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/hmac_drbg.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/md.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/md2.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/md4.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/md5.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/md_wrap.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/memory_buffer_alloc.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/oid.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/padlock.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/pem.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/pk.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/pk_wrap.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/pkcs12.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/pkcs5.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/pkparse.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/pkwrite.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/platform.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ripemd160.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/rsa.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/rsa_internal.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/sha1.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/sha256.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/sha512.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/threading.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/timing.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/version.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/version_features.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedcrypto_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/xtea.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				}
+			],
+			"output" : "/Users/nodepp/Documents/workspace/android /smartplug/app/build/intermediates/cmake/release/obj/x86/libmbedcrypto.so",
+			"toolchain" : "6355835146971515115"
+		},
+		"mbedtls-Release-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "mbedtls",
+			"buildCommand" : "/Users/nodepp/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/nodepp/Documents/workspace/android\\ /smartplug/app/.externalNativeBuild/cmake/release/x86 --target mbedtls",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedtls_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/debug.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedtls_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/net_sockets.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedtls_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ssl_cache.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedtls_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ssl_ciphersuites.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedtls_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ssl_cli.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedtls_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ssl_cookie.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedtls_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ssl_srv.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedtls_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ssl_ticket.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedtls_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/ssl_tls.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				}
+			],
+			"output" : "/Users/nodepp/Documents/workspace/android /smartplug/app/build/intermediates/cmake/release/obj/x86/libmbedtls.so",
+			"toolchain" : "6355835146971515115"
+		},
+		"mbedx509-Release-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "mbedx509",
+			"buildCommand" : "/Users/nodepp/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/nodepp/Documents/workspace/android\\ /smartplug/app/.externalNativeBuild/cmake/release/x86 --target mbedx509",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedx509_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/certs.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedx509_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/pkcs11.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedx509_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/x509.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedx509_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/x509_create.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedx509_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/x509_crl.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedx509_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/x509_crt.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedx509_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/x509_csr.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedx509_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/x509write_crt.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dmbedx509_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -Wmissing-declarations -Wmissing-prototypes -Wdocumentation -Wno-documentation-deprecated-sync -Wunreachable-code -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbedtls/x509write_csr.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				}
+			],
+			"output" : "/Users/nodepp/Documents/workspace/android /smartplug/app/build/intermediates/cmake/release/obj/x86/libmbedx509.so",
+			"toolchain" : "6355835146971515115"
+		},
+		"nodepp-Release-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "nodepp",
+			"buildCommand" : "/Users/nodepp/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/nodepp/Documents/workspace/android\\ /smartplug/app/.externalNativeBuild/cmake/release/x86 --target nodepp",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dnodepp_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/utils.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dnodepp_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/xxtea.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/darwin-x86_64 --sysroot=/Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot -Dnodepp_EXPORTS -I../../../../src/main/cpp/mbedtls/include  -isystem /Users/nodepp/Library/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC      -c ",
+					"src" : "/Users/nodepp/Documents/workspace/android /smartplug/app/src/main/cpp/mbed_client.c",
+					"workingDirectory" : "/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86"
+				}
+			],
+			"output" : "/Users/nodepp/Documents/workspace/android /smartplug/app/build/intermediates/cmake/release/obj/x86/libnodepp.so",
+			"toolchain" : "6355835146971515115"
+		}
+	},
+	"toolchains" : 
+	{
+		"6355835146971515115" : 
+		{
+			"cCompilerExecutable" : "/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/nodepp/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+		}
+	}
+}

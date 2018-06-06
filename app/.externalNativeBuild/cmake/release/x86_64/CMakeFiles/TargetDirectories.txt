@@ -1,0 +1,9 @@
+/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/edit_cache.dir
+/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir
+/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/nodepp.dir
+/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86_64/src/main/cpp/mbedtls/CMakeFiles/edit_cache.dir
+/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86_64/src/main/cpp/mbedtls/CMakeFiles/lib.dir
+/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86_64/src/main/cpp/mbedtls/CMakeFiles/mbedcrypto.dir
+/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86_64/src/main/cpp/mbedtls/CMakeFiles/mbedx509.dir
+/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86_64/src/main/cpp/mbedtls/CMakeFiles/rebuild_cache.dir
+/Users/nodepp/Documents/workspace/android /smartplug/app/.externalNativeBuild/cmake/release/x86_64/src/main/cpp/mbedtls/CMakeFiles/mbedtls.dir

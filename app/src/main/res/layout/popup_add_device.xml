@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_client_popup_bg"
+    android:padding="8dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/ll_setting"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_marginLeft="3dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@mipmap/ic_add_setting"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:padding="6dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:lineSpacingExtra="3dp"
+            android:lineSpacingMultiplier="1.5"
+            android:textSize="14sp"
+            android:text="配  置"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/light_text_color"/>
+    <LinearLayout
+        android:id="@+id/ll_scan"
+        android:layout_marginTop="3dp"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:layout_marginLeft="3dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@mipmap/ic_add_sacn"/>
+        <TextView
+            android:padding="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:lineSpacingExtra="3dp"
+            android:lineSpacingMultiplier="1.5"
+            android:textSize="14sp"
+            android:text="扫一扫"/>
+    </LinearLayout>
+
+</LinearLayout>

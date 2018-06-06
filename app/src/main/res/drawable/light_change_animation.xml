@@ -1,0 +1,7 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" android:oneshot="false">
+
+    <item android:drawable="@mipmap/light_red" android:duration="1000"></item>
+    <item android:drawable="@mipmap/light_green" android:duration="1000"></item>
+    <item android:drawable="@mipmap/light_blue" android:duration="1000"></item>
+
+</animation-list>
