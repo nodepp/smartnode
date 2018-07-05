@@ -9,6 +9,7 @@ public class MultipleTimeTask {
     int timeSet;
     int timeRepeaat;
     int timeOperate;
+    int operateIndex;
     boolean timeIsOpen;
     List<Integer> timeStamps;
 
@@ -52,12 +53,21 @@ public class MultipleTimeTask {
         this.timeIsOpen = timeIsOpen;
     }
 
+    public int getOperateIndex() {
+        return operateIndex;
+    }
+
+    public void setOperateIndex(int operateIndex) {
+        this.operateIndex = operateIndex;
+    }
+
     @Override
     public String toString() {
         return "MultipleTimeTask{" +
                 "timeSet=" + timeSet +
                 ", timeRepeaat=" + timeRepeaat +
                 ", timeOperate=" + timeOperate +
+                ", operateIndex=" + operateIndex +
                 ", timeIsOpen=" + timeIsOpen +
                 ", timeStamps=" + timeStamps +
                 '}';

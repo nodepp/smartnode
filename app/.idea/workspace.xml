@@ -11,7 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="ae443af8-ece4-4024-9e87-dbd08a9f9526" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../slidelibrary/slidelibrary.iml" afterPath="$PROJECT_DIR$/../slidelibrary/slidelibrary.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../smartplug.iml" afterPath="$PROJECT_DIR$/../smartplug.iml" />
     </list>
@@ -58,26 +57,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DeviceAdapter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/adapter/DeviceAdapter.java">
+      <file leaf-file-name="PbDataUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/PbDataUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3844">
-              <caret line="82" column="39" lean-forward="true" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
+            <state relative-caret-position="-2519">
+              <caret line="285" column="7" lean-forward="false" selection-start-line="285" selection-start-column="7" selection-end-line="285" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7426">
+              <caret line="697" column="7" lean-forward="false" selection-start-line="697" selection-start-column="7" selection-end-line="697" selection-end-column="7" />
               <folding>
-                <element signature="e#2469#2470#0" expanded="true" />
-                <element signature="e#2506#2507#0" expanded="true" />
-                <element signature="e#2563#2564#0" expanded="true" />
-                <element signature="e#2590#2591#0" expanded="true" />
-                <element signature="e#2647#2648#0" expanded="true" />
-                <element signature="e#2671#2672#0" expanded="true" />
-                <element signature="e#6044#7827#0" expanded="true" />
-                <element signature="e#7826#7827#0" expanded="true" />
-                <element signature="e#7873#12328#0" expanded="true" />
-                <element signature="e#12327#12328#0" expanded="true" />
-                <element signature="e#12660#12690#0" expanded="true" />
-                <element signature="e#12692#13650#0" expanded="true" />
-                <element signature="e#13649#13650#0" expanded="true" />
+                <element signature="e#4311#5796#0" expanded="true" />
+                <element signature="e#5795#5796#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Manifest.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/Manifest.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="153" column="55" lean-forward="false" selection-start-line="153" selection-start-column="55" selection-end-line="153" selection-end-column="90" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ColorControlActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/ColorControlActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1362">
+              <caret line="237" column="43" lean-forward="false" selection-start-line="237" selection-start-column="43" selection-end-line="237" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MoreSettingActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MoreSettingActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="125" column="26" lean-forward="true" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
+              <folding>
+                <element signature="e#12655#13545#0" expanded="true" />
+                <element signature="e#13544#13545#0" expanded="true" />
+                <element signature="e#14059#14531#0" expanded="true" />
+                <element signature="e#14530#14531#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="344" column="0" lean-forward="false" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,40 +140,41 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Timer</find>
-      <find>currentMsg</find>
-      <find>onDes</find>
-      <find>onp</find>
-      <find>messageList</find>
-      <find>setDeviceNoOnline</find>
-      <find>0x23</find>
+      <find>chang</find>
+      <find>controlSock</find>
+      <find>updateDeviceToDB()</find>
+      <find>operate</find>
+      <find>changeDeviceMode</find>
+      <find>setDeviceMode</find>
       <find>onTime</find>
-      <find>mIsLoop</find>
-      <find>startReceive</find>
-      <find>retryCount</find>
-      <find>onPause</find>
-      <find>isThrow</find>
-      <find>control</find>
       <find>query</find>
-      <find>ond</find>
-      <find>setColorLightCurrentState</find>
-      <find>showLi</find>
-      <find>isBigSeqMessage</find>
-      <find>ColorLig</find>
-      <find>showLightState</find>
-      <find>REFRESH_UI</find>
-      <find>handler</find>
-      <find>new Thread</find>
-      <find>sendSeq</find>
-      <find>sendDataAndRead</find>
-      <find>isBig</find>
-      <find>routerMac</find>
-      <find>checkShareSig</find>
-      <find>setRouterMac</find>
+      <find>onR</find>
+      <find>onTimeout</find>
+      <find>isRetrt</find>
+      <find>isRetry</find>
+      <find>sendRequest</find>
+      <find>onResum</find>
+      <find>sendTimeTask</find>
+      <find>ll_su_yan</find>
+      <find>llSuYan</find>
+      <find>brightDarkBar</find>
+      <find>changeState</find>
+      <find>brightness</find>
+      <find>change</find>
+      <find>changeSr</find>
+      <find>Timer</find>
+      <find>Pack</find>
+      <find>hasState</find>
+      <find>isUpdateApp</find>
+      <find>isClickChange</find>
+      <find>电平修改</find>
+      <find>changeFirmwareLevel</find>
+      <find>tbSwitchLebel</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>messageMap</replace>
+      <replace>isRetry</replace>
     </replaceStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -3337,17 +3384,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_six_switch.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_two_switch.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/nodepp/smartnode/ExampleUnitTest.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_send_message.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/esptouch/udp/UDPSocketClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/AddDeviceActivityThree.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/model/UserInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/PbDataUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/popup_add_device.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/BaseFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/ResponseListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/AboutActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/service/PhonePwdLoginService.java" />
@@ -3357,45 +3393,56 @@
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/LoginActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/RegisterActivityTwo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/SendMessageActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/TimeFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/view/PopupWindow/AdjustColorPopup.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/view/PopupWindow/EditColorPopup.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/adapter/DeviceAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MulitipleTimingActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MoreSettingActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/MyApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/model/MessageKey.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/model/MessageBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MultichannelControlActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/dtls/DTLSClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/ColorLightFragment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/NormalLightFragment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/ColorControlActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/WhiteLightActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/SceneFragment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPSocket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPClientScan.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPSocketA2S.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPClientA2S.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/AddDeviceActivityTwo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/twocode/CaptureActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPClientScanA2S.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/SwitchActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/receiver/NetChangeReceiver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nodepp/Nodepp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/WhiteLightActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/SplashActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/model/TimeTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/DBUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/model/MultipleTimeTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/TimeFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MulitipleTimingActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/SwitchActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/AddTimedTaskActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/adapter/TimeTaskAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/Utils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MultichannelControlActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPClientA2S.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/ColorControlActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/NormalLightFragment.java" />
+        <option value="$PROJECT_DIR$/libs/protobuf-java-2.5.0.jar!/com/google/protobuf/ByteString.class" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/PbDataUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/task/UpdateTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MainActivity.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/Constant.java" />
+        <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MoreSettingActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-6" />
-    <option name="y" value="23" />
+    <option name="x" value="383" />
+    <option name="y" value="216" />
     <option name="width" value="1920" />
-    <option name="height" value="985" />
+    <option name="height" value="988" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -3412,9 +3459,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3503,6 +3547,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smartplug" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smartplug" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -3567,13 +3637,50 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="udp" />
+              <option name="myItemId" value="adapter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smartplug" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smartplug" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smartnode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3593,9 +3700,158 @@
       <recent name="com.nodepp.smartnode.activity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/nodepp" />
       <recent name="$PROJECT_DIR$/src/main/res/mipmap-hdpi" />
       <recent name="$PROJECT_DIR$/src/main/res/layout" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/values/colors.xml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/BathHeaterActivity.java</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/layout/activity_bath_heater.xml</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/layout/activity_nswitch.xml</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/bg_top.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/bg_top1.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/bg_top2.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/btn_add.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/btn_off_nomal.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/btn_off_press.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/btn_on_nomal.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/btn_on_press.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/close_bath.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_bath.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_clock.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_dry_nor.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_dry_pre.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_fan_nor.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_fan_pre.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_lighting_nor.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_lighting_pre.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_pure_nor.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_pure_pre.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_warm_nor.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_warm_pre.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_wind_nor.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_wind_pre.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/open_bath_shower.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/mipmap-hdpi/voice_white.png</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/drawable/bath_bg_shape.xml</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/drawable/selector_bathshower.xml</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/drawable/selector_dry.xml</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/drawable/selector_fan.xml</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/drawable/selector_lighting.xml</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/drawable/selector_newswitch_off.xml</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/drawable/selector_newswitch_on.xml</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/drawable/selector_pure.xml</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/drawable/selector_warm.xml</PATH>
+          <PATH vcs="svn" revision="1166">$PROJECT_DIR$/src/main/res/drawable/selector_winding.xml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -3704,7 +3960,10 @@
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
-      <method />
+      <method>
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1528798855159" />
+      </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
       <module name="" />
@@ -3749,7 +4008,10 @@
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
       </Profilers>
-      <method />
+      <method>
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1528798855159" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -3929,7 +4191,10 @@
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
-      <method />
+      <method>
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1528798855159" />
+      </method>
     </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Android App.app" />
@@ -4147,7 +4412,42 @@
       <option name="project" value="LOCAL" />
       <updated>1528257637023</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="修改定时为独立定时，修改彩灯多个界面开关问题，去掉UDPA2S同步锁">
+      <created>1528449923085</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1528449923085</updated>
+    </task>
+    <task id="LOCAL-00023" summary="添加pb注释，修改上一次定时灯灯operateIndex">
+      <created>1528695588024</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1528695588024</updated>
+    </task>
+    <task id="LOCAL-00024" summary="修改定时问题，修复控制问题">
+      <created>1528796786048</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1528796786048</updated>
+    </task>
+    <task id="LOCAL-00025" summary="manifest增加activity">
+      <created>1528797229025</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1528797229025</updated>
+    </task>
+    <task id="LOCAL-00026" summary="去掉进入时提示电平修改成功">
+      <created>1528798634040</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1528798634040</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -4159,33 +4459,32 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="23" width="1920" height="985" extended-state="1" />
+    <frame x="383" y="216" width="1920" height="988" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23801917" sideWeight="0.50584793" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14039126" sideWeight="0.6176784" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20642202" sideWeight="0.6176784" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16986156" sideWeight="0.5046854" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.095846646" sideWeight="0.5052356" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19288175" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19266056" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26783812" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26783812" sideWeight="0.4947644" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14006889" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327252" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13990825" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45235363" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55644244" sideWeight="0.38232163" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22470714" sideWeight="0.88797814" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13777268" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16986156" sideWeight="0.4953146" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22896698" sideWeight="0.88797814" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.050458714" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08785942" sideWeight="0.4829843" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23801917" sideWeight="0.11263736" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -4194,6 +4493,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.086794466" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -4227,14 +4527,13 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13833992" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23801917" sideWeight="0.11263736" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23801917" sideWeight="0.11263736" order="7" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修复彩灯定时之前遗留的问题" />
     <MESSAGE value="sdk分支" />
     <MESSAGE value="修复bugly上报问题" />
     <MESSAGE value="增加修改定时任务判空" />
@@ -4255,368 +4554,24 @@
     <MESSAGE value="修改超时界面设置逻辑，修改线程池" />
     <MESSAGE value="修改分享设备函数" />
     <MESSAGE value="a服务器" />
-    <option name="LAST_COMMIT_MESSAGE" value="a服务器" />
+    <MESSAGE value="修改定时为独立定时，修改彩灯多个界面开关问题，去掉UDPA2S同步锁" />
+    <MESSAGE value="添加pb注释，修改上一次定时灯灯operateIndex" />
+    <MESSAGE value="修改定时问题，修复控制问题" />
+    <MESSAGE value="manifest增加activity" />
+    <MESSAGE value="去掉进入时提示电平修改成功" />
+    <option name="LAST_COMMIT_MESSAGE" value="去掉进入时提示电平修改成功" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/ResponseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/AboutActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-389">
-          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding>
-            <element signature="e#3789#3835#0" expanded="true" />
-            <element signature="e#4178#4200#0" expanded="true" />
-            <element signature="e#4202#4460#0" expanded="true" />
-            <element signature="e#4459#4460#0" expanded="true" />
-            <element signature="e#4497#4523#0" expanded="true" />
-            <element signature="e#4900#5460#0" expanded="true" />
-            <element signature="e#5459#5460#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/service/PhonePwdLoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/AddDeviceColorLightActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="210" column="0" lean-forward="false" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/ForgetPasswordActivityFour.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/RegisterActivityTwo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="235" column="20" lean-forward="false" selection-start-line="235" selection-start-column="20" selection-end-line="235" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/SendMessageActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="184" column="0" lean-forward="false" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/view/PopupWindow/AdjustColorPopup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="221" column="0" lean-forward="false" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/view/PopupWindow/EditColorPopup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="474" column="0" lean-forward="false" selection-start-line="474" selection-start-column="0" selection-end-line="474" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/adapter/DeviceTypeAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/PbDataUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="182" column="31" lean-forward="false" selection-start-line="182" selection-start-column="27" selection-end-line="182" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/model/MessageBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="40" column="18" lean-forward="false" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#305#306#0" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#381#382#0" expanded="true" />
-            <element signature="e#421#422#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#622#623#0" expanded="true" />
-            <element signature="e#653#654#0" expanded="true" />
-            <element signature="e#711#712#0" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/ThreadPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1620">
-          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MoreSettingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="123" column="9" lean-forward="false" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MultichannelControlActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="606" column="51" lean-forward="false" selection-start-line="606" selection-start-column="46" selection-end-line="606" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/cpp/mbed_client.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1912">
-          <caret line="254" column="23" lean-forward="false" selection-start-line="254" selection-start-column="20" selection-end-line="254" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MulitipleTimingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
-          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/dtls/DTLSClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="66" column="23" lean-forward="false" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/dtls/DTLSSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3150">
-          <caret line="211" column="34" lean-forward="false" selection-start-line="211" selection-start-column="34" selection-end-line="211" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/ColorLightFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="53" column="62" lean-forward="false" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="62" />
-          <folding>
-            <element signature="e#5497#5498#0" expanded="true" />
-            <element signature="e#5528#5529#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/WhiteLightActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="181" selection-end-column="51" />
-          <folding>
-            <element signature="e#7600#7631#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/TimeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="461" column="34" lean-forward="true" selection-start-line="461" selection-start-column="34" selection-end-line="461" selection-end-column="34" />
-          <folding>
-            <element signature="e#19261#19958#0" expanded="true" />
-            <element signature="e#19957#19958#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/ColorControlActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="112" column="19" lean-forward="false" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/SceneFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="61" column="28" lean-forward="true" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPAsyncTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/NormalLightFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8480">
-          <caret line="459" column="56" lean-forward="false" selection-start-line="459" selection-start-column="56" selection-end-line="459" selection-end-column="56" />
-          <folding>
-            <element signature="e#9607#9608#0" expanded="true" />
-            <element signature="e#9638#9639#0" expanded="true" />
-            <element signature="e#17859#17900#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPAsyncTaskA2S.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="45" column="55" lean-forward="false" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPSocketA2S.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="54" column="17" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="17" />
-          <folding>
-            <element signature="e#1609#1610#0" expanded="true" />
-            <element signature="e#1644#1645#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPClientScan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/Socket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" column="31" lean-forward="false" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Android/sdk/ndk-bundle/build/core/setup-app.mk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="94" column="39" lean-forward="false" selection-start-line="94" selection-start-column="39" selection-end-line="94" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/MyApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/esptouch/task/__EsptouchTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="246" column="33" lean-forward="false" selection-start-line="246" selection-start-column="33" selection-end-line="246" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/receiver/MyReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="40" column="51" lean-forward="true" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/AddDeviceActivityTwo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-379">
           <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPClientA2S.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-587">
-          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -4626,11 +4581,11 @@
         <state relative-caret-position="2977">
           <caret line="403" column="28" lean-forward="false" selection-start-line="403" selection-start-column="28" selection-end-line="403" selection-end-column="28" />
           <folding>
-            <element signature="e#9565#9935#0" expanded="true" />
-            <element signature="e#9934#9935#0" expanded="true" />
-            <element signature="e#9972#10006#0" expanded="true" />
-            <element signature="e#10008#10243#0" expanded="true" />
-            <element signature="e#10242#10243#0" expanded="true" />
+            <element signature="e#9565#9935#0" expanded="false" />
+            <element signature="e#9934#9935#0" expanded="false" />
+            <element signature="e#9972#10006#0" expanded="false" />
+            <element signature="e#10008#10243#0" expanded="false" />
+            <element signature="e#10242#10243#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -4639,30 +4594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="64" column="46" lean-forward="false" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/SplashActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="61" column="105" lean-forward="true" selection-start-line="61" selection-start-column="69" selection-end-line="61" selection-end-column="105" />
-          <folding>
-            <element signature="e#1186#1321#0" expanded="true" />
-            <element signature="e#1320#1321#0" expanded="true" />
-            <element signature="e#4064#4243#0" expanded="true" />
-            <element signature="e#4242#4243#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="301" column="61" lean-forward="false" selection-start-line="301" selection-start-column="61" selection-end-line="301" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4678,7 +4609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1699">
           <caret line="222" column="0" lean-forward="false" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4687,59 +4617,408 @@
         <state relative-caret-position="4389">
           <caret line="258" column="62" lean-forward="false" selection-start-line="258" selection-start-column="62" selection-end-line="258" selection-end-column="62" />
           <folding>
-            <element signature="e#11091#11317#0" expanded="true" />
-            <element signature="e#11316#11317#0" expanded="true" />
-            <element signature="e#11506#13496#0" expanded="true" />
-            <element signature="e#13495#13496#0" expanded="true" />
+            <element signature="e#11091#11317#0" expanded="false" />
+            <element signature="e#11316#11317#0" expanded="false" />
+            <element signature="e#11506#13496#0" expanded="false" />
+            <element signature="e#13495#13496#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nodepp/Nodepp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-26/android/app/AlertDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="833" column="75" lean-forward="false" selection-start-line="833" selection-start-column="75" selection-end-line="833" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/model/Device.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-91">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/DBUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1386">
+          <caret line="73" column="19" lean-forward="true" selection-start-line="72" selection-start-column="111" selection-end-line="73" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="74" column="41" lean-forward="false" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/model/TimeTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="181" column="15" lean-forward="false" selection-start-line="181" selection-start-column="15" selection-end-line="181" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/TimeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1110">
+          <caret line="397" column="61" lean-forward="false" selection-start-line="397" selection-start-column="61" selection-end-line="397" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/model/MultipleTimeTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1029">
+          <caret line="69" column="48" lean-forward="false" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/view/OpacityBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="392" column="16" lean-forward="false" selection-start-line="392" selection-start-column="16" selection-end-line="392" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/SwitchActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="610" column="28" lean-forward="true" selection-start-line="610" selection-start-column="28" selection-end-line="610" selection-end-column="28" />
+        <state relative-caret-position="546">
+          <caret line="136" column="13" lean-forward="false" selection-start-line="136" selection-start-column="13" selection-end-line="136" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#23076#23077#0" expanded="false" />
+            <element signature="e#23109#23110#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/AddDeviceColorLightActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/adapter/TimeTaskAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-811">
-          <caret line="752" column="49" lean-forward="true" selection-start-line="752" selection-start-column="49" selection-end-line="752" selection-end-column="49" />
+        <state relative-caret-position="-551">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="e#4850#5105#0" expanded="false" />
+            <element signature="e#5104#5105#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/WhiteLightActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="222" column="2" lean-forward="false" selection-start-line="222" selection-start-column="2" selection-end-line="222" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/adapter/DeviceAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="177" column="43" lean-forward="false" selection-start-line="177" selection-start-column="43" selection-end-line="177" selection-end-column="43" />
+          <folding>
+            <element signature="e#7873#12328#0" expanded="false" />
+            <element signature="e#12327#12328#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MultichannelControlActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="703" column="19" lean-forward="false" selection-start-line="703" selection-start-column="19" selection-end-line="709" selection-end-column="21" />
+          <folding>
+            <element signature="e#27348#27388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/AddTimedTaskActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="489" column="49" lean-forward="false" selection-start-line="489" selection-start-column="49" selection-end-line="489" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPClientA2S.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-229">
+          <caret line="37" column="35" lean-forward="false" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+          <folding>
+            <element signature="e#1602#1603#0" expanded="true" />
+            <element signature="e#1634#1635#0" expanded="true" />
+            <element signature="e#1691#1692#0" expanded="true" />
+            <element signature="e#1729#1730#0" expanded="true" />
+            <element signature="e#1775#1776#0" expanded="true" />
+            <element signature="e#1813#1814#0" expanded="true" />
+            <element signature="e#3319#3320#0" expanded="true" />
+            <element signature="e#3393#3394#0" expanded="true" />
+            <element signature="e#4422#5026#0" expanded="true" />
+            <element signature="e#5025#5026#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/dtls/DTLSAsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-443">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/dtls/DTLSSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/cpp/utils.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="83" column="29" lean-forward="false" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/cpp/mbed_client.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="271" column="52" lean-forward="false" selection-start-line="271" selection-start-column="42" selection-end-line="271" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/cpp/xxtea.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-431">
+          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/dtls/DTLSClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="70" column="41" lean-forward="false" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MulitipleTimingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="996">
+          <caret line="289" column="31" lean-forward="false" selection-start-line="289" selection-start-column="19" selection-end-line="289" selection-end-column="31" />
+          <folding>
+            <element signature="e#2021#3159#0" expanded="false" />
+            <element signature="e#3158#3159#0" expanded="false" />
+            <element signature="e#10562#11425#0" expanded="false" />
+            <element signature="e#11424#11425#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/ColorLightFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="140" column="49" lean-forward="false" selection-start-line="140" selection-start-column="49" selection-end-line="140" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/fragment/NormalLightFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="259" column="20" lean-forward="false" selection-start-line="259" selection-start-column="20" selection-end-line="259" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/MyApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/ndk-bundle/build/core/setup-app.mk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="70" column="101" lean-forward="false" selection-start-line="70" selection-start-column="101" selection-end-line="70" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/PhoneUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/protobuf-java-2.5.0.jar!/com/google/protobuf/ByteString.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_normal_light.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="86" column="38" lean-forward="false" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/task/UpdateTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="118" column="59" lean-forward="false" selection-start-line="118" selection-start-column="59" selection-end-line="118" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="368" column="45" lean-forward="false" selection-start-line="368" selection-start-column="28" selection-end-line="368" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/SplashActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="143" column="70" lean-forward="false" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="70" />
+          <folding>
+            <element signature="e#1142#1278#0" expanded="true" />
+            <element signature="e#1277#1278#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/XXTeaUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/PbDataUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2519">
+          <caret line="285" column="7" lean-forward="false" selection-start-line="285" selection-start-column="7" selection-end-line="285" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-26/android.jar!/android/Manifest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="153" column="55" lean-forward="false" selection-start-line="153" selection-start-column="55" selection-end-line="153" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/ColorControlActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1362">
+          <caret line="237" column="43" lean-forward="false" selection-start-line="237" selection-start-column="43" selection-end-line="237" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/udp/UDPClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="121" column="59" lean-forward="false" selection-start-line="121" selection-start-column="59" selection-end-line="121" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/Constant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="50" column="40" lean-forward="true" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+        <state relative-caret-position="567">
+          <caret line="33" column="45" lean-forward="true" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="500" column="24" lean-forward="true" selection-start-line="500" selection-start-column="24" selection-end-line="500" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7426">
+          <caret line="697" column="7" lean-forward="false" selection-start-line="697" selection-start-column="7" selection-end-line="697" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2299#2309#0" expanded="true" />
+            <element signature="e#4311#5796#0" expanded="true" />
+            <element signature="e#5795#5796#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/adapter/DeviceAdapter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3844">
-          <caret line="82" column="39" lean-forward="true" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
+        <state relative-caret-position="223">
+          <caret line="344" column="0" lean-forward="false" selection-start-line="344" selection-start-column="0" selection-end-line="344" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/nodepp/smartnode/activity/MoreSettingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="125" column="26" lean-forward="true" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
           <folding>
-            <element signature="e#2469#2470#0" expanded="true" />
-            <element signature="e#2506#2507#0" expanded="true" />
-            <element signature="e#2563#2564#0" expanded="true" />
-            <element signature="e#2590#2591#0" expanded="true" />
-            <element signature="e#2647#2648#0" expanded="true" />
-            <element signature="e#2671#2672#0" expanded="true" />
-            <element signature="e#6044#7827#0" expanded="true" />
-            <element signature="e#7826#7827#0" expanded="true" />
-            <element signature="e#7873#12328#0" expanded="true" />
-            <element signature="e#12327#12328#0" expanded="true" />
-            <element signature="e#12660#12690#0" expanded="true" />
-            <element signature="e#12692#13650#0" expanded="true" />
-            <element signature="e#13649#13650#0" expanded="true" />
+            <element signature="e#12655#13545#0" expanded="true" />
+            <element signature="e#13544#13545#0" expanded="true" />
+            <element signature="e#14059#14531#0" expanded="true" />
+            <element signature="e#14530#14531#0" expanded="true" />
           </folding>
         </state>
       </provider>

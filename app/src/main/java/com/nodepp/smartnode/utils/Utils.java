@@ -572,6 +572,7 @@ public class Utils {
                 timeTask.setDeviceId(deviceId);
                 timeTask.setDid(did);
                 timeTask.setTid(tid);
+                timeTask.setOperateIndex(timers.getOperateIndex());
                 int timeIsopen = timers.getTimeIsopen();
                 timeTask.setIsOpen(timeIsopen == 0?false:true);
                 int timeOperate = timers.getTimeOperate();

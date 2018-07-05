@@ -122,26 +122,8 @@ public class MulitipleTimingActivity extends BaseActivity implements View.OnClic
         if (NetWorkUtils.isNetworkConnected(this)) {
             if (lists != null) {//确认有定时任务才进行操作，lists 为0代表取消所有定时任务
                 Log.i(TAG, "list===" + lists.toString());
-                List<MultipleTimeTask> multipleTimeTasks = new ArrayList<MultipleTimeTask>();
-                for (TimeTask timeTask : lists) {
-                    MultipleTimeTask task = new MultipleTimeTask();
-                    task.setTimeSet(timeTask.getTimeSet());
-                    task.setTimeRepeaat(timeTask.getTimeRepeaat());
-                    task.setTimeOperate(timeTask.getTimeOperate());
-                    task.setTimeIsOpen(timeTask.isOpen());
-                    List<Integer> timeStamp = new ArrayList<Integer>();
-                    timeStamp.add(timeTask.getTimeStamp0());
-                    timeStamp.add(timeTask.getTimeStamp1());
-                    timeStamp.add(timeTask.getTimeStamp2());
-                    timeStamp.add(timeTask.getTimeStamp3());
-                    timeStamp.add(timeTask.getTimeStamp4());
-                    timeStamp.add(timeTask.getTimeStamp5());
-                    timeStamp.add(timeTask.getTimeStamp6());
-                    task.setTimeStamps(timeStamp);
-                    multipleTimeTasks.add(task);
-                }
                 long uid = Long.parseLong(Constant.userName);
-                final Nodepp.Msg msg = PbDataUtils.setTimeTaskRequestParam(uid, deviceModel.getDid(), deviceModel.getTid(), Constant.usig, multipleTimeTasks);
+                final Nodepp.Msg msg = PbDataUtils.setTimeTaskRequestParam(uid, deviceModel.getDid(), deviceModel.getTid(), Constant.usig, lists);
                 Log.i(TAG, "msg==" + msg.toString());
                 Socket.send(MulitipleTimingActivity.this, deviceModel.getConnetedMode(), deviceModel.getIp(), msg,clientKeys.get(deviceModel.getTid()), new ResponseListener() {
                     @Override

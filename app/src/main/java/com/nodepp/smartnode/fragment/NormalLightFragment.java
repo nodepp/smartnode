@@ -246,8 +246,6 @@ public class NormalLightFragment extends BaseFragment {
         super.onHiddenChanged(hidden);
         if (!hidden) {//相当于onResume
             Log.i(TAG, "show");
-            brightDarkBar.setOpacity(brightness);
-            suYanBar.setOpacity(suyan);
         } else {//相当于onPause
 
         }
@@ -341,25 +339,32 @@ public class NormalLightFragment extends BaseFragment {
             return;
         }
         Nodepp.Rgb color = msg.getColors(0);
-        int state = msg.getState();
-        showLightState(state);
-        if (isAdded()){
-
+        int state;
+        if (msg.hasState()){
+            state = msg.getState();
+        }else {
+            state = msg.getOperate();
         }
+        showLightState(state);
         if (state == 1) {
             int sence = msg.getPlatform();
-            int brightDark = msg.getBrightDark();
-            int suYan = msg.getSuYan();
+            brightness = msg.getBrightDark();
+            suyan = msg.getSuYan();
+            Log.i("query","brightDark---"+brightness);
+            Log.i("query","suYan---"+suyan);
             if (sence == 99) {//白光和彩光
                 if (color.getW() != 0) {
-                    brightDarkBar.setOpacity(brightDark);
-                    mGrad.setColor(Color.argb(brightDark, 0x46, 0xb2, 0xff));
-                    suYanBar.setOpacity(suYan);
+                    brightDarkBar.setOpacity(brightness);
+                    mGrad.setColor(Color.argb(brightness, 0x46, 0xb2, 0xff));
+                    suYanBar.setOpacity(suyan);
+                    Log.i("query","白光---");
+                }else {
+                    Log.i("query","彩光---");
                 }
             }
             if (isAdded()) {
                 ColorControlActivity activity = (ColorControlActivity) getActivity();
-                activity.setBottomMenu(color, sence, brightDark, suYan);
+                activity.setBottomMenu(color, sence, brightness, suyan);
                 activity.setLightState(1);
             }
         }else if (state == 0){
@@ -379,7 +384,7 @@ public class NormalLightFragment extends BaseFragment {
         if (myTask == null) {
             myTask = new MyTask();
         }
-        timer.schedule(myTask, 2000, 5000);  //定时器开始，每隔5s执行一次
+        timer.schedule(myTask, 1000, 3000);  //定时器开始，每隔3s执行一次
     }
 
     private void stopTimer() {
@@ -462,15 +467,8 @@ public class NormalLightFragment extends BaseFragment {
                                     mFunctions.invokeFunction(HIDE_MENU);
                                     mFunctions.invokeFunction(HIDE_NO_DEVICE);
                                     Log.i(TAG, "msg===" + msg.toString());
-                                    if (msg.getColorsCount() < 1) {
-                                        return;
-                                    }
-                                    Nodepp.Rgb colors = msg.getColors(0);
-                                    int a = colors.getW();
-                                    int r = colors.getR();
-                                    int g = colors.getG();
-                                    int b = colors.getB();
-                                    showLightState(msg.getState());
+                                    changeState(msg);
+
                                 }
                             }
                         }

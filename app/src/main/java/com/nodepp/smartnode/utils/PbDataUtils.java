@@ -6,6 +6,7 @@ import com.google.protobuf.ByteString;
 import com.nodepp.smartnode.Constant;
 import com.nodepp.smartnode.model.ColorsSelect;
 import com.nodepp.smartnode.model.MultipleTimeTask;
+import com.nodepp.smartnode.model.TimeTask;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -14,7 +15,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import nodepp.Nodepp;
 import outnodepp.Outnodepp;
 
@@ -339,60 +339,60 @@ public class PbDataUtils {
         nodepp.Nodepp.Msg.Builder msgBuilder = nodepp.Nodepp.Msg.newBuilder();
         nodepp.Nodepp.Head.Builder headBuilder = nodepp.Nodepp.Head.newBuilder();
         int sence = colorsSelect.getScene();
-        headBuilder.setSeq(getCurrentSeq());
-        headBuilder.setCmd(0x19);
-        headBuilder.setSubCmd(sence - 2);
-        headBuilder.setUid(uid);
-        headBuilder.setDid(did);
-        headBuilder.setTid(tid);
-        msgBuilder.setOperate(1);
-        msgBuilder.setAppProtocol(1);
-        headBuilder.setUsig(PbDataUtils.string2ByteString(uidSig));
-        msgBuilder.setHead(headBuilder);
+        headBuilder.setSeq(getCurrentSeq());//head设置数据包的序列号seq
+        headBuilder.setCmd(0x19);//head设置发送的命令
+        headBuilder.setSubCmd(sence - 2);//发送的子命令
+        headBuilder.setUid(uid);//head设置用户id
+        headBuilder.setDid(did);//head设置设备id
+        headBuilder.setTid(tid);//head设置设备的临时id
+        msgBuilder.setOperate(1);//msg设置控制设备的开关，0表示关闭，1表示开启
+        msgBuilder.setAppProtocol(1);//msg设置udp加密传输方式需要加上，旧的输DTLS传输，DTLS进行传输旧不用加，目前就登陆和验证登陆以及查询固件版本使用DTLS（使用DTLS的时候不需要添加）
+        headBuilder.setUsig(PbDataUtils.string2ByteString(uidSig));//用户票据信息，相当于token，java中字符串和byteString（源文件定义数据类型byte的时候，编译的时候就会变成byteString类型）需要进行转换
+        msgBuilder.setHead(headBuilder);//把head设置到msg里面
         int speed = colorsSelect.getSwitchSpeed();
         int switchSpeed = 500 - (int) Math.ceil(speed / 255.0 * 450);
-        msgBuilder.setColorSwitchTime(switchSpeed);
-        msgBuilder.setPlatform(sence);
-        msgBuilder.setBrightDark(colorsSelect.getLightDark());
-        msgBuilder.setSuYan(colorsSelect.getSuYan());
-        ArrayList<Nodepp.Rgb.Builder> list = new ArrayList<>();
+        msgBuilder.setColorSwitchTime(switchSpeed);//msg设置场景变化速度
+        msgBuilder.setPlatform(sence);//msg设置场景0-7为场景中的8个场景,99为白光或者彩光
+        msgBuilder.setBrightDark(colorsSelect.getLightDark());//msg设置灯的亮暗值
+        msgBuilder.setSuYan(colorsSelect.getSuYan());//msg设置素艳值
+        ArrayList<Nodepp.Rgb.Builder> list = new ArrayList<>();//RGB整体类，级别和Head一样，直接给RGB设置完值后，直接把RGB整体设置到Msg中
         Nodepp.Rgb.Builder color1 = Nodepp.Rgb.newBuilder();
         Nodepp.Rgb.Builder color2 = Nodepp.Rgb.newBuilder();
         Nodepp.Rgb.Builder color3 = Nodepp.Rgb.newBuilder();
         Nodepp.Rgb.Builder color4 = Nodepp.Rgb.newBuilder();
         Nodepp.Rgb.Builder color5 = Nodepp.Rgb.newBuilder();
         Nodepp.Rgb.Builder color6 = Nodepp.Rgb.newBuilder();
-        color1.setR(colorsSelect.getColorOneR());
+        color1.setR(colorsSelect.getColorOneR());//给第一个RGB对象赋值
         color1.setG(colorsSelect.getColorOneG());
         color1.setB(colorsSelect.getColorOneB());
         list.add(color1);
-        color2.setR(colorsSelect.getColorTwoR());
+        color2.setR(colorsSelect.getColorTwoR());//给第二个RGB对象赋值
         color2.setG(colorsSelect.getColorTwoG());
         color2.setB(colorsSelect.getColorTwoB());
         list.add(color2);
-        color3.setR(colorsSelect.getColorThreeR());
+        color3.setR(colorsSelect.getColorThreeR());//给第三个RGB对象赋值
         color3.setG(colorsSelect.getColorThreeG());
         color3.setB(colorsSelect.getColorThreeB());
         list.add(color3);
-        color4.setR(colorsSelect.getColorFourR());
+        color4.setR(colorsSelect.getColorFourR());//给第四个RGB对象赋值
         color4.setG(colorsSelect.getColorFourG());
         color4.setB(colorsSelect.getColorFourB());
         list.add(color4);
-        color5.setR(colorsSelect.getColorFiveR());
+        color5.setR(colorsSelect.getColorFiveR());//给第五个RGB对象赋值
         color5.setG(colorsSelect.getColorFiveG());
         color5.setB(colorsSelect.getColorFiveB());
         list.add(color5);
-        color6.setR(colorsSelect.getColorSixR());
+        color6.setR(colorsSelect.getColorSixR());//给第六个RGB对象赋值
         color6.setG(colorsSelect.getColorSixG());
         color6.setB(colorsSelect.getColorSixB());
         list.add(color6);
         for (int i = 0; i < colorsSelect.getColorSize(); i++) {
-            msgBuilder.addColors(list.get(i));
+            msgBuilder.addColors(list.get(i));//把6个RGB对象添加到msg中
         }
-        return msgBuilder.build();
+        return msgBuilder.build();//生成msg对象
     }
 
-    public static Nodepp.Msg setTimeTaskRequestParam(long uid, long did, long tid, String uidSig, List<MultipleTimeTask> multipleTimeTask) {
+    public static Nodepp.Msg setTimeTaskRequestParam(long uid, long did, long tid, String uidSig,List<TimeTask> lists) {
         nodepp.Nodepp.Msg.Builder msgBuilder = nodepp.Nodepp.Msg.newBuilder();
         nodepp.Nodepp.Head.Builder headBuilder = nodepp.Nodepp.Head.newBuilder();
         headBuilder.setSeq(getCurrentSeq());
@@ -403,19 +403,23 @@ public class PbDataUtils {
         headBuilder.setUsig(PbDataUtils.string2ByteString(uidSig));
         msgBuilder.setHead(headBuilder);
         msgBuilder.setAppProtocol(1);
-        for (MultipleTimeTask task : multipleTimeTask) {
+        for (TimeTask task : lists) {
             Nodepp.Timer.Builder timerBuilder = Nodepp.Timer.newBuilder();
             timerBuilder.setTimeSet(task.getTimeSet());
             timerBuilder.setTimeRepeat(task.getTimeRepeaat());
             timerBuilder.setTimeOperate(task.getTimeOperate());
-            timerBuilder.setTimeIsopen(task.isTimeIsOpen()?1:0);
-            List<Integer> timeStamps = task.getTimeStamps();
-            for (Integer time : timeStamps ) {
-                timerBuilder.addTimeStamp(time);
-            }
+            timerBuilder.setTimeIsopen(task.isOpen()?1:0);
+            timerBuilder.setOperateIndex(task.getOperateIndex());
+            timerBuilder.addTimeStamp(task.getTimeStamp0());
+            timerBuilder.addTimeStamp(task.getTimeStamp1());
+            timerBuilder.addTimeStamp(task.getTimeStamp2());
+            timerBuilder.addTimeStamp(task.getTimeStamp3());
+            timerBuilder.addTimeStamp(task.getTimeStamp4());
+            timerBuilder.addTimeStamp(task.getTimeStamp5());
+            timerBuilder.addTimeStamp(task.getTimeStamp6());
             msgBuilder.addTimers(timerBuilder);
         }
-        int count = multipleTimeTask.size();
+        int count = lists.size();
         for (int i = count ; i < 10 ; i++){
             Nodepp.Timer.Builder timerBuilder = Nodepp.Timer.newBuilder();
             timerBuilder.setTimeSet(0);
@@ -698,5 +702,43 @@ public class PbDataUtils {
         msgBuilder.setAppProtocol(1);
         return msgBuilder.build();
     }
+
+    //查询浴霸数据参数
+    public static Nodepp.Msg querybathdatas(long uid, long did,long tid, String uidSig) {
+        nodepp.Nodepp.Msg.Builder msgBuilder = nodepp.Nodepp.Msg.newBuilder();
+        nodepp.Nodepp.Head.Builder headBuilder = nodepp.Nodepp.Head.newBuilder();
+        headBuilder.setSeq(getCurrentSeq());
+        headBuilder.setCmd(0x1f);
+        headBuilder.setSubCmd(0);
+        headBuilder.setMagic(0xdd);
+        headBuilder.setUid(uid);
+        headBuilder.setDid(did);
+        headBuilder.setTid(tid);
+        headBuilder.setUsig(PbDataUtils.string2ByteString(uidSig));
+        msgBuilder.setHead(headBuilder);
+        msgBuilder.setAppProtocol(1);
+        return msgBuilder.build();
+    }
+
+    //控制浴霸
+    public static Nodepp.Msg controlbathdatas(long uid, long did,long tid, String uidSig,int oprete1
+            ,int oprete2) {
+        nodepp.Nodepp.Msg.Builder msgBuilder = nodepp.Nodepp.Msg.newBuilder();
+        nodepp.Nodepp.Head.Builder headBuilder = nodepp.Nodepp.Head.newBuilder();
+        headBuilder.setSeq(getCurrentSeq());
+        headBuilder.setCmd(0xcc);
+        headBuilder.setUid(uid);
+        headBuilder.setSubCmd(1);
+        headBuilder.setDid(did);
+        headBuilder.setTid(tid);
+        headBuilder.setUsig(PbDataUtils.string2ByteString(uidSig));
+        msgBuilder.setHead(headBuilder);
+        msgBuilder.setAppProtocol(1);
+        msgBuilder.setOperate(oprete1);
+        msgBuilder.setOperate(oprete2);
+        return msgBuilder.build();
+    }
+
+
 
 }

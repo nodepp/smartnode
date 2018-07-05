@@ -80,6 +80,9 @@ public class TimeTask extends EntityBase{
     @Column(column = "isUse")
     private boolean isUse;//定时任务是否使用
 
+    @Column(column = "operateIndex")
+    private int operateIndex;
+
     public int getDeviceId() {
         return deviceId;
     }
@@ -272,11 +275,18 @@ public class TimeTask extends EntityBase{
         this.tid = tid;
     }
 
+    public int getOperateIndex() {
+        return operateIndex;
+    }
+
+    public void setOperateIndex(int operateIndex) {
+        this.operateIndex = operateIndex;
+    }
+
     @Override
     public String toString() {
         return "TimeTask{" +
-                "id=" + getId() +
-                ", deviceId=" + deviceId +
+                "deviceId=" + deviceId +
                 ", did=" + did +
                 ", tid=" + tid +
                 ", time='" + time + '\'' +
@@ -300,6 +310,7 @@ public class TimeTask extends EntityBase{
                 ", timeStamp5=" + timeStamp5 +
                 ", timeStamp6=" + timeStamp6 +
                 ", isUse=" + isUse +
+                ", operateIndex=" + operateIndex +
                 '}';
     }
 }

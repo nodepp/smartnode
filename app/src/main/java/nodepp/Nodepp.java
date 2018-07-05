@@ -6,10 +6,10 @@ package nodepp;
 public final class Nodepp {
   private Nodepp() {}
   public static void registerAllExtensions(
-          com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistry registry) {
   }
   public interface HeadOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      extends com.google.protobuf.MessageOrBuilder {
 
     // optional uint32 magic = 1;
     /**
@@ -295,8 +295,8 @@ public final class Nodepp {
    * Protobuf type {@code nodepp.Head}
    */
   public static final class Head extends
-          com.google.protobuf.GeneratedMessage
-          implements HeadOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements HeadOrBuilder {
     // Use Head.newBuilder() to construct.
     private Head(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -314,19 +314,19 @@ public final class Nodepp {
     }
 
     private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+        getUnknownFields() {
       return this.unknownFields;
     }
     private Head(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -337,7 +337,7 @@ public final class Nodepp {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                      extensionRegistry, tag)) {
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -428,35 +428,35 @@ public final class Nodepp {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this);
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return nodepp.Nodepp.internal_static_nodepp_Head_descriptor;
+        getDescriptor() {
+      return Nodepp.internal_static_nodepp_Head_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return nodepp.Nodepp.internal_static_nodepp_Head_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      nodepp.Nodepp.Head.class, nodepp.Nodepp.Head.Builder.class);
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Nodepp.internal_static_nodepp_Head_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Head.class, Builder.class);
     }
 
     public static com.google.protobuf.Parser<Head> PARSER =
-            new com.google.protobuf.AbstractParser<Head>() {
-              public Head parsePartialFrom(
-                      com.google.protobuf.CodedInputStream input,
-                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                      throws com.google.protobuf.InvalidProtocolBufferException {
-                return new Head(input, extensionRegistry);
-              }
-            };
+        new com.google.protobuf.AbstractParser<Head>() {
+      public Head parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Head(input, extensionRegistry);
+      }
+    };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<Head> getParserForType() {
       return PARSER;
     }
@@ -866,7 +866,7 @@ public final class Nodepp {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-            throws java.io.IOException {
+                        throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt32(1, magic_);
@@ -927,67 +927,67 @@ public final class Nodepp {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(1, magic_);
+          .computeUInt32Size(1, magic_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(2, seq_);
+          .computeUInt32Size(2, seq_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(3, cmd_);
+          .computeUInt32Size(3, cmd_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(4, subCmd_);
+          .computeUInt32Size(4, subCmd_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(5, version_);
+          .computeUInt32Size(5, version_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt64Size(6, uid_);
+          .computeUInt64Size(6, uid_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt64Size(7, did_);
+          .computeUInt64Size(7, did_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(8, time_);
+          .computeUInt32Size(8, time_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(10, result_);
+          .computeUInt32Size(10, result_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(11, usig_);
+          .computeBytesSize(11, usig_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(12, dsig_);
+          .computeBytesSize(12, dsig_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt64Size(13, tid_);
+          .computeUInt64Size(13, tid_);
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt64Size(14, session_);
+          .computeUInt64Size(14, session_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(15, special_);
+          .computeUInt32Size(15, special_);
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(16, deviceIdentification_);
+          .computeBytesSize(16, deviceIdentification_);
       }
       if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(17, random_);
+          .computeBytesSize(17, random_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -995,75 +995,75 @@ public final class Nodepp {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-            throws java.io.ObjectStreamException {
+    @Override
+    protected Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static nodepp.Nodepp.Head parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Head parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static nodepp.Nodepp.Head parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Head parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static nodepp.Nodepp.Head parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Head parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static nodepp.Nodepp.Head parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Head parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static nodepp.Nodepp.Head parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
+    public static Head parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static nodepp.Nodepp.Head parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Head parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static nodepp.Nodepp.Head parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
+    public static Head parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static nodepp.Nodepp.Head parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Head parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static nodepp.Nodepp.Head parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
+    public static Head parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static nodepp.Nodepp.Head parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Head parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(nodepp.Nodepp.Head prototype) {
+    public static Builder newBuilder(Head prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1071,18 +1071,18 @@ public final class Nodepp {
      * Protobuf type {@code nodepp.Head}
      */
     public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-            implements nodepp.Nodepp.HeadOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements HeadOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return nodepp.Nodepp.internal_static_nodepp_Head_descriptor;
+          getDescriptor() {
+        return Nodepp.internal_static_nodepp_Head_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return nodepp.Nodepp.internal_static_nodepp_Head_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        nodepp.Nodepp.Head.class, nodepp.Nodepp.Head.Builder.class);
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Nodepp.internal_static_nodepp_Head_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Head.class, Builder.class);
       }
 
       // Construct using nodepp.Nodepp.Head.newBuilder()
@@ -1091,7 +1091,7 @@ public final class Nodepp {
       }
 
       private Builder(
-              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1145,24 +1145,24 @@ public final class Nodepp {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
-        return nodepp.Nodepp.internal_static_nodepp_Head_descriptor;
+          getDescriptorForType() {
+        return Nodepp.internal_static_nodepp_Head_descriptor;
       }
 
-      public nodepp.Nodepp.Head getDefaultInstanceForType() {
-        return nodepp.Nodepp.Head.getDefaultInstance();
+      public Head getDefaultInstanceForType() {
+        return Head.getDefaultInstance();
       }
 
-      public nodepp.Nodepp.Head build() {
-        nodepp.Nodepp.Head result = buildPartial();
+      public Head build() {
+        Head result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public nodepp.Nodepp.Head buildPartial() {
-        nodepp.Nodepp.Head result = new nodepp.Nodepp.Head(this);
+      public Head buildPartial() {
+        Head result = new Head(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1235,16 +1235,16 @@ public final class Nodepp {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof nodepp.Nodepp.Head) {
-          return mergeFrom((nodepp.Nodepp.Head)other);
+        if (other instanceof Head) {
+          return mergeFrom((Head)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(nodepp.Nodepp.Head other) {
-        if (other == nodepp.Nodepp.Head.getDefaultInstance()) return this;
+      public Builder mergeFrom(Head other) {
+        if (other == Head.getDefaultInstance()) return this;
         if (other.hasMagic()) {
           setMagic(other.getMagic());
         }
@@ -1302,14 +1302,14 @@ public final class Nodepp {
       }
 
       public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-        nodepp.Nodepp.Head parsedMessage = null;
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Head parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (nodepp.Nodepp.Head) e.getUnfinishedMessage();
+          parsedMessage = (Head) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -1792,9 +1792,9 @@ public final class Nodepp {
        */
       public Builder setUsig(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000200;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
         usig_ = value;
         onChanged();
         return this;
@@ -1844,9 +1844,9 @@ public final class Nodepp {
        */
       public Builder setDsig(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000400;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
         dsig_ = value;
         onChanged();
         return this;
@@ -2043,9 +2043,9 @@ public final class Nodepp {
        */
       public Builder setDeviceIdentification(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00004000;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00004000;
         deviceIdentification_ = value;
         onChanged();
         return this;
@@ -2083,9 +2083,9 @@ public final class Nodepp {
        */
       public Builder setRandom(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00008000;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00008000;
         random_ = value;
         onChanged();
         return this;
@@ -2112,7 +2112,7 @@ public final class Nodepp {
   }
 
   public interface TimerOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      extends com.google.protobuf.MessageOrBuilder {
 
     // optional uint32 time_set = 1;
     /**
@@ -2176,7 +2176,7 @@ public final class Nodepp {
      *表示7个uint32，依次为星期天、星期一-星期六，记录7天中设置的时间戳，比如我设置了周一定时操作，0,1400000000,0,0,0,0,0
      * </pre>
      */
-    java.util.List<java.lang.Integer> getTimeStampList();
+    java.util.List<Integer> getTimeStampList();
     /**
      * <code>repeated uint32 time_stamp = 4;</code>
      *
@@ -2211,13 +2211,31 @@ public final class Nodepp {
      * </pre>
      */
     int getTimeIsopen();
+
+    // optional uint32 operate_index = 6;
+    /**
+     * <code>optional uint32 operate_index = 6;</code>
+     *
+     * <pre>
+     *表示operate执行的对应位是否执行，operate_index:0000001表示执行operate的第一位，即第一位
+     * </pre>
+     */
+    boolean hasOperateIndex();
+    /**
+     * <code>optional uint32 operate_index = 6;</code>
+     *
+     * <pre>
+     *表示operate执行的对应位是否执行，operate_index:0000001表示执行operate的第一位，即第一位
+     * </pre>
+     */
+    int getOperateIndex();
   }
   /**
    * Protobuf type {@code nodepp.Timer}
    */
   public static final class Timer extends
-          com.google.protobuf.GeneratedMessage
-          implements TimerOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements TimerOrBuilder {
     // Use Timer.newBuilder() to construct.
     private Timer(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -2235,19 +2253,19 @@ public final class Nodepp {
     }
 
     private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+        getUnknownFields() {
       return this.unknownFields;
     }
     private Timer(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2258,7 +2276,7 @@ public final class Nodepp {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                      extensionRegistry, tag)) {
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -2280,7 +2298,7 @@ public final class Nodepp {
             }
             case 32: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                timeStamp_ = new java.util.ArrayList<java.lang.Integer>();
+                timeStamp_ = new java.util.ArrayList<Integer>();
                 mutable_bitField0_ |= 0x00000008;
               }
               timeStamp_.add(input.readUInt32());
@@ -2290,7 +2308,7 @@ public final class Nodepp {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008) && input.getBytesUntilLimit() > 0) {
-                timeStamp_ = new java.util.ArrayList<java.lang.Integer>();
+                timeStamp_ = new java.util.ArrayList<Integer>();
                 mutable_bitField0_ |= 0x00000008;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -2304,13 +2322,18 @@ public final class Nodepp {
               timeIsopen_ = input.readUInt32();
               break;
             }
+            case 48: {
+              bitField0_ |= 0x00000010;
+              operateIndex_ = input.readUInt32();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this);
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           timeStamp_ = java.util.Collections.unmodifiableList(timeStamp_);
@@ -2320,28 +2343,28 @@ public final class Nodepp {
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return nodepp.Nodepp.internal_static_nodepp_Timer_descriptor;
+        getDescriptor() {
+      return Nodepp.internal_static_nodepp_Timer_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return nodepp.Nodepp.internal_static_nodepp_Timer_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      nodepp.Nodepp.Timer.class, nodepp.Nodepp.Timer.Builder.class);
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Nodepp.internal_static_nodepp_Timer_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Timer.class, Builder.class);
     }
 
     public static com.google.protobuf.Parser<Timer> PARSER =
-            new com.google.protobuf.AbstractParser<Timer>() {
-              public Timer parsePartialFrom(
-                      com.google.protobuf.CodedInputStream input,
-                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                      throws com.google.protobuf.InvalidProtocolBufferException {
-                return new Timer(input, extensionRegistry);
-              }
-            };
+        new com.google.protobuf.AbstractParser<Timer>() {
+      public Timer parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Timer(input, extensionRegistry);
+      }
+    };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<Timer> getParserForType() {
       return PARSER;
     }
@@ -2421,7 +2444,7 @@ public final class Nodepp {
 
     // repeated uint32 time_stamp = 4;
     public static final int TIME_STAMP_FIELD_NUMBER = 4;
-    private java.util.List<java.lang.Integer> timeStamp_;
+    private java.util.List<Integer> timeStamp_;
     /**
      * <code>repeated uint32 time_stamp = 4;</code>
      *
@@ -2429,8 +2452,8 @@ public final class Nodepp {
      *表示7个uint32，依次为星期天、星期一-星期六，记录7天中设置的时间戳，比如我设置了周一定时操作，0,1400000000,0,0,0,0,0
      * </pre>
      */
-    public java.util.List<java.lang.Integer>
-    getTimeStampList() {
+    public java.util.List<Integer>
+        getTimeStampList() {
       return timeStamp_;
     }
     /**
@@ -2478,12 +2501,37 @@ public final class Nodepp {
       return timeIsopen_;
     }
 
+    // optional uint32 operate_index = 6;
+    public static final int OPERATE_INDEX_FIELD_NUMBER = 6;
+    private int operateIndex_;
+    /**
+     * <code>optional uint32 operate_index = 6;</code>
+     *
+     * <pre>
+     *表示operate执行的对应位是否执行，operate_index:0000001表示执行operate的第一位，即第一位
+     * </pre>
+     */
+    public boolean hasOperateIndex() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional uint32 operate_index = 6;</code>
+     *
+     * <pre>
+     *表示operate执行的对应位是否执行，operate_index:0000001表示执行operate的第一位，即第一位
+     * </pre>
+     */
+    public int getOperateIndex() {
+      return operateIndex_;
+    }
+
     private void initFields() {
       timeSet_ = 0;
       timeRepeat_ = 0;
       timeOperate_ = 0;
       timeStamp_ = java.util.Collections.emptyList();
       timeIsopen_ = 0;
+      operateIndex_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -2495,7 +2543,7 @@ public final class Nodepp {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-            throws java.io.IOException {
+                        throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt32(1, timeSet_);
@@ -2512,6 +2560,9 @@ public final class Nodepp {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeUInt32(5, timeIsopen_);
       }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeUInt32(6, operateIndex_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2523,28 +2574,32 @@ public final class Nodepp {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(1, timeSet_);
+          .computeUInt32Size(1, timeSet_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(2, timeRepeat_);
+          .computeUInt32Size(2, timeRepeat_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(3, timeOperate_);
+          .computeUInt32Size(3, timeOperate_);
       }
       {
         int dataSize = 0;
         for (int i = 0; i < timeStamp_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-                  .computeUInt32SizeNoTag(timeStamp_.get(i));
+            .computeUInt32SizeNoTag(timeStamp_.get(i));
         }
         size += dataSize;
         size += 1 * getTimeStampList().size();
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(5, timeIsopen_);
+          .computeUInt32Size(5, timeIsopen_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, operateIndex_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -2552,75 +2607,75 @@ public final class Nodepp {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-            throws java.io.ObjectStreamException {
+    @Override
+    protected Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static nodepp.Nodepp.Timer parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Timer parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static nodepp.Nodepp.Timer parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Timer parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static nodepp.Nodepp.Timer parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Timer parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static nodepp.Nodepp.Timer parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Timer parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static nodepp.Nodepp.Timer parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
+    public static Timer parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static nodepp.Nodepp.Timer parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Timer parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static nodepp.Nodepp.Timer parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
+    public static Timer parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static nodepp.Nodepp.Timer parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Timer parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static nodepp.Nodepp.Timer parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
+    public static Timer parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static nodepp.Nodepp.Timer parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Timer parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(nodepp.Nodepp.Timer prototype) {
+    public static Builder newBuilder(Timer prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -2628,18 +2683,18 @@ public final class Nodepp {
      * Protobuf type {@code nodepp.Timer}
      */
     public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-            implements nodepp.Nodepp.TimerOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements TimerOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return nodepp.Nodepp.internal_static_nodepp_Timer_descriptor;
+          getDescriptor() {
+        return Nodepp.internal_static_nodepp_Timer_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return nodepp.Nodepp.internal_static_nodepp_Timer_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        nodepp.Nodepp.Timer.class, nodepp.Nodepp.Timer.Builder.class);
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Nodepp.internal_static_nodepp_Timer_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Timer.class, Builder.class);
       }
 
       // Construct using nodepp.Nodepp.Timer.newBuilder()
@@ -2648,7 +2703,7 @@ public final class Nodepp {
       }
 
       private Builder(
-              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -2672,6 +2727,8 @@ public final class Nodepp {
         bitField0_ = (bitField0_ & ~0x00000008);
         timeIsopen_ = 0;
         bitField0_ = (bitField0_ & ~0x00000010);
+        operateIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -2680,24 +2737,24 @@ public final class Nodepp {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
-        return nodepp.Nodepp.internal_static_nodepp_Timer_descriptor;
+          getDescriptorForType() {
+        return Nodepp.internal_static_nodepp_Timer_descriptor;
       }
 
-      public nodepp.Nodepp.Timer getDefaultInstanceForType() {
-        return nodepp.Nodepp.Timer.getDefaultInstance();
+      public Timer getDefaultInstanceForType() {
+        return Timer.getDefaultInstance();
       }
 
-      public nodepp.Nodepp.Timer build() {
-        nodepp.Nodepp.Timer result = buildPartial();
+      public Timer build() {
+        Timer result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public nodepp.Nodepp.Timer buildPartial() {
-        nodepp.Nodepp.Timer result = new nodepp.Nodepp.Timer(this);
+      public Timer buildPartial() {
+        Timer result = new Timer(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2721,22 +2778,26 @@ public final class Nodepp {
           to_bitField0_ |= 0x00000008;
         }
         result.timeIsopen_ = timeIsopen_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.operateIndex_ = operateIndex_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof nodepp.Nodepp.Timer) {
-          return mergeFrom((nodepp.Nodepp.Timer)other);
+        if (other instanceof Timer) {
+          return mergeFrom((Timer)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(nodepp.Nodepp.Timer other) {
-        if (other == nodepp.Nodepp.Timer.getDefaultInstance()) return this;
+      public Builder mergeFrom(Timer other) {
+        if (other == Timer.getDefaultInstance()) return this;
         if (other.hasTimeSet()) {
           setTimeSet(other.getTimeSet());
         }
@@ -2759,6 +2820,9 @@ public final class Nodepp {
         if (other.hasTimeIsopen()) {
           setTimeIsopen(other.getTimeIsopen());
         }
+        if (other.hasOperateIndex()) {
+          setOperateIndex(other.getOperateIndex());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -2768,14 +2832,14 @@ public final class Nodepp {
       }
 
       public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-        nodepp.Nodepp.Timer parsedMessage = null;
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Timer parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (nodepp.Nodepp.Timer) e.getUnfinishedMessage();
+          parsedMessage = (Timer) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -2934,12 +2998,12 @@ public final class Nodepp {
       }
 
       // repeated uint32 time_stamp = 4;
-      private java.util.List<java.lang.Integer> timeStamp_ = java.util.Collections.emptyList();
+      private java.util.List<Integer> timeStamp_ = java.util.Collections.emptyList();
       private void ensureTimeStampIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          timeStamp_ = new java.util.ArrayList<java.lang.Integer>(timeStamp_);
+          timeStamp_ = new java.util.ArrayList<Integer>(timeStamp_);
           bitField0_ |= 0x00000008;
-        }
+         }
       }
       /**
        * <code>repeated uint32 time_stamp = 4;</code>
@@ -2948,8 +3012,8 @@ public final class Nodepp {
        *表示7个uint32，依次为星期天、星期一-星期六，记录7天中设置的时间戳，比如我设置了周一定时操作，0,1400000000,0,0,0,0,0
        * </pre>
        */
-      public java.util.List<java.lang.Integer>
-      getTimeStampList() {
+      public java.util.List<Integer>
+          getTimeStampList() {
         return java.util.Collections.unmodifiableList(timeStamp_);
       }
       /**
@@ -2980,7 +3044,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder setTimeStamp(
-              int index, int value) {
+          int index, int value) {
         ensureTimeStampIsMutable();
         timeStamp_.set(index, value);
         onChanged();
@@ -3007,7 +3071,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addAllTimeStamp(
-              java.lang.Iterable<? extends java.lang.Integer> values) {
+          Iterable<? extends Integer> values) {
         ensureTimeStampIsMutable();
         super.addAll(values, timeStamp_);
         onChanged();
@@ -3076,6 +3140,55 @@ public final class Nodepp {
         return this;
       }
 
+      // optional uint32 operate_index = 6;
+      private int operateIndex_ ;
+      /**
+       * <code>optional uint32 operate_index = 6;</code>
+       *
+       * <pre>
+       *表示operate执行的对应位是否执行，operate_index:0000001表示执行operate的第一位，即第一位
+       * </pre>
+       */
+      public boolean hasOperateIndex() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional uint32 operate_index = 6;</code>
+       *
+       * <pre>
+       *表示operate执行的对应位是否执行，operate_index:0000001表示执行operate的第一位，即第一位
+       * </pre>
+       */
+      public int getOperateIndex() {
+        return operateIndex_;
+      }
+      /**
+       * <code>optional uint32 operate_index = 6;</code>
+       *
+       * <pre>
+       *表示operate执行的对应位是否执行，operate_index:0000001表示执行operate的第一位，即第一位
+       * </pre>
+       */
+      public Builder setOperateIndex(int value) {
+        bitField0_ |= 0x00000020;
+        operateIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 operate_index = 6;</code>
+       *
+       * <pre>
+       *表示operate执行的对应位是否执行，operate_index:0000001表示执行operate的第一位，即第一位
+       * </pre>
+       */
+      public Builder clearOperateIndex() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        operateIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:nodepp.Timer)
     }
 
@@ -3088,7 +3201,7 @@ public final class Nodepp {
   }
 
   public interface RgbOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      extends com.google.protobuf.MessageOrBuilder {
 
     // optional uint32 w = 1;
     /**
@@ -3166,8 +3279,8 @@ public final class Nodepp {
    * Protobuf type {@code nodepp.Rgb}
    */
   public static final class Rgb extends
-          com.google.protobuf.GeneratedMessage
-          implements RgbOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements RgbOrBuilder {
     // Use Rgb.newBuilder() to construct.
     private Rgb(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -3185,19 +3298,19 @@ public final class Nodepp {
     }
 
     private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+        getUnknownFields() {
       return this.unknownFields;
     }
     private Rgb(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3208,7 +3321,7 @@ public final class Nodepp {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                      extensionRegistry, tag)) {
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -3239,35 +3352,35 @@ public final class Nodepp {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this);
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return nodepp.Nodepp.internal_static_nodepp_Rgb_descriptor;
+        getDescriptor() {
+      return Nodepp.internal_static_nodepp_Rgb_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return nodepp.Nodepp.internal_static_nodepp_Rgb_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      nodepp.Nodepp.Rgb.class, nodepp.Nodepp.Rgb.Builder.class);
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Nodepp.internal_static_nodepp_Rgb_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Rgb.class, Builder.class);
     }
 
     public static com.google.protobuf.Parser<Rgb> PARSER =
-            new com.google.protobuf.AbstractParser<Rgb>() {
-              public Rgb parsePartialFrom(
-                      com.google.protobuf.CodedInputStream input,
-                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                      throws com.google.protobuf.InvalidProtocolBufferException {
-                return new Rgb(input, extensionRegistry);
-              }
-            };
+        new com.google.protobuf.AbstractParser<Rgb>() {
+      public Rgb parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Rgb(input, extensionRegistry);
+      }
+    };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<Rgb> getParserForType() {
       return PARSER;
     }
@@ -3385,7 +3498,7 @@ public final class Nodepp {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-            throws java.io.IOException {
+                        throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeUInt32(1, w_);
@@ -3410,19 +3523,19 @@ public final class Nodepp {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(1, w_);
+          .computeUInt32Size(1, w_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(2, r_);
+          .computeUInt32Size(2, r_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(3, g_);
+          .computeUInt32Size(3, g_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(4, b_);
+          .computeUInt32Size(4, b_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3430,75 +3543,75 @@ public final class Nodepp {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-            throws java.io.ObjectStreamException {
+    @Override
+    protected Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static nodepp.Nodepp.Rgb parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Rgb parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static nodepp.Nodepp.Rgb parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Rgb parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static nodepp.Nodepp.Rgb parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Rgb parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static nodepp.Nodepp.Rgb parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Rgb parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static nodepp.Nodepp.Rgb parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
+    public static Rgb parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static nodepp.Nodepp.Rgb parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Rgb parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static nodepp.Nodepp.Rgb parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
+    public static Rgb parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static nodepp.Nodepp.Rgb parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Rgb parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static nodepp.Nodepp.Rgb parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
+    public static Rgb parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static nodepp.Nodepp.Rgb parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Rgb parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(nodepp.Nodepp.Rgb prototype) {
+    public static Builder newBuilder(Rgb prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -3506,18 +3619,18 @@ public final class Nodepp {
      * Protobuf type {@code nodepp.Rgb}
      */
     public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-            implements nodepp.Nodepp.RgbOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements RgbOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return nodepp.Nodepp.internal_static_nodepp_Rgb_descriptor;
+          getDescriptor() {
+        return Nodepp.internal_static_nodepp_Rgb_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return nodepp.Nodepp.internal_static_nodepp_Rgb_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        nodepp.Nodepp.Rgb.class, nodepp.Nodepp.Rgb.Builder.class);
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Nodepp.internal_static_nodepp_Rgb_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Rgb.class, Builder.class);
       }
 
       // Construct using nodepp.Nodepp.Rgb.newBuilder()
@@ -3526,7 +3639,7 @@ public final class Nodepp {
       }
 
       private Builder(
-              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -3556,24 +3669,24 @@ public final class Nodepp {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
-        return nodepp.Nodepp.internal_static_nodepp_Rgb_descriptor;
+          getDescriptorForType() {
+        return Nodepp.internal_static_nodepp_Rgb_descriptor;
       }
 
-      public nodepp.Nodepp.Rgb getDefaultInstanceForType() {
-        return nodepp.Nodepp.Rgb.getDefaultInstance();
+      public Rgb getDefaultInstanceForType() {
+        return Rgb.getDefaultInstance();
       }
 
-      public nodepp.Nodepp.Rgb build() {
-        nodepp.Nodepp.Rgb result = buildPartial();
+      public Rgb build() {
+        Rgb result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public nodepp.Nodepp.Rgb buildPartial() {
-        nodepp.Nodepp.Rgb result = new nodepp.Nodepp.Rgb(this);
+      public Rgb buildPartial() {
+        Rgb result = new Rgb(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -3598,16 +3711,16 @@ public final class Nodepp {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof nodepp.Nodepp.Rgb) {
-          return mergeFrom((nodepp.Nodepp.Rgb)other);
+        if (other instanceof Rgb) {
+          return mergeFrom((Rgb)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(nodepp.Nodepp.Rgb other) {
-        if (other == nodepp.Nodepp.Rgb.getDefaultInstance()) return this;
+      public Builder mergeFrom(Rgb other) {
+        if (other == Rgb.getDefaultInstance()) return this;
         if (other.hasW()) {
           setW(other.getW());
         }
@@ -3629,14 +3742,14 @@ public final class Nodepp {
       }
 
       public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-        nodepp.Nodepp.Rgb parsedMessage = null;
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Rgb parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (nodepp.Nodepp.Rgb) e.getUnfinishedMessage();
+          parsedMessage = (Rgb) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -3855,7 +3968,7 @@ public final class Nodepp {
   }
 
   public interface DeviceOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      extends com.google.protobuf.MessageOrBuilder {
 
     // optional bytes device_name = 1;
     /**
@@ -4099,8 +4212,8 @@ public final class Nodepp {
      *当前定时器设置
      * </pre>
      */
-    java.util.List<nodepp.Nodepp.Timer>
-    getTimersList();
+    java.util.List<Timer>
+        getTimersList();
     /**
      * <code>repeated .nodepp.Timer timers = 14;</code>
      *
@@ -4108,7 +4221,7 @@ public final class Nodepp {
      *当前定时器设置
      * </pre>
      */
-    nodepp.Nodepp.Timer getTimers(int index);
+    Timer getTimers(int index);
     /**
      * <code>repeated .nodepp.Timer timers = 14;</code>
      *
@@ -4124,8 +4237,8 @@ public final class Nodepp {
      *当前定时器设置
      * </pre>
      */
-    java.util.List<? extends nodepp.Nodepp.TimerOrBuilder>
-    getTimersOrBuilderList();
+    java.util.List<? extends TimerOrBuilder>
+        getTimersOrBuilderList();
     /**
      * <code>repeated .nodepp.Timer timers = 14;</code>
      *
@@ -4133,15 +4246,15 @@ public final class Nodepp {
      *当前定时器设置
      * </pre>
      */
-    nodepp.Nodepp.TimerOrBuilder getTimersOrBuilder(
+    TimerOrBuilder getTimersOrBuilder(
             int index);
   }
   /**
    * Protobuf type {@code nodepp.Device}
    */
   public static final class Device extends
-          com.google.protobuf.GeneratedMessage
-          implements DeviceOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements DeviceOrBuilder {
     // Use Device.newBuilder() to construct.
     private Device(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -4159,19 +4272,19 @@ public final class Nodepp {
     }
 
     private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+        getUnknownFields() {
       return this.unknownFields;
     }
     private Device(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4182,7 +4295,7 @@ public final class Nodepp {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                      extensionRegistry, tag)) {
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -4254,10 +4367,10 @@ public final class Nodepp {
             }
             case 114: {
               if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
-                timers_ = new java.util.ArrayList<nodepp.Nodepp.Timer>();
+                timers_ = new java.util.ArrayList<Timer>();
                 mutable_bitField0_ |= 0x00002000;
               }
-              timers_.add(input.readMessage(nodepp.Nodepp.Timer.PARSER, extensionRegistry));
+              timers_.add(input.readMessage(Timer.PARSER, extensionRegistry));
               break;
             }
           }
@@ -4266,7 +4379,7 @@ public final class Nodepp {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this);
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
           timers_ = java.util.Collections.unmodifiableList(timers_);
@@ -4276,28 +4389,28 @@ public final class Nodepp {
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return nodepp.Nodepp.internal_static_nodepp_Device_descriptor;
+        getDescriptor() {
+      return Nodepp.internal_static_nodepp_Device_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return nodepp.Nodepp.internal_static_nodepp_Device_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      nodepp.Nodepp.Device.class, nodepp.Nodepp.Device.Builder.class);
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Nodepp.internal_static_nodepp_Device_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Device.class, Builder.class);
     }
 
     public static com.google.protobuf.Parser<Device> PARSER =
-            new com.google.protobuf.AbstractParser<Device>() {
-              public Device parsePartialFrom(
-                      com.google.protobuf.CodedInputStream input,
-                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                      throws com.google.protobuf.InvalidProtocolBufferException {
-                return new Device(input, extensionRegistry);
-              }
-            };
+        new com.google.protobuf.AbstractParser<Device>() {
+      public Device parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Device(input, extensionRegistry);
+      }
+    };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<Device> getParserForType() {
       return PARSER;
     }
@@ -4617,7 +4730,7 @@ public final class Nodepp {
 
     // repeated .nodepp.Timer timers = 14;
     public static final int TIMERS_FIELD_NUMBER = 14;
-    private java.util.List<nodepp.Nodepp.Timer> timers_;
+    private java.util.List<Timer> timers_;
     /**
      * <code>repeated .nodepp.Timer timers = 14;</code>
      *
@@ -4625,7 +4738,7 @@ public final class Nodepp {
      *当前定时器设置
      * </pre>
      */
-    public java.util.List<nodepp.Nodepp.Timer> getTimersList() {
+    public java.util.List<Timer> getTimersList() {
       return timers_;
     }
     /**
@@ -4635,8 +4748,8 @@ public final class Nodepp {
      *当前定时器设置
      * </pre>
      */
-    public java.util.List<? extends nodepp.Nodepp.TimerOrBuilder>
-    getTimersOrBuilderList() {
+    public java.util.List<? extends TimerOrBuilder>
+        getTimersOrBuilderList() {
       return timers_;
     }
     /**
@@ -4656,7 +4769,7 @@ public final class Nodepp {
      *当前定时器设置
      * </pre>
      */
-    public nodepp.Nodepp.Timer getTimers(int index) {
+    public Timer getTimers(int index) {
       return timers_.get(index);
     }
     /**
@@ -4666,8 +4779,8 @@ public final class Nodepp {
      *当前定时器设置
      * </pre>
      */
-    public nodepp.Nodepp.TimerOrBuilder getTimersOrBuilder(
-            int index) {
+    public TimerOrBuilder getTimersOrBuilder(
+        int index) {
       return timers_.get(index);
     }
 
@@ -4697,7 +4810,7 @@ public final class Nodepp {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-            throws java.io.IOException {
+                        throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, deviceName_);
@@ -4752,59 +4865,59 @@ public final class Nodepp {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(1, deviceName_);
+          .computeBytesSize(1, deviceName_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(2, pictureIndex_);
+          .computeUInt32Size(2, pictureIndex_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt64Size(3, did_);
+          .computeUInt64Size(3, did_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt64Size(4, tid_);
+          .computeUInt64Size(4, tid_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(5, deviceType_);
+          .computeUInt32Size(5, deviceType_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(6, connetedMode_);
+          .computeUInt32Size(6, connetedMode_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(7, isGroup_);
+          .computeUInt32Size(7, isGroup_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(8, deviceGroupTids_);
+          .computeBytesSize(8, deviceGroupTids_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(9, deviceGroupDids_);
+          .computeBytesSize(9, deviceGroupDids_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(10, deviceIp_);
+          .computeBytesSize(10, deviceIp_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(11, deviceIps_);
+          .computeBytesSize(11, deviceIps_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(12, routerMac_);
+          .computeBytesSize(12, routerMac_);
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(13, special_);
+          .computeUInt32Size(13, special_);
       }
       for (int i = 0; i < timers_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-                .computeMessageSize(14, timers_.get(i));
+          .computeMessageSize(14, timers_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -4812,75 +4925,75 @@ public final class Nodepp {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-            throws java.io.ObjectStreamException {
+    @Override
+    protected Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static nodepp.Nodepp.Device parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Device parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static nodepp.Nodepp.Device parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Device parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static nodepp.Nodepp.Device parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Device parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static nodepp.Nodepp.Device parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Device parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static nodepp.Nodepp.Device parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
+    public static Device parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static nodepp.Nodepp.Device parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Device parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static nodepp.Nodepp.Device parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
+    public static Device parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static nodepp.Nodepp.Device parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Device parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static nodepp.Nodepp.Device parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
+    public static Device parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static nodepp.Nodepp.Device parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Device parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(nodepp.Nodepp.Device prototype) {
+    public static Builder newBuilder(Device prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -4888,18 +5001,18 @@ public final class Nodepp {
      * Protobuf type {@code nodepp.Device}
      */
     public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-            implements nodepp.Nodepp.DeviceOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements DeviceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return nodepp.Nodepp.internal_static_nodepp_Device_descriptor;
+          getDescriptor() {
+        return Nodepp.internal_static_nodepp_Device_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return nodepp.Nodepp.internal_static_nodepp_Device_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        nodepp.Nodepp.Device.class, nodepp.Nodepp.Device.Builder.class);
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Nodepp.internal_static_nodepp_Device_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Device.class, Builder.class);
       }
 
       // Construct using nodepp.Nodepp.Device.newBuilder()
@@ -4908,7 +5021,7 @@ public final class Nodepp {
       }
 
       private Builder(
-              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -4963,24 +5076,24 @@ public final class Nodepp {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
-        return nodepp.Nodepp.internal_static_nodepp_Device_descriptor;
+          getDescriptorForType() {
+        return Nodepp.internal_static_nodepp_Device_descriptor;
       }
 
-      public nodepp.Nodepp.Device getDefaultInstanceForType() {
-        return nodepp.Nodepp.Device.getDefaultInstance();
+      public Device getDefaultInstanceForType() {
+        return Device.getDefaultInstance();
       }
 
-      public nodepp.Nodepp.Device build() {
-        nodepp.Nodepp.Device result = buildPartial();
+      public Device build() {
+        Device result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public nodepp.Nodepp.Device buildPartial() {
-        nodepp.Nodepp.Device result = new nodepp.Nodepp.Device(this);
+      public Device buildPartial() {
+        Device result = new Device(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -5050,16 +5163,16 @@ public final class Nodepp {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof nodepp.Nodepp.Device) {
-          return mergeFrom((nodepp.Nodepp.Device)other);
+        if (other instanceof Device) {
+          return mergeFrom((Device)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(nodepp.Nodepp.Device other) {
-        if (other == nodepp.Nodepp.Device.getDefaultInstance()) return this;
+      public Builder mergeFrom(Device other) {
+        if (other == Device.getDefaultInstance()) return this;
         if (other.hasDeviceName()) {
           setDeviceName(other.getDeviceName());
         }
@@ -5118,8 +5231,8 @@ public final class Nodepp {
               timers_ = other.timers_;
               bitField0_ = (bitField0_ & ~0x00002000);
               timersBuilder_ =
-                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                              getTimersFieldBuilder() : null;
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getTimersFieldBuilder() : null;
             } else {
               timersBuilder_.addAllMessages(other.timers_);
             }
@@ -5134,14 +5247,14 @@ public final class Nodepp {
       }
 
       public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-        nodepp.Nodepp.Device parsedMessage = null;
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Device parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (nodepp.Nodepp.Device) e.getUnfinishedMessage();
+          parsedMessage = (Device) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -5183,9 +5296,9 @@ public final class Nodepp {
        */
       public Builder setDeviceName(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000001;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         deviceName_ = value;
         onChanged();
         return this;
@@ -5529,9 +5642,9 @@ public final class Nodepp {
        */
       public Builder setDeviceGroupTids(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000080;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
         deviceGroupTids_ = value;
         onChanged();
         return this;
@@ -5581,9 +5694,9 @@ public final class Nodepp {
        */
       public Builder setDeviceGroupDids(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000100;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
         deviceGroupDids_ = value;
         onChanged();
         return this;
@@ -5633,9 +5746,9 @@ public final class Nodepp {
        */
       public Builder setDeviceIp(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000200;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
         deviceIp_ = value;
         onChanged();
         return this;
@@ -5685,9 +5798,9 @@ public final class Nodepp {
        */
       public Builder setDeviceIps(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000400;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
         deviceIps_ = value;
         onChanged();
         return this;
@@ -5737,9 +5850,9 @@ public final class Nodepp {
        */
       public Builder setRouterMac(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000800;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
         routerMac_ = value;
         onChanged();
         return this;
@@ -5808,17 +5921,17 @@ public final class Nodepp {
       }
 
       // repeated .nodepp.Timer timers = 14;
-      private java.util.List<nodepp.Nodepp.Timer> timers_ =
-              java.util.Collections.emptyList();
+      private java.util.List<Timer> timers_ =
+        java.util.Collections.emptyList();
       private void ensureTimersIsMutable() {
         if (!((bitField0_ & 0x00002000) == 0x00002000)) {
-          timers_ = new java.util.ArrayList<nodepp.Nodepp.Timer>(timers_);
+          timers_ = new java.util.ArrayList<Timer>(timers_);
           bitField0_ |= 0x00002000;
-        }
+         }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-              nodepp.Nodepp.Timer, nodepp.Nodepp.Timer.Builder, nodepp.Nodepp.TimerOrBuilder> timersBuilder_;
+          Timer, Timer.Builder, TimerOrBuilder> timersBuilder_;
 
       /**
        * <code>repeated .nodepp.Timer timers = 14;</code>
@@ -5827,7 +5940,7 @@ public final class Nodepp {
        *当前定时器设置
        * </pre>
        */
-      public java.util.List<nodepp.Nodepp.Timer> getTimersList() {
+      public java.util.List<Timer> getTimersList() {
         if (timersBuilder_ == null) {
           return java.util.Collections.unmodifiableList(timers_);
         } else {
@@ -5855,7 +5968,7 @@ public final class Nodepp {
        *当前定时器设置
        * </pre>
        */
-      public nodepp.Nodepp.Timer getTimers(int index) {
+      public Timer getTimers(int index) {
         if (timersBuilder_ == null) {
           return timers_.get(index);
         } else {
@@ -5870,7 +5983,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder setTimers(
-              int index, nodepp.Nodepp.Timer value) {
+          int index, Timer value) {
         if (timersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5891,7 +6004,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder setTimers(
-              int index, nodepp.Nodepp.Timer.Builder builderForValue) {
+          int index, Timer.Builder builderForValue) {
         if (timersBuilder_ == null) {
           ensureTimersIsMutable();
           timers_.set(index, builderForValue.build());
@@ -5908,7 +6021,7 @@ public final class Nodepp {
        *当前定时器设置
        * </pre>
        */
-      public Builder addTimers(nodepp.Nodepp.Timer value) {
+      public Builder addTimers(Timer value) {
         if (timersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5929,7 +6042,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addTimers(
-              int index, nodepp.Nodepp.Timer value) {
+          int index, Timer value) {
         if (timersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5950,7 +6063,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addTimers(
-              nodepp.Nodepp.Timer.Builder builderForValue) {
+          Timer.Builder builderForValue) {
         if (timersBuilder_ == null) {
           ensureTimersIsMutable();
           timers_.add(builderForValue.build());
@@ -5968,7 +6081,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addTimers(
-              int index, nodepp.Nodepp.Timer.Builder builderForValue) {
+          int index, Timer.Builder builderForValue) {
         if (timersBuilder_ == null) {
           ensureTimersIsMutable();
           timers_.add(index, builderForValue.build());
@@ -5986,7 +6099,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addAllTimers(
-              java.lang.Iterable<? extends nodepp.Nodepp.Timer> values) {
+          Iterable<? extends Timer> values) {
         if (timersBuilder_ == null) {
           ensureTimersIsMutable();
           super.addAll(values, timers_);
@@ -6037,8 +6150,8 @@ public final class Nodepp {
        *当前定时器设置
        * </pre>
        */
-      public nodepp.Nodepp.Timer.Builder getTimersBuilder(
-              int index) {
+      public Timer.Builder getTimersBuilder(
+          int index) {
         return getTimersFieldBuilder().getBuilder(index);
       }
       /**
@@ -6048,8 +6161,8 @@ public final class Nodepp {
        *当前定时器设置
        * </pre>
        */
-      public nodepp.Nodepp.TimerOrBuilder getTimersOrBuilder(
-              int index) {
+      public TimerOrBuilder getTimersOrBuilder(
+          int index) {
         if (timersBuilder_ == null) {
           return timers_.get(index);  } else {
           return timersBuilder_.getMessageOrBuilder(index);
@@ -6062,8 +6175,8 @@ public final class Nodepp {
        *当前定时器设置
        * </pre>
        */
-      public java.util.List<? extends nodepp.Nodepp.TimerOrBuilder>
-      getTimersOrBuilderList() {
+      public java.util.List<? extends TimerOrBuilder>
+           getTimersOrBuilderList() {
         if (timersBuilder_ != null) {
           return timersBuilder_.getMessageOrBuilderList();
         } else {
@@ -6077,9 +6190,9 @@ public final class Nodepp {
        *当前定时器设置
        * </pre>
        */
-      public nodepp.Nodepp.Timer.Builder addTimersBuilder() {
+      public Timer.Builder addTimersBuilder() {
         return getTimersFieldBuilder().addBuilder(
-                nodepp.Nodepp.Timer.getDefaultInstance());
+            Timer.getDefaultInstance());
       }
       /**
        * <code>repeated .nodepp.Timer timers = 14;</code>
@@ -6088,10 +6201,10 @@ public final class Nodepp {
        *当前定时器设置
        * </pre>
        */
-      public nodepp.Nodepp.Timer.Builder addTimersBuilder(
-              int index) {
+      public Timer.Builder addTimersBuilder(
+          int index) {
         return getTimersFieldBuilder().addBuilder(
-                index, nodepp.Nodepp.Timer.getDefaultInstance());
+            index, Timer.getDefaultInstance());
       }
       /**
        * <code>repeated .nodepp.Timer timers = 14;</code>
@@ -6100,16 +6213,16 @@ public final class Nodepp {
        *当前定时器设置
        * </pre>
        */
-      public java.util.List<nodepp.Nodepp.Timer.Builder>
-      getTimersBuilderList() {
+      public java.util.List<Timer.Builder>
+           getTimersBuilderList() {
         return getTimersFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-              nodepp.Nodepp.Timer, nodepp.Nodepp.Timer.Builder, nodepp.Nodepp.TimerOrBuilder>
-      getTimersFieldBuilder() {
+          Timer, Timer.Builder, TimerOrBuilder>
+          getTimersFieldBuilder() {
         if (timersBuilder_ == null) {
           timersBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                  nodepp.Nodepp.Timer, nodepp.Nodepp.Timer.Builder, nodepp.Nodepp.TimerOrBuilder>(
+              Timer, Timer.Builder, TimerOrBuilder>(
                   timers_,
                   ((bitField0_ & 0x00002000) == 0x00002000),
                   getParentForChildren(),
@@ -6131,7 +6244,7 @@ public final class Nodepp {
   }
 
   public interface UpgradeOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      extends com.google.protobuf.MessageOrBuilder {
 
     // optional bytes name = 1;
     /**
@@ -6187,8 +6300,8 @@ public final class Nodepp {
    * Protobuf type {@code nodepp.Upgrade}
    */
   public static final class Upgrade extends
-          com.google.protobuf.GeneratedMessage
-          implements UpgradeOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements UpgradeOrBuilder {
     // Use Upgrade.newBuilder() to construct.
     private Upgrade(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -6206,19 +6319,19 @@ public final class Nodepp {
     }
 
     private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+        getUnknownFields() {
       return this.unknownFields;
     }
     private Upgrade(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6229,7 +6342,7 @@ public final class Nodepp {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                      extensionRegistry, tag)) {
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -6265,35 +6378,35 @@ public final class Nodepp {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this);
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return nodepp.Nodepp.internal_static_nodepp_Upgrade_descriptor;
+        getDescriptor() {
+      return Nodepp.internal_static_nodepp_Upgrade_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return nodepp.Nodepp.internal_static_nodepp_Upgrade_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      nodepp.Nodepp.Upgrade.class, nodepp.Nodepp.Upgrade.Builder.class);
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Nodepp.internal_static_nodepp_Upgrade_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Upgrade.class, Builder.class);
     }
 
     public static com.google.protobuf.Parser<Upgrade> PARSER =
-            new com.google.protobuf.AbstractParser<Upgrade>() {
-              public Upgrade parsePartialFrom(
-                      com.google.protobuf.CodedInputStream input,
-                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                      throws com.google.protobuf.InvalidProtocolBufferException {
-                return new Upgrade(input, extensionRegistry);
-              }
-            };
+        new com.google.protobuf.AbstractParser<Upgrade>() {
+      public Upgrade parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Upgrade(input, extensionRegistry);
+      }
+    };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<Upgrade> getParserForType() {
       return PARSER;
     }
@@ -6396,7 +6509,7 @@ public final class Nodepp {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-            throws java.io.IOException {
+                        throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, name_);
@@ -6424,23 +6537,23 @@ public final class Nodepp {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(1, name_);
+          .computeBytesSize(1, name_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(2, info_);
+          .computeBytesSize(2, info_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(3, size_);
+          .computeUInt32Size(3, size_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(4, start_);
+          .computeUInt32Size(4, start_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(5, data_);
+          .computeBytesSize(5, data_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -6448,75 +6561,75 @@ public final class Nodepp {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-            throws java.io.ObjectStreamException {
+    @Override
+    protected Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static nodepp.Nodepp.Upgrade parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Upgrade parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static nodepp.Nodepp.Upgrade parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Upgrade parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static nodepp.Nodepp.Upgrade parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Upgrade parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static nodepp.Nodepp.Upgrade parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Upgrade parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static nodepp.Nodepp.Upgrade parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
+    public static Upgrade parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static nodepp.Nodepp.Upgrade parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Upgrade parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static nodepp.Nodepp.Upgrade parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
+    public static Upgrade parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static nodepp.Nodepp.Upgrade parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Upgrade parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static nodepp.Nodepp.Upgrade parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
+    public static Upgrade parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static nodepp.Nodepp.Upgrade parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Upgrade parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(nodepp.Nodepp.Upgrade prototype) {
+    public static Builder newBuilder(Upgrade prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -6524,18 +6637,18 @@ public final class Nodepp {
      * Protobuf type {@code nodepp.Upgrade}
      */
     public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-            implements nodepp.Nodepp.UpgradeOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements UpgradeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return nodepp.Nodepp.internal_static_nodepp_Upgrade_descriptor;
+          getDescriptor() {
+        return Nodepp.internal_static_nodepp_Upgrade_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return nodepp.Nodepp.internal_static_nodepp_Upgrade_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        nodepp.Nodepp.Upgrade.class, nodepp.Nodepp.Upgrade.Builder.class);
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Nodepp.internal_static_nodepp_Upgrade_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Upgrade.class, Builder.class);
       }
 
       // Construct using nodepp.Nodepp.Upgrade.newBuilder()
@@ -6544,7 +6657,7 @@ public final class Nodepp {
       }
 
       private Builder(
-              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -6576,24 +6689,24 @@ public final class Nodepp {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
-        return nodepp.Nodepp.internal_static_nodepp_Upgrade_descriptor;
+          getDescriptorForType() {
+        return Nodepp.internal_static_nodepp_Upgrade_descriptor;
       }
 
-      public nodepp.Nodepp.Upgrade getDefaultInstanceForType() {
-        return nodepp.Nodepp.Upgrade.getDefaultInstance();
+      public Upgrade getDefaultInstanceForType() {
+        return Upgrade.getDefaultInstance();
       }
 
-      public nodepp.Nodepp.Upgrade build() {
-        nodepp.Nodepp.Upgrade result = buildPartial();
+      public Upgrade build() {
+        Upgrade result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public nodepp.Nodepp.Upgrade buildPartial() {
-        nodepp.Nodepp.Upgrade result = new nodepp.Nodepp.Upgrade(this);
+      public Upgrade buildPartial() {
+        Upgrade result = new Upgrade(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6622,16 +6735,16 @@ public final class Nodepp {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof nodepp.Nodepp.Upgrade) {
-          return mergeFrom((nodepp.Nodepp.Upgrade)other);
+        if (other instanceof Upgrade) {
+          return mergeFrom((Upgrade)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(nodepp.Nodepp.Upgrade other) {
-        if (other == nodepp.Nodepp.Upgrade.getDefaultInstance()) return this;
+      public Builder mergeFrom(Upgrade other) {
+        if (other == Upgrade.getDefaultInstance()) return this;
         if (other.hasName()) {
           setName(other.getName());
         }
@@ -6656,14 +6769,14 @@ public final class Nodepp {
       }
 
       public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-        nodepp.Nodepp.Upgrade parsedMessage = null;
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Upgrade parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (nodepp.Nodepp.Upgrade) e.getUnfinishedMessage();
+          parsedMessage = (Upgrade) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -6693,9 +6806,9 @@ public final class Nodepp {
        */
       public Builder setName(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000001;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         name_ = value;
         onChanged();
         return this;
@@ -6729,9 +6842,9 @@ public final class Nodepp {
        */
       public Builder setInfo(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000002;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
         info_ = value;
         onChanged();
         return this;
@@ -6831,9 +6944,9 @@ public final class Nodepp {
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000010;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
         data_ = value;
         onChanged();
         return this;
@@ -6860,7 +6973,7 @@ public final class Nodepp {
   }
 
   public interface MsgOrBuilder
-          extends com.google.protobuf.MessageOrBuilder {
+      extends com.google.protobuf.MessageOrBuilder {
 
     // optional .nodepp.Head head = 1;
     /**
@@ -6870,11 +6983,11 @@ public final class Nodepp {
     /**
      * <code>optional .nodepp.Head head = 1;</code>
      */
-    nodepp.Nodepp.Head getHead();
+    Head getHead();
     /**
      * <code>optional .nodepp.Head head = 1;</code>
      */
-    nodepp.Nodepp.HeadOrBuilder getHeadOrBuilder();
+    HeadOrBuilder getHeadOrBuilder();
 
     // optional uint32 time_interval = 10;
     /**
@@ -7136,8 +7249,8 @@ public final class Nodepp {
      *定时器设置
      * </pre>
      */
-    java.util.List<nodepp.Nodepp.Timer>
-    getTimersList();
+    java.util.List<Timer>
+        getTimersList();
     /**
      * <code>repeated .nodepp.Timer timers = 29;</code>
      *
@@ -7145,7 +7258,7 @@ public final class Nodepp {
      *定时器设置
      * </pre>
      */
-    nodepp.Nodepp.Timer getTimers(int index);
+    Timer getTimers(int index);
     /**
      * <code>repeated .nodepp.Timer timers = 29;</code>
      *
@@ -7161,8 +7274,8 @@ public final class Nodepp {
      *定时器设置
      * </pre>
      */
-    java.util.List<? extends nodepp.Nodepp.TimerOrBuilder>
-    getTimersOrBuilderList();
+    java.util.List<? extends TimerOrBuilder>
+        getTimersOrBuilderList();
     /**
      * <code>repeated .nodepp.Timer timers = 29;</code>
      *
@@ -7170,7 +7283,7 @@ public final class Nodepp {
      *定时器设置
      * </pre>
      */
-    nodepp.Nodepp.TimerOrBuilder getTimersOrBuilder(
+    TimerOrBuilder getTimersOrBuilder(
             int index);
 
     // optional uint64 uid = 30;
@@ -7379,8 +7492,8 @@ public final class Nodepp {
      *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
      * </pre>
      */
-    java.util.List<nodepp.Nodepp.Rgb>
-    getColorsList();
+    java.util.List<Rgb>
+        getColorsList();
     /**
      * <code>repeated .nodepp.Rgb colors = 45;</code>
      *
@@ -7388,7 +7501,7 @@ public final class Nodepp {
      *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
      * </pre>
      */
-    nodepp.Nodepp.Rgb getColors(int index);
+    Rgb getColors(int index);
     /**
      * <code>repeated .nodepp.Rgb colors = 45;</code>
      *
@@ -7404,8 +7517,8 @@ public final class Nodepp {
      *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
      * </pre>
      */
-    java.util.List<? extends nodepp.Nodepp.RgbOrBuilder>
-    getColorsOrBuilderList();
+    java.util.List<? extends RgbOrBuilder>
+        getColorsOrBuilderList();
     /**
      * <code>repeated .nodepp.Rgb colors = 45;</code>
      *
@@ -7413,7 +7526,7 @@ public final class Nodepp {
      *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
      * </pre>
      */
-    nodepp.Nodepp.RgbOrBuilder getColorsOrBuilder(
+    RgbOrBuilder getColorsOrBuilder(
             int index);
 
     // optional uint32 color_switch_time = 46;
@@ -7496,8 +7609,8 @@ public final class Nodepp {
      *新增，设备集合
      * </pre>
      */
-    java.util.List<nodepp.Nodepp.Device>
-    getDevicesList();
+    java.util.List<Device>
+        getDevicesList();
     /**
      * <code>repeated .nodepp.Device devices = 50;</code>
      *
@@ -7505,7 +7618,7 @@ public final class Nodepp {
      *新增，设备集合
      * </pre>
      */
-    nodepp.Nodepp.Device getDevices(int index);
+    Device getDevices(int index);
     /**
      * <code>repeated .nodepp.Device devices = 50;</code>
      *
@@ -7521,8 +7634,8 @@ public final class Nodepp {
      *新增，设备集合
      * </pre>
      */
-    java.util.List<? extends nodepp.Nodepp.DeviceOrBuilder>
-    getDevicesOrBuilderList();
+    java.util.List<? extends DeviceOrBuilder>
+        getDevicesOrBuilderList();
     /**
      * <code>repeated .nodepp.Device devices = 50;</code>
      *
@@ -7530,7 +7643,7 @@ public final class Nodepp {
      *新增，设备集合
      * </pre>
      */
-    nodepp.Nodepp.DeviceOrBuilder getDevicesOrBuilder(
+    DeviceOrBuilder getDevicesOrBuilder(
             int index);
 
     // optional uint32 initialize_data = 51;
@@ -7559,7 +7672,7 @@ public final class Nodepp {
      *当前用户的所有did
      * </pre>
      */
-    java.util.List<java.lang.Long> getDidsList();
+    java.util.List<Long> getDidsList();
     /**
      * <code>repeated uint64 dids = 52;</code>
      *
@@ -7621,7 +7734,7 @@ public final class Nodepp {
      *fw
      * </pre>
      */
-    nodepp.Nodepp.Upgrade getUpgrade();
+    Upgrade getUpgrade();
     /**
      * <code>optional .nodepp.Upgrade upgrade = 55;</code>
      *
@@ -7629,7 +7742,7 @@ public final class Nodepp {
      *fw
      * </pre>
      */
-    nodepp.Nodepp.UpgradeOrBuilder getUpgradeOrBuilder();
+    UpgradeOrBuilder getUpgradeOrBuilder();
 
     // optional bytes key_client = 56;
     /**
@@ -7718,7 +7831,7 @@ public final class Nodepp {
      * <code>optional bytes key_client_wan = 61;</code>
      *
      * <pre>
-     *client/app---server key
+     *client-server key
      * </pre>
      */
     boolean hasKeyClientWan();
@@ -7726,7 +7839,7 @@ public final class Nodepp {
      * <code>optional bytes key_client_wan = 61;</code>
      *
      * <pre>
-     *client/app---server key
+     *client-server key
      * </pre>
      */
     com.google.protobuf.ByteString getKeyClientWan();
@@ -7734,18 +7847,10 @@ public final class Nodepp {
     // optional uint32 app_protocol = 62;
     /**
      * <code>optional uint32 app_protocol = 62;</code>
-     *
-     * <pre>
-     *1代表app新协议
-     * </pre>
      */
     boolean hasAppProtocol();
     /**
      * <code>optional uint32 app_protocol = 62;</code>
-     *
-     * <pre>
-     *1代表app新协议
-     * </pre>
      */
     int getAppProtocol();
   }
@@ -7753,8 +7858,8 @@ public final class Nodepp {
    * Protobuf type {@code nodepp.Msg}
    */
   public static final class Msg extends
-          com.google.protobuf.GeneratedMessage
-          implements MsgOrBuilder {
+      com.google.protobuf.GeneratedMessage
+      implements MsgOrBuilder {
     // Use Msg.newBuilder() to construct.
     private Msg(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -7772,20 +7877,20 @@ public final class Nodepp {
     }
 
     private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+        getUnknownFields() {
       return this.unknownFields;
     }
     private Msg(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
       int mutable_bitField0_ = 0;
       int mutable_bitField1_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder();
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7796,17 +7901,17 @@ public final class Nodepp {
               break;
             default: {
               if (!parseUnknownField(input, unknownFields,
-                      extensionRegistry, tag)) {
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
             }
             case 10: {
-              nodepp.Nodepp.Head.Builder subBuilder = null;
+              Head.Builder subBuilder = null;
               if (((bitField0_ & 0x00000001) == 0x00000001)) {
                 subBuilder = head_.toBuilder();
               }
-              head_ = input.readMessage(nodepp.Nodepp.Head.PARSER, extensionRegistry);
+              head_ = input.readMessage(Head.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(head_);
                 head_ = subBuilder.buildPartial();
@@ -7886,10 +7991,10 @@ public final class Nodepp {
             }
             case 234: {
               if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
-                timers_ = new java.util.ArrayList<nodepp.Nodepp.Timer>();
+                timers_ = new java.util.ArrayList<Timer>();
                 mutable_bitField0_ |= 0x00008000;
               }
-              timers_.add(input.readMessage(nodepp.Nodepp.Timer.PARSER, extensionRegistry));
+              timers_.add(input.readMessage(Timer.PARSER, extensionRegistry));
               break;
             }
             case 240: {
@@ -7949,10 +8054,10 @@ public final class Nodepp {
             }
             case 362: {
               if (!((mutable_bitField0_ & 0x08000000) == 0x08000000)) {
-                colors_ = new java.util.ArrayList<nodepp.Nodepp.Rgb>();
+                colors_ = new java.util.ArrayList<Rgb>();
                 mutable_bitField0_ |= 0x08000000;
               }
-              colors_.add(input.readMessage(nodepp.Nodepp.Rgb.PARSER, extensionRegistry));
+              colors_.add(input.readMessage(Rgb.PARSER, extensionRegistry));
               break;
             }
             case 368: {
@@ -7977,10 +8082,10 @@ public final class Nodepp {
             }
             case 402: {
               if (!((mutable_bitField1_ & 0x00000001) == 0x00000001)) {
-                devices_ = new java.util.ArrayList<nodepp.Nodepp.Device>();
+                devices_ = new java.util.ArrayList<Device>();
                 mutable_bitField1_ |= 0x00000001;
               }
-              devices_.add(input.readMessage(nodepp.Nodepp.Device.PARSER, extensionRegistry));
+              devices_.add(input.readMessage(Device.PARSER, extensionRegistry));
               break;
             }
             case 408: {
@@ -7990,7 +8095,7 @@ public final class Nodepp {
             }
             case 416: {
               if (!((mutable_bitField1_ & 0x00000004) == 0x00000004)) {
-                dids_ = new java.util.ArrayList<java.lang.Long>();
+                dids_ = new java.util.ArrayList<Long>();
                 mutable_bitField1_ |= 0x00000004;
               }
               dids_.add(input.readUInt64());
@@ -8000,7 +8105,7 @@ public final class Nodepp {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField1_ & 0x00000004) == 0x00000004) && input.getBytesUntilLimit() > 0) {
-                dids_ = new java.util.ArrayList<java.lang.Long>();
+                dids_ = new java.util.ArrayList<Long>();
                 mutable_bitField1_ |= 0x00000004;
               }
               while (input.getBytesUntilLimit() > 0) {
@@ -8020,11 +8125,11 @@ public final class Nodepp {
               break;
             }
             case 442: {
-              nodepp.Nodepp.Upgrade.Builder subBuilder = null;
+              Upgrade.Builder subBuilder = null;
               if (((bitField1_ & 0x00000002) == 0x00000002)) {
                 subBuilder = upgrade_.toBuilder();
               }
-              upgrade_ = input.readMessage(nodepp.Nodepp.Upgrade.PARSER, extensionRegistry);
+              upgrade_ = input.readMessage(Upgrade.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(upgrade_);
                 upgrade_ = subBuilder.buildPartial();
@@ -8073,7 +8178,7 @@ public final class Nodepp {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-                e.getMessage()).setUnfinishedMessage(this);
+            e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
           timers_ = java.util.Collections.unmodifiableList(timers_);
@@ -8092,28 +8197,28 @@ public final class Nodepp {
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
-    getDescriptor() {
-      return nodepp.Nodepp.internal_static_nodepp_Msg_descriptor;
+        getDescriptor() {
+      return Nodepp.internal_static_nodepp_Msg_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-    internalGetFieldAccessorTable() {
-      return nodepp.Nodepp.internal_static_nodepp_Msg_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                      nodepp.Nodepp.Msg.class, nodepp.Nodepp.Msg.Builder.class);
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Nodepp.internal_static_nodepp_Msg_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Msg.class, Builder.class);
     }
 
     public static com.google.protobuf.Parser<Msg> PARSER =
-            new com.google.protobuf.AbstractParser<Msg>() {
-              public Msg parsePartialFrom(
-                      com.google.protobuf.CodedInputStream input,
-                      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                      throws com.google.protobuf.InvalidProtocolBufferException {
-                return new Msg(input, extensionRegistry);
-              }
-            };
+        new com.google.protobuf.AbstractParser<Msg>() {
+      public Msg parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Msg(input, extensionRegistry);
+      }
+    };
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<Msg> getParserForType() {
       return PARSER;
     }
@@ -8122,7 +8227,7 @@ public final class Nodepp {
     private int bitField1_;
     // optional .nodepp.Head head = 1;
     public static final int HEAD_FIELD_NUMBER = 1;
-    private nodepp.Nodepp.Head head_;
+    private Head head_;
     /**
      * <code>optional .nodepp.Head head = 1;</code>
      */
@@ -8132,13 +8237,13 @@ public final class Nodepp {
     /**
      * <code>optional .nodepp.Head head = 1;</code>
      */
-    public nodepp.Nodepp.Head getHead() {
+    public Head getHead() {
       return head_;
     }
     /**
      * <code>optional .nodepp.Head head = 1;</code>
      */
-    public nodepp.Nodepp.HeadOrBuilder getHeadOrBuilder() {
+    public HeadOrBuilder getHeadOrBuilder() {
       return head_;
     }
 
@@ -8480,7 +8585,7 @@ public final class Nodepp {
 
     // repeated .nodepp.Timer timers = 29;
     public static final int TIMERS_FIELD_NUMBER = 29;
-    private java.util.List<nodepp.Nodepp.Timer> timers_;
+    private java.util.List<Timer> timers_;
     /**
      * <code>repeated .nodepp.Timer timers = 29;</code>
      *
@@ -8488,7 +8593,7 @@ public final class Nodepp {
      *定时器设置
      * </pre>
      */
-    public java.util.List<nodepp.Nodepp.Timer> getTimersList() {
+    public java.util.List<Timer> getTimersList() {
       return timers_;
     }
     /**
@@ -8498,8 +8603,8 @@ public final class Nodepp {
      *定时器设置
      * </pre>
      */
-    public java.util.List<? extends nodepp.Nodepp.TimerOrBuilder>
-    getTimersOrBuilderList() {
+    public java.util.List<? extends TimerOrBuilder>
+        getTimersOrBuilderList() {
       return timers_;
     }
     /**
@@ -8519,7 +8624,7 @@ public final class Nodepp {
      *定时器设置
      * </pre>
      */
-    public nodepp.Nodepp.Timer getTimers(int index) {
+    public Timer getTimers(int index) {
       return timers_.get(index);
     }
     /**
@@ -8529,8 +8634,8 @@ public final class Nodepp {
      *定时器设置
      * </pre>
      */
-    public nodepp.Nodepp.TimerOrBuilder getTimersOrBuilder(
-            int index) {
+    public TimerOrBuilder getTimersOrBuilder(
+        int index) {
       return timers_.get(index);
     }
 
@@ -8800,7 +8905,7 @@ public final class Nodepp {
 
     // repeated .nodepp.Rgb colors = 45;
     public static final int COLORS_FIELD_NUMBER = 45;
-    private java.util.List<nodepp.Nodepp.Rgb> colors_;
+    private java.util.List<Rgb> colors_;
     /**
      * <code>repeated .nodepp.Rgb colors = 45;</code>
      *
@@ -8808,7 +8913,7 @@ public final class Nodepp {
      *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
      * </pre>
      */
-    public java.util.List<nodepp.Nodepp.Rgb> getColorsList() {
+    public java.util.List<Rgb> getColorsList() {
       return colors_;
     }
     /**
@@ -8818,8 +8923,8 @@ public final class Nodepp {
      *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
      * </pre>
      */
-    public java.util.List<? extends nodepp.Nodepp.RgbOrBuilder>
-    getColorsOrBuilderList() {
+    public java.util.List<? extends RgbOrBuilder>
+        getColorsOrBuilderList() {
       return colors_;
     }
     /**
@@ -8839,7 +8944,7 @@ public final class Nodepp {
      *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
      * </pre>
      */
-    public nodepp.Nodepp.Rgb getColors(int index) {
+    public Rgb getColors(int index) {
       return colors_.get(index);
     }
     /**
@@ -8849,8 +8954,8 @@ public final class Nodepp {
      *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
      * </pre>
      */
-    public nodepp.Nodepp.RgbOrBuilder getColorsOrBuilder(
-            int index) {
+    public RgbOrBuilder getColorsOrBuilder(
+        int index) {
       return colors_.get(index);
     }
 
@@ -8952,7 +9057,7 @@ public final class Nodepp {
 
     // repeated .nodepp.Device devices = 50;
     public static final int DEVICES_FIELD_NUMBER = 50;
-    private java.util.List<nodepp.Nodepp.Device> devices_;
+    private java.util.List<Device> devices_;
     /**
      * <code>repeated .nodepp.Device devices = 50;</code>
      *
@@ -8960,7 +9065,7 @@ public final class Nodepp {
      *新增，设备集合
      * </pre>
      */
-    public java.util.List<nodepp.Nodepp.Device> getDevicesList() {
+    public java.util.List<Device> getDevicesList() {
       return devices_;
     }
     /**
@@ -8970,8 +9075,8 @@ public final class Nodepp {
      *新增，设备集合
      * </pre>
      */
-    public java.util.List<? extends nodepp.Nodepp.DeviceOrBuilder>
-    getDevicesOrBuilderList() {
+    public java.util.List<? extends DeviceOrBuilder>
+        getDevicesOrBuilderList() {
       return devices_;
     }
     /**
@@ -8991,7 +9096,7 @@ public final class Nodepp {
      *新增，设备集合
      * </pre>
      */
-    public nodepp.Nodepp.Device getDevices(int index) {
+    public Device getDevices(int index) {
       return devices_.get(index);
     }
     /**
@@ -9001,8 +9106,8 @@ public final class Nodepp {
      *新增，设备集合
      * </pre>
      */
-    public nodepp.Nodepp.DeviceOrBuilder getDevicesOrBuilder(
-            int index) {
+    public DeviceOrBuilder getDevicesOrBuilder(
+        int index) {
       return devices_.get(index);
     }
 
@@ -9032,7 +9137,7 @@ public final class Nodepp {
 
     // repeated uint64 dids = 52;
     public static final int DIDS_FIELD_NUMBER = 52;
-    private java.util.List<java.lang.Long> dids_;
+    private java.util.List<Long> dids_;
     /**
      * <code>repeated uint64 dids = 52;</code>
      *
@@ -9040,8 +9145,8 @@ public final class Nodepp {
      *当前用户的所有did
      * </pre>
      */
-    public java.util.List<java.lang.Long>
-    getDidsList() {
+    public java.util.List<Long>
+        getDidsList() {
       return dids_;
     }
     /**
@@ -9107,7 +9212,7 @@ public final class Nodepp {
 
     // optional .nodepp.Upgrade upgrade = 55;
     public static final int UPGRADE_FIELD_NUMBER = 55;
-    private nodepp.Nodepp.Upgrade upgrade_;
+    private Upgrade upgrade_;
     /**
      * <code>optional .nodepp.Upgrade upgrade = 55;</code>
      *
@@ -9125,7 +9230,7 @@ public final class Nodepp {
      *fw
      * </pre>
      */
-    public nodepp.Nodepp.Upgrade getUpgrade() {
+    public Upgrade getUpgrade() {
       return upgrade_;
     }
     /**
@@ -9135,7 +9240,7 @@ public final class Nodepp {
      *fw
      * </pre>
      */
-    public nodepp.Nodepp.UpgradeOrBuilder getUpgradeOrBuilder() {
+    public UpgradeOrBuilder getUpgradeOrBuilder() {
       return upgrade_;
     }
 
@@ -9258,7 +9363,7 @@ public final class Nodepp {
      * <code>optional bytes key_client_wan = 61;</code>
      *
      * <pre>
-     *client/app---server key
+     *client-server key
      * </pre>
      */
     public boolean hasKeyClientWan() {
@@ -9268,7 +9373,7 @@ public final class Nodepp {
      * <code>optional bytes key_client_wan = 61;</code>
      *
      * <pre>
-     *client/app---server key
+     *client-server key
      * </pre>
      */
     public com.google.protobuf.ByteString getKeyClientWan() {
@@ -9280,27 +9385,19 @@ public final class Nodepp {
     private int appProtocol_;
     /**
      * <code>optional uint32 app_protocol = 62;</code>
-     *
-     * <pre>
-     *1代表app新协议
-     * </pre>
      */
     public boolean hasAppProtocol() {
       return ((bitField1_ & 0x00000100) == 0x00000100);
     }
     /**
      * <code>optional uint32 app_protocol = 62;</code>
-     *
-     * <pre>
-     *1代表app新协议
-     * </pre>
      */
     public int getAppProtocol() {
       return appProtocol_;
     }
 
     private void initFields() {
-      head_ = nodepp.Nodepp.Head.getDefaultInstance();
+      head_ = Head.getDefaultInstance();
       timeInterval_ = 0;
       operate_ = 0;
       state_ = 0;
@@ -9337,7 +9434,7 @@ public final class Nodepp {
       dids_ = java.util.Collections.emptyList();
       userData_ = com.google.protobuf.ByteString.EMPTY;
       random_ = com.google.protobuf.ByteString.EMPTY;
-      upgrade_ = nodepp.Nodepp.Upgrade.getDefaultInstance();
+      upgrade_ = Upgrade.getDefaultInstance();
       keyClient_ = com.google.protobuf.ByteString.EMPTY;
       brightDark_ = 0;
       suYan_ = 0;
@@ -9356,7 +9453,7 @@ public final class Nodepp {
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-            throws java.io.IOException {
+                        throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(1, head_);
@@ -9504,188 +9601,188 @@ public final class Nodepp {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeMessageSize(1, head_);
+          .computeMessageSize(1, head_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(10, timeInterval_);
+          .computeUInt32Size(10, timeInterval_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(11, operate_);
+          .computeUInt32Size(11, operate_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(12, state_);
+          .computeUInt32Size(12, state_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(13, wifiName_);
+          .computeBytesSize(13, wifiName_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(14, wifiPasswd_);
+          .computeBytesSize(14, wifiPasswd_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(15, wifiState_);
+          .computeUInt32Size(15, wifiState_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(16, userType_);
+          .computeUInt32Size(16, userType_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(17, user_);
+          .computeBytesSize(17, user_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(18, key_);
+          .computeBytesSize(18, key_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(19, verCur_);
+          .computeUInt32Size(19, verCur_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(20, verNew_);
+          .computeUInt32Size(20, verNew_);
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(21, verInfo_);
+          .computeBytesSize(21, verInfo_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(22, verUrl_);
+          .computeBytesSize(22, verUrl_);
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt64Size(24, appid_);
+          .computeUInt64Size(24, appid_);
       }
       for (int i = 0; i < timers_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-                .computeMessageSize(29, timers_.get(i));
+          .computeMessageSize(29, timers_.get(i));
       }
       if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt64Size(30, uid_);
+          .computeUInt64Size(30, uid_);
       }
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(31, usig_);
+          .computeBytesSize(31, usig_);
       }
       if (((bitField0_ & 0x00020000) == 0x00020000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt64Size(32, mid_);
+          .computeUInt64Size(32, mid_);
       }
       if (((bitField0_ & 0x00040000) == 0x00040000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt64Size(33, subMid_);
+          .computeUInt64Size(33, subMid_);
       }
       if (((bitField0_ & 0x00080000) == 0x00080000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(34, msig_);
+          .computeBytesSize(34, msig_);
       }
       if (((bitField0_ & 0x00100000) == 0x00100000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt64Size(35, did_);
+          .computeUInt64Size(35, did_);
       }
       if (((bitField0_ & 0x00200000) == 0x00200000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(36, dsig_);
+          .computeBytesSize(36, dsig_);
       }
       if (((bitField0_ & 0x00400000) == 0x00400000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt64Size(37, tid_);
+          .computeUInt64Size(37, tid_);
       }
       if (((bitField0_ & 0x00800000) == 0x00800000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(42, deviceType_);
+          .computeUInt32Size(42, deviceType_);
       }
       if (((bitField0_ & 0x01000000) == 0x01000000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(43, connetedMode_);
+          .computeUInt32Size(43, connetedMode_);
       }
       if (((bitField0_ & 0x02000000) == 0x02000000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(44, platform_);
+          .computeUInt32Size(44, platform_);
       }
       for (int i = 0; i < colors_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-                .computeMessageSize(45, colors_.get(i));
+          .computeMessageSize(45, colors_.get(i));
       }
       if (((bitField0_ & 0x04000000) == 0x04000000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(46, colorSwitchTime_);
+          .computeUInt32Size(46, colorSwitchTime_);
       }
       if (((bitField0_ & 0x08000000) == 0x08000000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(47, devicesMax_);
+          .computeUInt32Size(47, devicesMax_);
       }
       if (((bitField0_ & 0x10000000) == 0x10000000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(48, devicesCur_);
+          .computeUInt32Size(48, devicesCur_);
       }
       if (((bitField0_ & 0x20000000) == 0x20000000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(49, shareVerification_);
+          .computeBytesSize(49, shareVerification_);
       }
       for (int i = 0; i < devices_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-                .computeMessageSize(50, devices_.get(i));
+          .computeMessageSize(50, devices_.get(i));
       }
       if (((bitField0_ & 0x40000000) == 0x40000000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(51, initializeData_);
+          .computeUInt32Size(51, initializeData_);
       }
       {
         int dataSize = 0;
         for (int i = 0; i < dids_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-                  .computeUInt64SizeNoTag(dids_.get(i));
+            .computeUInt64SizeNoTag(dids_.get(i));
         }
         size += dataSize;
         size += 2 * getDidsList().size();
       }
       if (((bitField0_ & 0x80000000) == 0x80000000)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(53, userData_);
+          .computeBytesSize(53, userData_);
       }
       if (((bitField1_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(54, random_);
+          .computeBytesSize(54, random_);
       }
       if (((bitField1_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeMessageSize(55, upgrade_);
+          .computeMessageSize(55, upgrade_);
       }
       if (((bitField1_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(56, keyClient_);
+          .computeBytesSize(56, keyClient_);
       }
       if (((bitField1_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(57, brightDark_);
+          .computeUInt32Size(57, brightDark_);
       }
       if (((bitField1_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(58, suYan_);
+          .computeUInt32Size(58, suYan_);
       }
       if (((bitField1_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(59, macId_);
+          .computeBytesSize(59, macId_);
       }
       if (((bitField1_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(60, deviceMode_);
+          .computeUInt32Size(60, deviceMode_);
       }
       if (((bitField1_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeBytesSize(61, keyClientWan_);
+          .computeBytesSize(61, keyClientWan_);
       }
       if (((bitField1_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-                .computeUInt32Size(62, appProtocol_);
+          .computeUInt32Size(62, appProtocol_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -9693,75 +9790,75 @@ public final class Nodepp {
     }
 
     private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-            throws java.io.ObjectStreamException {
+    @Override
+    protected Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
 
-    public static nodepp.Nodepp.Msg parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Msg parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static nodepp.Nodepp.Msg parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Msg parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static nodepp.Nodepp.Msg parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Msg parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static nodepp.Nodepp.Msg parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+    public static Msg parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static nodepp.Nodepp.Msg parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
+    public static Msg parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static nodepp.Nodepp.Msg parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Msg parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static nodepp.Nodepp.Msg parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
+    public static Msg parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static nodepp.Nodepp.Msg parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Msg parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static nodepp.Nodepp.Msg parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
+    public static Msg parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static nodepp.Nodepp.Msg parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
+    public static Msg parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(nodepp.Nodepp.Msg prototype) {
+    public static Builder newBuilder(Msg prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -9769,18 +9866,18 @@ public final class Nodepp {
      * Protobuf type {@code nodepp.Msg}
      */
     public static final class Builder extends
-            com.google.protobuf.GeneratedMessage.Builder<Builder>
-            implements nodepp.Nodepp.MsgOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements MsgOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-        return nodepp.Nodepp.internal_static_nodepp_Msg_descriptor;
+          getDescriptor() {
+        return Nodepp.internal_static_nodepp_Msg_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internalGetFieldAccessorTable() {
-        return nodepp.Nodepp.internal_static_nodepp_Msg_fieldAccessorTable
-                .ensureFieldAccessorsInitialized(
-                        nodepp.Nodepp.Msg.class, nodepp.Nodepp.Msg.Builder.class);
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Nodepp.internal_static_nodepp_Msg_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Msg.class, Builder.class);
       }
 
       // Construct using nodepp.Nodepp.Msg.newBuilder()
@@ -9789,7 +9886,7 @@ public final class Nodepp {
       }
 
       private Builder(
-              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -9809,7 +9906,7 @@ public final class Nodepp {
       public Builder clear() {
         super.clear();
         if (headBuilder_ == null) {
-          head_ = nodepp.Nodepp.Head.getDefaultInstance();
+          head_ = Head.getDefaultInstance();
         } else {
           headBuilder_.clear();
         }
@@ -9899,7 +9996,7 @@ public final class Nodepp {
         random_ = com.google.protobuf.ByteString.EMPTY;
         bitField1_ = (bitField1_ & ~0x00000010);
         if (upgradeBuilder_ == null) {
-          upgrade_ = nodepp.Nodepp.Upgrade.getDefaultInstance();
+          upgrade_ = Upgrade.getDefaultInstance();
         } else {
           upgradeBuilder_.clear();
         }
@@ -9926,24 +10023,24 @@ public final class Nodepp {
       }
 
       public com.google.protobuf.Descriptors.Descriptor
-      getDescriptorForType() {
-        return nodepp.Nodepp.internal_static_nodepp_Msg_descriptor;
+          getDescriptorForType() {
+        return Nodepp.internal_static_nodepp_Msg_descriptor;
       }
 
-      public nodepp.Nodepp.Msg getDefaultInstanceForType() {
-        return nodepp.Nodepp.Msg.getDefaultInstance();
+      public Msg getDefaultInstanceForType() {
+        return Msg.getDefaultInstance();
       }
 
-      public nodepp.Nodepp.Msg build() {
-        nodepp.Nodepp.Msg result = buildPartial();
+      public Msg build() {
+        Msg result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public nodepp.Nodepp.Msg buildPartial() {
-        nodepp.Nodepp.Msg result = new nodepp.Nodepp.Msg(this);
+      public Msg buildPartial() {
+        Msg result = new Msg(this);
         int from_bitField0_ = bitField0_;
         int from_bitField1_ = bitField1_;
         int to_bitField0_ = 0;
@@ -10159,16 +10256,16 @@ public final class Nodepp {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof nodepp.Nodepp.Msg) {
-          return mergeFrom((nodepp.Nodepp.Msg)other);
+        if (other instanceof Msg) {
+          return mergeFrom((Msg)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(nodepp.Nodepp.Msg other) {
-        if (other == nodepp.Nodepp.Msg.getDefaultInstance()) return this;
+      public Builder mergeFrom(Msg other) {
+        if (other == Msg.getDefaultInstance()) return this;
         if (other.hasHead()) {
           mergeHead(other.getHead());
         }
@@ -10233,8 +10330,8 @@ public final class Nodepp {
               timers_ = other.timers_;
               bitField0_ = (bitField0_ & ~0x00008000);
               timersBuilder_ =
-                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                              getTimersFieldBuilder() : null;
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getTimersFieldBuilder() : null;
             } else {
               timersBuilder_.addAllMessages(other.timers_);
             }
@@ -10292,8 +10389,8 @@ public final class Nodepp {
               colors_ = other.colors_;
               bitField0_ = (bitField0_ & ~0x08000000);
               colorsBuilder_ =
-                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                              getColorsFieldBuilder() : null;
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getColorsFieldBuilder() : null;
             } else {
               colorsBuilder_.addAllMessages(other.colors_);
             }
@@ -10330,8 +10427,8 @@ public final class Nodepp {
               devices_ = other.devices_;
               bitField1_ = (bitField1_ & ~0x00000001);
               devicesBuilder_ =
-                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                              getDevicesFieldBuilder() : null;
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getDevicesFieldBuilder() : null;
             } else {
               devicesBuilder_.addAllMessages(other.devices_);
             }
@@ -10389,14 +10486,14 @@ public final class Nodepp {
       }
 
       public Builder mergeFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws java.io.IOException {
-        nodepp.Nodepp.Msg parsedMessage = null;
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Msg parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (nodepp.Nodepp.Msg) e.getUnfinishedMessage();
+          parsedMessage = (Msg) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -10409,9 +10506,9 @@ public final class Nodepp {
       private int bitField1_;
 
       // optional .nodepp.Head head = 1;
-      private nodepp.Nodepp.Head head_ = nodepp.Nodepp.Head.getDefaultInstance();
+      private Head head_ = Head.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-              nodepp.Nodepp.Head, nodepp.Nodepp.Head.Builder, nodepp.Nodepp.HeadOrBuilder> headBuilder_;
+          Head, Head.Builder, HeadOrBuilder> headBuilder_;
       /**
        * <code>optional .nodepp.Head head = 1;</code>
        */
@@ -10421,7 +10518,7 @@ public final class Nodepp {
       /**
        * <code>optional .nodepp.Head head = 1;</code>
        */
-      public nodepp.Nodepp.Head getHead() {
+      public Head getHead() {
         if (headBuilder_ == null) {
           return head_;
         } else {
@@ -10431,7 +10528,7 @@ public final class Nodepp {
       /**
        * <code>optional .nodepp.Head head = 1;</code>
        */
-      public Builder setHead(nodepp.Nodepp.Head value) {
+      public Builder setHead(Head value) {
         if (headBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10448,7 +10545,7 @@ public final class Nodepp {
        * <code>optional .nodepp.Head head = 1;</code>
        */
       public Builder setHead(
-              nodepp.Nodepp.Head.Builder builderForValue) {
+          Head.Builder builderForValue) {
         if (headBuilder_ == null) {
           head_ = builderForValue.build();
           onChanged();
@@ -10461,12 +10558,12 @@ public final class Nodepp {
       /**
        * <code>optional .nodepp.Head head = 1;</code>
        */
-      public Builder mergeHead(nodepp.Nodepp.Head value) {
+      public Builder mergeHead(Head value) {
         if (headBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001) &&
-                  head_ != nodepp.Nodepp.Head.getDefaultInstance()) {
+              head_ != Head.getDefaultInstance()) {
             head_ =
-                    nodepp.Nodepp.Head.newBuilder(head_).mergeFrom(value).buildPartial();
+              Head.newBuilder(head_).mergeFrom(value).buildPartial();
           } else {
             head_ = value;
           }
@@ -10482,7 +10579,7 @@ public final class Nodepp {
        */
       public Builder clearHead() {
         if (headBuilder_ == null) {
-          head_ = nodepp.Nodepp.Head.getDefaultInstance();
+          head_ = Head.getDefaultInstance();
           onChanged();
         } else {
           headBuilder_.clear();
@@ -10493,7 +10590,7 @@ public final class Nodepp {
       /**
        * <code>optional .nodepp.Head head = 1;</code>
        */
-      public nodepp.Nodepp.Head.Builder getHeadBuilder() {
+      public Head.Builder getHeadBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return getHeadFieldBuilder().getBuilder();
@@ -10501,7 +10598,7 @@ public final class Nodepp {
       /**
        * <code>optional .nodepp.Head head = 1;</code>
        */
-      public nodepp.Nodepp.HeadOrBuilder getHeadOrBuilder() {
+      public HeadOrBuilder getHeadOrBuilder() {
         if (headBuilder_ != null) {
           return headBuilder_.getMessageOrBuilder();
         } else {
@@ -10512,11 +10609,11 @@ public final class Nodepp {
        * <code>optional .nodepp.Head head = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-              nodepp.Nodepp.Head, nodepp.Nodepp.Head.Builder, nodepp.Nodepp.HeadOrBuilder>
-      getHeadFieldBuilder() {
+          Head, Head.Builder, HeadOrBuilder>
+          getHeadFieldBuilder() {
         if (headBuilder_ == null) {
           headBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                  nodepp.Nodepp.Head, nodepp.Nodepp.Head.Builder, nodepp.Nodepp.HeadOrBuilder>(
+              Head, Head.Builder, HeadOrBuilder>(
                   head_,
                   getParentForChildren(),
                   isClean());
@@ -10703,9 +10800,9 @@ public final class Nodepp {
        */
       public Builder setWifiName(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000010;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
         wifiName_ = value;
         onChanged();
         return this;
@@ -10755,9 +10852,9 @@ public final class Nodepp {
        */
       public Builder setWifiPasswd(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000020;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
         wifiPasswd_ = value;
         onChanged();
         return this;
@@ -10905,9 +11002,9 @@ public final class Nodepp {
        */
       public Builder setUser(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000100;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
         user_ = value;
         onChanged();
         return this;
@@ -10957,9 +11054,9 @@ public final class Nodepp {
        */
       public Builder setKey(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000200;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
         key_ = value;
         onChanged();
         return this;
@@ -11107,9 +11204,9 @@ public final class Nodepp {
        */
       public Builder setVerInfo(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00001000;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
         verInfo_ = value;
         onChanged();
         return this;
@@ -11159,9 +11256,9 @@ public final class Nodepp {
        */
       public Builder setVerUrl(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00002000;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
         verUrl_ = value;
         onChanged();
         return this;
@@ -11230,17 +11327,17 @@ public final class Nodepp {
       }
 
       // repeated .nodepp.Timer timers = 29;
-      private java.util.List<nodepp.Nodepp.Timer> timers_ =
-              java.util.Collections.emptyList();
+      private java.util.List<Timer> timers_ =
+        java.util.Collections.emptyList();
       private void ensureTimersIsMutable() {
         if (!((bitField0_ & 0x00008000) == 0x00008000)) {
-          timers_ = new java.util.ArrayList<nodepp.Nodepp.Timer>(timers_);
+          timers_ = new java.util.ArrayList<Timer>(timers_);
           bitField0_ |= 0x00008000;
-        }
+         }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-              nodepp.Nodepp.Timer, nodepp.Nodepp.Timer.Builder, nodepp.Nodepp.TimerOrBuilder> timersBuilder_;
+          Timer, Timer.Builder, TimerOrBuilder> timersBuilder_;
 
       /**
        * <code>repeated .nodepp.Timer timers = 29;</code>
@@ -11249,7 +11346,7 @@ public final class Nodepp {
        *定时器设置
        * </pre>
        */
-      public java.util.List<nodepp.Nodepp.Timer> getTimersList() {
+      public java.util.List<Timer> getTimersList() {
         if (timersBuilder_ == null) {
           return java.util.Collections.unmodifiableList(timers_);
         } else {
@@ -11277,7 +11374,7 @@ public final class Nodepp {
        *定时器设置
        * </pre>
        */
-      public nodepp.Nodepp.Timer getTimers(int index) {
+      public Timer getTimers(int index) {
         if (timersBuilder_ == null) {
           return timers_.get(index);
         } else {
@@ -11292,7 +11389,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder setTimers(
-              int index, nodepp.Nodepp.Timer value) {
+          int index, Timer value) {
         if (timersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -11313,7 +11410,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder setTimers(
-              int index, nodepp.Nodepp.Timer.Builder builderForValue) {
+          int index, Timer.Builder builderForValue) {
         if (timersBuilder_ == null) {
           ensureTimersIsMutable();
           timers_.set(index, builderForValue.build());
@@ -11330,7 +11427,7 @@ public final class Nodepp {
        *定时器设置
        * </pre>
        */
-      public Builder addTimers(nodepp.Nodepp.Timer value) {
+      public Builder addTimers(Timer value) {
         if (timersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -11351,7 +11448,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addTimers(
-              int index, nodepp.Nodepp.Timer value) {
+          int index, Timer value) {
         if (timersBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -11372,7 +11469,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addTimers(
-              nodepp.Nodepp.Timer.Builder builderForValue) {
+          Timer.Builder builderForValue) {
         if (timersBuilder_ == null) {
           ensureTimersIsMutable();
           timers_.add(builderForValue.build());
@@ -11390,7 +11487,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addTimers(
-              int index, nodepp.Nodepp.Timer.Builder builderForValue) {
+          int index, Timer.Builder builderForValue) {
         if (timersBuilder_ == null) {
           ensureTimersIsMutable();
           timers_.add(index, builderForValue.build());
@@ -11408,7 +11505,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addAllTimers(
-              java.lang.Iterable<? extends nodepp.Nodepp.Timer> values) {
+          Iterable<? extends Timer> values) {
         if (timersBuilder_ == null) {
           ensureTimersIsMutable();
           super.addAll(values, timers_);
@@ -11459,8 +11556,8 @@ public final class Nodepp {
        *定时器设置
        * </pre>
        */
-      public nodepp.Nodepp.Timer.Builder getTimersBuilder(
-              int index) {
+      public Timer.Builder getTimersBuilder(
+          int index) {
         return getTimersFieldBuilder().getBuilder(index);
       }
       /**
@@ -11470,8 +11567,8 @@ public final class Nodepp {
        *定时器设置
        * </pre>
        */
-      public nodepp.Nodepp.TimerOrBuilder getTimersOrBuilder(
-              int index) {
+      public TimerOrBuilder getTimersOrBuilder(
+          int index) {
         if (timersBuilder_ == null) {
           return timers_.get(index);  } else {
           return timersBuilder_.getMessageOrBuilder(index);
@@ -11484,8 +11581,8 @@ public final class Nodepp {
        *定时器设置
        * </pre>
        */
-      public java.util.List<? extends nodepp.Nodepp.TimerOrBuilder>
-      getTimersOrBuilderList() {
+      public java.util.List<? extends TimerOrBuilder>
+           getTimersOrBuilderList() {
         if (timersBuilder_ != null) {
           return timersBuilder_.getMessageOrBuilderList();
         } else {
@@ -11499,9 +11596,9 @@ public final class Nodepp {
        *定时器设置
        * </pre>
        */
-      public nodepp.Nodepp.Timer.Builder addTimersBuilder() {
+      public Timer.Builder addTimersBuilder() {
         return getTimersFieldBuilder().addBuilder(
-                nodepp.Nodepp.Timer.getDefaultInstance());
+            Timer.getDefaultInstance());
       }
       /**
        * <code>repeated .nodepp.Timer timers = 29;</code>
@@ -11510,10 +11607,10 @@ public final class Nodepp {
        *定时器设置
        * </pre>
        */
-      public nodepp.Nodepp.Timer.Builder addTimersBuilder(
-              int index) {
+      public Timer.Builder addTimersBuilder(
+          int index) {
         return getTimersFieldBuilder().addBuilder(
-                index, nodepp.Nodepp.Timer.getDefaultInstance());
+            index, Timer.getDefaultInstance());
       }
       /**
        * <code>repeated .nodepp.Timer timers = 29;</code>
@@ -11522,16 +11619,16 @@ public final class Nodepp {
        *定时器设置
        * </pre>
        */
-      public java.util.List<nodepp.Nodepp.Timer.Builder>
-      getTimersBuilderList() {
+      public java.util.List<Timer.Builder>
+           getTimersBuilderList() {
         return getTimersFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-              nodepp.Nodepp.Timer, nodepp.Nodepp.Timer.Builder, nodepp.Nodepp.TimerOrBuilder>
-      getTimersFieldBuilder() {
+          Timer, Timer.Builder, TimerOrBuilder>
+          getTimersFieldBuilder() {
         if (timersBuilder_ == null) {
           timersBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                  nodepp.Nodepp.Timer, nodepp.Nodepp.Timer.Builder, nodepp.Nodepp.TimerOrBuilder>(
+              Timer, Timer.Builder, TimerOrBuilder>(
                   timers_,
                   ((bitField0_ & 0x00008000) == 0x00008000),
                   getParentForChildren(),
@@ -11621,9 +11718,9 @@ public final class Nodepp {
        */
       public Builder setUsig(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00020000;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00020000;
         usig_ = value;
         onChanged();
         return this;
@@ -11771,9 +11868,9 @@ public final class Nodepp {
        */
       public Builder setMsig(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00100000;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00100000;
         msig_ = value;
         onChanged();
         return this;
@@ -11872,9 +11969,9 @@ public final class Nodepp {
        */
       public Builder setDsig(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00400000;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00400000;
         dsig_ = value;
         onChanged();
         return this;
@@ -12090,17 +12187,17 @@ public final class Nodepp {
       }
 
       // repeated .nodepp.Rgb colors = 45;
-      private java.util.List<nodepp.Nodepp.Rgb> colors_ =
-              java.util.Collections.emptyList();
+      private java.util.List<Rgb> colors_ =
+        java.util.Collections.emptyList();
       private void ensureColorsIsMutable() {
         if (!((bitField0_ & 0x08000000) == 0x08000000)) {
-          colors_ = new java.util.ArrayList<nodepp.Nodepp.Rgb>(colors_);
+          colors_ = new java.util.ArrayList<Rgb>(colors_);
           bitField0_ |= 0x08000000;
-        }
+         }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-              nodepp.Nodepp.Rgb, nodepp.Nodepp.Rgb.Builder, nodepp.Nodepp.RgbOrBuilder> colorsBuilder_;
+          Rgb, Rgb.Builder, RgbOrBuilder> colorsBuilder_;
 
       /**
        * <code>repeated .nodepp.Rgb colors = 45;</code>
@@ -12109,7 +12206,7 @@ public final class Nodepp {
        *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
        * </pre>
        */
-      public java.util.List<nodepp.Nodepp.Rgb> getColorsList() {
+      public java.util.List<Rgb> getColorsList() {
         if (colorsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(colors_);
         } else {
@@ -12137,7 +12234,7 @@ public final class Nodepp {
        *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
        * </pre>
        */
-      public nodepp.Nodepp.Rgb getColors(int index) {
+      public Rgb getColors(int index) {
         if (colorsBuilder_ == null) {
           return colors_.get(index);
         } else {
@@ -12152,7 +12249,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder setColors(
-              int index, nodepp.Nodepp.Rgb value) {
+          int index, Rgb value) {
         if (colorsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12173,7 +12270,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder setColors(
-              int index, nodepp.Nodepp.Rgb.Builder builderForValue) {
+          int index, Rgb.Builder builderForValue) {
         if (colorsBuilder_ == null) {
           ensureColorsIsMutable();
           colors_.set(index, builderForValue.build());
@@ -12190,7 +12287,7 @@ public final class Nodepp {
        *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
        * </pre>
        */
-      public Builder addColors(nodepp.Nodepp.Rgb value) {
+      public Builder addColors(Rgb value) {
         if (colorsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12211,7 +12308,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addColors(
-              int index, nodepp.Nodepp.Rgb value) {
+          int index, Rgb value) {
         if (colorsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12232,7 +12329,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addColors(
-              nodepp.Nodepp.Rgb.Builder builderForValue) {
+          Rgb.Builder builderForValue) {
         if (colorsBuilder_ == null) {
           ensureColorsIsMutable();
           colors_.add(builderForValue.build());
@@ -12250,7 +12347,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addColors(
-              int index, nodepp.Nodepp.Rgb.Builder builderForValue) {
+          int index, Rgb.Builder builderForValue) {
         if (colorsBuilder_ == null) {
           ensureColorsIsMutable();
           colors_.add(index, builderForValue.build());
@@ -12268,7 +12365,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addAllColors(
-              java.lang.Iterable<? extends nodepp.Nodepp.Rgb> values) {
+          Iterable<? extends Rgb> values) {
         if (colorsBuilder_ == null) {
           ensureColorsIsMutable();
           super.addAll(values, colors_);
@@ -12319,8 +12416,8 @@ public final class Nodepp {
        *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
        * </pre>
        */
-      public nodepp.Nodepp.Rgb.Builder getColorsBuilder(
-              int index) {
+      public Rgb.Builder getColorsBuilder(
+          int index) {
         return getColorsFieldBuilder().getBuilder(index);
       }
       /**
@@ -12330,8 +12427,8 @@ public final class Nodepp {
        *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
        * </pre>
        */
-      public nodepp.Nodepp.RgbOrBuilder getColorsOrBuilder(
-              int index) {
+      public RgbOrBuilder getColorsOrBuilder(
+          int index) {
         if (colorsBuilder_ == null) {
           return colors_.get(index);  } else {
           return colorsBuilder_.getMessageOrBuilder(index);
@@ -12344,8 +12441,8 @@ public final class Nodepp {
        *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
        * </pre>
        */
-      public java.util.List<? extends nodepp.Nodepp.RgbOrBuilder>
-      getColorsOrBuilderList() {
+      public java.util.List<? extends RgbOrBuilder>
+           getColorsOrBuilderList() {
         if (colorsBuilder_ != null) {
           return colorsBuilder_.getMessageOrBuilderList();
         } else {
@@ -12359,9 +12456,9 @@ public final class Nodepp {
        *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
        * </pre>
        */
-      public nodepp.Nodepp.Rgb.Builder addColorsBuilder() {
+      public Rgb.Builder addColorsBuilder() {
         return getColorsFieldBuilder().addBuilder(
-                nodepp.Nodepp.Rgb.getDefaultInstance());
+            Rgb.getDefaultInstance());
       }
       /**
        * <code>repeated .nodepp.Rgb colors = 45;</code>
@@ -12370,10 +12467,10 @@ public final class Nodepp {
        *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
        * </pre>
        */
-      public nodepp.Nodepp.Rgb.Builder addColorsBuilder(
-              int index) {
+      public Rgb.Builder addColorsBuilder(
+          int index) {
         return getColorsFieldBuilder().addBuilder(
-                index, nodepp.Nodepp.Rgb.getDefaultInstance());
+            index, Rgb.getDefaultInstance());
       }
       /**
        * <code>repeated .nodepp.Rgb colors = 45;</code>
@@ -12382,16 +12479,16 @@ public final class Nodepp {
        *w,r,g,b色值数组，用于彩灯和白灯的色彩调节
        * </pre>
        */
-      public java.util.List<nodepp.Nodepp.Rgb.Builder>
-      getColorsBuilderList() {
+      public java.util.List<Rgb.Builder>
+           getColorsBuilderList() {
         return getColorsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-              nodepp.Nodepp.Rgb, nodepp.Nodepp.Rgb.Builder, nodepp.Nodepp.RgbOrBuilder>
-      getColorsFieldBuilder() {
+          Rgb, Rgb.Builder, RgbOrBuilder>
+          getColorsFieldBuilder() {
         if (colorsBuilder_ == null) {
           colorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                  nodepp.Nodepp.Rgb, nodepp.Nodepp.Rgb.Builder, nodepp.Nodepp.RgbOrBuilder>(
+              Rgb, Rgb.Builder, RgbOrBuilder>(
                   colors_,
                   ((bitField0_ & 0x08000000) == 0x08000000),
                   getParentForChildren(),
@@ -12579,9 +12676,9 @@ public final class Nodepp {
        */
       public Builder setShareVerification(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x80000000;
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x80000000;
         shareVerification_ = value;
         onChanged();
         return this;
@@ -12601,17 +12698,17 @@ public final class Nodepp {
       }
 
       // repeated .nodepp.Device devices = 50;
-      private java.util.List<nodepp.Nodepp.Device> devices_ =
-              java.util.Collections.emptyList();
+      private java.util.List<Device> devices_ =
+        java.util.Collections.emptyList();
       private void ensureDevicesIsMutable() {
         if (!((bitField1_ & 0x00000001) == 0x00000001)) {
-          devices_ = new java.util.ArrayList<nodepp.Nodepp.Device>(devices_);
+          devices_ = new java.util.ArrayList<Device>(devices_);
           bitField1_ |= 0x00000001;
-        }
+         }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-              nodepp.Nodepp.Device, nodepp.Nodepp.Device.Builder, nodepp.Nodepp.DeviceOrBuilder> devicesBuilder_;
+          Device, Device.Builder, DeviceOrBuilder> devicesBuilder_;
 
       /**
        * <code>repeated .nodepp.Device devices = 50;</code>
@@ -12620,7 +12717,7 @@ public final class Nodepp {
        *新增，设备集合
        * </pre>
        */
-      public java.util.List<nodepp.Nodepp.Device> getDevicesList() {
+      public java.util.List<Device> getDevicesList() {
         if (devicesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(devices_);
         } else {
@@ -12648,7 +12745,7 @@ public final class Nodepp {
        *新增，设备集合
        * </pre>
        */
-      public nodepp.Nodepp.Device getDevices(int index) {
+      public Device getDevices(int index) {
         if (devicesBuilder_ == null) {
           return devices_.get(index);
         } else {
@@ -12663,7 +12760,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder setDevices(
-              int index, nodepp.Nodepp.Device value) {
+          int index, Device value) {
         if (devicesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12684,7 +12781,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder setDevices(
-              int index, nodepp.Nodepp.Device.Builder builderForValue) {
+          int index, Device.Builder builderForValue) {
         if (devicesBuilder_ == null) {
           ensureDevicesIsMutable();
           devices_.set(index, builderForValue.build());
@@ -12701,7 +12798,7 @@ public final class Nodepp {
        *新增，设备集合
        * </pre>
        */
-      public Builder addDevices(nodepp.Nodepp.Device value) {
+      public Builder addDevices(Device value) {
         if (devicesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12722,7 +12819,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addDevices(
-              int index, nodepp.Nodepp.Device value) {
+          int index, Device value) {
         if (devicesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12743,7 +12840,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addDevices(
-              nodepp.Nodepp.Device.Builder builderForValue) {
+          Device.Builder builderForValue) {
         if (devicesBuilder_ == null) {
           ensureDevicesIsMutable();
           devices_.add(builderForValue.build());
@@ -12761,7 +12858,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addDevices(
-              int index, nodepp.Nodepp.Device.Builder builderForValue) {
+          int index, Device.Builder builderForValue) {
         if (devicesBuilder_ == null) {
           ensureDevicesIsMutable();
           devices_.add(index, builderForValue.build());
@@ -12779,7 +12876,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addAllDevices(
-              java.lang.Iterable<? extends nodepp.Nodepp.Device> values) {
+          Iterable<? extends Device> values) {
         if (devicesBuilder_ == null) {
           ensureDevicesIsMutable();
           super.addAll(values, devices_);
@@ -12830,8 +12927,8 @@ public final class Nodepp {
        *新增，设备集合
        * </pre>
        */
-      public nodepp.Nodepp.Device.Builder getDevicesBuilder(
-              int index) {
+      public Device.Builder getDevicesBuilder(
+          int index) {
         return getDevicesFieldBuilder().getBuilder(index);
       }
       /**
@@ -12841,8 +12938,8 @@ public final class Nodepp {
        *新增，设备集合
        * </pre>
        */
-      public nodepp.Nodepp.DeviceOrBuilder getDevicesOrBuilder(
-              int index) {
+      public DeviceOrBuilder getDevicesOrBuilder(
+          int index) {
         if (devicesBuilder_ == null) {
           return devices_.get(index);  } else {
           return devicesBuilder_.getMessageOrBuilder(index);
@@ -12855,8 +12952,8 @@ public final class Nodepp {
        *新增，设备集合
        * </pre>
        */
-      public java.util.List<? extends nodepp.Nodepp.DeviceOrBuilder>
-      getDevicesOrBuilderList() {
+      public java.util.List<? extends DeviceOrBuilder>
+           getDevicesOrBuilderList() {
         if (devicesBuilder_ != null) {
           return devicesBuilder_.getMessageOrBuilderList();
         } else {
@@ -12870,9 +12967,9 @@ public final class Nodepp {
        *新增，设备集合
        * </pre>
        */
-      public nodepp.Nodepp.Device.Builder addDevicesBuilder() {
+      public Device.Builder addDevicesBuilder() {
         return getDevicesFieldBuilder().addBuilder(
-                nodepp.Nodepp.Device.getDefaultInstance());
+            Device.getDefaultInstance());
       }
       /**
        * <code>repeated .nodepp.Device devices = 50;</code>
@@ -12881,10 +12978,10 @@ public final class Nodepp {
        *新增，设备集合
        * </pre>
        */
-      public nodepp.Nodepp.Device.Builder addDevicesBuilder(
-              int index) {
+      public Device.Builder addDevicesBuilder(
+          int index) {
         return getDevicesFieldBuilder().addBuilder(
-                index, nodepp.Nodepp.Device.getDefaultInstance());
+            index, Device.getDefaultInstance());
       }
       /**
        * <code>repeated .nodepp.Device devices = 50;</code>
@@ -12893,16 +12990,16 @@ public final class Nodepp {
        *新增，设备集合
        * </pre>
        */
-      public java.util.List<nodepp.Nodepp.Device.Builder>
-      getDevicesBuilderList() {
+      public java.util.List<Device.Builder>
+           getDevicesBuilderList() {
         return getDevicesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-              nodepp.Nodepp.Device, nodepp.Nodepp.Device.Builder, nodepp.Nodepp.DeviceOrBuilder>
-      getDevicesFieldBuilder() {
+          Device, Device.Builder, DeviceOrBuilder>
+          getDevicesFieldBuilder() {
         if (devicesBuilder_ == null) {
           devicesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                  nodepp.Nodepp.Device, nodepp.Nodepp.Device.Builder, nodepp.Nodepp.DeviceOrBuilder>(
+              Device, Device.Builder, DeviceOrBuilder>(
                   devices_,
                   ((bitField1_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -12962,12 +13059,12 @@ public final class Nodepp {
       }
 
       // repeated uint64 dids = 52;
-      private java.util.List<java.lang.Long> dids_ = java.util.Collections.emptyList();
+      private java.util.List<Long> dids_ = java.util.Collections.emptyList();
       private void ensureDidsIsMutable() {
         if (!((bitField1_ & 0x00000004) == 0x00000004)) {
-          dids_ = new java.util.ArrayList<java.lang.Long>(dids_);
+          dids_ = new java.util.ArrayList<Long>(dids_);
           bitField1_ |= 0x00000004;
-        }
+         }
       }
       /**
        * <code>repeated uint64 dids = 52;</code>
@@ -12976,8 +13073,8 @@ public final class Nodepp {
        *当前用户的所有did
        * </pre>
        */
-      public java.util.List<java.lang.Long>
-      getDidsList() {
+      public java.util.List<Long>
+          getDidsList() {
         return java.util.Collections.unmodifiableList(dids_);
       }
       /**
@@ -13008,7 +13105,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder setDids(
-              int index, long value) {
+          int index, long value) {
         ensureDidsIsMutable();
         dids_.set(index, value);
         onChanged();
@@ -13035,7 +13132,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder addAllDids(
-              java.lang.Iterable<? extends java.lang.Long> values) {
+          Iterable<? extends Long> values) {
         ensureDidsIsMutable();
         super.addAll(values, dids_);
         onChanged();
@@ -13086,9 +13183,9 @@ public final class Nodepp {
        */
       public Builder setUserData(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField1_ |= 0x00000008;
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000008;
         userData_ = value;
         onChanged();
         return this;
@@ -13126,9 +13223,9 @@ public final class Nodepp {
        */
       public Builder setRandom(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField1_ |= 0x00000010;
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000010;
         random_ = value;
         onChanged();
         return this;
@@ -13144,9 +13241,9 @@ public final class Nodepp {
       }
 
       // optional .nodepp.Upgrade upgrade = 55;
-      private nodepp.Nodepp.Upgrade upgrade_ = nodepp.Nodepp.Upgrade.getDefaultInstance();
+      private Upgrade upgrade_ = Upgrade.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-              nodepp.Nodepp.Upgrade, nodepp.Nodepp.Upgrade.Builder, nodepp.Nodepp.UpgradeOrBuilder> upgradeBuilder_;
+          Upgrade, Upgrade.Builder, UpgradeOrBuilder> upgradeBuilder_;
       /**
        * <code>optional .nodepp.Upgrade upgrade = 55;</code>
        *
@@ -13164,7 +13261,7 @@ public final class Nodepp {
        *fw
        * </pre>
        */
-      public nodepp.Nodepp.Upgrade getUpgrade() {
+      public Upgrade getUpgrade() {
         if (upgradeBuilder_ == null) {
           return upgrade_;
         } else {
@@ -13178,7 +13275,7 @@ public final class Nodepp {
        *fw
        * </pre>
        */
-      public Builder setUpgrade(nodepp.Nodepp.Upgrade value) {
+      public Builder setUpgrade(Upgrade value) {
         if (upgradeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13199,7 +13296,7 @@ public final class Nodepp {
        * </pre>
        */
       public Builder setUpgrade(
-              nodepp.Nodepp.Upgrade.Builder builderForValue) {
+          Upgrade.Builder builderForValue) {
         if (upgradeBuilder_ == null) {
           upgrade_ = builderForValue.build();
           onChanged();
@@ -13216,12 +13313,12 @@ public final class Nodepp {
        *fw
        * </pre>
        */
-      public Builder mergeUpgrade(nodepp.Nodepp.Upgrade value) {
+      public Builder mergeUpgrade(Upgrade value) {
         if (upgradeBuilder_ == null) {
           if (((bitField1_ & 0x00000020) == 0x00000020) &&
-                  upgrade_ != nodepp.Nodepp.Upgrade.getDefaultInstance()) {
+              upgrade_ != Upgrade.getDefaultInstance()) {
             upgrade_ =
-                    nodepp.Nodepp.Upgrade.newBuilder(upgrade_).mergeFrom(value).buildPartial();
+              Upgrade.newBuilder(upgrade_).mergeFrom(value).buildPartial();
           } else {
             upgrade_ = value;
           }
@@ -13241,7 +13338,7 @@ public final class Nodepp {
        */
       public Builder clearUpgrade() {
         if (upgradeBuilder_ == null) {
-          upgrade_ = nodepp.Nodepp.Upgrade.getDefaultInstance();
+          upgrade_ = Upgrade.getDefaultInstance();
           onChanged();
         } else {
           upgradeBuilder_.clear();
@@ -13256,7 +13353,7 @@ public final class Nodepp {
        *fw
        * </pre>
        */
-      public nodepp.Nodepp.Upgrade.Builder getUpgradeBuilder() {
+      public Upgrade.Builder getUpgradeBuilder() {
         bitField1_ |= 0x00000020;
         onChanged();
         return getUpgradeFieldBuilder().getBuilder();
@@ -13268,7 +13365,7 @@ public final class Nodepp {
        *fw
        * </pre>
        */
-      public nodepp.Nodepp.UpgradeOrBuilder getUpgradeOrBuilder() {
+      public UpgradeOrBuilder getUpgradeOrBuilder() {
         if (upgradeBuilder_ != null) {
           return upgradeBuilder_.getMessageOrBuilder();
         } else {
@@ -13283,11 +13380,11 @@ public final class Nodepp {
        * </pre>
        */
       private com.google.protobuf.SingleFieldBuilder<
-              nodepp.Nodepp.Upgrade, nodepp.Nodepp.Upgrade.Builder, nodepp.Nodepp.UpgradeOrBuilder>
-      getUpgradeFieldBuilder() {
+          Upgrade, Upgrade.Builder, UpgradeOrBuilder>
+          getUpgradeFieldBuilder() {
         if (upgradeBuilder_ == null) {
           upgradeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                  nodepp.Nodepp.Upgrade, nodepp.Nodepp.Upgrade.Builder, nodepp.Nodepp.UpgradeOrBuilder>(
+              Upgrade, Upgrade.Builder, UpgradeOrBuilder>(
                   upgrade_,
                   getParentForChildren(),
                   isClean());
@@ -13315,9 +13412,9 @@ public final class Nodepp {
        */
       public Builder setKeyClient(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField1_ |= 0x00000040;
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000040;
         keyClient_ = value;
         onChanged();
         return this;
@@ -13461,9 +13558,9 @@ public final class Nodepp {
        */
       public Builder setMacId(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField1_ |= 0x00000200;
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000200;
         macId_ = value;
         onChanged();
         return this;
@@ -13537,7 +13634,7 @@ public final class Nodepp {
        * <code>optional bytes key_client_wan = 61;</code>
        *
        * <pre>
-       *client/app---server key
+       *client-server key
        * </pre>
        */
       public boolean hasKeyClientWan() {
@@ -13547,7 +13644,7 @@ public final class Nodepp {
        * <code>optional bytes key_client_wan = 61;</code>
        *
        * <pre>
-       *client/app---server key
+       *client-server key
        * </pre>
        */
       public com.google.protobuf.ByteString getKeyClientWan() {
@@ -13557,14 +13654,14 @@ public final class Nodepp {
        * <code>optional bytes key_client_wan = 61;</code>
        *
        * <pre>
-       *client/app---server key
+       *client-server key
        * </pre>
        */
       public Builder setKeyClientWan(com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField1_ |= 0x00000800;
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00000800;
         keyClientWan_ = value;
         onChanged();
         return this;
@@ -13573,7 +13670,7 @@ public final class Nodepp {
        * <code>optional bytes key_client_wan = 61;</code>
        *
        * <pre>
-       *client/app---server key
+       *client-server key
        * </pre>
        */
       public Builder clearKeyClientWan() {
@@ -13587,30 +13684,18 @@ public final class Nodepp {
       private int appProtocol_ ;
       /**
        * <code>optional uint32 app_protocol = 62;</code>
-       *
-       * <pre>
-       *1代表app新协议
-       * </pre>
        */
       public boolean hasAppProtocol() {
         return ((bitField1_ & 0x00001000) == 0x00001000);
       }
       /**
        * <code>optional uint32 app_protocol = 62;</code>
-       *
-       * <pre>
-       *1代表app新协议
-       * </pre>
        */
       public int getAppProtocol() {
         return appProtocol_;
       }
       /**
        * <code>optional uint32 app_protocol = 62;</code>
-       *
-       * <pre>
-       *1代表app新协议
-       * </pre>
        */
       public Builder setAppProtocol(int value) {
         bitField1_ |= 0x00001000;
@@ -13620,10 +13705,6 @@ public final class Nodepp {
       }
       /**
        * <code>optional uint32 app_protocol = 62;</code>
-       *
-       * <pre>
-       *1代表app新协议
-       * </pre>
        */
       public Builder clearAppProtocol() {
         bitField1_ = (bitField1_ & ~0x00001000);
@@ -13643,138 +13724,140 @@ public final class Nodepp {
     // @@protoc_insertion_point(class_scope:nodepp.Msg)
   }
 
+
+
   private static com.google.protobuf.Descriptors.Descriptor
-          internal_static_nodepp_Head_descriptor;
+    internal_static_nodepp_Head_descriptor;
   private static
-  com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internal_static_nodepp_Head_fieldAccessorTable;
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_nodepp_Head_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-          internal_static_nodepp_Timer_descriptor;
+    internal_static_nodepp_Timer_descriptor;
   private static
-  com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internal_static_nodepp_Timer_fieldAccessorTable;
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_nodepp_Timer_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-          internal_static_nodepp_Rgb_descriptor;
+    internal_static_nodepp_Rgb_descriptor;
   private static
-  com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internal_static_nodepp_Rgb_fieldAccessorTable;
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_nodepp_Rgb_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-          internal_static_nodepp_Device_descriptor;
+    internal_static_nodepp_Device_descriptor;
   private static
-  com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internal_static_nodepp_Device_fieldAccessorTable;
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_nodepp_Device_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-          internal_static_nodepp_Upgrade_descriptor;
+    internal_static_nodepp_Upgrade_descriptor;
   private static
-  com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internal_static_nodepp_Upgrade_fieldAccessorTable;
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_nodepp_Upgrade_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-          internal_static_nodepp_Msg_descriptor;
+    internal_static_nodepp_Msg_descriptor;
   private static
-  com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internal_static_nodepp_Msg_fieldAccessorTable;
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_nodepp_Msg_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
-  getDescriptor() {
+      getDescriptor() {
     return descriptor;
   }
   private static com.google.protobuf.Descriptors.FileDescriptor
-          descriptor;
+      descriptor;
   static {
-    java.lang.String[] descriptorData = {
-            "\n\014nodepp.proto\022\006nodepp\"\203\002\n\004Head\022\r\n\005magic" +
-                    "\030\001 \001(\r\022\013\n\003seq\030\002 \001(\r\022\013\n\003cmd\030\003 \001(\r\022\017\n\007sub_" +
-                    "cmd\030\004 \001(\r\022\017\n\007version\030\005 \001(\r\022\013\n\003uid\030\006 \001(\004\022" +
-                    "\013\n\003did\030\007 \001(\004\022\014\n\004time\030\010 \001(\r\022\016\n\006result\030\n \001" +
-                    "(\r\022\014\n\004usig\030\013 \001(\014\022\014\n\004dsig\030\014 \001(\014\022\013\n\003tid\030\r " +
-                    "\001(\004\022\017\n\007session\030\016 \001(\004\022\017\n\007special\030\017 \001(\r\022\035\n" +
-                    "\025device_identification\030\020 \001(\014\022\016\n\006random\030\021" +
-                    " \001(\014\"m\n\005Timer\022\020\n\010time_set\030\001 \001(\r\022\023\n\013time_" +
-                    "repeat\030\002 \001(\r\022\024\n\014time_operate\030\003 \001(\r\022\022\n\nti" +
-                    "me_stamp\030\004 \003(\r\022\023\n\013time_isopen\030\005 \001(\r\"1\n\003R",
-            "gb\022\t\n\001w\030\001 \001(\r\022\t\n\001r\030\002 \001(\r\022\t\n\001g\030\003 \001(\r\022\t\n\001b" +
-                    "\030\004 \001(\r\"\253\002\n\006Device\022\023\n\013device_name\030\001 \001(\014\022\024" +
-                    "\n\014pictureIndex\030\002 \001(\r\022\013\n\003did\030\003 \001(\004\022\013\n\003tid" +
-                    "\030\004 \001(\004\022\023\n\013device_type\030\005 \001(\r\022\025\n\rconneted_" +
-                    "mode\030\006 \001(\r\022\020\n\010is_group\030\007 \001(\r\022\031\n\021device_g" +
-                    "roup_tids\030\010 \001(\014\022\031\n\021device_group_dids\030\t \001" +
-                    "(\014\022\021\n\tdevice_ip\030\n \001(\014\022\022\n\ndevice_ips\030\013 \001(" +
-                    "\014\022\021\n\trouterMac\030\014 \001(\014\022\017\n\007special\030\r \001(\r\022\035\n" +
-                    "\006timers\030\016 \003(\0132\r.nodepp.Timer\"P\n\007Upgrade\022" +
-                    "\014\n\004name\030\001 \001(\014\022\014\n\004info\030\002 \001(\014\022\014\n\004size\030\003 \001(",
-            "\r\022\r\n\005start\030\004 \001(\r\022\014\n\004data\030\005 \001(\014\"\371\006\n\003Msg\022\032" +
-                    "\n\004head\030\001 \001(\0132\014.nodepp.Head\022\025\n\rtime_inter" +
-                    "val\030\n \001(\r\022\017\n\007operate\030\013 \001(\r\022\r\n\005state\030\014 \001(" +
-                    "\r\022\021\n\twifi_name\030\r \001(\014\022\023\n\013wifi_passwd\030\016 \001(" +
-                    "\014\022\022\n\nwifi_state\030\017 \001(\r\022\021\n\tuser_type\030\020 \001(\r" +
-                    "\022\014\n\004user\030\021 \001(\014\022\013\n\003key\030\022 \001(\014\022\017\n\007ver_cur\030\023" +
-                    " \001(\r\022\017\n\007ver_new\030\024 \001(\r\022\020\n\010ver_info\030\025 \001(\014\022" +
-                    "\017\n\007ver_url\030\026 \001(\014\022\r\n\005appid\030\030 \001(\004\022\035\n\006timer" +
-                    "s\030\035 \003(\0132\r.nodepp.Timer\022\013\n\003uid\030\036 \001(\004\022\014\n\004u" +
-                    "sig\030\037 \001(\014\022\013\n\003mid\030  \001(\004\022\017\n\007sub_mid\030! \001(\004\022",
-            "\014\n\004msig\030\" \001(\014\022\013\n\003did\030# \001(\004\022\014\n\004dsig\030$ \001(\014" +
-                    "\022\013\n\003tid\030% \001(\004\022\023\n\013device_type\030* \001(\r\022\025\n\rco" +
-                    "nneted_mode\030+ \001(\r\022\020\n\010platform\030, \001(\r\022\033\n\006c" +
-                    "olors\030- \003(\0132\013.nodepp.Rgb\022\031\n\021color_switch" +
-                    "_time\030. \001(\r\022\023\n\013devices_max\030/ \001(\r\022\023\n\013devi" +
-                    "ces_cur\0300 \001(\r\022\032\n\022share_verification\0301 \001(" +
-                    "\014\022\037\n\007devices\0302 \003(\0132\016.nodepp.Device\022\027\n\017in" +
-                    "itialize_data\0303 \001(\r\022\014\n\004dids\0304 \003(\004\022\021\n\tuse" +
-                    "r_data\0305 \001(\014\022\016\n\006random\0306 \001(\014\022 \n\007upgrade\030" +
-                    "7 \001(\0132\017.nodepp.Upgrade\022\022\n\nkey_client\0308 \001",
-            "(\014\022\023\n\013bright_dark\0309 \001(\r\022\016\n\006su_yan\030: \001(\r\022" +
-                    "\016\n\006mac_id\030; \001(\014\022\023\n\013device_mode\030< \001(\r\022\026\n\016" +
-                    "key_client_wan\030= \001(\014\022\024\n\014app_protocol\030> \001" +
-                    "(\r"
+    String[] descriptorData = {
+      "\n\014nodepp.proto\022\006nodepp\"\203\002\n\004Head\022\r\n\005magic" +
+      "\030\001 \001(\r\022\013\n\003seq\030\002 \001(\r\022\013\n\003cmd\030\003 \001(\r\022\017\n\007sub_" +
+      "cmd\030\004 \001(\r\022\017\n\007version\030\005 \001(\r\022\013\n\003uid\030\006 \001(\004\022" +
+      "\013\n\003did\030\007 \001(\004\022\014\n\004time\030\010 \001(\r\022\016\n\006result\030\n \001" +
+      "(\r\022\014\n\004usig\030\013 \001(\014\022\014\n\004dsig\030\014 \001(\014\022\013\n\003tid\030\r " +
+      "\001(\004\022\017\n\007session\030\016 \001(\004\022\017\n\007special\030\017 \001(\r\022\035\n" +
+      "\025device_identification\030\020 \001(\014\022\016\n\006random\030\021" +
+      " \001(\014\"\204\001\n\005Timer\022\020\n\010time_set\030\001 \001(\r\022\023\n\013time" +
+      "_repeat\030\002 \001(\r\022\024\n\014time_operate\030\003 \001(\r\022\022\n\nt" +
+      "ime_stamp\030\004 \003(\r\022\023\n\013time_isopen\030\005 \001(\r\022\025\n\r",
+      "operate_index\030\006 \001(\r\"1\n\003Rgb\022\t\n\001w\030\001 \001(\r\022\t\n" +
+      "\001r\030\002 \001(\r\022\t\n\001g\030\003 \001(\r\022\t\n\001b\030\004 \001(\r\"\253\002\n\006Devic" +
+      "e\022\023\n\013device_name\030\001 \001(\014\022\024\n\014pictureIndex\030\002" +
+      " \001(\r\022\013\n\003did\030\003 \001(\004\022\013\n\003tid\030\004 \001(\004\022\023\n\013device" +
+      "_type\030\005 \001(\r\022\025\n\rconneted_mode\030\006 \001(\r\022\020\n\010is" +
+      "_group\030\007 \001(\r\022\031\n\021device_group_tids\030\010 \001(\014\022" +
+      "\031\n\021device_group_dids\030\t \001(\014\022\021\n\tdevice_ip\030" +
+      "\n \001(\014\022\022\n\ndevice_ips\030\013 \001(\014\022\021\n\trouterMac\030\014" +
+      " \001(\014\022\017\n\007special\030\r \001(\r\022\035\n\006timers\030\016 \003(\0132\r." +
+      "nodepp.Timer\"P\n\007Upgrade\022\014\n\004name\030\001 \001(\014\022\014\n",
+      "\004info\030\002 \001(\014\022\014\n\004size\030\003 \001(\r\022\r\n\005start\030\004 \001(\r" +
+      "\022\014\n\004data\030\005 \001(\014\"\371\006\n\003Msg\022\032\n\004head\030\001 \001(\0132\014.n" +
+      "odepp.Head\022\025\n\rtime_interval\030\n \001(\r\022\017\n\007ope" +
+      "rate\030\013 \001(\r\022\r\n\005state\030\014 \001(\r\022\021\n\twifi_name\030\r" +
+      " \001(\014\022\023\n\013wifi_passwd\030\016 \001(\014\022\022\n\nwifi_state\030" +
+      "\017 \001(\r\022\021\n\tuser_type\030\020 \001(\r\022\014\n\004user\030\021 \001(\014\022\013" +
+      "\n\003key\030\022 \001(\014\022\017\n\007ver_cur\030\023 \001(\r\022\017\n\007ver_new\030" +
+      "\024 \001(\r\022\020\n\010ver_info\030\025 \001(\014\022\017\n\007ver_url\030\026 \001(\014" +
+      "\022\r\n\005appid\030\030 \001(\004\022\035\n\006timers\030\035 \003(\0132\r.nodepp" +
+      ".Timer\022\013\n\003uid\030\036 \001(\004\022\014\n\004usig\030\037 \001(\014\022\013\n\003mid",
+      "\030  \001(\004\022\017\n\007sub_mid\030! \001(\004\022\014\n\004msig\030\" \001(\014\022\013\n" +
+      "\003did\030# \001(\004\022\014\n\004dsig\030$ \001(\014\022\013\n\003tid\030% \001(\004\022\023\n" +
+      "\013device_type\030* \001(\r\022\025\n\rconneted_mode\030+ \001(" +
+      "\r\022\020\n\010platform\030, \001(\r\022\033\n\006colors\030- \003(\0132\013.no" +
+      "depp.Rgb\022\031\n\021color_switch_time\030. \001(\r\022\023\n\013d" +
+      "evices_max\030/ \001(\r\022\023\n\013devices_cur\0300 \001(\r\022\032\n" +
+      "\022share_verification\0301 \001(\014\022\037\n\007devices\0302 \003" +
+      "(\0132\016.nodepp.Device\022\027\n\017initialize_data\0303 " +
+      "\001(\r\022\014\n\004dids\0304 \003(\004\022\021\n\tuser_data\0305 \001(\014\022\016\n\006" +
+      "random\0306 \001(\014\022 \n\007upgrade\0307 \001(\0132\017.nodepp.U",
+      "pgrade\022\022\n\nkey_client\0308 \001(\014\022\023\n\013bright_dar" +
+      "k\0309 \001(\r\022\016\n\006su_yan\030: \001(\r\022\016\n\006mac_id\030; \001(\014\022" +
+      "\023\n\013device_mode\030< \001(\r\022\026\n\016key_client_wan\030=" +
+      " \001(\014\022\024\n\014app_protocol\030> \001(\r"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-            new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-              public com.google.protobuf.ExtensionRegistry assignDescriptors(
-                      com.google.protobuf.Descriptors.FileDescriptor root) {
-                descriptor = root;
-                internal_static_nodepp_Head_descriptor =
-                        getDescriptor().getMessageTypes().get(0);
-                internal_static_nodepp_Head_fieldAccessorTable = new
-                        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                        internal_static_nodepp_Head_descriptor,
-                        new java.lang.String[] { "Magic", "Seq", "Cmd", "SubCmd", "Version", "Uid", "Did", "Time", "Result", "Usig", "Dsig", "Tid", "Session", "Special", "DeviceIdentification", "Random", });
-                internal_static_nodepp_Timer_descriptor =
-                        getDescriptor().getMessageTypes().get(1);
-                internal_static_nodepp_Timer_fieldAccessorTable = new
-                        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                        internal_static_nodepp_Timer_descriptor,
-                        new java.lang.String[] { "TimeSet", "TimeRepeat", "TimeOperate", "TimeStamp", "TimeIsopen", });
-                internal_static_nodepp_Rgb_descriptor =
-                        getDescriptor().getMessageTypes().get(2);
-                internal_static_nodepp_Rgb_fieldAccessorTable = new
-                        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                        internal_static_nodepp_Rgb_descriptor,
-                        new java.lang.String[] { "W", "R", "G", "B", });
-                internal_static_nodepp_Device_descriptor =
-                        getDescriptor().getMessageTypes().get(3);
-                internal_static_nodepp_Device_fieldAccessorTable = new
-                        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                        internal_static_nodepp_Device_descriptor,
-                        new java.lang.String[] { "DeviceName", "PictureIndex", "Did", "Tid", "DeviceType", "ConnetedMode", "IsGroup", "DeviceGroupTids", "DeviceGroupDids", "DeviceIp", "DeviceIps", "RouterMac", "Special", "Timers", });
-                internal_static_nodepp_Upgrade_descriptor =
-                        getDescriptor().getMessageTypes().get(4);
-                internal_static_nodepp_Upgrade_fieldAccessorTable = new
-                        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                        internal_static_nodepp_Upgrade_descriptor,
-                        new java.lang.String[] { "Name", "Info", "Size", "Start", "Data", });
-                internal_static_nodepp_Msg_descriptor =
-                        getDescriptor().getMessageTypes().get(5);
-                internal_static_nodepp_Msg_fieldAccessorTable = new
-                        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                        internal_static_nodepp_Msg_descriptor,
-                        new java.lang.String[] { "Head", "TimeInterval", "Operate", "State", "WifiName", "WifiPasswd", "WifiState", "UserType", "User", "Key", "VerCur", "VerNew", "VerInfo", "VerUrl", "Appid", "Timers", "Uid", "Usig", "Mid", "SubMid", "Msig", "Did", "Dsig", "Tid", "DeviceType", "ConnetedMode", "Platform", "Colors", "ColorSwitchTime", "DevicesMax", "DevicesCur", "ShareVerification", "Devices", "InitializeData", "Dids", "UserData", "Random", "Upgrade", "KeyClient", "BrightDark", "SuYan", "MacId", "DeviceMode", "KeyClientWan", "AppProtocol", });
-                return null;
-              }
-            };
+      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
+        public com.google.protobuf.ExtensionRegistry assignDescriptors(
+            com.google.protobuf.Descriptors.FileDescriptor root) {
+          descriptor = root;
+          internal_static_nodepp_Head_descriptor =
+            getDescriptor().getMessageTypes().get(0);
+          internal_static_nodepp_Head_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_nodepp_Head_descriptor,
+              new String[] { "Magic", "Seq", "Cmd", "SubCmd", "Version", "Uid", "Did", "Time", "Result", "Usig", "Dsig", "Tid", "Session", "Special", "DeviceIdentification", "Random", });
+          internal_static_nodepp_Timer_descriptor =
+            getDescriptor().getMessageTypes().get(1);
+          internal_static_nodepp_Timer_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_nodepp_Timer_descriptor,
+              new String[] { "TimeSet", "TimeRepeat", "TimeOperate", "TimeStamp", "TimeIsopen", "OperateIndex", });
+          internal_static_nodepp_Rgb_descriptor =
+            getDescriptor().getMessageTypes().get(2);
+          internal_static_nodepp_Rgb_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_nodepp_Rgb_descriptor,
+              new String[] { "W", "R", "G", "B", });
+          internal_static_nodepp_Device_descriptor =
+            getDescriptor().getMessageTypes().get(3);
+          internal_static_nodepp_Device_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_nodepp_Device_descriptor,
+              new String[] { "DeviceName", "PictureIndex", "Did", "Tid", "DeviceType", "ConnetedMode", "IsGroup", "DeviceGroupTids", "DeviceGroupDids", "DeviceIp", "DeviceIps", "RouterMac", "Special", "Timers", });
+          internal_static_nodepp_Upgrade_descriptor =
+            getDescriptor().getMessageTypes().get(4);
+          internal_static_nodepp_Upgrade_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_nodepp_Upgrade_descriptor,
+              new String[] { "Name", "Info", "Size", "Start", "Data", });
+          internal_static_nodepp_Msg_descriptor =
+            getDescriptor().getMessageTypes().get(5);
+          internal_static_nodepp_Msg_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_nodepp_Msg_descriptor,
+              new String[] { "Head", "TimeInterval", "Operate", "State", "WifiName", "WifiPasswd", "WifiState", "UserType", "User", "Key", "VerCur", "VerNew", "VerInfo", "VerUrl", "Appid", "Timers", "Uid", "Usig", "Mid", "SubMid", "Msig", "Did", "Dsig", "Tid", "DeviceType", "ConnetedMode", "Platform", "Colors", "ColorSwitchTime", "DevicesMax", "DevicesCur", "ShareVerification", "Devices", "InitializeData", "Dids", "UserData", "Random", "Upgrade", "KeyClient", "BrightDark", "SuYan", "MacId", "DeviceMode", "KeyClientWan", "AppProtocol", });
+          return null;
+        }
+      };
     com.google.protobuf.Descriptors.FileDescriptor
-            .internalBuildGeneratedFileFrom(descriptorData,
-                    new com.google.protobuf.Descriptors.FileDescriptor[] {
-                    }, assigner);
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        }, assigner);
   }
 
   // @@protoc_insertion_point(outer_class_scope)

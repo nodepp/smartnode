@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@mipmap/bg_top2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_back" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="智慧浴霸"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/iv_voice"
+            android:layout_width="20dp"
+            android:layout_height="22dp"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/voice_white"
+            android:layout_toLeftOf="@+id/iv_more"
+            android:layout_marginTop="5dp"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_more"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/more"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+           />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+
+        >
+
+        <TextView
+            android:id="@+id/bath_rt_tp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="浴室实时温度:"
+            android:textSize="12sp"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/ht_st_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="55dp"
+            android:layout_marginStart="90dp"
+            android:layout_toEndOf="@+id/bath_rt_tp"
+            android:layout_toRightOf="@+id/bath_rt_tp"
+            android:text="取暖开始时间:"
+            android:textSize="12sp"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/bath_txt_tp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/bath_rt_tp"
+            android:layout_below="@+id/bath_rt_tp"
+            android:text="26°C"
+            android:textColor="@color/white"
+            android:textSize="36sp" />
+
+
+        <TextView
+            android:id="@+id/ht_txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/ht_st_time"
+            android:layout_alignStart="@+id/ht_st_time"
+            android:layout_below="@+id/ht_st_time"
+            android:text="50min"
+            android:textColor="@color/white"
+            android:textSize="36sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bath_bg_shape">
+
+
+        <RelativeLayout
+            android:id="@+id/asd"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/ic_clock"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="15dp"
+                android:background="@mipmap/ic_clock" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            >
+            <ImageView
+                android:id="@+id/ic_bath_ht"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/ic_bath" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="27dp"
+            android:paddingBottom="10dp">
+
+            <Button
+                android:id="@+id/ic_light_nor"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignLeft="@+id/ic_warm_nor"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/ic_warm_nor"
+                android:background="@drawable/selector_lighting" />
+
+            <TextView
+                android:id="@+id/txt_light_nor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ic_light_nor"
+                android:layout_alignStart="@+id/ic_light_nor"
+                android:layout_below="@+id/ic_light_nor"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="照明"
+                android:textColor="#BDB3D0"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/ic_wind_nor"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/selector_winding" />
+
+            <TextView
+                android:id="@+id/txt_wind_nor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ic_wind_nor"
+                android:layout_alignStart="@+id/ic_wind_nor"
+                android:layout_below="@+id/ic_wind_nor"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="新风"
+                android:textColor="#BDB3D0"
+                android:textSize="10sp" />
+
+
+            <Button
+                android:id="@+id/ic_pure_nor"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="48dp"
+                android:layout_marginStart="48dp"
+                android:layout_toEndOf="@+id/ic_wind_nor"
+                android:layout_toRightOf="@+id/ic_wind_nor"
+                android:background="@drawable/selector_pure" />
+
+            <TextView
+                android:id="@+id/txt_pure_nor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ic_pure_nor"
+                android:layout_alignStart="@+id/ic_pure_nor"
+                android:layout_below="@+id/ic_pure_nor"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="净化"
+                android:textColor="#BDB3D0"
+                android:textSize="10sp" />
+
+
+            <Button
+                android:id="@+id/ic_warm_nor"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/txt_light_nor"
+                android:layout_marginEnd="47dp"
+                android:layout_marginRight="47dp"
+                android:layout_toLeftOf="@+id/ic_fan_nor"
+                android:layout_toStartOf="@+id/ic_fan_nor"
+                android:background="@drawable/selector_warm" />
+
+
+            <TextView
+                android:id="@+id/txt_warm_nor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ic_warm_nor"
+                android:layout_alignStart="@+id/ic_warm_nor"
+                android:layout_below="@+id/ic_warm_nor"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="风暖"
+                android:textColor="#BDB3D0"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/ic_fan_nor"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignLeft="@+id/ic_wind_nor"
+                android:layout_alignStart="@+id/ic_wind_nor"
+                android:layout_alignTop="@+id/ic_warm_nor"
+                android:background="@drawable/selector_fan" />
+
+
+            <TextView
+                android:id="@+id/txt_fan_nor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ic_fan_nor"
+                android:layout_alignStart="@+id/ic_fan_nor"
+                android:layout_below="@+id/ic_fan_nor"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="灯暖"
+                android:textColor="#BDB3D0"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/ic_dry_nor"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignLeft="@+id/ic_pure_nor"
+                android:layout_alignStart="@+id/ic_pure_nor"
+                android:layout_alignTop="@+id/ic_fan_nor"
+                android:background="@drawable/selector_dry" />
+
+
+            <TextView
+                android:id="@+id/txt_dry_nor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ic_dry_nor"
+                android:layout_alignStart="@+id/ic_dry_nor"
+                android:layout_below="@+id/ic_dry_nor"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="干燥"
+                android:textColor="#BDB3D0"
+                android:textSize="10sp" />
+
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/open_bath_shower"
+            android:layout_width="180dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/relativeLayout2"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/selector_bathshower" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+

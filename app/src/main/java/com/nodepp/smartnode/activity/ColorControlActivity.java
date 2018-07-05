@@ -22,6 +22,7 @@ import com.nodepp.smartnode.fragment.TimeFragment;
 import com.nodepp.smartnode.model.Device;
 import com.nodepp.smartnode.struct.FunctionManager;
 import com.nodepp.smartnode.struct.FunctionNoParamAndResult;
+import com.nodepp.smartnode.udp.UDPClientA2S;
 import com.nodepp.smartnode.utils.Log;
 import com.nodepp.smartnode.utils.SharedPreferencesUtils;
 import com.nodepp.smartnode.view.TitleBar;
@@ -138,10 +139,6 @@ public class ColorControlActivity extends BaseVoiceActivity implements View.OnCl
             @Override
             public void onClick() {
                 Intent intent = new Intent(ColorControlActivity.this, MoreSettingActivity.class);
-//                intent.putExtra("socket_id", socketId);//socket的did
-//                intent.putExtra("socket_tid", socketTid);//socket的tid
-//                intent.putExtra("connetedMode", connetedMode);
-//                intent.putExtra("deviceType", deviceType);
                 intent.putExtra("device", deviceModel);
                 startActivityForResult(intent,1);
             }

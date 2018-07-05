@@ -440,6 +440,8 @@
     <color name="navy">#000080</color>
     <!--海军色 -->
 
+    <color name="bathNoSelected">#BDB3D0</color>
+    <color name="bathSelected">#9869FF</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
@@ -447,6 +449,8 @@
     <color name="black">#000000</color>
     <color name="grey_deep">#8a8a8a</color>
     <color name="title_bar">#46B2FF</color>
+
+    <color name="bath_heater">#6D69FF</color>
     <color name="btn_press">#278AD0</color>
     <color name="switch_on">#f4ea29</color>
     <color name="text_color">#666666</color>

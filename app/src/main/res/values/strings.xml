@@ -72,7 +72,7 @@
     <string name="add_new_socket">添加设备</string>
     <string name="no_click_quick">请不要快速点击</string>
     <string name="time_task_full">已经有10个定时任务了，无法继续添加了</string>
-    <string name="send_task_success">定时</string>
+    <string name="send_task_success">操作成功</string>
     <string name="send_task_fail">定时失败,请重试</string>
     <string name="no_time_task">请先设置定时任务</string>
     <string name="get_uid_fail">获取用户uid失败，请重新登录</string>

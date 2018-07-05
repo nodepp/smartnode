@@ -32,6 +32,7 @@ import com.nodepp.smartnode.udp.UDPClient;
 import com.nodepp.smartnode.udp.UDPClientA2S;
 import com.nodepp.smartnode.udp.UDPSocketA2S;
 import com.nodepp.smartnode.utils.DBUtil;
+import com.nodepp.smartnode.utils.DESUtils;
 import com.nodepp.smartnode.utils.JDJToast;
 import com.nodepp.smartnode.utils.Log;
 import com.nodepp.smartnode.utils.NetWorkUtils;
@@ -54,7 +55,7 @@ public class MoreSettingActivity extends BaseActivity {
     private CheckBox cbModeTwo;
     private CheckBox cbModeThree;
     private Device deviceModel;
-    private boolean isClickChange = false;
+    private boolean isClickChange = true;
     private int retryTime = 0;
     private String versionInfo = "";
     private Handler handler = new Handler() {
@@ -82,7 +83,7 @@ public class MoreSettingActivity extends BaseActivity {
         LinearLayout llDeviceMode = (LinearLayout) findViewById(R.id.ll_deice_mode);
         TextView tvChangeLebelLine = (TextView) findViewById(R.id.tv_change_lebel_line);
         TextView tvLineDeiceMode = (TextView) findViewById(R.id.tv_line_deice_mode);
-        if (deviceModel.getDeviceType() == 3 || deviceModel.getDeviceType() == 6 || deviceModel.getDeviceType() == 7 || deviceModel.getDeviceType() == 8) {//彩灯，白灯不显示电平反转功能和模式选择
+        if (deviceModel.getDeviceType() == 3 || deviceModel.getDeviceType() == 6 || deviceModel.getDeviceType() == 7 || deviceModel.getDeviceType() == 8 || deviceModel.getDeviceType() == 9) {//彩灯，白灯不显示电平反转功能和模式选择
             llChangeDeviceLebel.setVisibility(View.GONE);
             llDeviceMode.setVisibility(View.GONE);
             tvChangeLebelLine.setVisibility(View.GONE);
@@ -111,9 +112,7 @@ public class MoreSettingActivity extends BaseActivity {
         llFirmwareVer.setOnClickListener(onClickListener);
         llChangeDeviceName.setOnClickListener(onClickListener);
         tbSwitchLebel.setOnCheckedChangeListener(onCheckedChanged);
-        isClickChange = false;
         llFirmwareVer.setClickable(false);
-        isClickChange = true;
         loadingDialog = new LoadingDialog(this, "请求固件升级中...");
     }
 
@@ -129,7 +128,9 @@ public class MoreSettingActivity extends BaseActivity {
 
     private void initData() {
         if (null != deviceModel) {
+            isClickChange = false;//标志，表明不是通过点击
             tbSwitchLebel.setChecked(deviceModel.getFirmwareLevel() == 1 ? true : false);
+            isClickChange = true;
             tvFimewareVer.setText(String.valueOf(deviceModel.getFirmwareVersion()));
             UDPClientA2S.getInstance().setThrowInvalidPackage(false);
             UDPClient.getInstance(this).setThrowInvalidPackage(false);
@@ -195,11 +196,14 @@ public class MoreSettingActivity extends BaseActivity {
                         Log.i(TAG, "receive==" + msg.toString());
                         int result = msg.getHead().getResult();
                         if (result == 0) {
-                            int mode = msg.getDeviceMode();
-                            deviceModel.setDeviceMode(mode);
-                            setDeviceMode(mode);
-                            updateDeviceToDB();
-                            JDJToast.showMessage(MoreSettingActivity.this, "模式修改成功");
+                            if (msg.hasDeviceMode()){
+                                int mode = msg.getDeviceMode();
+                                deviceModel.setDeviceMode(mode);
+                                controlSocket(0);//重置设备状态成功
+                                setDeviceMode(mode);
+                                updateDeviceToDB();
+                                JDJToast.showMessage(MoreSettingActivity.this, "模式修改成功");
+                            }
                         } else {
                             JDJToast.showMessage(MoreSettingActivity.this, "模式失败");
                         }
@@ -511,10 +515,15 @@ public class MoreSettingActivity extends BaseActivity {
                         int result = msg.getHead().getResult();
                         if (result == 0) {
                             if (deviceModel != null) {
-                                int state = msg.getState();
-                                deviceModel.setFirmwareLevel(state);
-                                tbSwitchLebel.setChecked(state == 1 ? true : false);
-                                updateDeviceToDB();
+                               if (msg.hasState()){
+                                   int state = msg.getState();
+                                   deviceModel.setFirmwareLevel(state);
+                                   isClickChange = false;
+                                   tbSwitchLebel.setChecked(state == 1 ? true : false);
+                                   isClickChange = true;
+                                   updateDeviceToDB();
+                                   JDJToast.showMessage(MoreSettingActivity.this, "电平修改成功");
+                               }
                             }
                         } else if (result == 404) {
 
@@ -551,11 +560,15 @@ public class MoreSettingActivity extends BaseActivity {
                         int result = msg.getHead().getResult();
                         if (result == 0) {
                             if (deviceModel != null) {
-                                int state = msg.getState();
-                                if (deviceModel.getFirmwareLevel() != state) {
-                                    deviceModel.setFirmwareLevel(state);
-                                    tbSwitchLebel.setChecked(state == 1 ? true : false);
-                                    updateDeviceToDB();
+                                if (msg.hasState()){
+                                    int state = msg.getState();
+                                    if (deviceModel.getFirmwareLevel() != state) {
+                                        deviceModel.setFirmwareLevel(state);
+                                        isClickChange = false;
+                                        tbSwitchLebel.setChecked(state == 1 ? true : false);
+                                        isClickChange = true;
+                                        updateDeviceToDB();
+                                    }
                                 }
                             }
                         }
@@ -675,5 +688,42 @@ public class MoreSettingActivity extends BaseActivity {
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.show();
     }
+    /**
+     * 控制设备状态的方法
+     *
+     * @param operate
+     */
+    private void controlSocket(int operate) {
+        if (NetWorkUtils.isNetworkConnected(this)) {
+            Log.i(TAG, "operate===" + operate);
+            long uid = Long.parseLong(Constant.userName);
+            final Nodepp.Msg msg = PbDataUtils.setRequestParam(16, 1, uid, deviceModel.getDid(), deviceModel.getTid(), operate, Constant.usig);
+            Socket.send(MoreSettingActivity.this, deviceModel.getConnetedMode(), deviceModel.getIp(), msg, clientKeys.get(deviceModel.getTid()), new ResponseListener() {
+                @Override
+                public void onSuccess(Nodepp.Msg msg) {
+                    int result = msg.getHead().getResult();
+                    if (result == 404) {
+                        JDJToast.showMessage(MoreSettingActivity.this, getString(R.string.device_is_not_online));
+                    }else if (result == 0){
+                        JDJToast.showMessage(MoreSettingActivity.this, "重置设备状态成功");
+                    }
 
+                }
+
+                @Override
+                public void onTimeout(Nodepp.Msg msg) {
+
+                }
+
+                @Override
+                public void onFaile() {
+
+
+                }
+
+            });
+        } else {
+            JDJToast.showMessage(this, "网络没有连接，请稍后重试");
+        }
+    }
 }

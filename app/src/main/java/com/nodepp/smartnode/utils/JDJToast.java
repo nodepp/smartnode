@@ -11,7 +11,7 @@ public class JDJToast {
     public static void showMessage(Context context,String s){
         if (toast == null) {
 
-            toast = Toast.makeText(context, s, Toast.LENGTH_SHORT);
+            toast = Toast.makeText(context, s, Toast.LENGTH_LONG);
         }else {
             try {
                 toast.setText(s);//直接覆盖还在显示的toast内容，不用等待上一条显示完

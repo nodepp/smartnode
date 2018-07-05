@@ -177,26 +177,11 @@ public class TimeTaskAdapter extends BaseAdapter {
             });
             StringBuilder builder = new StringBuilder();
             boolean isOpen = timeTask.isOpen();
-            int timeOperate = timeTask.getTimeOperate();
+            int operateIndex = timeTask.getOperateIndex();
+            Log.i("operateIndex","operateIndex---"+operateIndex);
             if (nameLists != null){//多路的时候才显示
-                if (isOpen){
-                    builder.append((timeOperate & 1)!=0?nameLists.get(0)+"、":"");
-                    builder.append((timeOperate & 2)!=0?nameLists.get(1)+"、":"");
-                    builder.append((timeOperate & 4)!=0?nameLists.get(2)+"、":"");
-                    builder.append((timeOperate & 8)!=0?nameLists.get(3)+"、":"");
-                    if (nameLists.size() > 4){
-                        builder.append((timeOperate & 16)!=0?nameLists.get(4)+"、":"");
-                        builder.append((timeOperate & 32)!=0?nameLists.get(5)+"、":"");
-                    }
-                }else {
-                    builder.append((timeOperate & 1)==0?nameLists.get(0)+"、":"");
-                    builder.append((timeOperate & 2)==0?nameLists.get(1)+"、":"");
-                    builder.append((timeOperate & 4)==0?nameLists.get(2)+"、":"");
-                    builder.append((timeOperate & 8)==0?nameLists.get(3)+"、":"");
-                    if (nameLists.size() > 4){
-                        builder.append((timeOperate & 16)==0?nameLists.get(4)+"、":"");
-                        builder.append((timeOperate & 32)==0?nameLists.get(5)+"、":"");
-                    }
+                for (int i = 0;i < nameLists.size();i++){
+                    builder.append((operateIndex & 1<<i)!=0?nameLists.get(i)+"、":"");
                 }
                 if (builder.length() > 0){
                     builder.deleteCharAt(builder.length()-1);

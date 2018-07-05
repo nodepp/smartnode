@@ -35,7 +35,7 @@ public class UDPClientA2S extends DatagramSocket {
     private static DatagramPacket mReceivePacket;
     private static volatile boolean mIsLoop= false;
     private boolean isThrow = true;
-    private boolean isRetrt = true;
+    private boolean isRetry = true;
     private static Map<Integer, MessageBean> messageMap = new Hashtable<>();
 
     private Handler handler = new Handler(Looper.myLooper());
@@ -57,8 +57,8 @@ public class UDPClientA2S extends DatagramSocket {
         this.isThrow = isThrow;
     }
 
-    public void setIsRetry(boolean isRetrt){
-        this.isRetrt = isRetrt;
+    public void setIsRetry(boolean isRetry){
+        this.isRetry = isRetry;
     }
     private void addRetryCount() {
         synchronized (UDPClient.class) {
@@ -127,18 +127,20 @@ public class UDPClientA2S extends DatagramSocket {
             close();
             return;
         }
-        synchronized (UDPClientA2S.class){
+//        synchronized (UDPClientA2S.class){
             Nodepp.Msg message = null;
             try {
                 message = sendDataAndRead(msg);
             } catch (IOException e) {
                 e.printStackTrace();
                 try {//超时重试1次
-                    if (retryCount == 0) {
-                        Log.i("retry", "超时重试1次");
-                        addRetryCount();
-                        message = sendDataAndRead(msg);
-                    }
+                   if (isRetry){
+                       if (retryCount == 0) {
+                           Log.i("retry", "超时重试1次");
+                           addRetryCount();
+                           message = sendDataAndRead(msg);
+                       }
+                   }
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }finally {
@@ -153,13 +155,16 @@ public class UDPClientA2S extends DatagramSocket {
                             responseListener.onSuccess(finalMessage);
                             Log.i("sendMessageAS","receive"+ finalMessage.toString());
                         }else {
-                            responseListener.onTimeout(msg);
-                            Log.i("sendMessageAS","receive onFaile");
+                            if (isRetry){
+                                responseListener.onTimeout(msg);
+                                Log.i("sendMessageAS","receive onFaile");
+                            }
+
                         }
                     }
                 });
             }
-        }
+//        }
     }
     /**
      * 一发一收
@@ -175,7 +180,7 @@ public class UDPClientA2S extends DatagramSocket {
             message = sendDataAndRead(msg);
         } catch (IOException e) {
             e.printStackTrace();
-            if (isRetrt){
+            if (isRetry){
                 try {//超时重试1次
                     if (retryCount == 0) {
                         Log.i("retry", "超时重试1次");

@@ -141,6 +141,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     private void resetDeviceMode() {
         if (deviceModel.getDeviceMode() == 1) {//点动模式，设置onTouchListener监听
             changeState(0);
+            Log.i("hh","changeState(0)");
             tbSwitchOne.setOnTouchListener(onTouchListener);
             tbSwitchTwo.setOnTouchListener(onTouchListener);
             tbSwitchThree.setOnTouchListener(onTouchListener);
@@ -158,7 +159,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     }
 
     /**
-     * 把每一个通道的名称和对应控制的operate中的哪一位对应存起来
+     * 把每一个通道的名称和对应控制的operate中的哪一位对应存起来,然后语音通过名称就知道要操作哪一位
      */
     private void setChannelsNameToMap() {
         namesMap.clear();
@@ -175,6 +176,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     @Override
     protected void onResume() {
         super.onResume();
+        UDPClientA2S.getInstance().setIsRetry(false);
+        //如果是点动模式，默认所有的按钮都是关的
         setSocketState();
         startTimer();
         resetDeviceMode();
@@ -598,12 +601,11 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                                 int deviceMode = msg.getDeviceMode();
                                 if (deviceMode != 1){//点动模式的时候不设置state，其他模式才进行设置
                                     changeState(state);
-                                }
-                                if (deviceModel.getDeviceMode() != deviceMode){
-                                    deviceModel.setDeviceMode(deviceMode);
+                                }else {
+                                    //点动模式的时候直接重置按钮监听（可能是多人分享一个设备，一个人切换了模式，查询到模式变了立即改变）
                                     resetDeviceMode();
-                                    Log.i(TAG, "deviceMode is change");
                                 }
+                                deviceModel.setDeviceMode(deviceMode);
                                 Log.i("jjjj","query设置界面");
                             }else {
                                 Log.i("jjjj","query不设置界面");
@@ -659,6 +661,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
 
     @Override
     protected void onPause() {
+        UDPClientA2S.getInstance().setIsRetry(true);
         stopTimer();
         super.onPause();
     }
@@ -671,57 +674,49 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     private void controlSocket(int operate) {
         if (NetWorkUtils.isNetworkConnected(this)) {
             Log.i(TAG, "operate===" + operate);
-            String s = SharedPreferencesUtils.getString(this, "uid", "0");
-            String uidSig = SharedPreferencesUtils.getString(this, "uidSig", "0");
-            Log.i(TAG, "-----加密uid----" + s);
-            s = DESUtils.decodeValue(s);
-            if (s != null) {
-                long uid = Long.parseLong(s);
-                final Nodepp.Msg msg = PbDataUtils.setRequestParam(16, 1, uid, deviceModel.getDid(), deviceModel.getTid(), operate, uidSig);
-                Socket.send(MultichannelControlActivity.this, deviceModel.getConnetedMode(), deviceModel.getIp(), msg, clientKeys.get(deviceModel.getTid()), new ResponseListener() {
-                    @Override
-                    public void onSuccess(Nodepp.Msg msg) {
-                        int result = msg.getHead().getResult();
-                        if (result == 404) {
+            long uid = Long.parseLong(Constant.userName);
+            final Nodepp.Msg msg = PbDataUtils.setRequestParam(16, 1, uid, deviceModel.getDid(), deviceModel.getTid(), operate, Constant.usig);
+            Socket.send(MultichannelControlActivity.this, deviceModel.getConnetedMode(), deviceModel.getIp(), msg, clientKeys.get(deviceModel.getTid()), new ResponseListener() {
+                @Override
+                public void onSuccess(Nodepp.Msg msg) {
+                    int result = msg.getHead().getResult();
+                    if (result == 404) {
 //                            setDeviceNoOnline(deviceModel);
-                            JDJToast.showMessage(MultichannelControlActivity.this, getString(R.string.device_is_not_online));
-                        }else if (result == 0){
-                            if (isBigSeqMessage(msg)){
-                                int state = currentMsg.getState();
-                                int deviceMode = currentMsg.getDeviceMode();
-                                if (deviceMode != 1){//点动模式的时候不设置state，其他模式才进行设置
-                                    changeState(state);
-                                }
-                            }else {
-                            }
-                        }
-
-                    }
-
-                    @Override
-                    public void onTimeout(Nodepp.Msg msg) {
-                        Log.i(TAG, "controlSocket=onFaile=");
-                        if (msg.getHead().getSeq() < currentMsg.getHead().getSeq()){
-                            return;
-                        }
-                        //发送失败，设置为上一次状态
-                        if (currentMsg != null){
+                        JDJToast.showMessage(MultichannelControlActivity.this, getString(R.string.device_is_not_online));
+                    }else if (result == 0){
+                        if (isBigSeqMessage(msg)){
                             int state = currentMsg.getState();
                             int deviceMode = currentMsg.getDeviceMode();
-                            if (deviceMode != 1){//点动模式的时候不设置state，其他模式才进行设置
-                                changeState(state);
-                            }
+                        }else {
+
                         }
                     }
 
-                    @Override
-                    public void onFaile() {
+                }
 
-
+                @Override
+                public void onTimeout(Nodepp.Msg msg) {
+                    Log.i(TAG, "controlSocket=onFaile=");
+                    if (msg.getHead().getSeq() < currentMsg.getHead().getSeq()){
+                        return;
                     }
+                    //发送失败，设置为上一次状态
+                    if (currentMsg != null){
+                        int state = currentMsg.getState();
+                        int deviceMode = currentMsg.getDeviceMode();
+                        if (deviceMode != 1){//点动模式的时候不设置state，其他模式才进行设置
+                            changeState(state);
+                        }
+                    }
+                }
 
-                });
-            }
+                @Override
+                public void onFaile() {
+
+
+                }
+
+            });
         } else {
             JDJToast.showMessage(this, "网络没有连接，请稍后重试");
         }

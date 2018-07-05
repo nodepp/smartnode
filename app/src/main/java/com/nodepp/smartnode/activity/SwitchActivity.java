@@ -319,30 +319,12 @@ public class SwitchActivity extends BaseVoiceActivity implements View.OnClickLis
         if (NetWorkUtils.isNetworkConnected(this)) {
             if (lists != null) {//确认有定时任务才进行操作.lists.size() == 0说明取消所有定时任务
                 Log.i(TAG, "list===" + lists.toString());
-                List<MultipleTimeTask> multipleTimeTasks = new ArrayList<MultipleTimeTask>();
-                for (TimeTask timeTask : lists) {
-                    MultipleTimeTask task = new MultipleTimeTask();
-                    task.setTimeSet(timeTask.getTimeSet());
-                    task.setTimeRepeaat(timeTask.getTimeRepeaat());
-                    task.setTimeOperate(timeTask.getTimeOperate());
-                    task.setTimeIsOpen(timeTask.isOpen());
-                    List<Integer> timeStamp = new ArrayList<Integer>();
-                    timeStamp.add(timeTask.getTimeStamp0());
-                    timeStamp.add(timeTask.getTimeStamp1());
-                    timeStamp.add(timeTask.getTimeStamp2());
-                    timeStamp.add(timeTask.getTimeStamp3());
-                    timeStamp.add(timeTask.getTimeStamp4());
-                    timeStamp.add(timeTask.getTimeStamp5());
-                    timeStamp.add(timeTask.getTimeStamp6());
-                    task.setTimeStamps(timeStamp);
-                    multipleTimeTasks.add(task);
-                }
                 String s = SharedPreferencesUtils.getString(this, "uid", "0");
                 String uidSig = SharedPreferencesUtils.getString(this, "uidSig", "0");
                 Log.i(TAG, "-----加密uid----" + s);
                 s = DESUtils.decodeValue(s);
                 long uid = Long.parseLong(s);
-                final Nodepp.Msg msg = PbDataUtils.setTimeTaskRequestParam(uid, deviceModel.getDid(), deviceModel.getTid(), uidSig, multipleTimeTasks);
+                final Nodepp.Msg msg = PbDataUtils.setTimeTaskRequestParam(uid, deviceModel.getDid(), deviceModel.getTid(), uidSig, lists);
                 Log.i(TAG, "msg==" + msg.toString());
                 Socket.send(SwitchActivity.this, deviceModel.getConnetedMode(), deviceModel.getIp(), msg, clientKeys.get(deviceModel.getTid()), new ResponseListener() {
                     @Override

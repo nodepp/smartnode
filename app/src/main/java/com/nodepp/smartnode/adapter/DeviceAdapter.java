@@ -18,6 +18,7 @@ import com.lidroid.xutils.exception.DbException;
 import com.nodepp.smartnode.Constant;
 import com.nodepp.smartnode.R;
 import com.nodepp.smartnode.activity.AddDeviceActivity;
+import com.nodepp.smartnode.activity.BathHeaterActivity;
 import com.nodepp.smartnode.activity.ColorControlActivity;
 import com.nodepp.smartnode.activity.MultichannelControlActivity;
 import com.nodepp.smartnode.activity.SendMessageActivity;
@@ -102,33 +103,33 @@ public class DeviceAdapter extends BaseAdapter {
         holer.tvDeviceDame.setText(device.getSocketName());
         switch (device.getDeviceType()) {//1表示普通1路控制灯，2表示普通6路控制灯，3表示彩光灯,4表示4路，5表示8路,6表示白灯
             case 1:
-                holer.tvDeviceTypeDame.setText("单路控制器");
+                //holer.tvDeviceTypeDame.setText("单路控制器");
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_one_online:R.mipmap.ic_control_one_unline);
                 break;
             case 2:
-                holer.tvDeviceTypeDame.setText("六路控制器");
+                //holer.tvDeviceTypeDame.setText("六路控制器");
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_six_online:R.mipmap.ic_control_six_unline);
                 break;
             case 3:
             case 7:
-                holer.tvDeviceTypeDame.setText("彩色灯");
+                //holer.tvDeviceTypeDame.setText("彩色灯");
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_colorlight_online:R.mipmap.ic_control_colorlight_unline);
                 break;
             case 4:
-                holer.tvDeviceTypeDame.setText("四路控制器");
+                //holer.tvDeviceTypeDame.setText("四路控制器");
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_four_online:R.mipmap.ic_control_four_unline);
                 break;
             case 6:
             case 8:
-                holer.tvDeviceTypeDame.setText("白色灯");
+                //holer.tvDeviceTypeDame.setText("白色灯");
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_whitelight_online:R.mipmap.ic_control_whitelight_unline);
                 break;
             case 9:
-                holer.tvDeviceTypeDame.setText("串口通讯");
-                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_serial_online:R.mipmap.ic_control_serial_unline);
+                //holer.tvDeviceTypeDame.setText("串口通讯");
+                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.bath_nor:R.mipmap.bath_un);
                 break;
             case 10:
-                holer.tvDeviceTypeDame.setText("二路控制器");
+                //holer.tvDeviceTypeDame.setText("二路控制器");
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_two_online:R.mipmap.ic_control_two_unline);
                 break;
         }
@@ -158,7 +159,7 @@ public class DeviceAdapter extends BaseAdapter {
                     } else if (deviceType == 6 || deviceType == 8) {//白灯
                         intent = new Intent(context, WhiteLightActivity.class);
                     }else if (deviceType == 9){
-                        intent = new Intent(context, SendMessageActivity.class);
+                        intent = new Intent(context, BathHeaterActivity.class);
                     }else {
                         JDJToast.showMessage(context, context.getString(R.string.unknow_device));
                         return;

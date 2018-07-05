@@ -61,6 +61,7 @@ public class AddTimedTaskActivity extends BaseActivity {
     private boolean isTodayAndLitlle = false;
     private long tid;
     private int operate;
+    private int operateIndex;
     private boolean isOneSwitch;
     private ArrayList<String> memoNames;
 
@@ -99,6 +100,8 @@ public class AddTimedTaskActivity extends BaseActivity {
                     cbThursday.setChecked(task.isThursday());
                     cbFriday.setChecked(task.isFriday());
                     cbSaturday.setChecked(task.isSaturday());
+                    operateIndex = task.getOperateIndex();
+                    operate = task.getTimeOperate();
                 }
             } catch (DbException e) {
                 e.printStackTrace();
@@ -324,9 +327,9 @@ public class AddTimedTaskActivity extends BaseActivity {
     //将设置好的时间保存到数据库
     private void saveTimeTask() {
         timeTask.setTime(tvTime.getText().toString());
-        if (!isOneSwitch){
-            timeTask.setTimeOperate(operate);
-        }
+//        if (!isOneSwitch){
+//            timeTask.setTimeOperate(operate);
+//        }
         Log.i(TAG, "operate----" + operate);
         try {
             if (id == 0) {//新增的定时任务
@@ -380,6 +383,7 @@ public class AddTimedTaskActivity extends BaseActivity {
         int timeOperate;
         if (isOneSwitch) {
             timeOperate = timeTask.isOpen() ? 1 : 0;
+            operateIndex = 1;
         } else {
             timeOperate = timeTask.isOpen() ? operate : 0;
         }
@@ -387,6 +391,7 @@ public class AddTimedTaskActivity extends BaseActivity {
         int time = changeToTimeStamp(tvTime.getText().toString());//当前设置定时的时间戳
         LinkedList<Integer> timeStamp = getTimeStamp(time);//整个星期的时间戳
         timeTask.setTimeSet(timeSet);
+        timeTask.setOperateIndex(operateIndex);
         timeTask.setTimeRepeaat(timeRepeaat);
         timeTask.setTimeOperate(timeOperate);
         timeTask.setTimeStamp0(timeStamp.get(0));//保存timeStamp0的值
@@ -518,6 +523,8 @@ public class AddTimedTaskActivity extends BaseActivity {
         }
     }
     private void showSelectDialog(final boolean isOpen) {
+        operateIndex = 0;
+        operate = 0;
         String[] items = {"开关1", "开关2", "开关3", "开关4", "开关5", "开关6","开关7", "开关8"};
         if (memoNames != null) {
             items = memoNames.toArray(new String[memoNames.size()]);
@@ -527,68 +534,30 @@ public class AddTimedTaskActivity extends BaseActivity {
             builder.setTitle("请选择要开启的通道");
         } else {
             builder.setTitle("请选择要关闭的通道");
-//            operate = 255;
         }
-        boolean[] checkedItems = getDefaultState(operate,isOpen);
+//        boolean[] checkedItems = getDefaultState(operate,isOpen);
 //        boolean[]checkedItems = {true ,false,true,true,true ,false,true,true};
-        builder.setMultiChoiceItems(items, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+        builder.setMultiChoiceItems(items, null, new DialogInterface.OnMultiChoiceClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which, boolean isChecked) {
                 Log.i("kk", "which==" + which);
                 Log.i("kk", "isChecked==" + isChecked);
+                if (isChecked) {
+                    operateIndex |=1 << which;
+                }else{
+                    operateIndex &=~(1 << which);
+                }
                 if (isOpen){
-                    switch (which) {
-                        case 0:
-                            operate = operate+ (isChecked ? 1 : -1);
-                            break;
-                        case 1:
-                            operate = operate + (isChecked ? 2 : -2);
-                            break;
-                        case 2:
-                            operate = operate + (isChecked ? 4 : -4);
-                            break;
-                        case 3:
-                            operate = operate + (isChecked ? 8 : -8);
-                            break;
-                        case 4:
-                            operate = operate + (isChecked ? 16 : -16);
-                            break;
-                        case 5:
-                            operate = operate + (isChecked ? 32 : -32);
-                            break;
-                        case 6:
-                            operate = operate + (isChecked ? 64 : -64);
-                            break;
-                        case 7:
-                            operate = operate + (isChecked ? 128 : -128);
-                            break;
+                    if (isChecked) {
+                        operate |=1 << which;
+                    }else{
+                        operate &=~(1 << which) ;
                     }
                 }else {
-                    switch (which) {
-                        case 0:
-                            operate = operate + (isChecked ? -1 : 1);
-                            break;
-                        case 1:
-                            operate = operate + (isChecked ? -2 : 2);
-                            break;
-                        case 2:
-                            operate = operate + (isChecked ? -4 : 4);
-                            break;
-                        case 3:
-                            operate = operate + (isChecked ? -8 : 8);
-                            break;
-                        case 4:
-                            operate = operate + (isChecked ? -16 : 16);
-                            break;
-                        case 5:
-                            operate = operate + (isChecked ? -32 : 32);
-                            break;
-                        case 6:
-                            operate = operate + (isChecked ? -64 : 64);
-                            break;
-                        case 7:
-                            operate = operate + (isChecked ? -128 : 128);
-                            break;
+                    if (isChecked) {
+                        operate &=~(1 << which) ;
+                    }else{
+                        operate |=1 << which;
                     }
                 }
 
@@ -598,6 +567,7 @@ public class AddTimedTaskActivity extends BaseActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Log.i("kk", "operate------------" + operate);
+                Log.i("kk", "operateIndex------------" + operateIndex);
                 dialog.dismiss();
             }
         });

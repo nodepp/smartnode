@@ -314,6 +314,7 @@ public class MainActivity extends BaseVoiceActivity {
                         } else {
                             msg = PbDataUtils.setQueryStateRequestParam(uid, device.getDid(), device.getTid(), Constant.usig);
                         }
+
                         Log.i("server",msg.toString());
                         UDPClientScanA2S.getInstance().queryDevice(msg);
                     }
@@ -361,6 +362,7 @@ public class MainActivity extends BaseVoiceActivity {
         if (screenChangeReceiver != null) {
             unregisterReceiver(screenChangeReceiver);
         }
+        handler.removeCallbacksAndMessages(null);
         mLocationClient.stopLocation();//停止定位后，本地定位服务并不会被销毁
         mLocationClient.onDestroy();//销毁定位客户端，同时销毁本地定位服务。
         //停止推送
@@ -371,11 +373,9 @@ public class MainActivity extends BaseVoiceActivity {
                 UDPClient.getInstance(MainActivity.this).close();
                 UDPClient.getInstance(MainActivity.this).closeSocket();
                 UDPClientScanA2S.getInstance().close();
-                UDPClientA2S.getInstance().close();
             }
         }.start();
         //清除掉所有跟次handler相关的Runnable和Message，防止发生内存泄漏了
-        handler.removeCallbacksAndMessages(null);
         super.onDestroy();
     }
 
@@ -565,7 +565,7 @@ public class MainActivity extends BaseVoiceActivity {
 //        titleBar.setBackgroundColor(getResources().getColor(R.color.white));
 //        titleBar.setTitleColor(getResources().getColor(R.color.text_color1));
 //        titleBar.setRightButtonImage(R.mipmap.ic_add_device_new);
-        titleBar.setRightButtonImage(R.mipmap.add_socket);
+        titleBar.setRightButtonImage(R.mipmap.add_black);
         titleBar.setRightClickListener(new TitleBar.RightClickListener() {
             @Override
             public void onClick() {
@@ -673,6 +673,24 @@ public class MainActivity extends BaseVoiceActivity {
                     1);
         }
     }
+
+    /**
+     * 判断是否是8.0,8.0需要处理未知应用来源权限问题,否则直接安装
+     */
+    private boolean checkIsAndroidO() {
+        if (Build.VERSION.SDK_INT >= 26) {
+            boolean isCan = getPackageManager().canRequestPackageInstalls();
+            if (!isCan) {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.REQUEST_INSTALL_PACKAGES}, 10010);
+                return false;
+            } else {
+             return true;
+            }
+        } else {
+           return true;
+        }
+
+    }
     /**
      * 检查是否需要更新app
      *
@@ -688,6 +706,9 @@ public class MainActivity extends BaseVoiceActivity {
                 requestWriteSDCardPermission();
                 return;
             }
+        }
+        if (checkIsAndroidO()){
+            return;
         }
         if (NetWorkUtils.isNetworkConnected(context)) {
             Nodepp.Msg msg = PbDataUtils.setCheckUpdateRequestParam(localVersion);
@@ -800,6 +821,8 @@ public class MainActivity extends BaseVoiceActivity {
                 intent = new Intent(this, MultichannelControlActivity.class);
             } else if (deviceType == 6 || deviceType == 8) {//白灯
                 intent = new Intent(this, WhiteLightActivity.class);
+            } else if (deviceType == 9) {//白灯
+                intent = new Intent(this, BathHeaterActivity.class);
             } else {
                 JDJToast.showMessage(this, getString(R.string.unknow_device));
                 return;
@@ -946,6 +969,12 @@ public class MainActivity extends BaseVoiceActivity {
 
                 }
                 break;
+            case 10010:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                } else {
+                    JDJToast.showMessage(MainActivity.this,"未知应用来源应用安装被限制");
+                }
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }

@@ -17,7 +17,6 @@ import com.nodepp.smartnode.task.CheckConnectTask;
 import com.nodepp.smartnode.task.NetWorkListener;
 import com.nodepp.smartnode.udp.ResponseListener;
 import com.nodepp.smartnode.utils.DBUtil;
-import com.nodepp.smartnode.utils.DESUtils;
 import com.nodepp.smartnode.utils.JDJToast;
 import com.nodepp.smartnode.utils.Log;
 import com.nodepp.smartnode.utils.PbDataUtils;
@@ -37,6 +36,7 @@ public class SplashActivity extends BaseActivity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
+
         }
     };
     @Override
@@ -101,21 +101,19 @@ public class SplashActivity extends BaseActivity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
     protected void onDestroy() {
 //        Utils.removeBackground(llAll);
-        handler.removeCallbacksAndMessages(null);
         super.onDestroy();
     }
     /**
      * 检测udi和usig
      */
     private void checkUserId() {
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-            }
-        },5000);//5s还没进去就跳到
         //判断wifi连接情况，没有连接时提示用户先连接
         String username = SharedPreferencesUtils.getString(this, "username", "0");
         String uidSig = SharedPreferencesUtils.getString(this, "uidSig", "");

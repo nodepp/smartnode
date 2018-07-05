@@ -25,26 +25,18 @@
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="JDK" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/classes" />
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
   </component>
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
-        <entry key="$PROJECT_DIR$">
+        <entry key="$PROJECT_DIR$/app">
           <value>
             <SvnBranchConfiguration>
-              <option name="branchUrls">
-                <list>
-                  <option value="svn://192.168.0.106:19000/com/nodepp/src/app/android/%E4%B9%90%E5%9B%BA%E7%AD%BE%E5%90%8D%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7V.1.1.5" />
-                  <option value="svn://192.168.0.106:19000/com/nodepp/src/app/android/TestUDP" />
-                  <option value="svn://192.168.0.106:19000/com/nodepp/src/app/android/admin" />
-                  <option value="svn://192.168.0.106:19000/com/nodepp/src/app/android/branches" />
-                  <option value="svn://192.168.0.106:19000/com/nodepp/src/app/android/nodeppSDK" />
-                  <option value="svn://192.168.0.106:19000/com/nodepp/src/app/android/smartplug" />
-                  <option value="svn://192.168.0.106:19000/com/nodepp/src/app/android/xxtealib" />
-                </list>
-              </option>
-              <option name="trunkUrl" value="svn://192.168.0.106:19000/com/nodepp/src/app/android/branches/smartplug" />
+              <option name="trunkUrl" value="" />
             </SvnBranchConfiguration>
           </value>
         </entry>

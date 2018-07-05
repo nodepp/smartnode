@@ -4,7 +4,7 @@
     android:id="@+id/ll_all"
     android:layout_width="match_parent"
     android:layout_height="40dp"
-    android:background="@color/title_bar"
+    android:background="@color/white"
     android:gravity="center_vertical"
     skin:enable="true"
     android:orientation="horizontal">
@@ -15,11 +15,11 @@
         <ImageView
             android:id="@+id/iv_back"
             android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_height="25dp"
             android:paddingLeft="10dp"
             android:layout_centerVertical="true"
             android:paddingRight="20dp"
-            android:src="@mipmap/ic_back" />
+            android:src="@mipmap/icon_back_black" />
         <ImageView
             android:id="@+id/iv_person"
             android:layout_width="56dp"
@@ -28,7 +28,7 @@
             android:visibility="gone"
             android:layout_centerVertical="true"
             android:paddingRight="20dp"
-            android:src="@mipmap/ic_head" />
+            android:src="@mipmap/person_black" />
     </RelativeLayout>
     <TextView
         android:id="@+id/tv_title"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18sp" />
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -46,10 +46,10 @@
             android:id="@+id/btn_right"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:background="@mipmap/more"
+            android:background="@mipmap/more_black"
             android:gravity="center"
             android:layout_marginLeft="15dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:visibility="gone" />
         <TextView
             android:id="@+id/tv_right"
@@ -61,7 +61,7 @@
             android:focusable="true"
             android:textSize="16sp"
             android:layout_centerInParent="true"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:visibility="invisible" />
     </RelativeLayout>
 </LinearLayout>

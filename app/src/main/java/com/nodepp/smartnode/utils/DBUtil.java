@@ -41,6 +41,9 @@ public class DBUtil {
                                     if (oldVersion <19){
                                         addFieldToTable(dbUtils, "tb_device", "int", "deviceMode");//deviceMode int类型
                                     }
+                                    if (oldVersion <20){
+                                        addFieldToTable(dbUtils, "tb_time_task", "int", "operateIndex");//operateIndex int类型
+                                    }
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }

@@ -396,29 +396,11 @@ public class TimeFragment extends BaseFragment implements View.OnClickListener {
             if (NetWorkUtils.isNetworkConnected(mActivity)) {
                 if (lists != null) {//确认有定时任务才进行操作
                     Log.i(TAG, "list===" + lists.toString());
-                    List<MultipleTimeTask> multipleTimeTasks = new ArrayList<MultipleTimeTask>();
-                    for (TimeTask timeTask : lists) {
-                        MultipleTimeTask task = new MultipleTimeTask();
-                        task.setTimeSet(timeTask.getTimeSet());
-                        task.setTimeRepeaat(timeTask.getTimeRepeaat());
-                        task.setTimeIsOpen(timeTask.isOpen());
-                        task.setTimeOperate(timeTask.isOpen() ? timeTask.getTimeOperate() : 0);
-                        List<Integer> timeStamp = new ArrayList<Integer>();
-                        timeStamp.add(timeTask.getTimeStamp0());
-                        timeStamp.add(timeTask.getTimeStamp1());
-                        timeStamp.add(timeTask.getTimeStamp2());
-                        timeStamp.add(timeTask.getTimeStamp3());
-                        timeStamp.add(timeTask.getTimeStamp4());
-                        timeStamp.add(timeTask.getTimeStamp5());
-                        timeStamp.add(timeTask.getTimeStamp6());
-                        task.setTimeStamps(timeStamp);
-                        multipleTimeTasks.add(task);
-                    }
                     if (mActivity != null) {
                         String username = SharedPreferencesUtils.getString(mActivity, "username", "0");
                         String uidSig = SharedPreferencesUtils.getString(mActivity, "uidSig", "0");
                         long uid = Long.parseLong(username);
-                        Nodepp.Msg msg = PbDataUtils.setTimeTaskRequestParam(uid, did, tid, uidSig, multipleTimeTasks);
+                        Nodepp.Msg msg = PbDataUtils.setTimeTaskRequestParam(uid, did, tid, uidSig, lists);
                         Log.i(TAG, "msg==" + msg.toString());
                         Socket.send(mActivity, deviceModel.getConnetedMode(), ip, msg, random, new ResponseListener() {
                             @Override
