@@ -704,13 +704,12 @@ public class PbDataUtils {
     }
 
     //查询浴霸数据参数
-    public static Nodepp.Msg querybathdatas(long uid, long did,long tid, String uidSig) {
+    public static Nodepp.Msg querybathdatas(long uid, long did,long tid, String uidSig,Byte []querydatas) {
         nodepp.Nodepp.Msg.Builder msgBuilder = nodepp.Nodepp.Msg.newBuilder();
         nodepp.Nodepp.Head.Builder headBuilder = nodepp.Nodepp.Head.newBuilder();
         headBuilder.setSeq(getCurrentSeq());
         headBuilder.setCmd(0x1f);
-        headBuilder.setSubCmd(0);
-        headBuilder.setMagic(0xdd);
+        headBuilder.setSubCmd(1);
         headBuilder.setUid(uid);
         headBuilder.setDid(did);
         headBuilder.setTid(tid);
@@ -720,22 +719,19 @@ public class PbDataUtils {
         return msgBuilder.build();
     }
 
-    //控制浴霸
-    public static Nodepp.Msg controlbathdatas(long uid, long did,long tid, String uidSig,int oprete1
-            ,int oprete2) {
+    //查询浴霸数据参数
+    public static Nodepp.Msg controlbathdatas(long uid, long did,long tid, String uidSig,Byte []controldatas) {
         nodepp.Nodepp.Msg.Builder msgBuilder = nodepp.Nodepp.Msg.newBuilder();
         nodepp.Nodepp.Head.Builder headBuilder = nodepp.Nodepp.Head.newBuilder();
         headBuilder.setSeq(getCurrentSeq());
-        headBuilder.setCmd(0xcc);
+        headBuilder.setCmd(0x1f);
+        headBuilder.setSubCmd(0);
         headBuilder.setUid(uid);
-        headBuilder.setSubCmd(1);
         headBuilder.setDid(did);
         headBuilder.setTid(tid);
         headBuilder.setUsig(PbDataUtils.string2ByteString(uidSig));
         msgBuilder.setHead(headBuilder);
         msgBuilder.setAppProtocol(1);
-        msgBuilder.setOperate(oprete1);
-        msgBuilder.setOperate(oprete2);
         return msgBuilder.build();
     }
 
