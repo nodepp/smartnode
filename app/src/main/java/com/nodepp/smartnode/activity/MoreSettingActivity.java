@@ -83,7 +83,7 @@ public class MoreSettingActivity extends BaseActivity {
         LinearLayout llDeviceMode = (LinearLayout) findViewById(R.id.ll_deice_mode);
         TextView tvChangeLebelLine = (TextView) findViewById(R.id.tv_change_lebel_line);
         TextView tvLineDeiceMode = (TextView) findViewById(R.id.tv_line_deice_mode);
-        if (deviceModel.getDeviceType() == 3 || deviceModel.getDeviceType() == 6 || deviceModel.getDeviceType() == 7 || deviceModel.getDeviceType() == 8 || deviceModel.getDeviceType() == 9) {//彩灯，白灯不显示电平反转功能和模式选择
+        if (deviceModel.getDeviceType() == 3 || deviceModel.getDeviceType() == 6 || deviceModel.getDeviceType() == 7 || deviceModel.getDeviceType() == 8 || deviceModel.getDeviceType() == 12) {//彩灯，白灯不显示电平反转功能和模式选择
             llChangeDeviceLebel.setVisibility(View.GONE);
             llDeviceMode.setVisibility(View.GONE);
             tvChangeLebelLine.setVisibility(View.GONE);

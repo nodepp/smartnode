@@ -10,8 +10,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.protobuf.ByteString;
+import com.google.zxing.common.StringUtils;
 import com.nodepp.smartnode.Constant;
 import com.nodepp.smartnode.R;
+import com.nodepp.smartnode.helper.Util;
 import com.nodepp.smartnode.model.Device;
 import com.nodepp.smartnode.udp.ResponseListener;
 import com.nodepp.smartnode.udp.Socket;
@@ -20,11 +23,19 @@ import com.nodepp.smartnode.utils.Log;
 import com.nodepp.smartnode.utils.PbDataUtils;
 import com.nodepp.smartnode.utils.Utils;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Observable;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import nodepp.Nodepp;
+
+import static com.nodepp.smartnode.utils.PbDataUtils.parserPB;
 
 /**
  * Created by yuyue on 2018/6/9.
@@ -49,6 +60,9 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
     private String tempreature_str,warmtime_str;
     private int key1,key2,key3,key4,key5,key6,key7,key8;
     private byte one_keybyte,two_keybyte;
+    private byte [] receiveData;
+    private int receiveDatalen;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -188,9 +202,9 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
             initclick(6, 1, 0);
         }
         if(result.contains("打开浴霸")){
-            initclick(7,1,1);
+            initclick(7,1,0);
         }else if(result.contains("关闭浴霸")) {
-            initclick(7, 1, 0);
+            initclick(7, 1, 1);
         }
     }
 
@@ -198,103 +212,103 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
     private void initclick(int flagss, int sever,int lstate) {
         if (flagss == 1 && sever == 1) {
             if (lstate== 0 && ic_light.isSelected()) {
-                send_data1 = 0x08;
-                sendData(send_data1,send_data2);
-                ic_light.setSelected(false);
-                ic_light.setBackgroundResource(R.mipmap.ic_lighting_pre);
-                txt_light.setTextColor(getResources().getColor(R.color.bathSelected));
-            } else {
                 send_data1 = 0x04;
                 sendData(send_data1,send_data2);
-                ic_light.setSelected(true);
                 ic_light.setBackgroundResource(R.mipmap.ic_lighting_nor);
                 txt_light.setTextColor(getResources().getColor(R.color.bathNoSelected));
-
+                ic_light.setSelected(false);
+            } else {
+                send_data1 = 0x08;
+                sendData(send_data1,send_data2);
+                ic_light.setBackgroundResource(R.mipmap.ic_lighting_pre);
+                txt_light.setTextColor(getResources().getColor(R.color.bathSelected));
+                ic_light.setSelected(true);
             }
         } else if(sever== 0){
             JDJToast.showMessage(BathHeaterActivity.this,"控制失败");
         }
         if (flagss == 2 && sever == 1) {
             if (lstate== 0 && ic_wind.isSelected()) {
-                send_data1 = 0x02;
-                sendData(send_data1,send_data2);
-                ic_wind.setSelected(false);
-                ic_wind.setBackgroundResource(R.mipmap.ic_wind_pre);
-                txt_wind.setTextColor(getResources().getColor(R.color.bathSelected));
-            } else {
                 send_data1 = 0x01;
                 sendData(send_data1,send_data2);
-                ic_wind.setSelected(true);
                 ic_wind.setBackgroundResource(R.mipmap.ic_wind_nor);
                 txt_wind.setTextColor(getResources().getColor(R.color.bathNoSelected));
+                ic_wind.setSelected(false);
+            } else {
+                send_data1 = 0x02;
+                sendData(send_data1,send_data2);
+                ic_wind.setBackgroundResource(R.mipmap.ic_wind_pre);
+                txt_wind.setTextColor(getResources().getColor(R.color.bathSelected));
+                ic_wind.setSelected(true);
             }
         } else if(sever==0){
             JDJToast.showMessage(BathHeaterActivity.this,"控制失败");
         }
         if (flagss == 3 && sever == 1) {
             if (lstate==0 && ic_pure.isSelected()) {
-                send_data1 = (byte) 0x80;
-                sendData(send_data1,send_data2);
-                ic_pure.setSelected(false);
-                ic_pure.setBackgroundResource(R.mipmap.ic_pure_pre);
-                txt_pure.setTextColor(getResources().getColor(R.color.bathSelected));
-            } else {
                 send_data1 = 0x40;
                 sendData(send_data1,send_data2);
-                ic_pure.setSelected(true);
                 ic_pure.setBackgroundResource(R.mipmap.ic_pure_nor);
                 txt_pure.setTextColor(getResources().getColor(R.color.bathNoSelected));
+                ic_pure.setSelected(false);
+            } else {
+                send_data1 = (byte) 0x80;
+                sendData(send_data1,send_data2);
+                ic_pure.setBackgroundResource(R.mipmap.ic_pure_pre);
+                txt_pure.setTextColor(getResources().getColor(R.color.bathSelected));
+                ic_pure.setSelected(true);
             }
         } else if(sever==0){
             JDJToast.showMessage(BathHeaterActivity.this,"控制失败");
         }
         if (flagss == 4 && sever == 1) {
             if (lstate==0 && ic_warm.isSelected()) {
-                send_data2 = 0x20;
-                sendData(send_data1,send_data2);
-                ic_warm.setSelected(false);
-                ic_warm.setBackgroundResource(R.mipmap.ic_warm_pre);
-                txt_warm.setTextColor(getResources().getColor(R.color.bathSelected));
-            } else {
                 send_data2 = 0x10;
                 sendData(send_data1,send_data2);
-                ic_warm.setSelected(true);
                 ic_warm.setBackgroundResource(R.mipmap.ic_warm_nor);
                 txt_warm.setTextColor(getResources().getColor(R.color.bathNoSelected));
+                ic_warm.setSelected(false);
+            } else {
+                send_data2 = 0x20;
+                sendData(send_data1,send_data2);
+                ic_warm.setBackgroundResource(R.mipmap.ic_warm_pre);
+                txt_warm.setTextColor(getResources().getColor(R.color.bathSelected));
+                ic_warm.setSelected(true);
             }
         } else if(sever==0){
             JDJToast.showMessage(BathHeaterActivity.this,"控制失败");
         }
         if (flagss == 5 && sever == 1) {
             if (lstate==0 && ic_fan.isSelected()) {
-                send_data2 = 0x08;
-                sendData(send_data1,send_data2);
-                ic_fan.setSelected(false);
-                ic_fan.setBackgroundResource(R.mipmap.ic_fan_pre);
-                txt_fan.setTextColor(getResources().getColor(R.color.bathSelected));
-            } else {
                 send_data2 = 0x04;
                 sendData(send_data1,send_data2);
-                ic_fan.setSelected(true);
                 ic_fan.setBackgroundResource(R.mipmap.ic_fan_nor);
                 txt_fan.setTextColor(getResources().getColor(R.color.bathNoSelected));
+                ic_fan.setSelected(false);
+            } else {
+                send_data2 = 0x08;
+                sendData(send_data1,send_data2);
+                ic_fan.setBackgroundResource(R.mipmap.ic_fan_pre);
+                txt_fan.setTextColor(getResources().getColor(R.color.bathSelected));
+                ic_fan.setSelected(true);
             }
         } else if(sever==0){
             JDJToast.showMessage(BathHeaterActivity.this,"控制失败");
         }
         if (flagss == 6 && sever == 1) {
             if (lstate==0 && ic_dry.isSelected()) {
+                send_data2 = 0x01;
+                sendData(send_data1,send_data2);
+                ic_dry.setBackgroundResource(R.mipmap.ic_dry_nor);
+                txt_dry.setTextColor(getResources().getColor(R.color.bathNoSelected));
+                ic_dry.setSelected(false);
+            } else {
                 send_data2 = 0x02;
                 sendData(send_data1,send_data2);
                 ic_dry.setSelected(false);
                 ic_dry.setBackgroundResource(R.mipmap.ic_dry_pre);
                 txt_dry.setTextColor(getResources().getColor(R.color.bathSelected));
-            } else {
-                send_data2 = 0x01;
-                sendData(send_data1,send_data2);
                 ic_dry.setSelected(true);
-                ic_dry.setBackgroundResource(R.mipmap.ic_dry_nor);
-                txt_dry.setTextColor(getResources().getColor(R.color.bathNoSelected));
             }
         } else if(sever==0){
             JDJToast.showMessage(BathHeaterActivity.this,"控制失败");
@@ -303,13 +317,13 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
             if (lstate==0 && bath_shower.isSelected()) {
                 send_data1 = 0x40;
                 sendData(send_data1,send_data2);
-                bath_shower.setSelected(false);
                 bath_shower.setBackgroundResource(R.mipmap.close_bath);
+
             } else {
                 send_data1 = (byte) 0x80;
                 sendData(send_data1,send_data2);
-                bath_shower.setSelected(true);
                 bath_shower.setBackgroundResource(R.mipmap.open_bath_shower);
+
             }
         } else if(sever==0){
             JDJToast.showMessage(BathHeaterActivity.this,"控制失败");
@@ -326,7 +340,7 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         if (myTask == null) {
             myTask = new MyTasks();
         }
-        timer.schedule(myTask, 15000, 20000);  //定时器开始，每隔20s执行一次
+        timer.schedule(myTask, 20000, 20000);  //定时器开始，每隔20s执行一次
     }
 
     private void stopTimer() {
@@ -348,19 +362,37 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
      */
     private void queryBathHeatherState() {
         long uid = Long.parseLong(Constant.userName);
-        Byte []querydatas = new Byte[3];
-        querydatas[0] = (byte) 0xcc;
-        querydatas[1] = 0;
-        querydatas[2] = (byte) 0xdd;
-        Nodepp.Msg msg = PbDataUtils.querybathdatas(uid, deviceModel.getDid(), deviceModel.getTid(), Constant.usig,querydatas);
+        byte[] data = null;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        DataOutputStream dos = new DataOutputStream(bos);
+        try {
+            dos.writeByte(0xcc);
+            dos.writeByte(0x00);
+            dos.writeByte(0xdd);
+            data = bos.toByteArray();
+            bos.close();
+            dos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e(TAG, "Exception==" + e.toString());
+            data = null;
+        }
+        Nodepp.Msg msg = PbDataUtils.querybathroom(uid, deviceModel.getDid(), deviceModel.getTid(),Constant.usig,data);
+        Log.i(TAG,"发送的数据长度"+data.length);
+
         Socket.send(this, deviceModel.getConnetedMode(), deviceModel.getIp(), msg, clientKeys.get(deviceModel.getTid()), new ResponseListener() {
             @Override
             public void onSuccess(Nodepp.Msg msg) {
                 int result = msg.getHead().getResult();
+
                 if (result == 0){
-                    //把bytestring转化为字节数组
-                    byte[] receiveByte =msg.getUserData().toByteArray();
+                    byte receiveByte [] = msg.getUserData().toByteArray();
+                    Utils.bytesToHexString(receiveByte);
+                    String receive_data = Utils.bytesToHexString(receiveByte);
+                    Log.i(TAG,"接收的转化值"+receive_data);
+                    //循环字符串数组
                     for(int i = 0;i<receiveByte.length;i++) {
+                        Log.i(TAG,"看看值多少"+receiveByte[i]);
                         if (receiveByte.length == 7) {
 //                            if (receiveByte[0]==(0xcc) && receiveByte[6] == 0xdd) {
                                 one_keybyte = receiveByte[2];
@@ -369,8 +401,10 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
                                 warmtime_str = new String(String.valueOf(receiveByte[5]));
                                 String onebits = Utils.byteToBitString(one_keybyte);
                                 String twobits = Utils.byteToBitString(two_keybyte);
-//                            String onebits = "10101010";
-//                            String twobits = "10101010";
+                            Log.i(TAG,"接收的1"+one_keybyte);
+                            Log.i(TAG,"接收的2"+two_keybyte);
+                            Log.i(TAG,"接收的1dsada"+onebits);
+                            Log.i(TAG,"接收的2dsada"+twobits);
                                 //预留1100 0000
                                 if (onebits.substring(0, 2).equals("10")) {
                                     key1 = 1;
@@ -529,13 +563,25 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
      */
     private void sendData(byte send_data1,byte send_data2){
         long uid = Long.parseLong(Constant.userName);
-        Byte []controldatas = new Byte[5];
-        controldatas[0] = (byte) 0xcc;
-        controldatas[1] = 0x01;
-        controldatas[2] = send_data1;
-        controldatas[3] = send_data2;
-        controldatas[4] = (byte) 0xdd;
-        Nodepp.Msg msg = PbDataUtils.controlbathdatas(uid, deviceModel.getDid(), deviceModel.getTid(), Constant.usig,controldatas);
+        byte[] data = null;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        DataOutputStream dos = new DataOutputStream(bos);
+        try {
+            dos.writeByte(0xcc);
+            dos.writeByte(0x01);
+            dos.writeByte(send_data1);
+            dos.writeByte(send_data2);
+            dos.writeByte(0xdd);
+            data = bos.toByteArray();
+            bos.close();
+            dos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e(TAG, "Exception==" + e.toString());
+            data = null;
+        }
+//        byte[] asa = Utils.HexString2Bytes(send_control);
+        Nodepp.Msg msg = PbDataUtils.querybathroom(uid, deviceModel.getDid(), deviceModel.getTid(), Constant.usig, data);
         Socket.send(this, deviceModel.getConnetedMode(), deviceModel.getIp(), msg, clientKeys.get(deviceModel.getTid()), new ResponseListener() {
             @Override
             public void onSuccess(Nodepp.Msg msg) {
@@ -543,8 +589,11 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
                 int result = msg.getHead().getResult();
                 Log.i(TAG,"返回的head头包"+result);
                 if (result == 0){
+                    byte receiveByte [] = msg.getUserData().toByteArray();
+                    Utils.bytesToHexString(receiveByte);
+                    String receive_data = Utils.bytesToHexString(receiveByte);
                     //服务器返回
-
+                    Log.i(TAG,"接收的控制返回结果"+receive_data);
                 }else if(result == 404){
 
                 }

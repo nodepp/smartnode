@@ -132,6 +132,10 @@ public class DeviceAdapter extends BaseAdapter {
                 //holer.tvDeviceTypeDame.setText("二路控制器");
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_two_online:R.mipmap.ic_control_two_unline);
                 break;
+            case 12:
+                //holer.tvDeviceTypeDame.setText("浴霸通讯");
+                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.bath_nor:R.mipmap.bath_un);
+                break;
         }
         if (device.isOnline()){
             holer.tvDeviceTypeDame.setTextColor(context.getResources().getColor(R.color.text_color2));
@@ -158,7 +162,7 @@ public class DeviceAdapter extends BaseAdapter {
                         intent = new Intent(context, MultichannelControlActivity.class);
                     } else if (deviceType == 6 || deviceType == 8) {//白灯
                         intent = new Intent(context, WhiteLightActivity.class);
-                    }else if (deviceType == 9){
+                    }else if (deviceType == 12){
                         intent = new Intent(context, BathHeaterActivity.class);
                     }else {
                         JDJToast.showMessage(context, context.getString(R.string.unknow_device));
