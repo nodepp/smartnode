@@ -341,7 +341,7 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         if (myTask == null) {
             myTask = new MyTasks();
         }
-        timer.schedule(myTask, 5000, 5000);  //定时器开始，每隔20s执行一次
+        timer.schedule(myTask, 1000, 15000);  //定时器开始，每隔20s执行一次
     }
 
     private void stopTimer() {
@@ -381,7 +381,7 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
             data = null;
         }
         Nodepp.Msg msg = PbDataUtils.querybathroom(uid, deviceModel.getDid(), deviceModel.getTid(),Constant.usig,data);
-        Log.i(TAG,"发送的数据长度"+data.length);
+//        Log.i(TAG,"发送的数据长度"+data.length);
 
         Socket.send(this, deviceModel.getConnetedMode(), deviceModel.getIp(), msg, clientKeys.get(deviceModel.getTid()), new ResponseListener() {
             @Override
@@ -616,7 +616,7 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
 
             @Override
             public void onTimeout(Nodepp.Msg msg) {
-
+                Log.i(TAG,"接收的控制返回结果"+111);
 
             }
 
@@ -663,11 +663,11 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         super.onPause();
         stopTimer();
     }
-
-    //网络变化时，数据更新
+    //数据更新
     @Override
     protected void netChange(Observable observable, Object data) {
-        deviceModel.setConnetedMode(0);//网络变化先切换到互联网模式
+        super.netChange(observable, data);
+        deviceModel.setConnetedMode(0);
     }
 
 

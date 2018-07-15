@@ -711,7 +711,7 @@ public class PbDataUtils {
         headBuilder.setSeq(getCurrentSeq());
         headBuilder.setCmd(0x1f);
         headBuilder.setUid(uid);
-        headBuilder.setSubCmd(1);
+        headBuilder.setSubCmd(0);
         headBuilder.setDid(did);
         headBuilder.setTid(tid);
         headBuilder.setUsig(PbDataUtils.string2ByteString(uidSig));
