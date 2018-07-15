@@ -148,6 +148,7 @@ public class Utils {
         return l;
     }
 
+
     public static long byteToLong(byte[] bssidBytes, int offset, int count) {
         byte[] bytes = new byte[count];
         for (int i = 0; i < count; i++) {
@@ -833,6 +834,10 @@ public class Utils {
                 .append((by>>0)&0x1);
         return sb.toString();
     }
+
+
+
+
 
 
 }

@@ -126,7 +126,7 @@ public class DeviceAdapter extends BaseAdapter {
                 break;
             case 9:
                 //holer.tvDeviceTypeDame.setText("串口通讯");
-                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.bath_nor:R.mipmap.bath_un);
+                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_serial_online:R.mipmap.ic_control_serial_unline);
                 break;
             case 10:
                 //holer.tvDeviceTypeDame.setText("二路控制器");
@@ -164,6 +164,8 @@ public class DeviceAdapter extends BaseAdapter {
                         intent = new Intent(context, WhiteLightActivity.class);
                     }else if (deviceType == 12){
                         intent = new Intent(context, BathHeaterActivity.class);
+                    }else if (deviceType == 9){
+                        intent = new Intent(context, SendMessageActivity.class);
                     }else {
                         JDJToast.showMessage(context, context.getString(R.string.unknow_device));
                         return;
