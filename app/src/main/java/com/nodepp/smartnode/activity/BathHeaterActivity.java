@@ -246,13 +246,13 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         }
         if (flagss == 3 && sever == 1) {
             if (lstate==0 && ic_pure.isSelected()) {
-                send_data1 = 0x40;
+                send_data2 = 0x40;
                 sendData(send_data1,send_data2);
                 ic_pure.setBackgroundResource(R.mipmap.ic_pure_nor);
                 txt_pure.setTextColor(getResources().getColor(R.color.bathNoSelected));
                 ic_pure.setSelected(false);
             } else {
-                send_data1 = (byte) 0x80;
+                send_data2 = (byte) 0x80;
                 sendData(send_data1,send_data2);
                 ic_pure.setBackgroundResource(R.mipmap.ic_pure_pre);
                 txt_pure.setTextColor(getResources().getColor(R.color.bathSelected));
@@ -315,12 +315,12 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         }
         if (flagss == 7 && sever == 1) {
             if (lstate==0 && bath_shower.isSelected()) {
-                send_data1 = 0x40;
+                send_data1 = 0x10;
                 sendData(send_data1,send_data2);
                 bath_shower.setBackgroundResource(R.mipmap.close_bath);
                 bath_shower.setSelected(false);
             } else {
-                send_data1 = (byte) 0x80;
+                send_data1 = (byte) 0x20;
                 sendData(send_data1,send_data2);
                 bath_shower.setBackgroundResource(R.mipmap.open_bath_shower);
                 bath_shower.setSelected(true);
