@@ -213,12 +213,14 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         if (flagss == 1 && sever == 1) {
             if (lstate== 0 && ic_light.isSelected()) {
                 send_data1 = 0x04;
+                send_data2 = 0x00;
                 sendData(send_data1,send_data2);
                 ic_light.setBackgroundResource(R.mipmap.ic_lighting_nor);
                 txt_light.setTextColor(getResources().getColor(R.color.bathNoSelected));
                 ic_light.setSelected(false);
             } else {
                 send_data1 = 0x08;
+                send_data2 = 0x00;
                 sendData(send_data1,send_data2);
                 ic_light.setBackgroundResource(R.mipmap.ic_lighting_pre);
                 txt_light.setTextColor(getResources().getColor(R.color.bathSelected));
@@ -230,12 +232,14 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         if (flagss == 2 && sever == 1) {
             if (lstate== 0 && ic_wind.isSelected()) {
                 send_data1 = 0x01;
+                send_data2 = 0x00;
                 sendData(send_data1,send_data2);
                 ic_wind.setBackgroundResource(R.mipmap.ic_wind_nor);
                 txt_wind.setTextColor(getResources().getColor(R.color.bathNoSelected));
                 ic_wind.setSelected(false);
             } else {
                 send_data1 = 0x02;
+                send_data2 = 0x00;
                 sendData(send_data1,send_data2);
                 ic_wind.setBackgroundResource(R.mipmap.ic_wind_pre);
                 txt_wind.setTextColor(getResources().getColor(R.color.bathSelected));
@@ -246,12 +250,14 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         }
         if (flagss == 3 && sever == 1) {
             if (lstate==0 && ic_pure.isSelected()) {
+                send_data1 = 0x00;
                 send_data2 = 0x40;
                 sendData(send_data1,send_data2);
                 ic_pure.setBackgroundResource(R.mipmap.ic_pure_nor);
                 txt_pure.setTextColor(getResources().getColor(R.color.bathNoSelected));
                 ic_pure.setSelected(false);
             } else {
+                send_data1 = 0x00;
                 send_data2 = (byte) 0x80;
                 sendData(send_data1,send_data2);
                 ic_pure.setBackgroundResource(R.mipmap.ic_pure_pre);
@@ -263,12 +269,14 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         }
         if (flagss == 4 && sever == 1) {
             if (lstate==0 && ic_warm.isSelected()) {
+                send_data1 = 0x00;
                 send_data2 = 0x10;
                 sendData(send_data1,send_data2);
                 ic_warm.setBackgroundResource(R.mipmap.ic_warm_nor);
                 txt_warm.setTextColor(getResources().getColor(R.color.bathNoSelected));
                 ic_warm.setSelected(false);
             } else {
+                send_data1 = 0x00;
                 send_data2 = 0x20;
                 sendData(send_data1,send_data2);
                 ic_warm.setBackgroundResource(R.mipmap.ic_warm_pre);
@@ -280,12 +288,14 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         }
         if (flagss == 5 && sever == 1) {
             if (lstate==0 && ic_fan.isSelected()) {
+                send_data1 = 0x00;
                 send_data2 = 0x04;
                 sendData(send_data1,send_data2);
                 ic_fan.setBackgroundResource(R.mipmap.ic_fan_nor);
                 txt_fan.setTextColor(getResources().getColor(R.color.bathNoSelected));
                 ic_fan.setSelected(false);
             } else {
+                send_data1 = 0x00;
                 send_data2 = 0x08;
                 sendData(send_data1,send_data2);
                 ic_fan.setBackgroundResource(R.mipmap.ic_fan_pre);
@@ -297,12 +307,14 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         }
         if (flagss == 6 && sever == 1) {
             if (lstate==0 && ic_dry.isSelected()) {
+                send_data1 = 0x00;
                 send_data2 = 0x01;
                 sendData(send_data1,send_data2);
                 ic_dry.setBackgroundResource(R.mipmap.ic_dry_nor);
                 txt_dry.setTextColor(getResources().getColor(R.color.bathNoSelected));
                 ic_dry.setSelected(false);
             } else {
+                send_data1 = 0x00;
                 send_data2 = 0x02;
                 sendData(send_data1,send_data2);
                 ic_dry.setSelected(false);
@@ -316,11 +328,13 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         if (flagss == 7 && sever == 1) {
             if (lstate==0 && bath_shower.isSelected()) {
                 send_data1 = 0x10;
+                send_data2 = 0x00;
                 sendData(send_data1,send_data2);
                 bath_shower.setBackgroundResource(R.mipmap.close_bath);
                 bath_shower.setSelected(false);
             } else {
                 send_data1 = (byte) 0x20;
+                send_data2 = 0x00;
                 sendData(send_data1,send_data2);
                 bath_shower.setBackgroundResource(R.mipmap.open_bath_shower);
                 bath_shower.setSelected(true);
@@ -341,7 +355,7 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         if (myTask == null) {
             myTask = new MyTasks();
         }
-        timer.schedule(myTask, 1000, 15000);  //定时器开始，每隔20s执行一次
+        timer.schedule(myTask, 1000, 100000);  //定时器开始，每隔20s执行一次
     }
 
     private void stopTimer() {
@@ -398,8 +412,13 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
 //                            if (receiveByte[0]==(0xcc) && receiveByte[6] == 0xdd) {
                                 one_keybyte = receiveByte[2];
                                 two_keybyte = receiveByte[3];
-                                tempreature_str = new String(String.valueOf(receiveByte[4]));
-                                warmtime_str = new String(String.valueOf(receiveByte[5]));
+                                String dd = new String(String.valueOf(receiveByte[4]));
+                                byte rec1byte [] = {receiveByte[4]};
+                                Integer rec1int = Integer.parseInt(Utils.bytesToHexString(rec1byte),16);
+                                tempreature_str = rec1int+"";
+                                byte rec2byte [] = {receiveByte[5]};
+                                Integer rec2int = Integer.parseInt(Utils.bytesToHexString(rec2byte),16);
+                                warmtime_str = rec2int+"";
                                 String onebits = Utils.byteToBitString(one_keybyte);
                                 String twobits = Utils.byteToBitString(two_keybyte);
                                 //预留1100 0000
@@ -479,14 +498,6 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
     private void ChangeBathState(String tempreature_str, String warmtime_str,int key1,int key2,
                                  int key3,
                                  int key4,int key5,int key6,int key7,int key8) {
-        Log.e(TAG,"key1值"+key1);
-        Log.e(TAG,"key2值"+key2);
-        Log.e(TAG,"key3值"+key3);
-        Log.e(TAG,"key4值"+key4);
-        Log.e(TAG,"key5值"+key5);
-        Log.e(TAG,"key6值"+key6);
-        Log.e(TAG,"key7值"+key7);
-        Log.e(TAG,"key8值"+key8);
 
         time_bath.setText(warmtime_str+"min");
         if(tempreature_str ==null){
@@ -599,6 +610,7 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
                 int result = msg.getHead().getResult();
                 Log.i(TAG,"返回的head头包"+result);
                 if (result == 0){
+                    queryBathHeatherState();
                     byte receiveByte [] = msg.getUserData().toByteArray();
                     Utils.bytesToHexString(receiveByte);
                     String receive_data = Utils.bytesToHexString(receiveByte);
