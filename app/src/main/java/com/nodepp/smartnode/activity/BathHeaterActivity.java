@@ -327,13 +327,13 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         }
         if (flagss == 7 && sever == 1) {
             if (lstate==0 && bath_shower.isSelected()) {
-                send_data1 = 0x10;
+                send_data1 = 0x20;
                 send_data2 = 0x00;
                 sendData(send_data1,send_data2);
                 bath_shower.setBackgroundResource(R.mipmap.close_bath);
                 bath_shower.setSelected(false);
             } else {
-                send_data1 = (byte) 0x20;
+                send_data1 = (byte) 0x10;
                 send_data2 = 0x00;
                 sendData(send_data1,send_data2);
                 bath_shower.setBackgroundResource(R.mipmap.open_bath_shower);
@@ -355,7 +355,7 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         if (myTask == null) {
             myTask = new MyTasks();
         }
-        timer.schedule(myTask, 1000, 100000);  //定时器开始，每隔20s执行一次
+        timer.schedule(myTask, 1000, 10000);  //定时器开始，每隔20s执行一次
     }
 
     private void stopTimer() {
@@ -412,13 +412,12 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
 //                            if (receiveByte[0]==(0xcc) && receiveByte[6] == 0xdd) {
                                 one_keybyte = receiveByte[2];
                                 two_keybyte = receiveByte[3];
-                                String dd = new String(String.valueOf(receiveByte[4]));
                                 byte rec1byte [] = {receiveByte[4]};
                                 Integer rec1int = Integer.parseInt(Utils.bytesToHexString(rec1byte),16);
-                                tempreature_str = rec1int+"";
+                                 warmtime_str = rec1int+"";
                                 byte rec2byte [] = {receiveByte[5]};
                                 Integer rec2int = Integer.parseInt(Utils.bytesToHexString(rec2byte),16);
-                                warmtime_str = rec2int+"";
+                                tempreature_str = rec2int+"";
                                 String onebits = Utils.byteToBitString(one_keybyte);
                                 String twobits = Utils.byteToBitString(two_keybyte);
                                 //预留1100 0000
@@ -583,6 +582,7 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
      *
      */
     private void sendData(byte send_data1,byte send_data2){
+
         long uid = Long.parseLong(Constant.userName);
         byte[] data = null;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -648,7 +648,7 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
                 @Override
                 public void run() {
                     long currentTimeMillis = System.currentTimeMillis();
-                    if (currentTimeMillis - lastControlTimeStamp > 3000){//距离最后一次控制的时间大于3s才进行状态查询
+                    if (currentTimeMillis - lastControlTimeStamp > 1000){//距离最后一次控制的时间大于3s才进行状态查询
                         queryBathHeatherState();
                     }else {
                         Log.i(TAG,"---------控制不执行-------------");
