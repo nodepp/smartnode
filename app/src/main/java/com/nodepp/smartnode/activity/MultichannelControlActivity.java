@@ -105,6 +105,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         } else if (deviceModel.getDeviceType() == 2) {
             setContentView(R.layout.activity_six_switch);
         }else if (deviceModel.getDeviceType() == 10){
+            setContentView(R.layout.activity_new_tworoad);
+        }else if (deviceModel.getDeviceType() == 13) {
             setContentView(R.layout.activity_two_switch);
         }
         initView();
@@ -135,6 +137,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         tvFour.setText(multipleRemarkName.getChannelFourName());
         tvFive.setText(multipleRemarkName.getChannelFiveName());
         tvSix.setText(multipleRemarkName.getChannelSixName());
+        tvTitle.setText(multipleRemarkName.getChannelTitleName());
         setChannelsNameToMap();
     }
 
@@ -214,6 +217,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         tvFour.setOnClickListener(onClickListener);
         tvFive.setOnClickListener(onClickListener);
         tvSix.setOnClickListener(onClickListener);
+        tvTitle.setOnClickListener(onClickListener);
         tbSwitchOne.setOnCheckedChangeListener(checkListener);
         tbSwitchTwo.setOnCheckedChangeListener(checkListener);
         tbSwitchThree.setOnCheckedChangeListener(checkListener);
@@ -223,7 +227,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         ivBacke.setOnClickListener(this);
         ivMore.setOnClickListener(this);
         btnVoice.setOnClickListener(this);
-        tvTitle.setText(deviceModel.getSocketName());
+//        tvTitle.setText(deviceModel.getSocketName());
     }
 
     View.OnTouchListener onTouchListener = new View.OnTouchListener() {
@@ -284,6 +288,9 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
+                case R.id.tv_title:
+                    showChangeNameDialog(7);
+                    break;
                 case R.id.tv_one:
                     showChangeNameDialog(1);
                     break;
@@ -341,7 +348,12 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("请输入要修改的名字");
         final EditText editText = new EditText(this);
-        editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(5)});
+
+        if(index==7){
+            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(30)});
+        }else{
+            editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(5)});
+        }
         builder.setView(editText);
         builder.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
             @Override
@@ -376,6 +388,9 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                             multipleRemarkName.setChannelSixName(name);
                             tvSix.setText(name);
                             break;
+                        case 7:
+                            multipleRemarkName.setChannelTitleName(name);
+                            tvTitle.setText(name);
                     }
                     try {
                         DBUtil.getInstance(MultichannelControlActivity.this).update(multipleRemarkName, WhereBuilder.b("tid", "=", deviceModel.getTid()).and("userName", "=", Constant.userName));

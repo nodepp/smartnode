@@ -46,7 +46,6 @@
         android:layout_below="@+id/btn_voice"
         android:layout_centerHorizontal="true"
         >
-
         <ToggleButton
             android:id="@+id/tb_switch_one"
             style="@style/multiple_switch2"

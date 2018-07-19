@@ -355,7 +355,7 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         if (myTask == null) {
             myTask = new MyTasks();
         }
-        timer.schedule(myTask, 1000, 10000);  //定时器开始，每隔20s执行一次
+        timer.schedule(myTask, 1000, 5000);  //定时器开始，每隔20s执行一次
     }
 
     private void stopTimer() {
@@ -421,7 +421,7 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
                                 String onebits = Utils.byteToBitString(one_keybyte);
                                 String twobits = Utils.byteToBitString(two_keybyte);
                                 //预留1100 0000
-                                if (onebits.substring(0, 2).equals("10")) {
+                                if (onebits.substring(0,2).equals("10")) {
                                     key1 = 1;
                                 } else if (onebits.substring(0,2).equals("01")) {
                                     key1 = 2;
