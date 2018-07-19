@@ -23,7 +23,6 @@ import com.nodepp.smartnode.activity.ColorControlActivity;
 import com.nodepp.smartnode.activity.MultichannelControlActivity;
 import com.nodepp.smartnode.activity.SendMessageActivity;
 import com.nodepp.smartnode.activity.SwitchActivity;
-import com.nodepp.smartnode.activity.TwochannelControlActivity;
 import com.nodepp.smartnode.activity.WhiteLightActivity;
 import com.nodepp.smartnode.model.ColorsSelect;
 import com.nodepp.smartnode.model.Device;
@@ -168,8 +167,6 @@ public class DeviceAdapter extends BaseAdapter {
                     }else if (deviceType == 9){
                         intent = new Intent(context, SendMessageActivity.class);
                         //新增定制两路类型
-                    }else if (deviceType == 13) {
-                        intent = new Intent(context, TwochannelControlActivity.class);
                     }else {
                         JDJToast.showMessage(context, context.getString(R.string.unknow_device));
                         return;
