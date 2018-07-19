@@ -105,9 +105,9 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         } else if (deviceModel.getDeviceType() == 2) {
             setContentView(R.layout.activity_six_switch);
         }else if (deviceModel.getDeviceType() == 10){
-            setContentView(R.layout.activity_new_tworoad);
-        }else if (deviceModel.getDeviceType() == 13) {
             setContentView(R.layout.activity_two_switch);
+        }else if (deviceModel.getDeviceType() == 13) {
+            setContentView(R.layout.activity_new_tworoad);
         }
         initView();
 

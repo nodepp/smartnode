@@ -158,7 +158,7 @@ public class DeviceAdapter extends BaseAdapter {
                     } else if (deviceType == 3 || deviceType == 7) {//彩灯
                         SharedPreferencesUtils.saveBoolean(context, device.getTid() + "isClickWhite", false);
                         intent = new Intent(context, ColorControlActivity.class);
-                    } else if (deviceType == 2 || deviceType == 4 || deviceType == 10 ) {//6,4,2路控制器
+                    } else if (deviceType == 2 || deviceType == 4 || deviceType == 10 || deviceType ==13) {//6,4,2路控制器
                         intent = new Intent(context, MultichannelControlActivity.class);
                     } else if (deviceType == 6 || deviceType == 8) {//白灯
                         intent = new Intent(context, WhiteLightActivity.class);

@@ -48,6 +48,8 @@ public class MoreSettingActivity extends BaseActivity {
     private TextView tvNewVer;
     private ImageView ivNewVer;
     private TextView tvFimewareVer;
+    private LinearLayout ll_info;
+    private TextView ll_line;
     private LinearLayout llFirmwareVer;
     private LoadingDialog loadingDialog;
     private ToggleButton tbSwitchLebel;
@@ -83,11 +85,17 @@ public class MoreSettingActivity extends BaseActivity {
         LinearLayout llDeviceMode = (LinearLayout) findViewById(R.id.ll_deice_mode);
         TextView tvChangeLebelLine = (TextView) findViewById(R.id.tv_change_lebel_line);
         TextView tvLineDeiceMode = (TextView) findViewById(R.id.tv_line_deice_mode);
+        ll_info = findViewById(R.id.ll_device_infor);
+        ll_line = findViewById(R.id.ll_device_line);
         if (deviceModel.getDeviceType() == 3 || deviceModel.getDeviceType() == 6 || deviceModel.getDeviceType() == 7 || deviceModel.getDeviceType() == 8 || deviceModel.getDeviceType() == 12) {//彩灯，白灯不显示电平反转功能和模式选择
             llChangeDeviceLebel.setVisibility(View.GONE);
             llDeviceMode.setVisibility(View.GONE);
             tvChangeLebelLine.setVisibility(View.GONE);
             tvLineDeiceMode.setVisibility(View.GONE);
+        }
+        if(deviceModel.getDeviceType() ==13){
+          ll_line.setVisibility(View.VISIBLE);
+          ll_info.setVisibility(View.VISIBLE);
         }
         LinearLayout llChangeDeviceName = (LinearLayout) findViewById(R.id.ll_change_device_name);
         LinearLayout llShareDevice = (LinearLayout) findViewById(R.id.ll_share_device);
