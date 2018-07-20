@@ -77,7 +77,7 @@
         <item name="android:focusable">false</item>
         <item name="android:button">@null</item>
         <item name="android:checked">false</item>
-        <item name="android:background">@drawable/selector_tworoad</item>
+        <item name="android:background">@drawable/selector_newchanne</item>
     </style>
     <style name="multiple_switch_text">
         <item name="android:layout_width">70dp</item>

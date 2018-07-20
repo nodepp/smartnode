@@ -245,7 +245,7 @@
             android:textSize="16sp"
             android:textColor="@color/text_color"
             android:layout_marginLeft="15dp"
-            android:text="版本号: v1.0                   技术支持:400-863-2656"/>
+            android:text="版本号: v1.0  技术支持:400-863-2656"/>
 
 
     </LinearLayout>
