@@ -137,7 +137,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         tvFour.setText(multipleRemarkName.getChannelFourName());
         tvFive.setText(multipleRemarkName.getChannelFiveName());
         tvSix.setText(multipleRemarkName.getChannelSixName());
-        tvTitle.setText(multipleRemarkName.getChannelTitleName());
+
+        tvTitle.setText(deviceModel.getSocketName());
         setChannelsNameToMap();
     }
 
@@ -227,7 +228,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         ivBacke.setOnClickListener(this);
         ivMore.setOnClickListener(this);
         btnVoice.setOnClickListener(this);
-//        tvTitle.setText(deviceModel.getSocketName());
+//
     }
 
     View.OnTouchListener onTouchListener = new View.OnTouchListener() {
@@ -391,6 +392,11 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                         case 7:
                             multipleRemarkName.setChannelTitleName(name);
                             tvTitle.setText(name);
+                            deviceModel.setSocketName(name);
+                            Constant.isDeviceRename = true;
+                            SharedPreferencesUtils.saveBoolean(MultichannelControlActivity.this, deviceModel.getUserName() + "isUpdateUserWord", true);
+                            updateDeviceToDB();
+
                     }
                     try {
                         DBUtil.getInstance(MultichannelControlActivity.this).update(multipleRemarkName, WhereBuilder.b("tid", "=", deviceModel.getTid()).and("userName", "=", Constant.userName));
@@ -491,6 +497,17 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
             }
         }
     };
+
+
+    private void updateDeviceToDB() {
+        if (deviceModel != null) {
+            try {
+                DBUtil.getInstance(MultichannelControlActivity.this).update(deviceModel, WhereBuilder.b("tid", "=", deviceModel.getTid()).and("userName", "=", Constant.userName));
+            } catch (DbException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     /**
      * 把设备设置为不在线

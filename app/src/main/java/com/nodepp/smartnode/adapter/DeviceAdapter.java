@@ -136,6 +136,9 @@ public class DeviceAdapter extends BaseAdapter {
                 //holer.tvDeviceTypeDame.setText("浴霸通讯");
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.bath_nor:R.mipmap.bath_un);
                 break;
+            case 13:
+                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_two_online:R.mipmap.ic_control_two_unline);
+                break;
         }
         if (device.isOnline()){
             holer.tvDeviceTypeDame.setTextColor(context.getResources().getColor(R.color.text_color2));
