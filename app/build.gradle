@@ -4,9 +4,9 @@ android {
     signingConfigs {
         config {
             keyAlias 'nodepp'
-            keyPassword 'uewqneo.190'
             storeFile file('/Users/nodepp/Documents/workspace/android/nodepp.jks')
             storePassword 'uewqneo.190'
+            keyPassword 'uewqneo.190'
         }
     }
     compileSdkVersion 26

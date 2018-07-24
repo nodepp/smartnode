@@ -176,6 +176,7 @@ public class AddDeviceActivity extends BaseActivity implements View.OnClickListe
                 loadingDialog.show();
             }
             long uid = Long.parseLong(Constant.userName);
+            //对uid，usig进行pb打包
             Nodepp.Msg msg = PbDataUtils.getDidFromServer(uid, Constant.usig);
             Log.i(TAG, "msg=1=" + msg.toString());
             UDPSocketA2S.send(AddDeviceActivity.this, msg, new ResponseListener() {
@@ -186,7 +187,9 @@ public class AddDeviceActivity extends BaseActivity implements View.OnClickListe
                     int seq = msg.getHead().getSeq();
                     if (result == 0) {
                         Log.i(TAG, "msg=2=" + msg.toString());
+                        //获取到did
                         UserInfo.did = msg.getDid();
+                        //临时保存该用户名下到did
                         SharedPreferencesUtils.saveLong(AddDeviceActivity.this, Constant.userName + "did", msg.getDid());
                         Log.i(TAG, "did==" + UserInfo.did);
                         UserInfo.dsig = msg.getDsig();

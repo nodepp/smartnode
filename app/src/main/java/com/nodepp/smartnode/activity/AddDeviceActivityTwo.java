@@ -25,10 +25,15 @@ import com.nodepp.smartnode.utils.ClickUtils;
 import com.nodepp.smartnode.utils.JDJToast;
 import com.nodepp.smartnode.utils.Log;
 import com.nodepp.smartnode.utils.NetWorkUtils;
+import com.nodepp.smartnode.utils.PbDataUtils;
 import com.nodepp.smartnode.utils.SharedPreferencesUtils;
 import com.nodepp.smartnode.view.CircleLoadingDialog;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
 import java.util.List;
+
+import nodepp.Nodepp;
 
 /**
  * 添加插座第二个界面
@@ -152,6 +157,7 @@ public class AddDeviceActivityTwo extends BaseActivity implements View.OnClickLi
                   } else {
                       circleLoadingDialog.dismiss();
                   }
+
                   JDJToast.showMessage(AddDeviceActivityTwo.this, "配置成功");
                   startActivity(new Intent(AddDeviceActivityTwo.this, AddDeviceActivityThree.class));//连上wifi跳到下一个界面
                   finish();

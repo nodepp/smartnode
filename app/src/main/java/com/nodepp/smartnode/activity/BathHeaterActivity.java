@@ -372,7 +372,6 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
 
 
 
-
     /**
      * 通过串口查询浴霸并获得返回数据
      *

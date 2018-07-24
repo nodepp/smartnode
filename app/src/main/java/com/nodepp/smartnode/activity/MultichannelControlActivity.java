@@ -393,13 +393,12 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                             multipleRemarkName.setChannelTitleName(name);
                             tvTitle.setText(name);
                             deviceModel.setSocketName(name);
-                            Constant.isDeviceRename = true;
-                            SharedPreferencesUtils.saveBoolean(MultichannelControlActivity.this, deviceModel.getUserName() + "isUpdateUserWord", true);
-                            updateDeviceToDB();
-
                     }
                     try {
                         DBUtil.getInstance(MultichannelControlActivity.this).update(multipleRemarkName, WhereBuilder.b("tid", "=", deviceModel.getTid()).and("userName", "=", Constant.userName));
+                        Constant.isDeviceRename = true;
+                        SharedPreferencesUtils.saveBoolean(MultichannelControlActivity.this, deviceModel.getUserName() + "isUpdateUserWord", true);
+                        updateDeviceToDB();
                     } catch (DbException e) {
                         e.printStackTrace();
                     }
