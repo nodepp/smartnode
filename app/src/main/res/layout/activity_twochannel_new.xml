@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@mipmap/tworoad_bg2"
+        android:id="@+id/imageView2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@+id/relativeLayout4">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@mipmap/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_voice"
+            android:layout_toEndOf="@+id/iv_back"
+            android:layout_toRightOf="@+id/iv_back"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="GLMINCO WO2智能开关"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_voice"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@mipmap/voice_white"
+            android:layout_toLeftOf="@+id/iv_more"
+            android:layout_marginTop="1dp"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_more"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/more"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+           />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_two"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:visibility="gone"
+        android:layout_marginBottom="51dp"
+        android:layout_alignLeft="@+id/rl_one"
+        android:layout_alignStart="@+id/rl_one">
+
+        <ToggleButton
+            android:id="@+id/tb_switch_three"
+            style="@style/multiple_switch"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="135dp" />
+
+        <TextView
+            android:id="@+id/tv_three"
+            style="@style/multiple_switch_text"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="205dp"
+            android:text="通道三"
+            android:textAlignment="center" />
+
+        <ToggleButton
+            android:id="@+id/tb_switch_four"
+            style="@style/multiple_switch"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="135dp" />
+
+        <TextView
+            android:id="@+id/tv_four"
+            style="@style/multiple_switch_text"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="205dp"
+            android:text="通道四"
+            android:textAlignment="center" />
+        <ToggleButton
+            android:id="@+id/tb_switch_five"
+            style="@style/multiple_switch"
+            android:layout_marginTop="26dp"
+            android:layout_marginLeft="34dp" />
+        <TextView
+            android:id="@+id/tv_five"
+            style="@style/multiple_switch_text"
+            android:text="通道五"
+            android:layout_marginTop="95dp"
+            android:layout_marginLeft="30dp"
+            />
+        <ToggleButton
+            android:id="@+id/tb_switch_six"
+            style="@style/multiple_switch"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="28dp"
+            android:layout_marginRight="36dp"
+            android:background="@drawable/selector_multiple_switch_four" />
+        <TextView
+            android:id="@+id/tv_six"
+            style="@style/multiple_switch_text"
+            android:text="通道六"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="95dp"
+            android:layout_marginRight="10dp"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/relativeLayout4"
+        android:layout_marginEnd="41dp"
+        android:layout_marginRight="41dp"
+        android:layout_marginTop="44dp"
+        android:text="50min"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="200dp">
+
+        <ToggleButton
+            style="@style/multiple_switch3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="56dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="90dp"
+            android:id="@+id/tb_switch_one" />
+
+        <TextView
+            android:id="@+id/tv_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_two"
+            android:layout_alignBottom="@+id/tv_two"
+            android:layout_alignEnd="@+id/tb_switch_one"
+            android:layout_alignRight="@+id/tb_switch_one"
+            android:text="通道一" />
+
+        <ToggleButton
+            style="@style/multiple_switch3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="56dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginTop="90dp"
+            android:id="@+id/tb_switch_two" />
+
+        <TextView
+            android:id="@+id/tv_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/tb_switch_two"
+            android:layout_alignRight="@+id/tb_switch_two"
+            android:layout_below="@+id/tb_switch_two"
+            android:layout_marginTop="15dp"
+            android:text="通道二" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_timing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@mipmap/ic_clock2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="20sp"
+                android:text="新增定时"
+                android:layout_marginTop="10dp"
+                android:textColor="#666666"/>
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+
