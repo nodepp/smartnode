@@ -74,6 +74,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     private ToggleButton tbSwitchSix;
     private int switchValue = 0;
     private int currentCheck = 0;
+    private int deviceValue = 0;
     private DbUtils dbUtils;
     // 引擎类型
     private String mEngineType = SpeechConstant.TYPE_CLOUD;
@@ -108,10 +109,15 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
             setContentView(R.layout.activity_two_switch);
         }else if (deviceModel.getDeviceType() == 13) {
             setContentView(R.layout.activity_twochannel_new);
+        }else  if(deviceModel.getDeviceType() == 14){
+            setContentView(R.layout.activity_newfour_switch);
+            deviceValue  = 14;
+
         }
         initView();
 
     }
+
     private void initData() {
         try {
             nameList = DBUtil.getInstance(MultichannelControlActivity.this).findAll(Selector.from(MultipleRemarkName.class).where("userName", "=", Constant.userName).and((WhereBuilder.b("tid", "=", deviceModel.getTid()))));
@@ -211,6 +217,9 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         tvFour = (TextView) findViewById(R.id.tv_four);
         tvFive = (TextView) findViewById(R.id.tv_five);
         tvSix = (TextView) findViewById(R.id.tv_six);
+        if(deviceValue == 14){
+            llTiming.setVisibility(View.INVISIBLE);
+        }
         llTiming.setOnClickListener(onClickListener);
         tvOne.setOnClickListener(onClickListener);
         tvTwo.setOnClickListener(onClickListener);
@@ -681,12 +690,29 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         Log.i("state", "state==" + state);
         switchValue = state;
         isSetStates = true;
-        tbSwitchOne.setChecked((state & 1) == 0 ? false : true);
-        tbSwitchTwo.setChecked((state & 2) == 0 ? false : true);
-        tbSwitchThree.setChecked((state & 4) == 0 ? false : true);
-        tbSwitchFour.setChecked((state & 8) == 0 ? false : true);
-        tbSwitchFive.setChecked((state & 16) == 0 ? false : true);
-        tbSwitchSix.setChecked((state & 32) == 0 ? false : true);
+        if(deviceValue ==14){
+            if(state == 1){
+                tbSwitchOne.setChecked(true);
+                tbSwitchTwo.setChecked(false);
+            }else if(state == 2){
+                tbSwitchOne.setChecked(false);
+                tbSwitchTwo.setChecked(true);
+            }
+            if(state == 4){
+                tbSwitchThree.setChecked(true);
+                tbSwitchFour.setChecked(false);
+            }else if(state == 8){
+                tbSwitchThree.setChecked(false);
+                tbSwitchFour.setChecked(true);
+            }
+        }else {
+            tbSwitchOne.setChecked((state & 1) == 0 ? false : true);
+            tbSwitchTwo.setChecked((state & 2) == 0 ? false : true);
+            tbSwitchThree.setChecked((state & 4) == 0 ? false : true);
+            tbSwitchFour.setChecked((state & 8) == 0 ? false : true);
+            tbSwitchFive.setChecked((state & 16) == 0 ? false : true);
+            tbSwitchSix.setChecked((state & 32) == 0 ? false : true);
+        }
         isSetStates = false;
     }
 

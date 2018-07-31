@@ -363,6 +363,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
+                        //到互联网
                         if (msg.hasKeyClientWan()){
                             ByteString keyClientWan = msg.getKeyClientWan();
                             Log.i("appkey","key:"+keyClientWan.toStringUtf8());

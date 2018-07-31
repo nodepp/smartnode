@@ -24,7 +24,7 @@ public class Device extends EntityBase {
     private long tid;//设备临时id
 
     @Column(column = "deviceType")
-    private int deviceType = 0;//设备类型，0表示不确定什么类型，1表示普通1路控制灯，2表示普通6路控制灯，3表示彩光灯,4表示4路，5表示8路,6表示白灯，7pwm彩灯，8 pwm白灯,9 串口通讯,10 二路控制器
+    private int deviceType = 0;//设备类型，0表示不确定什么类型，1表示普通1路控制灯，2表示普通6路控制灯，3表示彩光灯,4表示4路，5表示8路,6表示白灯，7pwm彩灯，8 pwm白灯,9 串口通讯,10 二路控制器，12 浴霸，13 定制二路
 
     @Column(column = "connetedMode")
     private int connetedMode = 0;//设备连接类型，0表示互联网连接控制，1表示近场局域网控制

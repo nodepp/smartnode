@@ -27,6 +27,9 @@ import java.util.List;
 import cn.jpush.android.api.JPushInterface;
 import nodepp.Nodepp;
 
+/**
+ * 启动页面。进页面logo
+ */
 
 public class SplashActivity extends BaseActivity {
 
@@ -47,6 +50,7 @@ public class SplashActivity extends BaseActivity {
         //如果极光推送服务关了，唤醒
         JPushInterface.resumePush(getApplicationContext());
         CheckConnectTask task = new CheckConnectTask(SplashActivity.this);//ping一下网络，看是不是能连接到外网，可能存在连接到的wifi无法访问到外网
+        //异步传输获取网络状态
         task.setNetWorkListener(new NetWorkListener() {
             @Override
             public void onSuccess(int state) {
@@ -114,6 +118,7 @@ public class SplashActivity extends BaseActivity {
      * 检测udi和usig
      */
     private void checkUserId() {
+        final long currentTime = System.currentTimeMillis();
         //判断wifi连接情况，没有连接时提示用户先连接
         String username = SharedPreferencesUtils.getString(this, "username", "0");
         String uidSig = SharedPreferencesUtils.getString(this, "uidSig", "");
@@ -122,8 +127,10 @@ public class SplashActivity extends BaseActivity {
         }
         JPushInterface.setAlias(this,PbDataUtils.getCurrentSeq(),username);//设置极光推送别名
         long uid = Long.parseLong(username);
+        //检查用户uid
         Nodepp.Msg msg = PbDataUtils.setCheckUserIdParam(uid, uidSig);
         Log.i(TAG, "msg send:" + msg.toString());
+
         DTLSSocket.send(SplashActivity.this, null, msg, new ResponseListener() {
             @Override
             public void onSuccess(Nodepp.Msg msg) {
@@ -138,13 +145,31 @@ public class SplashActivity extends BaseActivity {
                     startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                     finish();
                 } else if (result == 0) {
-                    if (msg.hasKeyClientWan()){
-                        ByteString keyClientWan = msg.getKeyClientWan();
-                        Log.i("appkey","key:"+keyClientWan.toStringUtf8());
-                        Constant.KEY_A2S = keyClientWan.toByteArray();
-                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                        finish();
-                    }else {
+                    long nowTime = System.currentTimeMillis();
+                    if((nowTime -currentTime) < 3000) {
+                        if (msg.hasKeyClientWan()) {
+                            Log.e("查询进入时间",nowTime- currentTime+"");
+                            ByteString keyClientWan = msg.getKeyClientWan();
+                            Log.i("appkey", "key:" + keyClientWan.toStringUtf8());
+                            Constant.KEY_A2S = keyClientWan.toByteArray();
+                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                            finish();
+                        } else {
+                            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                            finish();
+                        }
+                    }else if(((nowTime -currentTime) > 3000) && ((nowTime -currentTime<6000))){
+                        try {
+
+                                checkUserId();
+                                Log.e("循环几次了",nowTime-currentTime+"");
+                                Thread.sleep(1000);
+
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }else if((nowTime - currentTime) > 7000){
+                        JDJToast.showMessage(SplashActivity.this, getString(R.string.access_server_error));
                         startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                         finish();
                     }
