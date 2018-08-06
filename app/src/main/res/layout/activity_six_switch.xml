@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:fitsSystemWindows="true"
-    android:background="@drawable/shape_multiple_switch_bg"
     tools:context="com.nodepp.smartnode.activity.AboutActivity">
-    <LinearLayout
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ddd"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="220dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@mipmap/mulit_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/relativeLayout"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -16,18 +27,33 @@
             android:id="@+id/iv_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:src="@mipmap/ic_back" />
 
         <TextView
             android:id="@+id/tv_title"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="智能设备控制"
+            android:layout_centerVertical="true"
+            android:layout_alignBaseline="@+id/iv_voice"
+            android:text="二路"
+            android:layout_centerHorizontal="true"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/iv_voice"
+            android:layout_width="20dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/voice_white"
+            android:layout_toLeftOf="@+id/iv_more"
+            android:layout_marginTop="5dp"
+            android:visibility="visible" />
 
         <ImageView
             android:id="@+id/iv_more"
@@ -35,171 +61,158 @@
             android:layout_height="30dp"
             android:layout_marginRight="15dp"
             android:src="@mipmap/more"
-            android:visibility="visible" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="130dp"
-        android:layout_centerHorizontal="true">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ToggleButton
-                    android:id="@+id/tb_switch_one"
-                    style="@style/multiple_switch"
-                     />
-                <TextView
-                    android:id="@+id/tv_one"
-                    style="@style/multiple_switch_text"
-                    android:text="通道一"
-                    android:textAlignment="center"
-                    android:layout_marginTop="10dp"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ToggleButton
-                    android:id="@+id/tb_switch_two"
-                    style="@style/multiple_switch"
-                    android:layout_alignParentRight="true"
-                     />
-                <TextView
-                    android:id="@+id/tv_two"
-                    style="@style/multiple_switch_text"
-                    android:text="通道二"
-                    android:textAlignment="center"
-                    android:layout_marginTop="10dp"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ToggleButton
-                    android:id="@+id/tb_switch_three"
-                    style="@style/multiple_switch"
-                    android:layout_alignParentRight="true"
-                     />
-                <TextView
-                    android:id="@+id/tv_three"
-                    style="@style/multiple_switch_text"
-                    android:text="通道三"
-                    android:textAlignment="center"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="10dp"
-                    />
-            </LinearLayout>
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            />
+    </RelativeLayout>
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            >
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ToggleButton
-                    android:id="@+id/tb_switch_four"
-                    style="@style/multiple_switch"
-                    android:layout_alignParentRight="true"
-                     />
-                <TextView
-                    android:id="@+id/tv_four"
-                    style="@style/multiple_switch_text"
-                    android:text="通道四"
-                    android:textAlignment="center"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="10dp"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ToggleButton
-                    android:id="@+id/tb_switch_five"
-                    style="@style/multiple_switch"
-                     />
-                <TextView
-                    android:id="@+id/tv_five"
-                    style="@style/multiple_switch_text"
-                    android:text="通道五"
-                    android:textAlignment="center"
-                    android:layout_marginTop="10dp"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ToggleButton
-                    android:id="@+id/tb_switch_six"
-                    style="@style/multiple_switch"
-                    android:layout_alignParentRight="true"
-                     />
-                <TextView
-                    android:id="@+id/tv_six"
-                    style="@style/multiple_switch_text"
-                    android:text="通道六"
-                    android:textAlignment="center"
-                    android:layout_marginTop="10dp"
-                    />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/ll_timing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:orientation="vertical">
-        <ImageView
+    <RelativeLayout
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/relativeLayout"
+        android:background="@null">
+
+        <Button
+            android:id="@+id/btn_switch_off"
             android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@mipmap/ic_timing"/>
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="66dp"
+            android:background="@mipmap/control_6" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ddd"
+        >
+
+        <ToggleButton
+            android:id="@+id/tb_switch_one"
+            style="@style/multiple_switch"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="30dp" />
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="定时"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/white"/>
-    </LinearLayout>
-    <Button
-        android:id="@+id/btn_voice"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_alignParentRight="true"
-        android:visibility="visible"
-        android:layout_marginRight="15sp"
-        android:layout_marginTop="70dp"
-        android:background="@drawable/selector_voice_control" />
+            android:id="@+id/tv_one"
+            style="@style/multiple_switch_text"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/tb_switch_one"
+            android:text="通道一"
+            android:layout_alignLeft="@+id/tb_switch_one"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:textAlignment="center" />
+
+        <ToggleButton
+            android:id="@+id/tb_switch_two"
+            style="@style/multiple_switch"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:id="@+id/tv_two"
+            style="@style/multiple_switch_text"
+            android:layout_marginTop="15dp"
+            android:text="通道二"
+            android:layout_toRightOf="@+id/tv_one"
+            android:layout_alignLeft="@+id/tb_switch_two"
+            android:layout_below="@id/tb_switch_two"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:textAlignment="center" />
+
+        <ToggleButton
+            android:id="@+id/tb_switch_three"
+            style="@style/multiple_switch"
+            android:layout_below="@+id/tv_one"
+            android:layout_alignLeft="@+id/tv_one"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:id="@+id/tv_three"
+            style="@style/multiple_switch_text"
+            android:layout_marginTop="15dp"
+            android:text="通道三"
+            android:layout_alignLeft="@+id/tb_switch_three"
+            android:layout_below="@id/tb_switch_three"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:textAlignment="center" />
+
+        <ToggleButton
+            android:id="@+id/tb_switch_four"
+            style="@style/multiple_switch"
+            android:layout_below="@+id/tv_two"
+            android:layout_alignLeft="@+id/tv_two"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:id="@+id/tv_four"
+            style="@style/multiple_switch_text"
+            android:layout_marginTop="15dp"
+            android:text="通道4"
+            android:layout_alignLeft="@+id/tb_switch_four"
+            android:layout_below="@id/tb_switch_four"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:textAlignment="center" />
+        <ToggleButton
+            android:id="@+id/tb_switch_five"
+            style="@style/multiple_switch"
+            android:layout_below="@+id/tv_three"
+            android:layout_alignLeft="@+id/tv_three"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:id="@+id/tv_five"
+            style="@style/multiple_switch_text"
+            android:layout_marginTop="15dp"
+            android:text="通道5"
+            android:layout_alignLeft="@+id/tb_switch_five"
+            android:layout_below="@id/tb_switch_five"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:textAlignment="center" />
+
+        <ToggleButton
+            android:id="@+id/tb_switch_six"
+            style="@style/multiple_switch"
+            android:layout_below="@+id/tv_four"
+            android:layout_alignLeft="@+id/tv_four"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:id="@+id/tv_six"
+            style="@style/multiple_switch_text"
+            android:layout_marginTop="15dp"
+            android:text="通道6"
+            android:layout_alignLeft="@+id/tb_switch_six"
+            android:layout_below="@id/tb_switch_six"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:id="@+id/iv_add_task"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/btn_add"
+            ></ImageView>
+
+    </RelativeLayout>
 </RelativeLayout>
+
+
+

@@ -71,13 +71,13 @@ public class UDPClientScanA2S extends DatagramSocket{
         }
         return client;
     }
-
+//从广域网扫描设备
     public void receiveScanData(Context context,List<Device> list, Handler handler) {
         if (Constant.KEY_A2S == null){
             return;
         }
         Nodepp.Msg message = null;
-        Log.d(TAG, "receiveData");
+        Log.e(TAG, "receiveData");
         Log.i("key_scan", "receiveScanData:" + Utils.bytesToHexString(Constant.KEY_A2S));
         long deadline = System.currentTimeMillis() + 20000;
         while (System.currentTimeMillis() < deadline) {//20s后退出
@@ -91,6 +91,7 @@ public class UDPClientScanA2S extends DatagramSocket{
                     Log.i(TAG, " msg==receive=null");
                 } else {
                     Log.i(TAG, " msg==receive=yes");
+                    //把数据赋值给数组
                     byte[] recDatas = Arrays.copyOf(mReceivePacket.getData(), mReceivePacket.getLength());
                     if (recDatas.length > 0){
                         Outnodepp.Data out = Outnodepp.Data.PARSER.parseFrom(recDatas);

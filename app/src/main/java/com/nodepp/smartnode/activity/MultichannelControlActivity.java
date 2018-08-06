@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -27,9 +26,7 @@ import com.nodepp.smartnode.model.Device;
 import com.nodepp.smartnode.model.MultipleRemarkName;
 import com.nodepp.smartnode.udp.ResponseListener;
 import com.nodepp.smartnode.udp.Socket;
-import com.nodepp.smartnode.udp.UDPClient;
 import com.nodepp.smartnode.udp.UDPClientA2S;
-import com.nodepp.smartnode.utils.ClickUtils;
 import com.nodepp.smartnode.utils.DBUtil;
 import com.nodepp.smartnode.utils.DESUtils;
 import com.nodepp.smartnode.utils.JDJToast;
@@ -86,7 +83,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     private TextView tvFour;
     private TextView tvFive;
     private TextView tvSix;
-    private LinearLayout llTiming;
+    private ImageView iv_add_task;
+//    private LinearLayout llTiming;
     private MyTask myTask;
     private Timer timer;
 
@@ -202,7 +200,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     private void initView() {
         ImageView ivBacke = (ImageView) findViewById(R.id.iv_back);
         ImageView ivMore = (ImageView) findViewById(R.id.iv_more);
-        Button btnVoice = (Button) findViewById(R.id.btn_voice);
+        ImageView ivVoice = (ImageView) findViewById(R.id.iv_voice);
         tvTitle = (TextView) findViewById(R.id.tv_title);
         tbSwitchOne = (ToggleButton) findViewById(R.id.tb_switch_one);
         tbSwitchTwo = (ToggleButton) findViewById(R.id.tb_switch_two);
@@ -210,17 +208,19 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         tbSwitchFour = (ToggleButton) findViewById(R.id.tb_switch_four);
         tbSwitchFive = (ToggleButton) findViewById(R.id.tb_switch_five);
         tbSwitchSix = (ToggleButton) findViewById(R.id.tb_switch_six);
-        llTiming = (LinearLayout) findViewById(R.id.ll_timing);
+        iv_add_task = findViewById(R.id.iv_add_task);
+//        llTiming = (LinearLayout) findViewById(R.id.ll_timing);
         tvOne = (TextView) findViewById(R.id.tv_one);
         tvTwo = (TextView) findViewById(R.id.tv_two);
         tvThree = (TextView) findViewById(R.id.tv_three);
         tvFour = (TextView) findViewById(R.id.tv_four);
         tvFive = (TextView) findViewById(R.id.tv_five);
         tvSix = (TextView) findViewById(R.id.tv_six);
-        if(deviceValue == 14){
-            llTiming.setVisibility(View.INVISIBLE);
-        }
-        llTiming.setOnClickListener(onClickListener);
+//        if(deviceValue == 14){
+//            llTiming.setVisibility(View.INVISIBLE);
+//        }
+//        llTiming.setOnClickListener(onClickListener);
+        iv_add_task.setOnClickListener(onClickListener);
         tvOne.setOnClickListener(onClickListener);
         tvTwo.setOnClickListener(onClickListener);
         tvThree.setOnClickListener(onClickListener);
@@ -236,7 +236,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         tbSwitchSix.setOnCheckedChangeListener(checkListener);
         ivBacke.setOnClickListener(this);
         ivMore.setOnClickListener(this);
-        btnVoice.setOnClickListener(this);
+        ivVoice.setOnClickListener(this);
 //
     }
 
@@ -319,7 +319,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                 case R.id.tv_six:
                     showChangeNameDialog(6);
                     break;
-                case R.id.ll_timing:
+                case R.id.iv_add_task:
                     goTiming();
                     break;
             }
@@ -544,7 +544,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                 intentMore.putExtra("device", deviceModel);
                 startActivityForResult(intentMore,1);
                 break;
-            case R.id.btn_voice: //语音控制
+            case R.id.iv_voice: //语音控制
                 // 移动数据分析，收集开始听写事件
                 if (deviceModel.getDeviceMode() != 0){
                     JDJToast.showMessage(MultichannelControlActivity.this,"自锁模式才支持语音功能");
@@ -690,6 +690,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         Log.i("state", "state==" + state);
         switchValue = state;
         isSetStates = true;
+        //预留的14类型设备互锁
         if(deviceValue ==14){
             if(state == 1){
                 tbSwitchOne.setChecked(true);

@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:fitsSystemWindows="true"
-    android:background="@drawable/shape_multiple_switch_bg"
     tools:context="com.nodepp.smartnode.activity.AboutActivity">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/ddd"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="220dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@mipmap/mulit_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/relativeLayout"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -17,18 +27,33 @@
             android:id="@+id/iv_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:src="@mipmap/ic_back" />
 
         <TextView
             android:id="@+id/tv_title"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="智能设备控制"
+            android:layout_centerVertical="true"
+            android:layout_alignBaseline="@+id/iv_voice"
+            android:text="二路"
+            android:layout_centerHorizontal="true"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/iv_voice"
+            android:layout_width="20dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@mipmap/voice_white"
+            android:layout_toLeftOf="@+id/iv_more"
+            android:layout_marginTop="5dp"
+            android:visibility="visible" />
 
         <ImageView
             android:id="@+id/iv_more"
@@ -36,146 +61,170 @@
             android:layout_height="30dp"
             android:layout_marginRight="15dp"
             android:src="@mipmap/more"
-            android:visibility="visible" />
-    </LinearLayout>
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            />
+    </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/rl_one"
-        android:layout_width="240dp"
-        android:layout_height="300dp"
-        android:layout_below="@+id/btn_voice"
-        android:layout_centerHorizontal="true"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/relativeLayout"
+        android:background="@null">
+
+        <Button
+            android:id="@+id/btn_switch_off"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="66dp"
+            android:background="@mipmap/control_2" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ddd"
         >
+
         <ToggleButton
             android:id="@+id/tb_switch_one"
-            style="@style/multiple_switch2"
+            style="@style/multiple_switch"
+            android:layout_marginLeft="100dp"
+            android:layout_alignParentLeft="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="30dp" />
 
         <TextView
             android:id="@+id/tv_one"
             style="@style/multiple_switch_text"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="95dp"
-            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/tb_switch_one"
             android:text="通道一"
+            android:layout_alignLeft="@+id/tb_switch_one"
+            android:textSize="15sp"
+            android:textColor="@color/black"
             android:textAlignment="center" />
+
+
 
         <ToggleButton
             android:id="@+id/tb_switch_two"
-            style="@style/multiple_switch2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="40dp"
-            android:layout_below="@id/tv_one"
-            />
+            style="@style/multiple_switch"
+            android:layout_marginRight="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp" />
 
         <TextView
             android:id="@+id/tv_two"
             style="@style/multiple_switch_text"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="15dp"
             android:text="通道二"
-            android:layout_below="@id/tv_one"
+            android:layout_toRightOf="@+id/tv_one"
+            android:layout_alignLeft="@+id/tb_switch_two"
+            android:layout_below="@id/tb_switch_two"
+            android:textSize="15sp"
+            android:textColor="@color/black"
             android:textAlignment="center" />
-
-    </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/rl_two"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:visibility="gone"
-        android:layout_marginBottom="51dp"
-        android:layout_above="@+id/btn_voice"
-        android:layout_alignLeft="@+id/rl_one"
-        android:layout_alignStart="@+id/rl_one">
 
         <ToggleButton
             android:id="@+id/tb_switch_three"
             style="@style/multiple_switch"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="135dp" />
+            android:layout_below="@+id/tv_one"
+            android:layout_alignLeft="@+id/tv_one"
+            android:layout_marginRight="75dp"
+            android:visibility="gone"
+            android:layout_marginTop="30dp" />
 
         <TextView
             android:id="@+id/tv_three"
             style="@style/multiple_switch_text"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="205dp"
+            android:layout_marginTop="15dp"
             android:text="通道三"
+            android:layout_alignLeft="@+id/tb_switch_three"
+            android:layout_below="@id/tb_switch_three"
+            android:textSize="15sp"
+            android:visibility="gone"
+            android:textColor="@color/black"
             android:textAlignment="center" />
 
         <ToggleButton
             android:id="@+id/tb_switch_four"
             style="@style/multiple_switch"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="135dp" />
+            android:visibility="gone"
+            android:layout_below="@+id/tv_two"
+            android:layout_alignLeft="@+id/tv_two"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="30dp" />
 
         <TextView
             android:id="@+id/tv_four"
             style="@style/multiple_switch_text"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="24dp"
-            android:layout_marginTop="205dp"
-            android:text="通道四"
+            android:layout_marginTop="15dp"
+            android:text="通道4"
+            android:visibility="gone"
+            android:layout_alignLeft="@+id/tb_switch_four"
+            android:layout_below="@id/tb_switch_four"
+            android:textSize="15sp"
+            android:textColor="@color/black"
             android:textAlignment="center" />
         <ToggleButton
             android:id="@+id/tb_switch_five"
             style="@style/multiple_switch"
-            android:layout_marginTop="26dp"
-            android:layout_marginLeft="34dp" />
+            android:layout_below="@+id/tv_three"
+            android:layout_alignLeft="@+id/tv_three"
+            android:layout_marginRight="75dp"
+            android:visibility="gone"
+            android:layout_marginTop="30dp" />
+
         <TextView
             android:id="@+id/tv_five"
             style="@style/multiple_switch_text"
-            android:text="通道五"
-            android:layout_marginTop="95dp"
-            android:layout_marginLeft="30dp"
-            />
+            android:layout_marginTop="15dp"
+            android:text="通道5"
+            android:visibility="gone"
+            android:layout_alignLeft="@+id/tb_switch_five"
+            android:layout_below="@id/tb_switch_five"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:textAlignment="center" />
+
         <ToggleButton
             android:id="@+id/tb_switch_six"
             style="@style/multiple_switch"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="28dp"
-            android:layout_marginRight="36dp"
-            android:background="@drawable/selector_multiple_switch_four" />
+            android:visibility="gone"
+            android:layout_below="@+id/tv_four"
+            android:layout_alignLeft="@+id/tv_four"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="30dp" />
+
         <TextView
             android:id="@+id/tv_six"
+            android:visibility="gone"
             style="@style/multiple_switch_text"
-            android:text="通道六"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="95dp"
-            android:layout_marginRight="10dp"
-            />
-    </RelativeLayout>
-    <LinearLayout
-        android:id="@+id/ll_timing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:orientation="vertical">
+            android:layout_marginTop="15dp"
+            android:text="通道6"
+            android:layout_alignLeft="@+id/tb_switch_six"
+            android:layout_below="@id/tb_switch_six"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:textAlignment="center" />
+
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@mipmap/ic_timing"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:text="定时"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/white"/>
-    </LinearLayout>
-    <Button
-        android:id="@+id/btn_voice"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_alignParentRight="true"
-        android:visibility="visible"
-        android:layout_marginRight="15sp"
-        android:layout_marginTop="70dp"
-        android:background="@drawable/selector_voice_control" />
+            android:id="@+id/iv_add_task"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/btn_add"
+            ></ImageView>
+
+    </RelativeLayout>
 </RelativeLayout>
+
+
+

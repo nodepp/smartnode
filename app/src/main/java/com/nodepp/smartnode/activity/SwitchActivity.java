@@ -1,15 +1,20 @@
 package com.nodepp.smartnode.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.InputFilter;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,7 +26,7 @@ import com.nodepp.smartnode.Constant;
 import com.nodepp.smartnode.R;
 import com.nodepp.smartnode.adapter.TimeTaskAdapter;
 import com.nodepp.smartnode.model.Device;
-import com.nodepp.smartnode.model.MultipleTimeTask;
+import com.nodepp.smartnode.model.MultipleRemarkName;
 import com.nodepp.smartnode.model.TimeTask;
 import com.nodepp.smartnode.udp.ResponseListener;
 import com.nodepp.smartnode.udp.Socket;
@@ -40,7 +45,6 @@ import com.nodepp.smartnode.view.swipemenulistview.SwipeMenuCreator;
 import com.nodepp.smartnode.view.swipemenulistview.SwipeMenuItem;
 import com.nodepp.smartnode.view.swipemenulistview.SwipeMenuListView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -61,9 +65,8 @@ public class SwitchActivity extends BaseVoiceActivity implements View.OnClickLis
     private Button btnSwitchOff;
     private DbUtils dbUtils;
     private TimeTaskAdapter timeTaskAdapter;
-    private TextView tvDebugMsg;
     private LoadingDialog loadingDialog;
-    private List<Device> devices;
+//    private List<Device> devices;
     private Timer timer;
     private MyTask myTask;
     private Handler handler = new Handler() {
@@ -294,18 +297,19 @@ public class SwitchActivity extends BaseVoiceActivity implements View.OnClickLis
         tvTitle = (TextView) findViewById(R.id.tv_title);
         btnSwitchOn = (Button) findViewById(R.id.btn_switch_on);
         btnSwitchOff = (Button) findViewById(R.id.btn_switch_off);
-        Button btnVoice = (Button) findViewById(R.id.btn_voice);
+        ImageView ivVoice = findViewById(R.id.iv_voice);
         ImageView ivAddTask = (ImageView) findViewById(R.id.iv_add_task);
         listView = (SwipeMenuListView) findViewById(R.id.list_view);
-        tvDebugMsg = (TextView) findViewById(R.id.tv_debug_msg);
+//        tvDebugMsg = (TextView) findViewById(R.id.tv_debug_msg);
         String socketName = deviceModel.getSocketName();
         if (socketName != null){
             tvTitle.setText(socketName);
         }
-        btnVoice.setOnClickListener(this);
+        ivVoice.setOnClickListener(this);
         ivBacke.setOnClickListener(this);
         ivMore.setOnClickListener(this);
         ivAddTask.setOnClickListener(this);
+        tvTitle.setOnClickListener(this);
         btnSwitchOn.setOnClickListener(this);
         btnSwitchOff.setOnClickListener(this);
         loadingDialog = new LoadingDialog(this, getString(R.string.send_task_ing));
@@ -398,9 +402,11 @@ public class SwitchActivity extends BaseVoiceActivity implements View.OnClickLis
                     controlSocket(1);
                 }
                 break;
-            case R.id.btn_voice:
+            case R.id.iv_voice:
                 showVoiceDialog();
                 break;
+            case R.id.tv_title:
+                showChangeNameDialog();
         }
     }
     private void addTimerTask(){
@@ -691,6 +697,51 @@ public class SwitchActivity extends BaseVoiceActivity implements View.OnClickLis
          }
     }
 
+    /**
+     * 修改标题名称
+     */
+    private void showChangeNameDialog() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("请输入要修改的名字");
+        final EditText editText = new EditText(this);
+        editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(30)});
+        builder.setView(editText);
+        builder.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String name = editText.getText().toString();
+                updateUserWord(name);
+                if (TextUtils.isEmpty(name)) {
+                    JDJToast.showMessage(SwitchActivity.this, "请输入要修改的名字");
+                } else {
+                            tvTitle.setText(name);
+                            deviceModel.setSocketName(name);
+                        updateDeviceToDB();
+                    dialog.dismiss();
+                }
+            }
+        });
+        builder.setNegativeButton(getString(R.string.cancle), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+    }
+
+    private void updateDeviceToDB() {
+        if (deviceModel != null) {
+            try {
+                DBUtil.getInstance(SwitchActivity.this).update(deviceModel, WhereBuilder.b("tid", "=", deviceModel.getTid()).and("userName", "=", Constant.userName));
+            } catch (DbException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

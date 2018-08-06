@@ -684,10 +684,10 @@ public class MainActivity extends BaseVoiceActivity {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.REQUEST_INSTALL_PACKAGES}, 10010);
                 return false;
             } else {
-             return true;
+                return true;
             }
         } else {
-           return true;
+            return true;
         }
 
     }
@@ -973,7 +973,7 @@ public class MainActivity extends BaseVoiceActivity {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                 } else {
-                    JDJToast.showMessage(MainActivity.this,"未知应用来源应用安装被限制");
+//                    JDJToast.showMessage(MainActivity.this,"未知应用来源应用安装被限制");
                 }
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);

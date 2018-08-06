@@ -1,6 +1,8 @@
 package com.nodepp.smartnode.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -123,21 +125,21 @@ public class TimeTaskAdapter extends BaseAdapter {
             boolean isSaturday = timeTask.isSaturday();
             boolean isSunday = timeTask.isSunday();
             StringBuffer buffer = new StringBuffer();
-            buffer.append("周");
+//            buffer.append("周");
             if (isMonday)
-                buffer.append("一、");
+                buffer.append("周一、");
             if (isTuesday)
-                buffer.append("二、");
+                buffer.append("周二、");
             if (isWednesday)
-                buffer.append("三、");
+                buffer.append("周三、");
             if (isThursday)
-                buffer.append("四、");
+                buffer.append("周四、");
             if (isFriday)
-                buffer.append("五、");
+                buffer.append("周五、");
             if (isSaturday)
-                buffer.append("六、");
+                buffer.append("周六、");
             if (isSunday)
-                buffer.append("日、");
+                buffer.append("周日、");
             if (!isMonday && !isTuesday && !isWednesday && !isThursday && !isFriday && !isSaturday && !isSunday) {
 //            holder.tvRepeatTime.setText(context.getString(R.string.today));
             } else {
@@ -193,6 +195,13 @@ public class TimeTaskAdapter extends BaseAdapter {
             }
 
             holder.tvStartTime.setText(builder.toString());
+            if(builder.toString().equals("定时开启")){
+                holder.tvStartTime.setTextColor(Color.parseColor("#1894FF"));
+                holder.tvStartTime.setBackgroundColor(Color.parseColor("#C6E2FF"));
+            }else if(builder.toString().equals("定时关闭")){
+                holder.tvStartTime.setTextColor(Color.parseColor("#FF9D23"));
+                holder.tvStartTime.setBackgroundColor(Color.parseColor("#FFEC8B"));
+            }
 
 //        holder.tvStartTime.setText(getCurrentTime2(timeTask));
         }

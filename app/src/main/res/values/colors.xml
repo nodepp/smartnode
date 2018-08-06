@@ -440,6 +440,14 @@
     <color name="navy">#000080</color>
     <!--海军色 -->
 
+    <color name="channelonblue">#1894FF</color>
+    <!--单路定时开启字体颜色-->
+    <color name="channelonbgblue">#C6E2FF</color>
+    <!--单路定时开启字体背景颜色-->
+    <color name="channeloffog">#FF9D23</color>
+    <!--单路定时关闭字体颜色-->
+    <color name="channeloffbgog">#FFEC8B</color>
+    <!--单路定时关闭字体背景颜色-->
     <color name="bathNoSelected">#BDB3D0</color>
     <color name="bathSelected">#9869FF</color>
     <color name="colorPrimary">#3F51B5</color>

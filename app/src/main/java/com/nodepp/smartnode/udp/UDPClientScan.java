@@ -79,7 +79,6 @@ public class UDPClientScan extends DatagramSocket{
             client = null;
         }
     }
-
     public Nodepp.Msg receiveScanData(Context context,Handler handler, List<Device> list) {
         Log.i("LAN","------clear tidListLAN------");
         tidListLAN.clear();
@@ -160,6 +159,7 @@ public class UDPClientScan extends DatagramSocket{
         return message;
     }
 
+    //局域网内发送查询设备指令
     public void sendroadcastPacket(Context context) {
         if (client != null){
             long currentIp = NetWorkUtils.getCurrentIp(context.getApplicationContext());
