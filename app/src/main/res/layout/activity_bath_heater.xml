@@ -262,7 +262,7 @@
                 android:layout_marginRight="47dp"
                 android:layout_toLeftOf="@+id/ic_fan_nor"
                 android:layout_toStartOf="@+id/ic_fan_nor"
-                android:background="@drawable/selector_warm" />
+                android:background="@drawable/selector_fan" />
 
 
             <TextView
@@ -286,7 +286,7 @@
                 android:layout_alignLeft="@+id/ic_wind_nor"
                 android:layout_alignStart="@+id/ic_wind_nor"
                 android:layout_alignTop="@+id/ic_warm_nor"
-                android:background="@drawable/selector_fan" />
+                android:background="@drawable/selector_warm" />
 
 
             <TextView

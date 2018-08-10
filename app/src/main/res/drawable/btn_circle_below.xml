@@ -5,14 +5,14 @@
       <shape>
           <corners
           android:radius="20dp" />
-          <solid android:color="@color/bathSelected"/>
+          <solid android:color="#FFFFFF"/>
       </shape>
     </item>
     <item android:state_pressed="false">
         <shape>
             <corners
                 android:radius="20dp" />
-            <solid android:color="@color/bathSelected"/>
+            <solid android:color="#FFFFFF"/>
         </shape>
     </item>
     <!--  <item android:drawable="@color/transparent"/> -->

@@ -26,8 +26,8 @@
             android:layout_marginLeft="15dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:src="@mipmap/ic_back" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,20 +35,21 @@
             android:layout_toEndOf="@+id/iv_back"
             android:layout_toRightOf="@+id/iv_back"
             android:gravity="center"
-            android:layout_marginTop="5dp"
             android:text="GLMINCO WO2智能开关"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/btn_voice"
+        <ImageView
+            android:id="@+id/iv_voice"
             android:layout_width="20dp"
-            android:layout_height="30dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
-            android:background="@mipmap/voice_white"
+            android:src="@mipmap/voice_white"
             android:layout_toLeftOf="@+id/iv_more"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="5dp"
             android:visibility="visible" />
+
 
         <ImageView
             android:id="@+id/iv_more"
@@ -56,9 +57,10 @@
             android:layout_height="30dp"
             android:layout_marginRight="15dp"
             android:src="@mipmap/more"
+            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-           />
+            />
 
 
     </RelativeLayout>
@@ -224,7 +226,16 @@
 
 
     </RelativeLayout>
-
+    <ImageView
+        android:id="@+id/iv_add_task"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/btn_add"
+        android:visibility="gone"
+        ></ImageView>
 
 </RelativeLayout>
 

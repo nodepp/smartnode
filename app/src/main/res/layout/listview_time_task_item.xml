@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="70dp"
     android:paddingTop="5dp"
     android:paddingBottom="5dp"
     android:gravity="center_vertical"
     android:orientation="horizontal">
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="50dp">
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <TextView
             android:id="@+id/tv_time"
@@ -20,15 +20,37 @@
             android:textSize="25sp"
             android:text="20:18:00"/>
 
+
         <TextView
-            android:id="@+id/tv_start_time"
+            android:id="@+id/open_time"
             android:layout_toRightOf="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="定时开启"
+            android:text="开启时间"
             android:layout_alignBaseline="@+id/tv_time"
-            android:textSize="15sp" />
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#EDEDED"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/tv_time"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/line"
+            android:text="定时开启"
+            android:singleLine="false"
+            android:textSize="14sp" />
 
 
         <TextView
@@ -37,15 +59,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
+            android:layout_marginTop="1dp"
+            android:textAlignment="center"
             android:textColor="@color/text_color2"
             android:text="周一、周二、周三、周四、周五、周六、周日"/>
 
 
         <ToggleButton
             android:id="@+id/tb_switch"
-            android:layout_width="54dp"
-            android:layout_height="28dp"
-            android:layout_marginLeft="15dp"
+            android:layout_width="50sp"
+            android:layout_height="30sp"
+            android:layout_alignBaseline="@+id/tv_time"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"

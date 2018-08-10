@@ -11,6 +11,7 @@ import android.os.Message;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -150,12 +151,18 @@ public class AddDeviceActivityTwo extends BaseActivity implements View.OnClickLi
               public void run() {
                   String text = getString(R.string.connect_wifi_success);
                   if (version >= Build.VERSION_CODES.KITKAT) {
+
                       circleLoadingDialog.setTitle(text);
                   }
                   if (version <  Build.VERSION_CODES.KITKAT) {
                       pd.dismiss();
                   } else {
                       circleLoadingDialog.dismiss();
+                      //背景恢复
+                      WindowManager.LayoutParams lp = getWindow().getAttributes();
+                      lp.alpha = 1.0f;
+                      getWindow().setAttributes(lp);
+                      getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
                   }
 
                   JDJToast.showMessage(AddDeviceActivityTwo.this, "配置成功");
@@ -180,7 +187,7 @@ public class AddDeviceActivityTwo extends BaseActivity implements View.OnClickLi
                 pd = new ProgressDialog(AddDeviceActivityTwo.this);
                 pd.setCanceledOnTouchOutside(false);
                 pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-                pd.setMessage("正在连接中...");
+                pd.setMessage("正在努力连接中...");
                 pd.setButton(DialogInterface.BUTTON_NEGATIVE, "取消", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -198,7 +205,7 @@ public class AddDeviceActivityTwo extends BaseActivity implements View.OnClickLi
 
             } else {//4.4以上用自定义动画
                 if (circleLoadingDialog == null) {//避免重复创建
-                    circleLoadingDialog = new CircleLoadingDialog(AddDeviceActivityTwo.this);
+                    circleLoadingDialog = new CircleLoadingDialog(AddDeviceActivityTwo.this,R.style.CustomDialog);
                     circleLoadingDialog.setOnRetryClickListener(new CircleLoadingDialog.OnClickListener() {
                         @Override
                         public void click() {
@@ -218,6 +225,11 @@ public class AddDeviceActivityTwo extends BaseActivity implements View.OnClickLi
                 });
                 if (!AddDeviceActivityTwo.this.isFinishing()){
                     circleLoadingDialog.show();
+                    //使背景变暗
+                    WindowManager.LayoutParams lp = getWindow().getAttributes();
+                    lp.alpha = 0.6f;
+                    getWindow().setAttributes(lp);
+                    getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
                 }
             }
         }

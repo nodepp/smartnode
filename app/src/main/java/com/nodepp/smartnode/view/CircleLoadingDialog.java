@@ -18,13 +18,16 @@ import com.nodepp.smartnode.R;
  */
 public class CircleLoadingDialog extends AlertDialog {
 
-    private CirProgressBar progressbar;
+    private CirProgressBars progressbar;
     private TextView title;
     private OnClickListener listener;
     private ProgressButton pbButton;
     private ValueAnimator valueAnimator;
     private OnCancleClickListener cancleClickListener;
 
+    public CircleLoadingDialog(Context context,int theme) {
+        super(context,theme);
+    }
     public CircleLoadingDialog(Context context) {
         super(context);
     }
@@ -37,8 +40,8 @@ public class CircleLoadingDialog extends AlertDialog {
     }
 
     private void initView() {
-        progressbar = (CirProgressBar) findViewById(R.id.progressbar);
-        progressbar = (CirProgressBar) findViewById(R.id.progressbar);
+        progressbar = (CirProgressBars) findViewById(R.id.progressbar);
+        progressbar = (CirProgressBars) findViewById(R.id.progressbar);
         title = (TextView) findViewById(R.id.tv_title);
         ImageView ivCancle = (ImageView) findViewById(R.id.iv_cancle);
         pbButton = (ProgressButton) findViewById(R.id.btn_send);

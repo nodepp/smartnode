@@ -104,7 +104,9 @@ public class TimeTaskAdapter extends BaseAdapter {
             holder.tvTime = (TextView) convertView.findViewById(R.id.tv_time);
             holder.tvRepeatTime = (TextView) convertView.findViewById(R.id.tv_repeat_time);
             holder.tvStartTime = (TextView) convertView.findViewById(R.id.tv_start_time);
+            holder.line = convertView.findViewById(R.id.line);
             holder.tbSwitch = (ToggleButton) convertView.findViewById(R.id.tb_switch);
+            holder.opentime = convertView.findViewById(R.id.open_time);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -190,17 +192,32 @@ public class TimeTaskAdapter extends BaseAdapter {
                 }
                 Log.i("aa","time name:"+builder.toString());
                 builder.append(isOpen?"开启":"关闭");
+                if(isOpen == true){
+                    holder.tvStartTime.setTextColor(Color.parseColor("#1894FF"));
+                    holder.opentime.setTextColor(Color.parseColor("#1894FF"));
+                    holder.opentime.setBackgroundColor(Color.parseColor("#C6E2FF"));
+                    holder.opentime.setText("开启时间");
+                }else{
+                    holder.tvStartTime.setTextColor(Color.parseColor("#FF9D23"));
+                    holder.opentime.setTextColor(Color.parseColor("#FF9D23"));
+                    holder.opentime.setBackgroundColor(Color.parseColor("#FFEC8B"));
+                    holder.opentime.setText("关闭时间");
+                }
             }else {
                 builder.append(isOpen?"定时开启":"定时关闭");
+                holder.tvStartTime.setVisibility(View.GONE);
+                holder.line.setVisibility(View.GONE);
             }
 
             holder.tvStartTime.setText(builder.toString());
             if(builder.toString().equals("定时开启")){
-                holder.tvStartTime.setTextColor(Color.parseColor("#1894FF"));
-                holder.tvStartTime.setBackgroundColor(Color.parseColor("#C6E2FF"));
+                holder.opentime.setTextColor(Color.parseColor("#1894FF"));
+                holder.opentime.setBackgroundColor(Color.parseColor("#C6E2FF"));
+                holder.opentime.setText("开启时间");
             }else if(builder.toString().equals("定时关闭")){
-                holder.tvStartTime.setTextColor(Color.parseColor("#FF9D23"));
-                holder.tvStartTime.setBackgroundColor(Color.parseColor("#FFEC8B"));
+                holder.opentime.setTextColor(Color.parseColor("#FF9D23"));
+                holder.opentime.setBackgroundColor(Color.parseColor("#FFEC8B"));
+                holder.opentime.setText("关闭时间");
             }
 
 //        holder.tvStartTime.setText(getCurrentTime2(timeTask));
@@ -280,6 +297,8 @@ public class TimeTaskAdapter extends BaseAdapter {
         TextView tvTime;
         TextView tvRepeatTime;
         TextView tvStartTime;
+        TextView opentime;
+        TextView line;
         ToggleButton tbSwitch;
     }
 

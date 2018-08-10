@@ -9,21 +9,21 @@ import android.graphics.RectF;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+
 /**
  * 圆形进度圈
  * Created by yuyue on 2016/11/17.
  */
-public class CirProgressBar extends View {
+public class CirProgressBars extends View {
 
     private Paint mArcPaint;
-    private Paint mTextPaint;
-    private Paint mDottedLinePaint;
-    private Paint mRonudRectPaint;
+//    private Paint mTextPaint;
+//    private Paint mDottedLinePaint;
+//    private Paint mRonudRectPaint;
     private Paint mProgressPaint;
-    private RectF mArcRect;
+//    private RectF mArcRect;
     /**
      * 圆弧默认颜色
      */
@@ -31,11 +31,12 @@ public class CirProgressBar extends View {
     /**
      * 圆弧变动颜色
      */
-    private int mDottedRunColor = 0xFF6FC3FF;
+//    private int mDottedRunColor = 0xFF6FC3FF;
+    private int mDottedRunColor = 0xFFFFFFFF;
     /**
      * 圆弧两边的距离
      */
-    private int mPdDistance = 40;
+    private int mPdDistance = 10;
     /**
      * 线条数
      */
@@ -47,7 +48,7 @@ public class CirProgressBar extends View {
     /**
      * 线条高度
      */
-    private int mDottedLineHeight = 6;
+    private int mDottedLineHeight = 1;
     /**
      * 进度条最大值
      */
@@ -70,15 +71,15 @@ public class CirProgressBar extends View {
     private boolean isRestart = false;
     private int mRealProgress;
 
-    public CirProgressBar(Context context) {
+    public CirProgressBars(Context context) {
         this(context, null, 0);
     }
 
-    public CirProgressBar(Context context, AttributeSet attrs) {
+    public CirProgressBars(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public CirProgressBar(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CirProgressBars(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initView();
     }
@@ -87,24 +88,24 @@ public class CirProgressBar extends View {
     private void initView() {
         int[] screenWH = getScreenWH();
         mScressWidth = (int) (screenWH[0]*0.8);
-        mTextPaint = new Paint();
-        mTextPaint.setAntiAlias(true);
-        mTextPaint.setTextSize(dp2px(getResources(), 16));
-        mTextPaint.setColor(Color.WHITE);
-        // 内测虚线的画笔
-        mDottedLinePaint = new Paint();
-        mDottedLinePaint.setAntiAlias(true);
-        mDottedLinePaint.setStrokeWidth(mDottedLineHeight);
-        mDottedLinePaint.setColor(mDottedDefaultColor);
-        //
-        mRonudRectPaint = new Paint();
-        mRonudRectPaint.setAntiAlias(true);
-        mRonudRectPaint.setColor(mDottedRunColor);
-        mRonudRectPaint.setStyle(Paint.Style.FILL);
+//        mTextPaint = new Paint();
+//        mTextPaint.setAntiAlias(true);
+//        mTextPaint.setTextSize(dp2px(getResources(), 16));
+//        mTextPaint.setColor(Color.RED);
+//        // 内测虚线的画笔
+//        mDottedLinePaint = new Paint();
+//        mDottedLinePaint.setAntiAlias(true);
+//        mDottedLinePaint.setStrokeWidth(mDottedLineHeight);
+//        mDottedLinePaint.setColor(Color.RED);
+//        //
+//        mRonudRectPaint = new Paint();
+//        mRonudRectPaint.setAntiAlias(true);
+//        mRonudRectPaint.setColor(mDottedRunColor);
+//        mRonudRectPaint.setStyle(Paint.Style.FILL);
         // 中间进度画笔
         mProgressPaint = new Paint();
         mProgressPaint.setAntiAlias(true);
-        mProgressPaint.setColor(mDottedRunColor);
+        mProgressPaint.setColor(Color.WHITE);
         mProgressPaint.setTextSize(dp2px(getResources(), mProgressTextSize));
     }
 
@@ -119,12 +120,12 @@ public class CirProgressBar extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         mArcCenterX = (int) (w / 2.f);
-        mArcRect = new RectF();
-        mArcRect.top = 0;
-        mArcRect.left = 0;
-        mArcRect.right = w;
-        mArcRect.bottom = h;
-        mArcRadius = (int) (mArcRect.width() / 2);
+//        mArcRect = new RectF();
+//        mArcRect.top = 0;
+//        mArcRect.left = 0;
+//        mArcRect.right = w;
+//        mArcRect.bottom = h;
+//        mArcRadius = (int) (mArcRect.width() / 2);
         double sqrt = Math.sqrt(mArcRadius * mArcRadius + mArcRadius * mArcRadius);
         // 内部虚线的外部半径
         mExternalDottedLineRadius = mArcRadius;
@@ -144,7 +145,7 @@ public class CirProgressBar extends View {
     }
 
     private void drawRunText(Canvas canvas) {
-        mProgressPaint.setColor(mDottedRunColor);
+        mProgressPaint.setColor(Color.WHITE);
         String progressStr = this.mRealProgress + "%";
         if (!TextUtils.isEmpty(mProgressDesc)) {
             progressStr = mProgressDesc;
@@ -224,7 +225,7 @@ public class CirProgressBar extends View {
     }
 
     private void drawRunDottedLineArc(Canvas canvas) {
-        mDottedLinePaint.setColor(mDottedRunColor);
+//        mDottedLinePaint.setColor(mDottedRunColor);
         float evenryDegrees = (float) (2.0f * Math.PI / mDottedLineCount);
 
         float startDegress = (float) (225 * Math.PI / 180) + evenryDegrees / 2;
@@ -238,12 +239,12 @@ public class CirProgressBar extends View {
             float stopX = mArcCenterX + (float) Math.sin(degrees) * mExternalDottedLineRadius;
             float stopY = mArcCenterX - (float) Math.cos(degrees) * mExternalDottedLineRadius;
 
-            canvas.drawLine(startX, startY, stopX, stopY, mDottedLinePaint);
+//            canvas.drawLine(startX, startY, stopX, stopY, mDottedLinePaint);
         }
     }
 
     private void drawDottedLineArc(Canvas canvas) {
-        mDottedLinePaint.setColor(mDottedDefaultColor);
+//        mDottedLinePaint.setColor(mDottedDefaultColor);
         // 360 * Math.PI / 180
         float evenryDegrees = (float) (2.0f * Math.PI / mDottedLineCount);
 
@@ -261,7 +262,7 @@ public class CirProgressBar extends View {
 
             float stopX = mArcCenterX + (float) Math.sin(degrees) * mExternalDottedLineRadius;
             float stopY = mArcCenterX - (float) Math.cos(degrees) * mExternalDottedLineRadius;
-            canvas.drawLine(startX, startY, stopX, stopY, mDottedLinePaint);
+//            canvas.drawLine(startX, startY, stopX, stopY, mDottedLinePaint);
         }
     }
 

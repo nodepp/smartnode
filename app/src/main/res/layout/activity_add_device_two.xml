@@ -40,7 +40,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:textColorHint="@color/text_color2"
-        android:hint="请输入wifi密码"
+        android:hint="请输入网络密码"
         android:textSize="14sp"
         android:paddingLeft="10dp"
         android:background="@drawable/shape_edit_bg"/>

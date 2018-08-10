@@ -156,11 +156,11 @@ public class OpacityBar extends View {
 
         mBarPointerHaloPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 //        mBarPointerHaloPaint.setColor(Color.WHITE);
-        mBarPointerHaloPaint.setColor(Color.BLACK);
+        mBarPointerHaloPaint.setColor(Color.BLUE);
         mBarPointerHaloPaint.setAlpha(0x50);
 
         mBarPointerPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mBarPointerPaint.setColor(Color.TRANSPARENT);
+        mBarPointerPaint.setColor(Color.WHITE);
 
         mPosToOpacFactor = 0xFF / ((float) mBarLength);
         mOpacToPosFactor = ((float) mBarLength) / 0xFF;

@@ -21,6 +21,7 @@
         <item name="android:background">#EDEDED</item>
     </style>
 
+
     <style name="main_tab_bottom">
         <item name="android:textSize">11sp</item>
         <item name="android:textColor">@drawable/selector_tab_text_color</item>
@@ -80,8 +81,9 @@
         <item name="android:background">@drawable/selector_newchanne</item>
     </style>
     <style name="multiple_switch_text">
-        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">15sp</item>
         <item name="android:padding">5dp</item>
@@ -132,6 +134,10 @@
     <style name="CustomDialog" parent="Theme.AppCompat.Dialog">
         <item name="android:backgroundDimEnabled">false</item>
         <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
     </style>
 
 </resources>

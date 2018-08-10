@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -83,8 +84,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     private TextView tvFour;
     private TextView tvFive;
     private TextView tvSix;
-    private ImageView iv_add_task;
-//    private LinearLayout llTiming;
+    private ImageView ivBack,ivVoice,ivMore,iv_addtime;
+    private LinearLayout llTiming;
     private MyTask myTask;
     private Timer timer;
 
@@ -198,9 +199,19 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
 
 
     private void initView() {
-        ImageView ivBacke = (ImageView) findViewById(R.id.iv_back);
-        ImageView ivMore = (ImageView) findViewById(R.id.iv_more);
-        ImageView ivVoice = (ImageView) findViewById(R.id.iv_voice);
+//        ImageView ivBacke = (ImageView) findViewById(R.id.iv_back);
+//        ImageView ivMore = (ImageView) findViewById(R.id.iv_more);
+//        ImageView ivVoice = (ImageView) findViewById(R.id.iv_voice);
+//        ImageView iv_add_task = findViewById(R.id.iv_add_task);
+//
+        ivBack = findViewById(R.id.iv_back);
+        ivVoice = findViewById(R.id.iv_voice);
+        ivMore = findViewById(R.id.iv_more);
+        iv_addtime = findViewById(R.id.iv_add_task);
+        ivBack.setOnClickListener(this);
+        ivMore.setOnClickListener(this);
+        ivVoice.setOnClickListener(this);
+//        iv_addtime.setOnClickListener(this);
         tvTitle = (TextView) findViewById(R.id.tv_title);
         tbSwitchOne = (ToggleButton) findViewById(R.id.tb_switch_one);
         tbSwitchTwo = (ToggleButton) findViewById(R.id.tb_switch_two);
@@ -208,19 +219,16 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         tbSwitchFour = (ToggleButton) findViewById(R.id.tb_switch_four);
         tbSwitchFive = (ToggleButton) findViewById(R.id.tb_switch_five);
         tbSwitchSix = (ToggleButton) findViewById(R.id.tb_switch_six);
-        iv_add_task = findViewById(R.id.iv_add_task);
-//        llTiming = (LinearLayout) findViewById(R.id.ll_timing);
+
+        llTiming = (LinearLayout) findViewById(R.id.ll_timing);
         tvOne = (TextView) findViewById(R.id.tv_one);
         tvTwo = (TextView) findViewById(R.id.tv_two);
         tvThree = (TextView) findViewById(R.id.tv_three);
         tvFour = (TextView) findViewById(R.id.tv_four);
         tvFive = (TextView) findViewById(R.id.tv_five);
         tvSix = (TextView) findViewById(R.id.tv_six);
-//        if(deviceValue == 14){
-//            llTiming.setVisibility(View.INVISIBLE);
-//        }
-//        llTiming.setOnClickListener(onClickListener);
-        iv_add_task.setOnClickListener(onClickListener);
+        llTiming.setOnClickListener(onClickListener);
+
         tvOne.setOnClickListener(onClickListener);
         tvTwo.setOnClickListener(onClickListener);
         tvThree.setOnClickListener(onClickListener);
@@ -234,9 +242,14 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         tbSwitchFour.setOnCheckedChangeListener(checkListener);
         tbSwitchFive.setOnCheckedChangeListener(checkListener);
         tbSwitchSix.setOnCheckedChangeListener(checkListener);
-        ivBacke.setOnClickListener(this);
-        ivMore.setOnClickListener(this);
-        ivVoice.setOnClickListener(this);
+
+        iv_addtime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goTiming();
+            }
+        });
+
 //
     }
 
@@ -319,7 +332,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                 case R.id.tv_six:
                     showChangeNameDialog(6);
                     break;
-                case R.id.iv_add_task:
+                case R.id.ll_timing:
                     goTiming();
                     break;
             }
@@ -404,6 +417,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                             deviceModel.setSocketName(name);
                     }
                     try {
+//                        DBUtil.getInstance(MultichannelControlActivity.this).update(multipleRemarkName, WhereBuilder.b("tid", "=", deviceModel.getTid()).and("userName", "=", Constant.userName));
+
                         DBUtil.getInstance(MultichannelControlActivity.this).update(multipleRemarkName, WhereBuilder.b("tid", "=", deviceModel.getTid()).and("userName", "=", Constant.userName));
                         Constant.isDeviceRename = true;
                         SharedPreferencesUtils.saveBoolean(MultichannelControlActivity.this, deviceModel.getUserName() + "isUpdateUserWord", true);

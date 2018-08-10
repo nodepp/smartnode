@@ -138,7 +138,13 @@ public class DeviceAdapter extends BaseAdapter {
                 break;
             case 13:
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_two_online:R.mipmap.ic_control_two_unline);
+                holer.tvDeviceTypeDame.setText("GLMINCO WO2智能开关");
                 break;
+            case 14:
+                //重新烧的io口，六路14口
+                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_six_online:R.mipmap.ic_control_six_unline);
+                break;
+
         }
         if (device.isOnline()){
             holer.tvDeviceTypeDame.setTextColor(context.getResources().getColor(R.color.text_color2));
@@ -161,7 +167,7 @@ public class DeviceAdapter extends BaseAdapter {
                     } else if (deviceType == 3 || deviceType == 7) {//彩灯
                         SharedPreferencesUtils.saveBoolean(context, device.getTid() + "isClickWhite", false);
                         intent = new Intent(context, ColorControlActivity.class);
-                    } else if (deviceType == 2 || deviceType == 4 || deviceType == 10 || deviceType ==13) {//6,4,2路控制器
+                    } else if (deviceType == 2 || deviceType == 4 || deviceType == 10 || deviceType ==13 || deviceType ==14) {//6,4,2路控制器
                         intent = new Intent(context, MultichannelControlActivity.class);
                     } else if (deviceType == 6 || deviceType == 8) {//白灯
                         intent = new Intent(context, WhiteLightActivity.class);
