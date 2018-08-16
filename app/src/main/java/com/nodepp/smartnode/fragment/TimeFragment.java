@@ -310,7 +310,7 @@ public class TimeFragment extends BaseFragment implements View.OnClickListener {
 //                        timerTasks = new ArrayList<TimeTask>();
 //                        for (TimeTask timerTask : lists) {
 //                            if (timerTask.isUse()) {
-//                                timerTasks.add(timerTask);
+//                                timerTasks .add(timerTask);
 //                            }
 //                        }
 //                    }

@@ -9,6 +9,7 @@ import android.os.Message;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -55,6 +56,11 @@ public class AddDeviceActivityThree extends BaseActivity implements View.OnClick
         setContentView(R.layout.activity_add_device_three);
         initView();
         isShowSelectType = SharedPreferencesUtils.getBoolean(AddDeviceActivityThree.this, "isShowSelectType", false);
+        //背景恢复
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.alpha = 1.0f;
+        getWindow().setAttributes(lp);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
     }
 
     @Override

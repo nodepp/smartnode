@@ -109,7 +109,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         }else if (deviceModel.getDeviceType() == 13) {
             setContentView(R.layout.activity_twochannel_new);
         }else  if(deviceModel.getDeviceType() == 14){
-            setContentView(R.layout.activity_newfour_switch);
+            setContentView(R.layout.activity_six_switch);
             deviceValue  = 14;
 
         }
@@ -753,6 +753,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                 @Override
                 public void onSuccess(Nodepp.Msg msg) {
                     int result = msg.getHead().getResult();
+                    Log.e("查询控制结果",result+"");
                     if (result == 404) {
 //                            setDeviceNoOnline(deviceModel);
                         JDJToast.showMessage(MultichannelControlActivity.this, getString(R.string.device_is_not_online));

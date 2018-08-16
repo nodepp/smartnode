@@ -210,6 +210,7 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
 
 
     private void initclick(int flagss, int sever,int lstate) {
+        Log.e("查询server",sever+"");
         if (flagss == 1 && sever == 1) {
             if (lstate== 0 && ic_light.isSelected()) {
                 send_data1 = 0x04;
@@ -355,7 +356,7 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         if (myTask == null) {
             myTask = new MyTasks();
         }
-        timer.schedule(myTask, 1000, 5000);  //定时器开始，每隔20s执行一次
+        timer.schedule(myTask, 1000, 5000);  //定时器从进入页面1秒开始，每隔5s执行一次
     }
 
     private void stopTimer() {
@@ -401,14 +402,18 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
             public void onSuccess(Nodepp.Msg msg) {
                 int result = msg.getHead().getResult();
                 if (result == 0){
-                    isServer = 1;
+
                     byte receiveByte [] = msg.getUserData().toByteArray();
                     Utils.bytesToHexString(receiveByte);
                     String receive_data = Utils.bytesToHexString(receiveByte);
                     for(int i = 0;i<receiveByte.length;i++) {
-                        Log.e(TAG,"看看值多少"+receiveByte[i]);
+
                         if (receiveByte.length == 7) {
-//                            if (receiveByte[0]==(0xcc) && receiveByte[6] == 0xdd) {
+                            isServer = 1;
+////                            if (receiveByte[0]==(0xcc) && receiveByte[6] == 0xdd) {
+//                            byte ff[] = {receiveByte[0]};
+//                            Integer rec0 = Integer.parseInt(Utils.bytesToHexString(ff),16);
+//                            Log.e(TAG,"看看值控制"+rec0);
                                 one_keybyte = receiveByte[2];
                                 two_keybyte = receiveByte[3];
                                 byte rec1byte [] = {receiveByte[4]};
@@ -468,13 +473,16 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
                                     key8 = 2;
                                 }
 //                            }
+                            ChangeBathState(tempreature_str, warmtime_str,key1,key2,key3,key4,key5,key6,key7,key8);
+                        }else {
+                            isServer= 0;
+                            JDJToast.showMessage(BathHeaterActivity.this,"查询失败");
                         }
                         //服务器返回
 
-                        ChangeBathState(tempreature_str, warmtime_str,key1,key2,key3,key4,key5,key6,key7,key8);
                     }
                 }else if(result == 404){
-                    JDJToast.showMessage(BathHeaterActivity.this,"控制失败");
+                    JDJToast.showMessage(BathHeaterActivity.this,"服务器返回失败");
                     isServer= 0;
 
                 }

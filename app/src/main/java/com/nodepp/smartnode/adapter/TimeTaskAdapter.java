@@ -182,7 +182,7 @@ public class TimeTaskAdapter extends BaseAdapter {
             StringBuilder builder = new StringBuilder();
             boolean isOpen = timeTask.isOpen();
             int operateIndex = timeTask.getOperateIndex();
-            Log.i("operateIndex","operateIndex---"+operateIndex);
+            Log.e("operateIndex","operateIndex---"+operateIndex);
             if (nameLists != null){//多路的时候才显示
                 for (int i = 0;i < nameLists.size();i++){
                     builder.append((operateIndex & 1<<i)!=0?nameLists.get(i)+"、":"");

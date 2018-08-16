@@ -12,7 +12,7 @@
         <shape>
             <corners
                 android:radius="20dp" />
-            <solid android:color="#FFFFFF"/>
+            <solid android:color="#9F79EE"/>
         </shape>
     </item>
     <!--  <item android:drawable="@color/transparent"/> -->

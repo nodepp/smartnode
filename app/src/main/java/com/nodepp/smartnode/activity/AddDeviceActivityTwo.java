@@ -105,6 +105,7 @@ public class AddDeviceActivityTwo extends BaseActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_ok:
+                ClickUtils.hideSoftInputView(AddDeviceActivityTwo.this);//点击确认的时候隐藏软键盘
                 int connectedType = NetWorkUtils.getConnectedType(this);
                 if (connectedType == 1) {
                     sendNameandPassword();
@@ -158,16 +159,12 @@ public class AddDeviceActivityTwo extends BaseActivity implements View.OnClickLi
                       pd.dismiss();
                   } else {
                       circleLoadingDialog.dismiss();
-                      //背景恢复
-                      WindowManager.LayoutParams lp = getWindow().getAttributes();
-                      lp.alpha = 1.0f;
-                      getWindow().setAttributes(lp);
-                      getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
                   }
 
                   JDJToast.showMessage(AddDeviceActivityTwo.this, "配置成功");
                   startActivity(new Intent(AddDeviceActivityTwo.this, AddDeviceActivityThree.class));//连上wifi跳到下一个界面
                   finish();
+
               }
           });
         }
@@ -226,10 +223,10 @@ public class AddDeviceActivityTwo extends BaseActivity implements View.OnClickLi
                 if (!AddDeviceActivityTwo.this.isFinishing()){
                     circleLoadingDialog.show();
                     //使背景变暗
-                    WindowManager.LayoutParams lp = getWindow().getAttributes();
-                    lp.alpha = 0.6f;
-                    getWindow().setAttributes(lp);
-                    getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+//                    WindowManager.LayoutParams lp = getWindow().getAttributes();
+//                    lp.alpha = 0.6f;
+//                    getWindow().setAttributes(lp);
+//                    getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
                 }
             }
         }

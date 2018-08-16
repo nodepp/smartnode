@@ -317,8 +317,6 @@ public class AddTimedTaskActivity extends BaseActivity {
     //是否开启
     private void switchTime(boolean b) {
         timeTask.setIsOpen(b);//true代表开启
-        cbOpen.setChecked(b);
-        cbClose.setChecked(!b);
         if (!isOneSwitch){
             showSelectDialog(b);//多路才显示提示多通道
         }
@@ -458,7 +456,7 @@ public class AddTimedTaskActivity extends BaseActivity {
         //Date或者String转化为时间戳
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {
-             date = dateFormat.parse(currentTimeStr);
+            date = dateFormat.parse(currentTimeStr);
 
         } catch (ParseException e) {
             e.printStackTrace();
@@ -529,54 +527,63 @@ public class AddTimedTaskActivity extends BaseActivity {
         if (memoNames != null) {
             items = memoNames.toArray(new String[memoNames.size()]);
         }
-        AlertDialog.Builder builder = new AlertDialog.Builder(AddTimedTaskActivity.this);
-        if (isOpen) {
-            builder.setTitle("请选择要开启的通道");
-        } else {
-            builder.setTitle("请选择要关闭的通道");
+        if(cbOpen.isChecked() || cbClose.isChecked()){
+            cbOpen.setChecked(isOpen);
+            cbClose.setChecked(!isOpen);
+            AlertDialog.Builder builder = new AlertDialog.Builder(AddTimedTaskActivity.this);
+            if (isOpen) {
+                builder.setTitle("请选择要开启的通道");
+            } else {
+                builder.setTitle("请选择要关闭的通道");
+            }
+            builder.setMultiChoiceItems(items, null, new DialogInterface.OnMultiChoiceClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                    Log.i("kk", "which==" + which);
+                    Log.i("kk", "isChecked==" + isChecked);
+                    if (isChecked) {
+                        operateIndex |=1 << which;
+                    }else{
+                        operateIndex &=~(1 << which);
+                    }
+                    if (isOpen){
+                        if (isChecked) {
+                            operate |=1 << which;
+                        }else{
+                            operate &=~(1 << which) ;
+                        }
+                    }else {
+                        if (isChecked) {
+                            operate &=~(1 << which) ;
+                        }else{
+                            operate |=1 << which;
+                        }
+                    }
+
+                }
+            });
+            builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Log.i("kk", "operate------------" + operate);
+                    Log.i("kk", "operateIndex------------" + operateIndex);
+                    dialog.dismiss();
+                }
+            });
+            builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            builder.show();
+        }else {
+            JDJToast.showMessage(this,"请先点击开启/关闭选择要定时的通道");
         }
+    }
+
+
 //        boolean[] checkedItems = getDefaultState(operate,isOpen);
 //        boolean[]checkedItems = {true ,false,true,true,true ,false,true,true};
-        builder.setMultiChoiceItems(items, null, new DialogInterface.OnMultiChoiceClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-                Log.i("kk", "which==" + which);
-                Log.i("kk", "isChecked==" + isChecked);
-                if (isChecked) {
-                    operateIndex |=1 << which;
-                }else{
-                    operateIndex &=~(1 << which);
-                }
-                if (isOpen){
-                    if (isChecked) {
-                        operate |=1 << which;
-                    }else{
-                        operate &=~(1 << which) ;
-                    }
-                }else {
-                    if (isChecked) {
-                        operate &=~(1 << which) ;
-                    }else{
-                        operate |=1 << which;
-                    }
-                }
 
-            }
-        });
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Log.i("kk", "operate------------" + operate);
-                Log.i("kk", "operateIndex------------" + operateIndex);
-                dialog.dismiss();
-            }
-        });
-        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        builder.show();
-    }
 }
