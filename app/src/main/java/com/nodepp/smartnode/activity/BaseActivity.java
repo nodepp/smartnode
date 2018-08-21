@@ -5,6 +5,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -18,10 +21,12 @@ import com.nodepp.smartnode.R;
 import com.nodepp.smartnode.business.InitBusiness;
 import com.nodepp.smartnode.observe.NetObservable;
 import com.nodepp.smartnode.observe.PushObservable;
+import com.nodepp.smartnode.receiver.NetChangeReceiver;
 import com.nodepp.smartnode.service.TLSService;
 import com.nodepp.smartnode.service.TlsBusiness;
 import com.nodepp.smartnode.utils.JDJToast;
 import com.nodepp.smartnode.utils.Log;
+import com.nodepp.smartnode.utils.NetWorkUtils;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.util.HashMap;
@@ -38,12 +43,31 @@ public class BaseActivity extends AppCompatActivity implements Observer {
     private PushObservable pushObservable;
     protected static HashMap<Long,String> clientKeys = new HashMap<Long,String>();
 
+    private boolean isRegistered = false;
+    private NetChangeReceiver netWorkChangReceiver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initSystemBar(this);
         ActivityManager.getAppManager().addActivity(this);
         initTls();
+
+//        if (NetWorkUtils.isNetworkConnected(this)) {
+//            //动态注册网络状态监听广播
+//
+//            isRegistered = true;
+//        }
+//
+//注册网络状态监听广播
+        netWorkChangReceiver = new NetChangeReceiver();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
+        filter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION);
+        filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(netWorkChangReceiver, filter);
+        isRegistered = true;
+
         //被观察者
         netWorkObservable = ((MyApplication) getApplication()).getObservable();
         pushObservable = ((MyApplication) getApplication()).getPushObservable();
@@ -51,6 +75,10 @@ public class BaseActivity extends AppCompatActivity implements Observer {
         netWorkObservable.addObserver(this);
         //添加极光推送自定义消失变化观察者
         pushObservable.addObserver(this);
+
+
+
+
     }
 
     private void initTls() {
@@ -78,7 +106,7 @@ public class BaseActivity extends AppCompatActivity implements Observer {
         } else if (activity.getClass().equals(WhiteLightActivity.class)||activity.getClass().equals(MultichannelControlActivity.class)){
             tintManager.setStatusBarTintResource(R.color.multiple_status_bar);
         }else{
-            tintManager.setStatusBarTintResource(R.color.title_bar);//设置成标题栏的颜色
+            tintManager.setStatusBarTintResource(R.color.snow);//设置成标题栏的颜色
         }
 
     }
@@ -99,9 +127,14 @@ public class BaseActivity extends AppCompatActivity implements Observer {
 
     }
 
+
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (isRegistered) {
+            unregisterReceiver(netWorkChangReceiver);
+        }
         netWorkObservable.deleteObserver(this);//移除观察者
         pushObservable.deleteObserver(this);
         JDJToast.reset();
@@ -121,5 +154,7 @@ public class BaseActivity extends AppCompatActivity implements Observer {
             receivedPushData(observable,data);//极光自定义消息 观察者
         }
     }
+
+
 
 }

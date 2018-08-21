@@ -131,6 +131,7 @@ public class DeviceAdapter extends BaseAdapter {
             case 10:
                 //holer.tvDeviceTypeDame.setText("二路控制器");
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_two_online:R.mipmap.ic_control_two_unline);
+                holer.tvDeviceTypeDame.setText("");
                 break;
             case 12:
                 //holer.tvDeviceTypeDame.setText("浴霸通讯");
@@ -143,6 +144,10 @@ public class DeviceAdapter extends BaseAdapter {
             case 14:
                 //重新烧的io口，六路14口
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_six_online:R.mipmap.ic_control_six_unline);
+                break;
+            case 15:
+                //单路预留重置
+                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_one_online:R.mipmap.ic_control_one_unline);
                 break;
 
         }
@@ -162,7 +167,7 @@ public class DeviceAdapter extends BaseAdapter {
                 Device device = devices.get(position);
                 if (device.isOnline()) {
                     int deviceType = device.getDeviceType();
-                    if (deviceType == 1) {
+                    if (deviceType == 1 || deviceType == 15) {
                         intent = new Intent(context, SwitchActivity.class);
                     } else if (deviceType == 3 || deviceType == 7) {//彩灯
                         SharedPreferencesUtils.saveBoolean(context, device.getTid() + "isClickWhite", false);

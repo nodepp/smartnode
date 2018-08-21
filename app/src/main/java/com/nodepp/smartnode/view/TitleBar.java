@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.nodepp.smartnode.R;
@@ -21,12 +22,13 @@ public class TitleBar extends LinearLayout {
     private String title;
     public static final int TEXT = 1;
     public static final int BUTTON = 2;
+    private ImageView all_view;
     private TextView tvAdd;
     private Button btnRight;
     private TextView tvRight;
     private LeftClickListener leftClickListener;
     private ImageView ivBack;
-    private LinearLayout llAll;
+    private RelativeLayout llAll;
     private TextView textView;
     private ImageView ivPerson;
 
@@ -45,7 +47,8 @@ public class TitleBar extends LinearLayout {
     }
 
     private void initView() {
-        llAll = (LinearLayout) findViewById(R.id.ll_all);
+        all_view = (ImageView)findViewById(R.id.all_view);
+        llAll = (RelativeLayout) findViewById(R.id.ll_all);
         ivBack = (ImageView) findViewById(R.id.iv_back);
         ivPerson = (ImageView) findViewById(R.id.iv_person);
         textView = (TextView) findViewById(R.id.tv_title);

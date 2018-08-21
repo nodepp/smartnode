@@ -146,35 +146,49 @@ public class SplashActivity extends BaseActivity {
                     finish();
                 } else if (result == 0) {
                     long nowTime = System.currentTimeMillis();
-                    if((nowTime -currentTime) < 3000) {
-                        if (msg.hasKeyClientWan()) {
-                            Log.e("查询进入时间",nowTime- currentTime+"");
-                            ByteString keyClientWan = msg.getKeyClientWan();
-                            Log.i("appkey", "key:" + keyClientWan.toStringUtf8());
-                            Constant.KEY_A2S = keyClientWan.toByteArray();
-                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                            finish();
-                        } else {
-                            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
-                            finish();
-                        }
-                    }else if(((nowTime -currentTime) > 3000) && ((nowTime -currentTime<6000))){
-                        try {
-
-                                checkUserId();
-                                Log.e("循环几次了",nowTime-currentTime+"");
-                                Thread.sleep(1000);
-
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }else if((nowTime - currentTime) > 7000){
-                        JDJToast.showMessage(SplashActivity.this, getString(R.string.access_server_error));
+                    if (msg.hasKeyClientWan()) {
+                        ByteString keyClientWan = msg.getKeyClientWan();
+                        Log.i("appkey", "key:" + keyClientWan.toStringUtf8());
+                        Constant.KEY_A2S = keyClientWan.toByteArray();
+                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                        finish();
+                    }else if((nowTime - currentTime)>10000){
                         startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                         finish();
+                    } else {
+                            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                            finish();
                     }
                 }
             }
+
+
+//                    if((nowTime -currentTime) < 3000) {
+//                        if (msg.hasKeyClientWan()) {
+//                            Log.e("查询进入时间",nowTime- currentTime+"");
+//                            ByteString keyClientWan = msg.getKeyClientWan();
+//                            Log.i("appkey", "key:" + keyClientWan.toStringUtf8());
+//                            Constant.KEY_A2S = keyClientWan.toByteArray();
+//                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+//                            finish();
+//                        } else {
+//                            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+//                            finish();
+//                        }
+//                    }else if(((nowTime -currentTime) > 3000) && ((nowTime -currentTime<6000))){
+//                        try {
+//
+//                                checkUserId();
+//                                Log.e("循环几次了",nowTime-currentTime+"");
+//                                Thread.sleep(1000);
+//
+//                        } catch (InterruptedException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }else if((nowTime - currentTime) > 7000){
+//                        JDJToast.showMessage(SplashActivity.this, getString(R.string.access_server_error));
+//                        startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+//                        finish();
 
             @Override
             public void onTimeout(Nodepp.Msg msg) {

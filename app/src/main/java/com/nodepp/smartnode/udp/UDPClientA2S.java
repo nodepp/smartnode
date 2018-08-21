@@ -219,7 +219,6 @@ public class UDPClientA2S extends DatagramSocket {
                     Log.i(TAG, " msg==receive=null");
                 } else {
                     byte[] recDatas = Arrays.copyOf(mReceivePacket.getData(), mReceivePacket.getLength());
-                    Log.e(TAG, " 接收页面==" + Utils.bytesToHexString(recDatas));
                     for(int j = 0;j<recDatas.length;j++){
 
                     }

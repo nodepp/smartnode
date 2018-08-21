@@ -3,6 +3,8 @@ package com.nodepp.smartnode.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.TextUtils;
@@ -23,11 +25,13 @@ import com.lidroid.xutils.db.sqlite.WhereBuilder;
 import com.lidroid.xutils.exception.DbException;
 import com.nodepp.smartnode.Constant;
 import com.nodepp.smartnode.R;
+import com.nodepp.smartnode.esptouch.EspWifiAdminSimple;
 import com.nodepp.smartnode.model.Device;
 import com.nodepp.smartnode.model.MultipleRemarkName;
 import com.nodepp.smartnode.udp.ResponseListener;
 import com.nodepp.smartnode.udp.Socket;
 import com.nodepp.smartnode.udp.UDPClientA2S;
+import com.nodepp.smartnode.utils.ClickUtils;
 import com.nodepp.smartnode.utils.DBUtil;
 import com.nodepp.smartnode.utils.DESUtils;
 import com.nodepp.smartnode.utils.JDJToast;
@@ -73,6 +77,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     private int switchValue = 0;
     private int currentCheck = 0;
     private int deviceValue = 0;
+    private EspWifiAdminSimple mWifiAdmin;
     private DbUtils dbUtils;
     // 引擎类型
     private String mEngineType = SpeechConstant.TYPE_CLOUD;
@@ -98,6 +103,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mWifiAdmin = new EspWifiAdminSimple(this);
         deviceModel = (Device) getIntent().getSerializableExtra("device");
         isVoice = getIntent().getBooleanExtra("isVoice", false);
         if (deviceModel.getDeviceType() == 4) {
@@ -249,6 +255,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                 goTiming();
             }
         });
+
 
 //
     }
@@ -447,10 +454,10 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             lastControlTimeStamp = System.currentTimeMillis();
-//            if (ClickUtils.isFastClick(100)&&!isSetStates) {//防止用户一直快速点击
-//                JDJToast.showMessage(MultichannelControlActivity.this, getString(R.string.no_click_quick));
-//                return;
-//            }
+            if (ClickUtils.isFastClick(100)&&!isSetStates) {//防止用户一直快速点击
+                JDJToast.showMessage(MultichannelControlActivity.this, getString(R.string.no_click_quick));
+                return;
+            }
             switch (buttonView.getId()) {
                 case R.id.tb_switch_one:
                     isSelectOne = isChecked;
@@ -629,6 +636,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
             }
         }
     }
+
+
     /**
      * 查询设备的状态，然后进行设置
      */
@@ -705,39 +714,33 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         Log.i("state", "state==" + state);
         switchValue = state;
         isSetStates = true;
-        //预留的14类型设备互锁
-        if(deviceValue ==14){
-            if(state == 1){
-                tbSwitchOne.setChecked(true);
-                tbSwitchTwo.setChecked(false);
-            }else if(state == 2){
-                tbSwitchOne.setChecked(false);
-                tbSwitchTwo.setChecked(true);
-            }
-            if(state == 4){
-                tbSwitchThree.setChecked(true);
-                tbSwitchFour.setChecked(false);
-            }else if(state == 8){
-                tbSwitchThree.setChecked(false);
-                tbSwitchFour.setChecked(true);
-            }
-        }else {
+//        //预留的14类型设备互锁
+//        if(deviceValue ==14){
+//            if(state == 1){
+//                tbSwitchOne.setChecked(true);
+//                tbSwitchTwo.setChecked(false);
+//            }else if(state == 2){
+//                tbSwitchOne.setChecked(false);
+//                tbSwitchTwo.setChecked(true);
+//            }
+//            if(state == 4){
+//                tbSwitchThree.setChecked(true);
+//                tbSwitchFour.setChecked(false);
+//            }else if(state == 8){
+//                tbSwitchThree.setChecked(false);
+//                tbSwitchFour.setChecked(true);
+//            }
+//        }else {
             tbSwitchOne.setChecked((state & 1) == 0 ? false : true);
             tbSwitchTwo.setChecked((state & 2) == 0 ? false : true);
             tbSwitchThree.setChecked((state & 4) == 0 ? false : true);
             tbSwitchFour.setChecked((state & 8) == 0 ? false : true);
             tbSwitchFive.setChecked((state & 16) == 0 ? false : true);
             tbSwitchSix.setChecked((state & 32) == 0 ? false : true);
-        }
+//        }
         isSetStates = false;
     }
 
-    @Override
-    protected void onPause() {
-        UDPClientA2S.getInstance().setIsRetry(true);
-        stopTimer();
-        super.onPause();
-    }
 
     /**
      * 控制插座的方法
@@ -749,8 +752,10 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
             Log.i(TAG, "operate===" + operate);
             long uid = Long.parseLong(Constant.userName);
             final Nodepp.Msg msg = PbDataUtils.setRequestParam(16, 1, uid, deviceModel.getDid(), deviceModel.getTid(), operate, Constant.usig);
+            Log.e("查询基本数据",deviceModel.getConnetedMode()+"");
             Socket.send(MultichannelControlActivity.this, deviceModel.getConnetedMode(), deviceModel.getIp(), msg, clientKeys.get(deviceModel.getTid()), new ResponseListener() {
                 @Override
+
                 public void onSuccess(Nodepp.Msg msg) {
                     int result = msg.getHead().getResult();
                     Log.e("查询控制结果",result+"");
@@ -794,6 +799,29 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         } else {
             JDJToast.showMessage(this, "网络没有连接，请稍后重试");
         }
+    }
+    /**
+     * 观察网络变化
+     * @param observable
+     * @param data
+     */
+    @Override
+    protected void netChange(Observable observable, Object data) {
+        Log.e("net","多路 net change ");
+        deviceModel.setConnetedMode(0);
+//        JDJToast.showMessage(this, "网络环境发生变化，请不要过快点击设备");
+//        String apSsid = mWifiAdmin.getWifiConnectedSsid();
+//        WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+//        WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+//        String acssid = wifiInfo.getSSID();
+//        String str= acssid.replace("\"", "");
+//        if(str.equals(apSsid)) {
+//            deviceModel.setConnetedMode(1);
+//            JDJToast.showMessage(this, "已经进入局域网模式");
+//        }else {
+//            deviceModel.setConnetedMode(0);
+//            JDJToast.showMessage(this, "已经进入互联网模式");
+//        }
     }
 
     /**
@@ -842,22 +870,10 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 
-    /**
-     * 观察网络变化
-     * @param observable
-     * @param data
-     */
-    @Override
-    protected void netChange(Observable observable, Object data) {
 
-        Log.i("net","多路 net change ");
-        deviceModel.setConnetedMode(0);
-    }
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -880,4 +896,20 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
             }
         }
     }
+
+
+
+    @Override
+    protected void onPause() {
+        UDPClientA2S.getInstance().setIsRetry(true);
+        stopTimer();
+        super.onPause();
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
 }
