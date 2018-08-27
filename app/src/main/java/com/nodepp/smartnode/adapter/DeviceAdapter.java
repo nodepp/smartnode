@@ -20,6 +20,7 @@ import com.nodepp.smartnode.R;
 import com.nodepp.smartnode.activity.AddDeviceActivity;
 import com.nodepp.smartnode.activity.BathHeaterActivity;
 import com.nodepp.smartnode.activity.ColorControlActivity;
+import com.nodepp.smartnode.activity.CusSixteenchannelControlActivity;
 import com.nodepp.smartnode.activity.MultichannelControlActivity;
 import com.nodepp.smartnode.activity.SendMessageActivity;
 import com.nodepp.smartnode.activity.SwitchActivity;
@@ -144,10 +145,21 @@ public class DeviceAdapter extends BaseAdapter {
             case 14:
                 //重新烧的io口，六路14口
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_six_online:R.mipmap.ic_control_six_unline);
+                holer.tvDeviceTypeDame.setText(" ");
                 break;
+//            case 15:
+//                //单路预留重置
+//                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_one_online:R.mipmap.ic_control_one_unline);
+//                break;
             case 15:
-                //单路预留重置
-                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_one_online:R.mipmap.ic_control_one_unline);
+                //八路
+                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_six_online:R.mipmap.ic_control_six_unline);
+                holer.tvDeviceTypeDame.setText("八路测试");
+                break;
+            case 16:
+                //八路
+                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.icsixteen:R.mipmap.icsixteen);
+                holer.tvDeviceTypeDame.setText("十六路测试");
                 break;
 
         }
@@ -167,20 +179,22 @@ public class DeviceAdapter extends BaseAdapter {
                 Device device = devices.get(position);
                 if (device.isOnline()) {
                     int deviceType = device.getDeviceType();
-                    if (deviceType == 1 || deviceType == 15) {
+                    if (deviceType == 1) {
                         intent = new Intent(context, SwitchActivity.class);
                     } else if (deviceType == 3 || deviceType == 7) {//彩灯
                         SharedPreferencesUtils.saveBoolean(context, device.getTid() + "isClickWhite", false);
                         intent = new Intent(context, ColorControlActivity.class);
-                    } else if (deviceType == 2 || deviceType == 4 || deviceType == 10 || deviceType ==13 || deviceType ==14) {//6,4,2路控制器
-                        intent = new Intent(context, MultichannelControlActivity.class);
+//                    } else if (deviceType == 2 || deviceType == 4 || deviceType == 10 || deviceType ==13 || deviceType ==14 || deviceType ==15) {//6,4,2路控制器
+//                        intent = new Intent(context, MultichannelControlActivity.class);
                     } else if (deviceType == 6 || deviceType == 8) {//白灯
                         intent = new Intent(context, WhiteLightActivity.class);
                     }else if (deviceType == 12){
                         intent = new Intent(context, BathHeaterActivity.class);
-                    }else if (deviceType == 9){
+                    }else if (deviceType == 9) {
                         intent = new Intent(context, SendMessageActivity.class);
                         //新增定制两路类型
+                    }else if (deviceType == 2){
+                    intent = new Intent(context, CusSixteenchannelControlActivity.class);
                     }else {
                         JDJToast.showMessage(context, context.getString(R.string.unknow_device));
                         return;

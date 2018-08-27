@@ -13,10 +13,10 @@ android {
     buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.nodepp.smartnode"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 26
-        versionCode 20033
-        versionName "2.0.33"
+        versionCode 20036
+        versionName "2.0.36"
         multiDexEnabled true //分包
         resConfigs "en"//只保留中文字符串
         externalNativeBuild {
@@ -100,4 +100,9 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:multidex:1.0.0'
     testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+
+    compile 'cn.hugeterry.coordinatortablayout:coordinatortablayout:1.2.2'
+
 }

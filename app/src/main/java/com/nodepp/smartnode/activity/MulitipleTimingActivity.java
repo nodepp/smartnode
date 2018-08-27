@@ -92,6 +92,7 @@ public class MulitipleTimingActivity extends BaseActivity implements View.OnClic
         operate = getIntent().getIntExtra("operate", 0);
         deviceModel = (Device) getIntent().getSerializableExtra("device");
         memoNames = getIntent().getStringArrayListExtra("memoName");
+        Log.e("查询初始化的时候的",memoNames.toString());
         initView();
     }
 
@@ -324,6 +325,7 @@ public class MulitipleTimingActivity extends BaseActivity implements View.OnClic
                     if (memoNames != null){
                         //多路
                         intent.putStringArrayListExtra("memoNames",memoNames);
+                        Log.e("传递的多路值",memoNames.toString());
                     }else {
                         //白灯
                         intent.putExtra("isOneSwitch", true);

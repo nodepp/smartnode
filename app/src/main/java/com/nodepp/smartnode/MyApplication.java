@@ -20,6 +20,7 @@ import cn.jpush.android.api.JPushInterface;
 public class MyApplication extends Application {
     public static String TAG = MyApplication.class.getSimpleName();
     private TXCloudVideoView mPlayerView;
+    private static Context mContext;
     public static NetObservable observable = new NetObservable();
     public static PushObservable pushObservable = new PushObservable();
     protected void attachBaseContext(Context base) {
@@ -29,6 +30,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        mContext =  this;
 //        File file = new File(Environment.getExternalStorageDirectory(),"app1");
 //        Debug.startMethodTracing(file.getAbsolutePath());
         new Thread(){
@@ -75,4 +77,7 @@ public class MyApplication extends Application {
 //        SkinManager.getInstance().load();
 //    }
 
+    public static Context getAppContext() {
+        return mContext;
+    }
 }

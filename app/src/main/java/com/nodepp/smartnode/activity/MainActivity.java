@@ -76,6 +76,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Observable;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import cn.jpush.android.api.JPushInterface;
 import nodepp.Nodepp;
@@ -110,6 +112,10 @@ public class MainActivity extends BaseVoiceActivity {
     private LinearLayout llNoNetWork;
     private HashMap<String, Device> namesMap = new HashMap<>();
     private ScreenChangeReceiver screenChangeReceiver;
+
+    private long lastControlTimeStamp = 0;
+    private MyTasks myTask;
+    private Timer timer;
 
     private Handler handler = new Handler() {
         @Override
@@ -244,6 +250,30 @@ public class MainActivity extends BaseVoiceActivity {
 
     }
 
+    private void startTimer() {
+        Log.i(TAG, "startTimer");
+        if (timer == null) {
+            timer = new Timer();
+        }
+        if (myTask == null) {
+            myTask = new MyTasks();
+        }
+        timer.schedule(myTask, 1000, 5000);  //定时器从进入页面1秒开始，每隔5s执行一次
+    }
+
+    private void stopTimer() {
+        Log.i(TAG, "stopTimer");
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
+        if (myTask != null) {
+            myTask.cancel();
+            myTask = null;
+        }
+    }
+
+
     /**
      * 查询局域网设备状态
      *
@@ -254,7 +284,7 @@ public class MainActivity extends BaseVoiceActivity {
             if (devices.size() > 0) {
                 for (int i = 0; i < devices.size(); i++) {
                     Device device = devices.get(i);
-                    device.setIsOnline(false);
+//                    device.setIsOnline(false);
                     try {
                         DBUtil.getInstance(MainActivity.this).update(device, WhereBuilder.b("userName", "=", Constant.userName).and("did", "=", device.getDid()));
                     } catch (DbException e1) {
@@ -445,6 +475,7 @@ public class MainActivity extends BaseVoiceActivity {
         }
         showUI((devices == null || devices.size() == 0) ? false : true);
         super.onResume();
+        startTimer();
     }
 
     private void initView() {
@@ -606,6 +637,7 @@ public class MainActivity extends BaseVoiceActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        stopTimer();
         if (udpClientScan != null) {
             udpClientScan = null;
         }
@@ -857,15 +889,31 @@ public class MainActivity extends BaseVoiceActivity {
     @Override
     protected void netChange(Observable observable, Object data) {
         super.netChange(observable, data);
-        if (Constant.KEY_A2S == null){
-            //网络发生变化的时候，如果之前没有key，则重新尝试从服务器验证用户信息进行获取key，成功后就可以使用互联网通信
-            reCheckUserInfo();
-        }else {
-            initDevice(true);
-
+        Log.e("net","main net change ");
+        boolean networkOnline = NetWorkUtils.isNetworkOnline();
+        if (NetWorkUtils.isNetworkConnected(MainActivity.this)) {
+            if (networkOnline) {
+                Log.e("网络在线", "网络在线的吧");
+                if (Constant.KEY_A2S == null){
+                    //网络发生变化的时候，如果之前没有key，则重新尝试从服务器验证用户信息进行获取key，成功后就可以使用互联网通信
+                    reCheckUserInfo();
+                }else {
+                    initDevice(true);
+                }
+            } else {
+                Log.e("网络不在线", "网络不在线的吧");
+                initDevice(false);
+            }
+        } else {
+            if (Constant.KEY_A2S == null){
+                //网络发生变化的时候，如果之前没有key，则重新尝试从服务器验证用户信息进行获取key，成功后就可以使用互联网通信
+                reCheckUserInfo();
+            }else {
+                initDevice(true);
+            }
         }
-        Log.i("net","main net change ");
     }
+
 
     /**
      * 监听极光推送来的自定义消息
@@ -958,6 +1006,26 @@ public class MainActivity extends BaseVoiceActivity {
 
             }
         });
+    }
+
+    class MyTasks extends TimerTask {
+
+        @Override
+        public void run() {
+            Log.i(TAG, "执行");
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    long currentTimeMillis = System.currentTimeMillis();
+                    if (currentTimeMillis - lastControlTimeStamp > 1000){//距离最后一次控制的时间大于3s才进行状态查询
+                        initDevice(true);
+                    }else {
+                        Log.i(TAG,"---------控制不执行-------------");
+                    }
+                }
+
+            });
+        }
     }
 
     @Override

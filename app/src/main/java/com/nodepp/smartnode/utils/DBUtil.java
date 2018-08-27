@@ -44,6 +44,9 @@ public class DBUtil {
                                     if (oldVersion <20){
                                         addFieldToTable(dbUtils, "tb_time_task", "int", "operateIndex");//operateIndex int类型
                                     }
+//                                    if (oldVersion <21){
+//                                        addFieldToTable(dbUtils, "tb_multiple_remark_name", "char", "ChannelTitleName");//ChannelTitleName string类型
+//                                    }
                                 } catch (Exception e) {
                                     e.printStackTrace();
                                 }
@@ -79,4 +82,5 @@ public class DBUtil {
             e.printStackTrace();
         }
     }
+
 }

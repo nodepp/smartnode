@@ -76,8 +76,9 @@ public class AddTimedTaskActivity extends BaseActivity {
         tid = getIntent().getIntExtra("tid", 0);
         isOneSwitch = getIntent().getBooleanExtra("isOneSwitch", false);
         memoNames = getIntent().getStringArrayListExtra("memoNames");
+
         if (memoNames != null) {
-            Log.i("jj", "AddTimedTaskActivity==" + memoNames.toString());
+            Log.e("jj", "AddTimedTaskActivity==" + memoNames.toString());
         }
         dbUtils = DBUtil.getInstance(AddTimedTaskActivity.this);
         initView();

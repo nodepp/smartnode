@@ -142,6 +142,7 @@ public class MoreSettingActivity extends BaseActivity {
             tvFimewareVer.setText(String.valueOf(deviceModel.getFirmwareVersion()));
             UDPClientA2S.getInstance().setThrowInvalidPackage(false);
             UDPClient.getInstance(this).setThrowInvalidPackage(false);
+            Log.e("获得模式号",deviceModel.getDeviceMode()+"");
             setDeviceMode(deviceModel.getDeviceMode());
             checkFirmwareInfo(this, deviceModel.getDid());//先查
             checkFirmwareLevel(MoreSettingActivity.this, deviceModel.getDid());
@@ -202,18 +203,36 @@ public class MoreSettingActivity extends BaseActivity {
                 public void onSuccess(Nodepp.Msg msg) {
                     if (msg != null) {
                         Log.i(TAG, "receive==" + msg.toString());
+                        Log.e(TAG, msg.toString());
                         int result = msg.getHead().getResult();
                         if (result == 0) {
                             if (msg.hasDeviceMode()){
                                 int mode = msg.getDeviceMode();
+                                Log.e(TAG, "这个模式"+mode);
                                 deviceModel.setDeviceMode(mode);
+                                if(deviceModel.getDeviceMode() == 0){
+                                    cbModeOne.setChecked(true);
+                                    cbModeTwo.setChecked(false);
+                                    cbModeThree.setChecked(false);
+                                }else if(deviceModel.getDeviceMode() == 1){
+                                    cbModeOne.setChecked(false);
+                                    cbModeTwo.setChecked(true);
+                                    cbModeThree.setChecked(false);
+                                }else if(deviceModel.getDeviceMode() == 2){
+                                    cbModeOne.setChecked(false);
+                                    cbModeTwo.setChecked(false);
+                                    cbModeThree.setChecked(true);
+                                }
                                 controlSocket(0);//重置设备状态成功
                                 setDeviceMode(mode);
                                 updateDeviceToDB();
                                 JDJToast.showMessage(MoreSettingActivity.this, "模式修改成功");
                             }
                         } else {
-                            JDJToast.showMessage(MoreSettingActivity.this, "模式失败");
+                            cbModeOne.setChecked(false);
+                            cbModeTwo.setChecked(false);
+                            cbModeThree.setChecked(false);
+                            JDJToast.showMessage(MoreSettingActivity.this, "模式修改失败");
                         }
                     }
                 }
@@ -282,16 +301,20 @@ public class MoreSettingActivity extends BaseActivity {
                 case R.id.cb_mode_one:
                 case R.id.tv_mode_one:
                     //自锁模式
+                    Log.e(TAG, "send==点击了自锁模式=============");
                     changeDeviceMode(0);
+
                     break;
                 case R.id.cb_mode_two:
                 case R.id.tv_mode_two:
                     //点动模式
+                    Log.e(TAG, "send==点击了点动模式=============");
                     changeDeviceMode(1);
                     break;
                 case R.id.cb_mode_three:
                 case R.id.tv_mode_three:
                     //点动模式
+                    Log.e(TAG, "send==点击了互锁模式=============");
                     changeDeviceMode(2);
                     break;
             }
@@ -713,7 +736,14 @@ public class MoreSettingActivity extends BaseActivity {
                     if (result == 404) {
                         JDJToast.showMessage(MoreSettingActivity.this, getString(R.string.device_is_not_online));
                     }else if (result == 0){
-                        JDJToast.showMessage(MoreSettingActivity.this, "重置设备状态成功");
+                        if(deviceModel.getDeviceMode() == 0){
+                            JDJToast.showMessage(MoreSettingActivity.this, "重置到自锁模式成功");
+                        }else if(deviceModel.getDeviceMode() == 1){
+                            JDJToast.showMessage(MoreSettingActivity.this, "重置到点动模式成功");
+                        }else if(deviceModel.getDeviceMode() == 2){
+                            JDJToast.showMessage(MoreSettingActivity.this, "重置到互锁模式成功");
+                        }
+
                     }
 
                 }

@@ -148,21 +148,23 @@ public class UDPClientA2S extends DatagramSocket {
                 }
             }finally {
                 final Nodepp.Msg finalMessage = message;
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (finalMessage != null){
-                            responseListener.onSuccess(finalMessage);
-                            Log.i("sendMessageAS","receive"+ finalMessage.toString());
-                        }else {
-                            if (isRetry){
-                                responseListener.onTimeout(msg);
-                                Log.i("sendMessageAS","receive onFaile");
-                            }
+                if(handler !=null) {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (finalMessage != null) {
+                                responseListener.onSuccess(finalMessage);
+                                Log.i("sendMessageAS", "receive" + finalMessage.toString());
+                            } else {
+                                if (isRetry) {
+                                    responseListener.onTimeout(msg);
+                                    Log.i("sendMessageAS", "receive onFaile");
+                                }
 
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
 //        }
     }

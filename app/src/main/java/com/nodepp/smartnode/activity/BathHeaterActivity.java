@@ -20,6 +20,7 @@ import com.nodepp.smartnode.udp.ResponseListener;
 import com.nodepp.smartnode.udp.Socket;
 import com.nodepp.smartnode.utils.JDJToast;
 import com.nodepp.smartnode.utils.Log;
+import com.nodepp.smartnode.utils.NetWorkUtils;
 import com.nodepp.smartnode.utils.PbDataUtils;
 import com.nodepp.smartnode.utils.Utils;
 
@@ -685,8 +686,21 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
     //数据更新
     @Override
     protected void netChange(Observable observable, Object data) {
-        super.netChange(observable, data);
-        deviceModel.setConnetedMode(0);
+        Log.e("net", "多路 net change ");
+//        deviceModel.setConnetedMode(0);
+        boolean networkOnline = NetWorkUtils.isNetworkOnline();
+        if (NetWorkUtils.isNetworkConnected(BathHeaterActivity.this)) {
+            if (networkOnline) {
+                Log.e("网络在线", "网络在线的吧");
+                deviceModel.setConnetedMode(0);
+            } else {
+                Log.e("网络不在线", "网络不在线的吧");
+                deviceModel.setConnetedMode(1);
+            }
+        } else {
+            Log.e("网络不在线", "网络在线没数据的吧");
+            deviceModel.setConnetedMode(0);
+        }
     }
 
 

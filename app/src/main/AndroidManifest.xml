@@ -355,6 +355,7 @@
             android:value="502451df99097e4722a159e6" /> <!-- </>值来自开发者平台取得的AppKey -->
         <activity android:name=".activity.WhiteLightActivity"></activity>
         <activity android:name=".activity.BathHeaterActivity"></activity>
+        <activity android:name=".activity.CusSixteenchannelControlActivity"></activity>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.nodepp.smartnode.fileprovider"

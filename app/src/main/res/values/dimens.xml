@@ -29,4 +29,6 @@
     <dimen name="cardPadding">2px</dimen>
     <dimen name="cardRadius">2dp</dimen>
     <dimen name="borderRadius">20dp</dimen>
+
+    <dimen name="header_pager_offset">-90dip</dimen>
 </resources>

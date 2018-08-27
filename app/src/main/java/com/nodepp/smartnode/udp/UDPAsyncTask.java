@@ -3,6 +3,7 @@ package com.nodepp.smartnode.udp;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.lidroid.xutils.exception.DbException;
 import com.nodepp.smartnode.Constant;
 import com.nodepp.smartnode.model.UDPTask;
 import com.nodepp.smartnode.utils.Log;
@@ -45,8 +46,15 @@ public class UDPAsyncTask extends AsyncTask<UDPTask, Void, Nodepp.Msg> {
         Context context = mContext.get();
         Nodepp.Msg m = task.getMsg();
         if (context != null) {
-            if (m != null && random != null && random != null){
-                msg = UDPClient.getInstance(context).sendDataToClient(ip, m, random);
+//            if (m != null && random != null && random != null){
+//                msg = UDPClient.getInstance(context).sendDataToClient(ip, m, random);
+//            }
+            try {
+                if (m != null && random != null && ip != null){
+                    msg = UDPClient.getInstance(context).sendDataToClient(ip, m, random);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
             return msg;
         }else {

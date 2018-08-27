@@ -185,6 +185,7 @@ public class TimeTaskAdapter extends BaseAdapter {
             Log.e("operateIndex","operateIndex---"+operateIndex);
             if (nameLists != null){//多路的时候才显示
                 for (int i = 0;i < nameLists.size();i++){
+                    Log.e("几个通道","operateIndex---"+nameLists.size());
                     builder.append((operateIndex & 1<<i)!=0?nameLists.get(i)+"、":"");
                 }
                 if (builder.length() > 0){

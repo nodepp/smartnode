@@ -74,6 +74,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     private ToggleButton tbSwitchFour;
     private ToggleButton tbSwitchFive;
     private ToggleButton tbSwitchSix;
+    private ToggleButton tbSwicthSeven;
+    private ToggleButton tbSwitchEight;
     private int switchValue = 0;
     private int currentCheck = 0;
     private int deviceValue = 0;
@@ -89,6 +91,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     private TextView tvFour;
     private TextView tvFive;
     private TextView tvSix;
+    private TextView tvSeven;
+    private TextView tvEight;
     private ImageView ivBack,ivVoice,ivMore,iv_addtime;
     private LinearLayout llTiming;
     private MyTask myTask;
@@ -116,10 +120,70 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
             setContentView(R.layout.activity_twochannel_new);
         }else  if(deviceModel.getDeviceType() == 14){
             setContentView(R.layout.activity_six_switch);
-            deviceValue  = 14;
-
+//            deviceValue  = 14;
+        }else if(deviceModel.getDeviceType() == 15){
+            setContentView(R.layout.activity_eight_switch);
         }
         initView();
+
+    }
+
+
+    private void initView() {
+        ivBack = findViewById(R.id.iv_back);
+        ivVoice = findViewById(R.id.iv_voice);
+        ivMore = findViewById(R.id.iv_more);
+        iv_addtime = findViewById(R.id.iv_add_task);
+        ivBack.setOnClickListener(this);
+        ivMore.setOnClickListener(this);
+        ivVoice.setOnClickListener(this);
+//        iv_addtime.setOnClickListener(this);
+        tvTitle = (TextView) findViewById(R.id.tv_title);
+        tbSwitchOne = (ToggleButton) findViewById(R.id.tb_switch_one);
+        tbSwitchTwo = (ToggleButton) findViewById(R.id.tb_switch_two);
+        tbSwitchThree = (ToggleButton) findViewById(R.id.tb_switch_three);
+        tbSwitchFour = (ToggleButton) findViewById(R.id.tb_switch_four);
+        tbSwitchFive = (ToggleButton) findViewById(R.id.tb_switch_five);
+        tbSwitchSix = (ToggleButton) findViewById(R.id.tb_switch_six);
+        tbSwicthSeven = findViewById(R.id.tb_switch_seven);
+        tbSwitchEight = findViewById(R.id.tb_switch_eight);
+
+        llTiming = (LinearLayout) findViewById(R.id.ll_timing);
+        tvOne = (TextView) findViewById(R.id.tv_one);
+        tvTwo = (TextView) findViewById(R.id.tv_two);
+        tvThree = (TextView) findViewById(R.id.tv_three);
+        tvFour = (TextView) findViewById(R.id.tv_four);
+        tvFive = (TextView) findViewById(R.id.tv_five);
+        tvSix = (TextView) findViewById(R.id.tv_six);
+        tvSeven = findViewById(R.id.tv_seven);
+        tvEight = findViewById(R.id.tv_eight);
+
+        llTiming.setOnClickListener(onClickListener);
+
+        tvOne.setOnClickListener(onClickListener);
+        tvTwo.setOnClickListener(onClickListener);
+        tvThree.setOnClickListener(onClickListener);
+        tvFour.setOnClickListener(onClickListener);
+        tvFive.setOnClickListener(onClickListener);
+        tvSix.setOnClickListener(onClickListener);
+        tvSeven.setOnClickListener(onClickListener);
+        tvEight.setOnClickListener(onClickListener);
+        tvTitle.setOnClickListener(onClickListener);
+        tbSwitchOne.setOnCheckedChangeListener(checkListener);
+        tbSwitchTwo.setOnCheckedChangeListener(checkListener);
+        tbSwitchThree.setOnCheckedChangeListener(checkListener);
+        tbSwitchFour.setOnCheckedChangeListener(checkListener);
+        tbSwitchFive.setOnCheckedChangeListener(checkListener);
+        tbSwitchSix.setOnCheckedChangeListener(checkListener);
+        tbSwicthSeven.setOnCheckedChangeListener(checkListener);
+        tbSwitchEight.setOnCheckedChangeListener(checkListener);
+
+        iv_addtime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goTiming();
+            }
+        });
 
     }
 
@@ -148,6 +212,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         tvFour.setText(multipleRemarkName.getChannelFourName());
         tvFive.setText(multipleRemarkName.getChannelFiveName());
         tvSix.setText(multipleRemarkName.getChannelSixName());
+        tvSeven.setText(multipleRemarkName.getChannelSevenName());
+        tvEight.setText(multipleRemarkName.getChannelEightName());
 
         tvTitle.setText(deviceModel.getSocketName());
         setChannelsNameToMap();
@@ -163,6 +229,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
             tbSwitchFour.setOnTouchListener(onTouchListener);
             tbSwitchFive.setOnTouchListener(onTouchListener);
             tbSwitchSix.setOnTouchListener(onTouchListener);
+            tbSwicthSeven.setOnTouchListener(onTouchListener);
+            tbSwitchEight.setOnTouchListener(onTouchListener);
         } else {//其他模式，移除onTouchListener监听
             tbSwitchOne.setOnTouchListener(null);
             tbSwitchTwo.setOnTouchListener(null);
@@ -170,6 +238,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
             tbSwitchFour.setOnTouchListener(null);
             tbSwitchFive.setOnTouchListener(null);
             tbSwitchSix.setOnTouchListener(null);
+            tbSwicthSeven.setOnTouchListener(null);
+            tbSwitchEight.setOnTouchListener(null);
         }
     }
 
@@ -204,61 +274,6 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     }
 
 
-    private void initView() {
-//        ImageView ivBacke = (ImageView) findViewById(R.id.iv_back);
-//        ImageView ivMore = (ImageView) findViewById(R.id.iv_more);
-//        ImageView ivVoice = (ImageView) findViewById(R.id.iv_voice);
-//        ImageView iv_add_task = findViewById(R.id.iv_add_task);
-//
-        ivBack = findViewById(R.id.iv_back);
-        ivVoice = findViewById(R.id.iv_voice);
-        ivMore = findViewById(R.id.iv_more);
-        iv_addtime = findViewById(R.id.iv_add_task);
-        ivBack.setOnClickListener(this);
-        ivMore.setOnClickListener(this);
-        ivVoice.setOnClickListener(this);
-//        iv_addtime.setOnClickListener(this);
-        tvTitle = (TextView) findViewById(R.id.tv_title);
-        tbSwitchOne = (ToggleButton) findViewById(R.id.tb_switch_one);
-        tbSwitchTwo = (ToggleButton) findViewById(R.id.tb_switch_two);
-        tbSwitchThree = (ToggleButton) findViewById(R.id.tb_switch_three);
-        tbSwitchFour = (ToggleButton) findViewById(R.id.tb_switch_four);
-        tbSwitchFive = (ToggleButton) findViewById(R.id.tb_switch_five);
-        tbSwitchSix = (ToggleButton) findViewById(R.id.tb_switch_six);
-
-        llTiming = (LinearLayout) findViewById(R.id.ll_timing);
-        tvOne = (TextView) findViewById(R.id.tv_one);
-        tvTwo = (TextView) findViewById(R.id.tv_two);
-        tvThree = (TextView) findViewById(R.id.tv_three);
-        tvFour = (TextView) findViewById(R.id.tv_four);
-        tvFive = (TextView) findViewById(R.id.tv_five);
-        tvSix = (TextView) findViewById(R.id.tv_six);
-        llTiming.setOnClickListener(onClickListener);
-
-        tvOne.setOnClickListener(onClickListener);
-        tvTwo.setOnClickListener(onClickListener);
-        tvThree.setOnClickListener(onClickListener);
-        tvFour.setOnClickListener(onClickListener);
-        tvFive.setOnClickListener(onClickListener);
-        tvSix.setOnClickListener(onClickListener);
-        tvTitle.setOnClickListener(onClickListener);
-        tbSwitchOne.setOnCheckedChangeListener(checkListener);
-        tbSwitchTwo.setOnCheckedChangeListener(checkListener);
-        tbSwitchThree.setOnCheckedChangeListener(checkListener);
-        tbSwitchFour.setOnCheckedChangeListener(checkListener);
-        tbSwitchFive.setOnCheckedChangeListener(checkListener);
-        tbSwitchSix.setOnCheckedChangeListener(checkListener);
-
-        iv_addtime.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goTiming();
-            }
-        });
-
-
-//
-    }
 
     View.OnTouchListener onTouchListener = new View.OnTouchListener() {
         @Override
@@ -286,6 +301,11 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                         case R.id.tb_switch_six:
                             tbSwitchSix.setChecked(true);
                             break;
+                        case R.id.tb_switch_seven:
+                            tbSwicthSeven.setChecked(true);
+                        case R.id.tb_switch_eight:
+                            tbSwitchEight.setChecked(true);
+                            break;
                     }
                     break;
                 case MotionEvent.ACTION_UP:
@@ -308,6 +328,12 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                         case R.id.tb_switch_six:
                             tbSwitchSix.setChecked(false);
                             break;
+                        case R.id.tb_switch_seven:
+                            tbSwicthSeven.setChecked(false);
+                            break;
+                        case R.id.tb_switch_eight:
+                            tbSwitchEight.setChecked(false);
+                            break;
                     }
                     break;
             }
@@ -319,7 +345,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.tv_title:
-                    showChangeNameDialog(7);
+                    showChangeNameDialog(99);
                     break;
                 case R.id.tv_one:
                     showChangeNameDialog(1);
@@ -338,6 +364,12 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                     break;
                 case R.id.tv_six:
                     showChangeNameDialog(6);
+                    break;
+                case R.id.tv_seven:
+                    showChangeNameDialog(7);
+                    break;
+                case R.id.tv_eight:
+                    showChangeNameDialog(8);
                     break;
                 case R.id.ll_timing:
                     goTiming();
@@ -358,13 +390,17 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         ArrayList<String> names = new ArrayList<String>();
         names.add(multipleRemarkName.getChannelOneName());
         names.add(multipleRemarkName.getChannelTwoName());
-        if (deviceModel.getDeviceType() == 4 || deviceModel.getDeviceType() == 2 ){//4路和六路要
+        if (deviceModel.getDeviceType() == 4 || deviceModel.getDeviceType() == 2 || deviceModel.getDeviceType() == 14 || deviceModel.getDeviceType() ==15 ){//4路和六路要
             names.add(multipleRemarkName.getChannelThreeName());
             names.add(multipleRemarkName.getChannelFourName());
         }
-        if (deviceModel.getDeviceType() == 2) {//多传递5，6路的名称
+        if (deviceModel.getDeviceType() == 2 || deviceModel.getDeviceType() == 14 || deviceModel.getDeviceType() ==15 ) {//多传递5，6路的名称
             names.add(multipleRemarkName.getChannelFiveName());
             names.add(multipleRemarkName.getChannelSixName());
+        }
+        if(deviceModel.getDeviceType() ==15 ) {//多传递7，8路的名称
+            names.add(multipleRemarkName.getChannelSevenName());
+            names.add(multipleRemarkName.getChannelEightName());
         }
         intent.putStringArrayListExtra("memoName", names);
         startActivity(intent);
@@ -389,7 +425,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String name = editText.getText().toString();
-                 updateUserWord(name);
+                updateUserWord(name);
                 if (TextUtils.isEmpty(name)) {
                     JDJToast.showMessage(MultichannelControlActivity.this, "请输入要修改的名字");
                 } else {
@@ -419,7 +455,14 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                             tvSix.setText(name);
                             break;
                         case 7:
-                            multipleRemarkName.setChannelTitleName(name);
+                            multipleRemarkName.setChannelSevenName(name);
+                            tvSeven.setText(name);
+                            break;
+                        case 8:
+                            multipleRemarkName.setChannelEightName(name);
+                            tvEight.setText(name);
+                            break;
+                        case 99:
                             tvTitle.setText(name);
                             deviceModel.setSocketName(name);
                     }
@@ -454,10 +497,10 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             lastControlTimeStamp = System.currentTimeMillis();
-            if (ClickUtils.isFastClick(100)&&!isSetStates) {//防止用户一直快速点击
-                JDJToast.showMessage(MultichannelControlActivity.this, getString(R.string.no_click_quick));
-                return;
-            }
+//            if (ClickUtils.isFastClick(100)&&!isSetStates) {//防止用户一直快速点击
+//                JDJToast.showMessage(MultichannelControlActivity.this, getString(R.string.no_click_quick));
+//                return;
+//            }
             switch (buttonView.getId()) {
                 case R.id.tb_switch_one:
                     isSelectOne = isChecked;
@@ -517,11 +560,15 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                         case 6:
                             switchValue = isChecked ? 32 : 0;
                             break;
+                        case 7:
+                            switchValue = isChecked ? 64 : 0;
+                        case 8:
+                            switchValue = isChecked ? 128 : 0;
                     }
                     changeState(switchValue);
                 } else {
                     //自锁，点动
-                    switchValue = Utils.getSwitchValue(isSelectOne, isSelectTwo, isSelectThree, isSelectFour, isSelectFive, isSelectSix, false, false);
+                    switchValue = Utils.getSwitchValue(isSelectOne, isSelectTwo, isSelectThree, isSelectFour, isSelectFive, isSelectSix, isSelectSeven, isSelectEight);
                 }
                 controlSocket(switchValue);
             }
@@ -588,7 +635,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         if (myTask == null) {
             myTask = new MyTask();
         }
-        timer.schedule(myTask, 1000, 3000);  //定时器开始，每隔3s执行一次
+        timer.schedule(myTask, 1000, 5000);  //定时器开始，每隔3s执行一次
     }
 
     private void stopTimer() {
@@ -731,12 +778,14 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
 //                tbSwitchFour.setChecked(true);
 //            }
 //        }else {
-            tbSwitchOne.setChecked((state & 1) == 0 ? false : true);
-            tbSwitchTwo.setChecked((state & 2) == 0 ? false : true);
-            tbSwitchThree.setChecked((state & 4) == 0 ? false : true);
-            tbSwitchFour.setChecked((state & 8) == 0 ? false : true);
-            tbSwitchFive.setChecked((state & 16) == 0 ? false : true);
-            tbSwitchSix.setChecked((state & 32) == 0 ? false : true);
+        tbSwitchOne.setChecked((state & 1) == 0 ? false : true);
+        tbSwitchTwo.setChecked((state & 2) == 0 ? false : true);
+        tbSwitchThree.setChecked((state & 4) == 0 ? false : true);
+        tbSwitchFour.setChecked((state & 8) == 0 ? false : true);
+        tbSwitchFive.setChecked((state & 16) == 0 ? false : true);
+        tbSwitchSix.setChecked((state & 32) == 0 ? false : true);
+        tbSwicthSeven.setChecked((state & 64) == 0 ? false : true);
+        tbSwitchEight.setChecked((state & 128) == 0 ? false : true);
 //        }
         isSetStates = false;
     }
@@ -807,8 +856,23 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
      */
     @Override
     protected void netChange(Observable observable, Object data) {
-        Log.e("net","多路 net change ");
-        deviceModel.setConnetedMode(0);
+        super.netChange(observable, data);
+//        deviceModel.setConnetedMode(0);
+        boolean networkOnline = NetWorkUtils.isNetworkOnline();
+        if (NetWorkUtils.isNetworkConnected(MultichannelControlActivity.this)) {
+            if (networkOnline) {
+                Log.e("网络在线", "网络在线的吧");
+                deviceModel.setConnetedMode(0);
+            } else {
+                Log.e("网络不在线", "网络不在线的吧");
+                deviceModel.setConnetedMode(1);
+            }
+        } else {
+            Log.e("网络不在线", "网络在线没数据的吧");
+            deviceModel.setConnetedMode(0);
+        }
+    }
+
 //        JDJToast.showMessage(this, "网络环境发生变化，请不要过快点击设备");
 //        String apSsid = mWifiAdmin.getWifiConnectedSsid();
 //        WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
@@ -822,7 +886,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
 //            deviceModel.setConnetedMode(0);
 //            JDJToast.showMessage(this, "已经进入互联网模式");
 //        }
-    }
+
 
     /**
      * 语音控制
@@ -836,8 +900,10 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                 flag = flag +1;
                 if (deviceModel.getDeviceType() == 4){
                     switchValue = 15;
-                }else if (deviceModel.getDeviceType()  == 2){//6路
+                }else if (deviceModel.getDeviceType()  == 2 || deviceModel.getDeviceType()==14){//6路
                     switchValue = 63;
+                }else if(deviceModel.getDeviceType() == 15){
+                    switchValue = 127;
                 }
             } else if (result.contains("关闭")) {
                 switchValue = 0;

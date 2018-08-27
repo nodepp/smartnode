@@ -18,8 +18,8 @@ public class MultipleRemarkName extends EntityBase{
     @Column(column = "tid")
     private long tid;//设备临时id
 
-    @Column(column = "ChannelTitleName")
-    private String ChannelTitleName = "两路";
+//    @Column(column = "ChannelTitleName")
+//    private String ChannelTitleName = "两路";
 
     @Column(column = "ChannelOneName")
     private String ChannelOneName ="通道一";//通道1名称
@@ -133,13 +133,13 @@ public class MultipleRemarkName extends EntityBase{
         ChannelEightName = channelEightName;
     }
 
-    public String getChannelTitleName() {
-        return ChannelTitleName;
-    }
-
-    public void setChannelTitleName(String channelTitleName) {
-        ChannelTitleName = channelTitleName;
-    }
+//    public String getChannelTitleName() {
+//        return ChannelTitleName;
+//    }
+//
+//    public void setChannelTitleName(String channelTitleName) {
+//        ChannelTitleName = channelTitleName;
+//    }
 
     @Override
     public String toString() {
@@ -147,7 +147,7 @@ public class MultipleRemarkName extends EntityBase{
                 "userName='" + userName + '\'' +
                 ", did=" + did +
                 ", tid=" + tid +
-                ", ChannelTitleName='" + ChannelTitleName + '\'' +
+//                ", ChannelTitleName='" + ChannelTitleName + '\'' +
                 ", ChannelOneName='" + ChannelOneName + '\'' +
                 ", ChannelTwoName='" + ChannelTwoName + '\'' +
                 ", ChannelThreeName='" + ChannelThreeName + '\'' +

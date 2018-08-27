@@ -146,7 +146,6 @@
             android:focusable="false"
             android:textOn=""
             android:button="@null"
-            android:checked="false"
             android:background="@drawable/selector_toggle_switch"
             />
     </LinearLayout>

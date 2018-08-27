@@ -213,6 +213,48 @@
             android:textColor="@color/black"
             android:textAlignment="center" />
 
+
+        <ToggleButton
+            android:id="@+id/tb_switch_seven"
+            style="@style/multiple_switch"
+            android:layout_below="@+id/tv_three"
+            android:layout_alignLeft="@+id/tv_three"
+            android:layout_marginRight="75dp"
+            android:visibility="gone"
+            android:layout_marginTop="40dp" />
+
+        <TextView
+            android:id="@+id/tv_seven"
+            style="@style/multiple_switch_text"
+            android:layout_marginTop="15dp"
+            android:text="通道7"
+            android:layout_alignLeft="@+id/tb_switch_seven"
+            android:layout_below="@id/tb_switch_seven"
+            android:textSize="15sp"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textAlignment="center" />
+
+        <ToggleButton
+            android:id="@+id/tb_switch_eight"
+            style="@style/multiple_switch"
+            android:layout_below="@+id/tv_four"
+            android:layout_alignLeft="@+id/tv_four"
+            android:visibility="gone"
+            android:layout_marginTop="40dp" />
+
+        <TextView
+            android:id="@+id/tv_eight"
+            style="@style/multiple_switch_text"
+            android:layout_marginTop="15dp"
+            android:text="通道8"
+            android:layout_alignLeft="@+id/tb_switch_eight"
+            android:layout_below="@id/tb_switch_eight"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            android:textAlignment="center" />
+
         <ImageView
             android:id="@+id/iv_add_task"
             android:layout_width="60dp"

@@ -55,7 +55,7 @@ public class NetChangeReceiver extends BroadcastReceiver {
 
         if (WifiManager.WIFI_STATE_CHANGED_ACTION.equals(intent.getAction())) {// 监听wifi的打开与关闭，与wifi的连接无关
             int wifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, 0);
-            Log.e("TAG", "wifiState:" + wifiState);
+            Log.i("TAG", "wifiState:" + wifiState);
             switch (wifiState) {
                 case WifiManager.WIFI_STATE_DISABLED:
                     break;
@@ -82,8 +82,7 @@ public class NetChangeReceiver extends BroadcastReceiver {
                                     e.printStackTrace();
                                 }
                             }
-                            observable.notifyNetChange();
-                            Log.e("TAG", getConnectionType(info.getType()) + "连上");
+                            Log.i("TAG", getConnectionType(info.getType()) + "连上");
                         }
                     } else if (info.getType() == ConnectivityManager.TYPE_MOBILE) {
                         if (devices != null) {
@@ -95,8 +94,7 @@ public class NetChangeReceiver extends BroadcastReceiver {
                                     e.printStackTrace();
                                 }
                             }
-                            observable.notifyNetChange();
-                            Log.e("TAG", getConnectionType(info.getType()) + "连上");
+                            Log.i("TAG", getConnectionType(info.getType()) + "连上");
                         }
                     }
                 } else {
@@ -112,10 +110,10 @@ public class NetChangeReceiver extends BroadcastReceiver {
                             }
                         }
                         Log.i("net","-------------3-------------");
-                        observable.notifyNetChange();
                     }
                 }
             }
+            observable.notifyNetChange();
         }
     }
 }
