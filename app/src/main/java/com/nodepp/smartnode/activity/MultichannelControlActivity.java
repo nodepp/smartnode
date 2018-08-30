@@ -27,7 +27,10 @@ import com.nodepp.smartnode.Constant;
 import com.nodepp.smartnode.R;
 import com.nodepp.smartnode.esptouch.EspWifiAdminSimple;
 import com.nodepp.smartnode.model.Device;
+import com.nodepp.smartnode.model.MessageEvent;
 import com.nodepp.smartnode.model.MultipleRemarkName;
+import com.nodepp.smartnode.task.CheckConnectTask;
+import com.nodepp.smartnode.task.NetWorkListener;
 import com.nodepp.smartnode.udp.ResponseListener;
 import com.nodepp.smartnode.udp.Socket;
 import com.nodepp.smartnode.udp.UDPClientA2S;
@@ -42,13 +45,17 @@ import com.nodepp.smartnode.utils.SharedPreferencesUtils;
 import com.nodepp.smartnode.utils.Utils;
 
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.io.Serializable;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Observable;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -93,7 +100,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     private TextView tvSix;
     private TextView tvSeven;
     private TextView tvEight;
-    private ImageView ivBack,ivVoice,ivMore,iv_addtime;
+    private ImageView ivBack, ivVoice, ivMore, iv_addtime;
     private LinearLayout llTiming;
     private MyTask myTask;
     private Timer timer;
@@ -104,26 +111,33 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     private long lastControlTimeStamp = 0;
     private Device deviceModel;
     private Nodepp.Msg currentMsg = nodepp.Nodepp.Msg.newBuilder().build();//初始化为空
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //注册订阅者
+        EventBus.getDefault().register(this);
+
         mWifiAdmin = new EspWifiAdminSimple(this);
         deviceModel = (Device) getIntent().getSerializableExtra("device");
         isVoice = getIntent().getBooleanExtra("isVoice", false);
         if (deviceModel.getDeviceType() == 4) {
             setContentView(R.layout.activity_four_switch);
         } else if (deviceModel.getDeviceType() == 2) {
-            setContentView(R.layout.activity_six_switch);
-        }else if (deviceModel.getDeviceType() == 10){
+            setContentView(R.layout.activity_eight_switch);
+        } else if (deviceModel.getDeviceType() == 10) {
             setContentView(R.layout.activity_two_switch);
-        }else if (deviceModel.getDeviceType() == 13) {
+        } else if (deviceModel.getDeviceType() == 13) {
             setContentView(R.layout.activity_twochannel_new);
-        }else  if(deviceModel.getDeviceType() == 14){
+        } else if (deviceModel.getDeviceType() == 14) {
             setContentView(R.layout.activity_six_switch);
 //            deviceValue  = 14;
-        }else if(deviceModel.getDeviceType() == 15){
+        } else if (deviceModel.getDeviceType() == 15) {
             setContentView(R.layout.activity_eight_switch);
-        }
+        } else if (deviceModel.getDeviceType() == 17) {
+        setContentView(R.layout.activity_eight_switch);
+    }
         initView();
 
     }
@@ -222,7 +236,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
     private void resetDeviceMode() {
         if (deviceModel.getDeviceMode() == 1) {//点动模式，设置onTouchListener监听
             changeState(0);
-            Log.i("hh","changeState(0)");
+            Log.i("hh", "changeState(0)");
             tbSwitchOne.setOnTouchListener(onTouchListener);
             tbSwitchTwo.setOnTouchListener(onTouchListener);
             tbSwitchThree.setOnTouchListener(onTouchListener);
@@ -267,12 +281,11 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         startTimer();
         resetDeviceMode();
         initData();
-        if (isVoice){
+        if (isVoice) {
             showVoiceDialog();
             isVoice = false;
         }
     }
-
 
 
     View.OnTouchListener onTouchListener = new View.OnTouchListener() {
@@ -378,10 +391,11 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
 
         }
     };
+
     //跳转到定时界面
-    private void goTiming(){
-        if (deviceModel.getDeviceMode() != 0){
-            JDJToast.showMessage(MultichannelControlActivity.this,"自锁模式才支持定时功能");
+    private void goTiming() {
+        if (deviceModel.getDeviceMode() != 0) {
+            JDJToast.showMessage(MultichannelControlActivity.this, "自锁模式才支持定时功能");
             return;
         }
         Intent intent = new Intent(MultichannelControlActivity.this, MulitipleTimingActivity.class);
@@ -390,15 +404,15 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         ArrayList<String> names = new ArrayList<String>();
         names.add(multipleRemarkName.getChannelOneName());
         names.add(multipleRemarkName.getChannelTwoName());
-        if (deviceModel.getDeviceType() == 4 || deviceModel.getDeviceType() == 2 || deviceModel.getDeviceType() == 14 || deviceModel.getDeviceType() ==15 ){//4路和六路要
+        if (deviceModel.getDeviceType() == 4 || deviceModel.getDeviceType() == 2 || deviceModel.getDeviceType() == 14 || deviceModel.getDeviceType() == 15) {//4路和六路要
             names.add(multipleRemarkName.getChannelThreeName());
             names.add(multipleRemarkName.getChannelFourName());
         }
-        if (deviceModel.getDeviceType() == 2 || deviceModel.getDeviceType() == 14 || deviceModel.getDeviceType() ==15 ) {//多传递5，6路的名称
+        if (deviceModel.getDeviceType() == 2 || deviceModel.getDeviceType() == 14 || deviceModel.getDeviceType() == 15) {//多传递5，6路的名称
             names.add(multipleRemarkName.getChannelFiveName());
             names.add(multipleRemarkName.getChannelSixName());
         }
-        if(deviceModel.getDeviceType() ==15 ) {//多传递7，8路的名称
+        if (deviceModel.getDeviceType() == 15) {//多传递7，8路的名称
             names.add(multipleRemarkName.getChannelSevenName());
             names.add(multipleRemarkName.getChannelEightName());
         }
@@ -408,6 +422,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
 
     /**
      * 修改通道的名称
+     *
      * @param index 修改哪一个通道名称
      */
     private void showChangeNameDialog(final int index) {
@@ -415,9 +430,9 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         builder.setTitle("请输入要修改的名字");
         final EditText editText = new EditText(this);
 
-        if(index==7){
+        if (index == 7) {
             editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(30)});
-        }else{
+        } else {
             editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(5)});
         }
         builder.setView(editText);
@@ -588,6 +603,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
 
     /**
      * 把设备设置为不在线
+     *
      * @param device
      */
     private void setDeviceNoOnline(Device device) {
@@ -611,12 +627,12 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
             case R.id.iv_more:
                 Intent intentMore = new Intent(MultichannelControlActivity.this, MoreSettingActivity.class);
                 intentMore.putExtra("device", deviceModel);
-                startActivityForResult(intentMore,1);
+                startActivityForResult(intentMore, 1);
                 break;
             case R.id.iv_voice: //语音控制
                 // 移动数据分析，收集开始听写事件
-                if (deviceModel.getDeviceMode() != 0){
-                    JDJToast.showMessage(MultichannelControlActivity.this,"自锁模式才支持语音功能");
+                if (deviceModel.getDeviceMode() != 0) {
+                    JDJToast.showMessage(MultichannelControlActivity.this, "自锁模式才支持语音功能");
                     return;
                 }
                 showVoiceDialog();
@@ -660,25 +676,26 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                 @Override
                 public void run() {
                     long currentTimeMillis = System.currentTimeMillis();
-                    if (currentTimeMillis - lastControlTimeStamp > 2000){//距离最后一次控制的时间大于3s才进行状态查询
+                    if (currentTimeMillis - lastControlTimeStamp > 2000) {//距离最后一次控制的时间大于3s才进行状态查询
                         setSocketState();
-                    }else {
-                        Log.i(TAG,"---------控制不执行-------------");
+                    } else {
+                        Log.i(TAG, "---------控制不执行-------------");
                     }
                 }
             });
         }
     }
+
     //判断当前接收到的seq是不是比上一次的message大
-    private boolean isBigSeqMessage(Nodepp.Msg receiveMsg){
-        if (currentMsg == null){
+    private boolean isBigSeqMessage(Nodepp.Msg receiveMsg) {
+        if (currentMsg == null) {
             currentMsg = receiveMsg;
             return true;
-        }else {
-            if (currentMsg.getHead().getSeq() < receiveMsg.getHead().getSeq()){
+        } else {
+            if (currentMsg.getHead().getSeq() < receiveMsg.getHead().getSeq()) {
                 currentMsg = receiveMsg;
                 return true;
-            }else {
+            } else {
                 return false;
             }
         }
@@ -705,21 +722,21 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
 //                            setDeviceNoOnline(deviceModel);
                             JDJToast.showMessage(MultichannelControlActivity.this, getString(R.string.device_is_not_online));
                             return;
-                        }else if (result == 0){
+                        } else if (result == 0) {
                             Log.i(TAG, "msg==" + msg.toString());
-                            if (isBigSeqMessage(msg)){
+                            if (isBigSeqMessage(msg)) {
                                 int state = msg.getState();
                                 int deviceMode = msg.getDeviceMode();
-                                if (deviceMode != 1){//点动模式的时候不设置state，其他模式才进行设置
+                                if (deviceMode != 1) {//点动模式的时候不设置state，其他模式才进行设置
                                     changeState(state);
-                                }else {
+                                } else {
                                     //点动模式的时候直接重置按钮监听（可能是多人分享一个设备，一个人切换了模式，查询到模式变了立即改变）
                                     resetDeviceMode();
                                 }
                                 deviceModel.setDeviceMode(deviceMode);
-                                Log.i("jjjj","query设置界面");
-                            }else {
-                                Log.i("jjjj","query不设置界面");
+                                Log.i("jjjj", "query设置界面");
+                            } else {
+                                Log.i("jjjj", "query不设置界面");
                             }
                         }
                     }
@@ -728,16 +745,17 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                     public void onFaile() {
 
                     }
+
                     @Override
                     public void onTimeout(Nodepp.Msg msg) {
-                        if (msg.getHead().getSeq() < currentMsg.getHead().getSeq()){
+                        if (msg.getHead().getSeq() < currentMsg.getHead().getSeq()) {
                             return;
                         }
                         //设置为上一次状态
-                        if (currentMsg != null){
+                        if (currentMsg != null) {
                             int state = currentMsg.getState();
                             int deviceMode = currentMsg.getDeviceMode();
-                            if (deviceMode != 1){//点动模式的时候不设置state，其他模式才进行设置
+                            if (deviceMode != 1) {//点动模式的时候不设置state，其他模式才进行设置
                                 changeState(state);
                             }
                         }
@@ -755,6 +773,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
 
     /**
      * 根据state 改变界面开关的状态
+     *
      * @param state
      */
     private void changeState(int state) {
@@ -801,21 +820,21 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
             Log.i(TAG, "operate===" + operate);
             long uid = Long.parseLong(Constant.userName);
             final Nodepp.Msg msg = PbDataUtils.setRequestParam(16, 1, uid, deviceModel.getDid(), deviceModel.getTid(), operate, Constant.usig);
-            Log.e("查询基本数据",deviceModel.getConnetedMode()+"");
+            Log.e("查询基本数据", deviceModel.getConnetedMode() + "");
             Socket.send(MultichannelControlActivity.this, deviceModel.getConnetedMode(), deviceModel.getIp(), msg, clientKeys.get(deviceModel.getTid()), new ResponseListener() {
                 @Override
 
                 public void onSuccess(Nodepp.Msg msg) {
                     int result = msg.getHead().getResult();
-                    Log.e("查询控制结果",result+"");
+                    Log.e("查询控制结果", result + "");
                     if (result == 404) {
 //                            setDeviceNoOnline(deviceModel);
                         JDJToast.showMessage(MultichannelControlActivity.this, getString(R.string.device_is_not_online));
-                    }else if (result == 0){
-                        if (isBigSeqMessage(msg)){
+                    } else if (result == 0) {
+                        if (isBigSeqMessage(msg)) {
                             int state = currentMsg.getState();
                             int deviceMode = currentMsg.getDeviceMode();
-                        }else {
+                        } else {
 
                         }
                     }
@@ -825,14 +844,14 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                 @Override
                 public void onTimeout(Nodepp.Msg msg) {
                     Log.i(TAG, "controlSocket=onFaile=");
-                    if (msg.getHead().getSeq() < currentMsg.getHead().getSeq()){
+                    if (msg.getHead().getSeq() < currentMsg.getHead().getSeq()) {
                         return;
                     }
                     //发送失败，设置为上一次状态
-                    if (currentMsg != null){
+                    if (currentMsg != null) {
                         int state = currentMsg.getState();
                         int deviceMode = currentMsg.getDeviceMode();
-                        if (deviceMode != 1){//点动模式的时候不设置state，其他模式才进行设置
+                        if (deviceMode != 1) {//点动模式的时候不设置state，其他模式才进行设置
                             changeState(state);
                         }
                     }
@@ -849,47 +868,14 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
             JDJToast.showMessage(this, "网络没有连接，请稍后重试");
         }
     }
-    /**
-     * 观察网络变化
-     * @param observable
-     * @param data
-     */
-    @Override
-    protected void netChange(Observable observable, Object data) {
-        super.netChange(observable, data);
-//        deviceModel.setConnetedMode(0);
-        boolean networkOnline = NetWorkUtils.isNetworkOnline();
-        if (NetWorkUtils.isNetworkConnected(MultichannelControlActivity.this)) {
-            if (networkOnline) {
-                Log.e("网络在线", "网络在线的吧");
-                deviceModel.setConnetedMode(0);
-            } else {
-                Log.e("网络不在线", "网络不在线的吧");
-                deviceModel.setConnetedMode(1);
-            }
-        } else {
-            Log.e("网络不在线", "网络在线没数据的吧");
-            deviceModel.setConnetedMode(0);
-        }
-    }
 
-//        JDJToast.showMessage(this, "网络环境发生变化，请不要过快点击设备");
-//        String apSsid = mWifiAdmin.getWifiConnectedSsid();
-//        WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
-//        WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-//        String acssid = wifiInfo.getSSID();
-//        String str= acssid.replace("\"", "");
-//        if(str.equals(apSsid)) {
-//            deviceModel.setConnetedMode(1);
-//            JDJToast.showMessage(this, "已经进入局域网模式");
-//        }else {
-//            deviceModel.setConnetedMode(0);
-//            JDJToast.showMessage(this, "已经进入互联网模式");
-//        }
+
+
 
 
     /**
      * 语音控制
+     *
      * @param result
      */
     @Override
@@ -897,72 +883,104 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         int flag = 0;
         if (result.contains("全部")) {
             if (result.contains("打开") || result.contains("开启")) {
-                flag = flag +1;
-                if (deviceModel.getDeviceType() == 4){
+                flag = flag + 1;
+                if (deviceModel.getDeviceType() == 4) {
                     switchValue = 15;
-                }else if (deviceModel.getDeviceType()  == 2 || deviceModel.getDeviceType()==14){//6路
+                } else if (deviceModel.getDeviceType() == 2 || deviceModel.getDeviceType() == 14) {//6路
                     switchValue = 63;
-                }else if(deviceModel.getDeviceType() == 15){
+                } else if (deviceModel.getDeviceType() == 15) {
                     switchValue = 127;
                 }
             } else if (result.contains("关闭")) {
                 switchValue = 0;
-                flag = flag +1;
+                flag = flag + 1;
             }
         }
         Iterator iter = namesMap.entrySet().iterator();
         while (iter.hasNext()) {
             Map.Entry entry = (Map.Entry) iter.next();
             String key = (String) entry.getKey();
-            if (result.contains(key)){
-                flag = flag +1;
+            if (result.contains(key)) {
+                flag = flag + 1;
                 int index = (int) entry.getValue();
                 if (result.contains("打开") || result.contains("开启")) {
-                    switchValue |=(1 << index)&0xff;
-                }else if (result.contains("关闭")){
-                    switchValue &=~((1 << index)&0xff) ;
+                    switchValue |= (1 << index) & 0xff;
+                } else if (result.contains("关闭")) {
+                    switchValue &= ~((1 << index) & 0xff);
                 }
                 break;
             }
         }
-        if (result.contains("定时")){
+        if (result.contains("定时")) {
             cancleVoice();
             goTiming();
         }
-        if (flag > 0){
-            Log.i("switch","switch value:"+switchValue);
+        if (flag > 0) {
+            Log.i("switch", "switch value:" + switchValue);
             controlSocket(switchValue);
             changeState(switchValue);
         }
     }
 
 
-
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Serializable object = data.getSerializableExtra("device");
-        if (object != null){
-            Device device = (Device)object;
-            Log.i("hh","requestCode is "+requestCode);
-            Log.i("hh","resultCode is "+resultCode);
-            if (device == null){
-                Log.i("hh","result device is null");
-            }else {
-                Log.i("hh","result device is "+device.toString());
+        if (object != null) {
+            Device device = (Device) object;
+            Log.i("hh", "requestCode is " + requestCode);
+            Log.i("hh", "resultCode is " + resultCode);
+            if (device == null) {
+                Log.i("hh", "result device is null");
+            } else {
+                Log.i("hh", "result device is " + device.toString());
             }
 
-            if (requestCode == 1){
-                if (resultCode == 2){
+            if (requestCode == 1) {
+                if (resultCode == 2) {
                     deviceModel = device;
-                    Log.i("hh","deviceModel is "+deviceModel.toString());
+                    Log.i("hh", "deviceModel is " + deviceModel.toString());
                 }
             }
         }
     }
 
+
+    //定义处理接收的方法
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void userEventBus(MessageEvent userEvent) {
+        Log.e("接收者", userEvent.getMsg());
+        if (userEvent.getMsg().contains("切换到wifi了")) {
+            CheckConnectTask checkConnectTask = new CheckConnectTask(MultichannelControlActivity.this);
+            WeakReference<CheckConnectTask> udpAsyncTaskWeakReference = new WeakReference<>(checkConnectTask);
+            CheckConnectTask task = udpAsyncTaskWeakReference.get();
+            if (task == null) {
+                return;
+            }
+            task.setNetWorkListener(new NetWorkListener() {
+                @Override
+                public void onSuccess(int state) {
+                    if (state == -1) {
+                        deviceModel.setConnetedMode(1);
+                    } else if (state == -2) {
+                        deviceModel.setConnetedMode(1);
+                    } else if (state == 0) {
+                        deviceModel.setConnetedMode(0);
+                    }
+                }
+
+                @Override
+                public void onFaile() {
+
+                }
+            });
+            task.execute();
+
+        } else if (userEvent.getMsg().contains("切换到别的网络了")) {
+            deviceModel.setConnetedMode(0);
+        }
+    }
 
 
     @Override
@@ -975,6 +993,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
 
     @Override
     protected void onDestroy() {
+        EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
 

@@ -20,13 +20,21 @@ import com.nodepp.smartnode.fragment.NormalLightFragment;
 import com.nodepp.smartnode.fragment.SceneFragment;
 import com.nodepp.smartnode.fragment.TimeFragment;
 import com.nodepp.smartnode.model.Device;
+import com.nodepp.smartnode.model.MessageEvent;
 import com.nodepp.smartnode.struct.FunctionManager;
 import com.nodepp.smartnode.struct.FunctionNoParamAndResult;
+import com.nodepp.smartnode.task.CheckConnectTask;
+import com.nodepp.smartnode.task.NetWorkListener;
 import com.nodepp.smartnode.udp.UDPClientA2S;
 import com.nodepp.smartnode.utils.Log;
 import com.nodepp.smartnode.utils.SharedPreferencesUtils;
 import com.nodepp.smartnode.view.TitleBar;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Observable;
 
@@ -54,6 +62,8 @@ public class ColorControlActivity extends BaseVoiceActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_control);
+        //注册订阅者
+        EventBus.getDefault().register(this);
         deviceModel = (Device) getIntent().getSerializableExtra("device");
         isVoice = getIntent().getBooleanExtra("isVoice", false);
         initView();
@@ -363,21 +373,60 @@ public class ColorControlActivity extends BaseVoiceActivity implements View.OnCl
         super.onPause();
     }
 
-    @Override
-    protected void netChange(Observable observable, Object data) {
-        deviceModel.setDeviceMode(0);
-        NormalLightFragment normallLightFragment = (NormalLightFragment) fragmentArrayList.get(0);
-        ColorLightFragment colorLightFragment = (ColorLightFragment) fragmentArrayList.get(1);
-        SceneFragment sceneFragment = (SceneFragment) fragmentArrayList.get(2);
-        TimeFragment TimeFragment = (TimeFragment) fragmentArrayList.get(3);
-        normallLightFragment.setConnectMode(deviceModel.getDeviceMode());
-        colorLightFragment.setConnectMode(deviceModel.getDeviceMode());
-        sceneFragment.setConnectMode(deviceModel.getDeviceMode());
-        TimeFragment.setConnectMode(deviceModel.getDeviceMode());
+    //定义处理接收的方法
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void userEventBus(MessageEvent userEvent) {
+        Log.e("接收者", userEvent.getMsg());
+        if (userEvent.getMsg().contains("切换到wifi了")) {
+            CheckConnectTask checkConnectTask = new CheckConnectTask(ColorControlActivity.this);
+            WeakReference<CheckConnectTask> udpAsyncTaskWeakReference = new WeakReference<>(checkConnectTask);
+            CheckConnectTask task = udpAsyncTaskWeakReference.get();
+            if (task == null) {
+                return;
+            }
+            task.setNetWorkListener(new NetWorkListener() {
+                @Override
+                public void onSuccess(int state) {
+                    if (state == -1) {
+                        deviceModel.setConnetedMode(1);
+                    } else if (state == -2) {
+                        deviceModel.setConnetedMode(1);
+                    } else if (state == 0) {
+                        deviceModel.setConnetedMode(0);
+                        NormalLightFragment normallLightFragment = (NormalLightFragment) fragmentArrayList.get(0);
+                        ColorLightFragment colorLightFragment = (ColorLightFragment) fragmentArrayList.get(1);
+                        SceneFragment sceneFragment = (SceneFragment) fragmentArrayList.get(2);
+                        TimeFragment TimeFragment = (TimeFragment) fragmentArrayList.get(3);
+                        normallLightFragment.setConnectMode(deviceModel.getDeviceMode());
+                        colorLightFragment.setConnectMode(deviceModel.getDeviceMode());
+                        sceneFragment.setConnectMode(deviceModel.getDeviceMode());
+                        TimeFragment.setConnectMode(deviceModel.getDeviceMode());
+                    }
+                }
+
+                @Override
+                public void onFaile() {
+
+                }
+            });
+            task.execute();
+        } else if (userEvent.getMsg().contains("切换到别的网络了")) {
+            deviceModel.setConnetedMode(0);
+            NormalLightFragment normallLightFragment = (NormalLightFragment) fragmentArrayList.get(0);
+            ColorLightFragment colorLightFragment = (ColorLightFragment) fragmentArrayList.get(1);
+            SceneFragment sceneFragment = (SceneFragment) fragmentArrayList.get(2);
+            TimeFragment TimeFragment = (TimeFragment) fragmentArrayList.get(3);
+            normallLightFragment.setConnectMode(deviceModel.getDeviceMode());
+            colorLightFragment.setConnectMode(deviceModel.getDeviceMode());
+            sceneFragment.setConnectMode(deviceModel.getDeviceMode());
+            TimeFragment.setConnectMode(deviceModel.getDeviceMode());
+        }
     }
+
     @Override
     protected void onDestroy() {
         FunctionManager.getInstance().clear();//释放单例
+        EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
 

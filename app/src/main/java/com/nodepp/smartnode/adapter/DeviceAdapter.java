@@ -157,9 +157,14 @@ public class DeviceAdapter extends BaseAdapter {
                 holer.tvDeviceTypeDame.setText("八路测试");
                 break;
             case 16:
-                //八路
+                //16路
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.icsixteen:R.mipmap.icsixteen);
                 holer.tvDeviceTypeDame.setText("十六路测试");
+                break;
+            case 17:
+                //八路
+                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_six_online:R.mipmap.ic_control_six_unline);
+                holer.tvDeviceTypeDame.setText("八路定制");
                 break;
 
         }
@@ -184,8 +189,8 @@ public class DeviceAdapter extends BaseAdapter {
                     } else if (deviceType == 3 || deviceType == 7) {//彩灯
                         SharedPreferencesUtils.saveBoolean(context, device.getTid() + "isClickWhite", false);
                         intent = new Intent(context, ColorControlActivity.class);
-//                    } else if (deviceType == 2 || deviceType == 4 || deviceType == 10 || deviceType ==13 || deviceType ==14 || deviceType ==15) {//6,4,2路控制器
-//                        intent = new Intent(context, MultichannelControlActivity.class);
+                    } else if (deviceType == 2 || deviceType == 4 || deviceType == 10 || deviceType ==13 || deviceType ==14 || deviceType ==15 || deviceType ==17) {//6,4,2路控制器
+                        intent = new Intent(context, MultichannelControlActivity.class);
                     } else if (deviceType == 6 || deviceType == 8) {//白灯
                         intent = new Intent(context, WhiteLightActivity.class);
                     }else if (deviceType == 12){
@@ -193,7 +198,7 @@ public class DeviceAdapter extends BaseAdapter {
                     }else if (deviceType == 9) {
                         intent = new Intent(context, SendMessageActivity.class);
                         //新增定制两路类型
-                    }else if (deviceType == 2){
+                    }else if (deviceType == 16){
                     intent = new Intent(context, CusSixteenchannelControlActivity.class);
                     }else {
                         JDJToast.showMessage(context, context.getString(R.string.unknow_device));

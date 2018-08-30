@@ -7,6 +7,10 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
+import com.nodepp.smartnode.model.MessageEvent;
+
+import org.greenrobot.eventbus.EventBus;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -158,6 +162,7 @@ public class NetWorkUtils {
         try {
             Process ipProcess = runtime.exec("ping -c 2 -w 2 114.114.114.114");
             int status = ipProcess.waitFor();
+            EventBus.getDefault().post(new MessageEvent("网络可用"));
             return (status == 0);
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();

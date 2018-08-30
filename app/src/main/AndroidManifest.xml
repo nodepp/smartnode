@@ -216,6 +216,7 @@
             android:name=".activity.SelectGroupControlActivity"
             android:screenOrientation="portrait" />
 
+        <!--动态注册广播-->
         <receiver android:name="com.nodepp.smartnode.receiver.NetChangeReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />

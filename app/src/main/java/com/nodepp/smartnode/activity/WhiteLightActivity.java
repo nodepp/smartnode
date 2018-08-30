@@ -16,12 +16,21 @@ import android.widget.SeekBar;
 import com.nodepp.smartnode.Constant;
 import com.nodepp.smartnode.R;
 import com.nodepp.smartnode.model.Device;
+import com.nodepp.smartnode.model.MessageEvent;
+import com.nodepp.smartnode.task.CheckConnectTask;
+import com.nodepp.smartnode.task.NetWorkListener;
 import com.nodepp.smartnode.udp.ResponseListener;
 import com.nodepp.smartnode.udp.Socket;
 import com.nodepp.smartnode.utils.JDJToast;
 import com.nodepp.smartnode.utils.Log;
 import com.nodepp.smartnode.utils.PbDataUtils;
 import com.nodepp.smartnode.utils.Utils;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.lang.ref.WeakReference;
 import java.util.Observable;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -64,6 +73,9 @@ public class WhiteLightActivity extends BaseVoiceActivity implements View.OnClic
     @SuppressLint("WrongViewCast")
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     private void initView() {
+        //注册订阅者
+        EventBus.getDefault().register(this);
+
         ImageView ivBacke = (ImageView) findViewById(R.id.iv_back);
         ImageView ivMore = (ImageView) findViewById(R.id.iv_more);
         Button btnVoice = (Button) findViewById(R.id.btn_voice);
@@ -311,10 +323,39 @@ public class WhiteLightActivity extends BaseVoiceActivity implements View.OnClic
         stopTimer();
     }
 
-    //网络变化时，数据更新
-    @Override
-    protected void netChange(Observable observable, Object data) {
-        deviceModel.setConnetedMode(0);//网络变化先切换到互联网模式
+    //定义处理接收的方法
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void userEventBus(MessageEvent userEvent) {
+        Log.e("接收者", userEvent.getMsg());
+        if (userEvent.getMsg().contains("切换到wifi了")) {
+            CheckConnectTask checkConnectTask = new CheckConnectTask(WhiteLightActivity.this);
+            WeakReference<CheckConnectTask> udpAsyncTaskWeakReference = new WeakReference<>(checkConnectTask);
+            CheckConnectTask task = udpAsyncTaskWeakReference.get();
+            if (task == null) {
+                return;
+            }
+            task.setNetWorkListener(new NetWorkListener() {
+                @Override
+                public void onSuccess(int state) {
+                    if (state == -1) {
+                        deviceModel.setConnetedMode(1);
+                    } else if (state == -2) {
+                        deviceModel.setConnetedMode(1);
+                    } else if (state == 0) {
+                        deviceModel.setConnetedMode(0);
+                    }
+                }
+
+                @Override
+                public void onFaile() {
+
+                }
+            });
+            task.execute();
+
+        } else if (userEvent.getMsg().contains("切换到别的网络了")) {
+            deviceModel.setConnetedMode(0);
+        }
     }
 
 
@@ -379,5 +420,12 @@ public class WhiteLightActivity extends BaseVoiceActivity implements View.OnClic
                 Log.i("hh","deviceModel is "+deviceModel.toString());
             }
         }
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
 }

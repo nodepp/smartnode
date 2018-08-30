@@ -22,6 +22,7 @@ import com.nodepp.smartnode.utils.Log;
 import com.nodepp.smartnode.utils.PbDataUtils;
 import com.nodepp.smartnode.utils.SharedPreferencesUtils;
 
+
 import java.util.List;
 
 import cn.jpush.android.api.JPushInterface;

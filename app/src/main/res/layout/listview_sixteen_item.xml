@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:minHeight="80dp"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/fff"-->
+        <!--android:layout_toRightOf="@+id/sdsd"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical">-->
+    <TextView
+        android:id="@+id/tv_sixteen_channel_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignBaseline="@+id/sixteen_turn_on"
+        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:text="上面"/>
+
+
+
+    <Button
+        android:id="@+id/sixteen_turn_off"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_sixteen_centercorner"
+        android:text="反转" />
+
+    <Button
+        android:id="@+id/sixteen_turn_on"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_toLeftOf="@+id/sixteen_turn_off"
+        android:layout_toStartOf="@+id/sixteen_turn_off"
+        android:background="@drawable/shape_sixteen_leftcorner"
+        android:text="正转" />
+
+    <Button
+        android:id="@+id/sixteen_turn_stop"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_toEndOf="@+id/sixteen_turn_off"
+        android:layout_toRightOf="@+id/sixteen_turn_off"
+        android:background="@drawable/shape_sixteen_rightcorner"
+        android:text="停止" />
+
+    <TextView
+        android:id="@+id/battle_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@+id/sixteen_turn_on"
+        android:layout_marginRight="20dp"
+        android:text="100"/>
+
+</RelativeLayout>

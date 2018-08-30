@@ -16,6 +16,9 @@ import com.nodepp.smartnode.Constant;
 import com.nodepp.smartnode.R;
 import com.nodepp.smartnode.helper.Util;
 import com.nodepp.smartnode.model.Device;
+import com.nodepp.smartnode.model.MessageEvent;
+import com.nodepp.smartnode.task.CheckConnectTask;
+import com.nodepp.smartnode.task.NetWorkListener;
 import com.nodepp.smartnode.udp.ResponseListener;
 import com.nodepp.smartnode.udp.Socket;
 import com.nodepp.smartnode.utils.JDJToast;
@@ -24,11 +27,16 @@ import com.nodepp.smartnode.utils.NetWorkUtils;
 import com.nodepp.smartnode.utils.PbDataUtils;
 import com.nodepp.smartnode.utils.Utils;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import java.util.Observable;
 import java.util.Timer;
@@ -68,6 +76,9 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //注册订阅者
+        EventBus.getDefault().register(this);
         setContentView(R.layout.activity_bath_heater);
         Intent intent = getIntent();
         deviceModel = (Device) intent.getSerializableExtra("device");
@@ -667,6 +678,42 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         }
     }
 
+
+    //定义处理接收的方法
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void userEventBus(MessageEvent userEvent) {
+        Log.e("接收者", userEvent.getMsg());
+        if (userEvent.getMsg().contains("切换到wifi了")) {
+            CheckConnectTask checkConnectTask = new CheckConnectTask(BathHeaterActivity.this);
+            WeakReference<CheckConnectTask> udpAsyncTaskWeakReference = new WeakReference<>(checkConnectTask);
+            CheckConnectTask task = udpAsyncTaskWeakReference.get();
+            if (task == null) {
+                return;
+            }
+            task.setNetWorkListener(new NetWorkListener() {
+                @Override
+                public void onSuccess(int state) {
+                    if (state == -1) {
+                        deviceModel.setConnetedMode(1);
+                    } else if (state == -2) {
+                        deviceModel.setConnetedMode(1);
+                    } else if (state == 0) {
+                        deviceModel.setConnetedMode(0);
+                    }
+                }
+
+                @Override
+                public void onFaile() {
+
+                }
+            });
+            task.execute();
+
+        } else if (userEvent.getMsg().contains("切换到别的网络了")) {
+            deviceModel.setConnetedMode(0);
+        }
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -683,26 +730,10 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
         super.onPause();
         stopTimer();
     }
-    //数据更新
+
     @Override
-    protected void netChange(Observable observable, Object data) {
-        Log.e("net", "多路 net change ");
-//        deviceModel.setConnetedMode(0);
-        boolean networkOnline = NetWorkUtils.isNetworkOnline();
-        if (NetWorkUtils.isNetworkConnected(BathHeaterActivity.this)) {
-            if (networkOnline) {
-                Log.e("网络在线", "网络在线的吧");
-                deviceModel.setConnetedMode(0);
-            } else {
-                Log.e("网络不在线", "网络不在线的吧");
-                deviceModel.setConnetedMode(1);
-            }
-        } else {
-            Log.e("网络不在线", "网络在线没数据的吧");
-            deviceModel.setConnetedMode(0);
-        }
+    protected void onDestroy() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
-
-
-
 }

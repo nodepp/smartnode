@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nodepp.smartnode.R;
+import com.nodepp.smartnode.activity.CusSixteenchannelControlActivity;
 import com.nodepp.smartnode.model.Device;
 import com.nodepp.smartnode.utils.Log;
 
@@ -25,6 +26,7 @@ public class GroupControlAdapter extends BaseAdapter {
     private List<Device> lists;
     private List<Device> selectDevices = new ArrayList<Device>();
     private onFinishListener listener;
+
 
     public GroupControlAdapter(Context context, List<Device> lists) {
         this.context = context;

@@ -23,6 +23,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
@@ -43,6 +44,7 @@ import com.nodepp.smartnode.R;
 import com.nodepp.smartnode.adapter.DeviceAdapter;
 import com.nodepp.smartnode.dtls.DTLSSocket;
 import com.nodepp.smartnode.model.Device;
+import com.nodepp.smartnode.model.MessageEvent;
 import com.nodepp.smartnode.task.CheckConnectTask;
 import com.nodepp.smartnode.task.NetWorkListener;
 import com.nodepp.smartnode.twocode.CaptureActivity;
@@ -67,6 +69,9 @@ import com.nodepp.smartnode.view.TitleBar;
 import com.nodepp.smartnode.view.pullToRefresh.PullToRefreshLayout;
 import com.nodepp.smartnode.view.pullToRefresh.pullableview.PullableListView;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.json.JSONArray;
 
 import java.lang.ref.WeakReference;
@@ -97,6 +102,7 @@ public class MainActivity extends BaseVoiceActivity {
     private LinearLayout llLogout;
     private LinearLayout llScanning;
     private CircleImageView ivHeadPhoto;
+    private ProgressBar pg;
     private TextView tvNickName;
     //声明AMapLocationClient类对象
     public AMapLocationClient mLocationClient = null;
@@ -154,6 +160,7 @@ public class MainActivity extends BaseVoiceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
         setContentView(R.layout.activity_main);
         String username = SharedPreferencesUtils.getString(this, "username", "0");
         String uidSig = SharedPreferencesUtils.getString(this, "uidSig", "0");
@@ -168,6 +175,9 @@ public class MainActivity extends BaseVoiceActivity {
         initDevice(true);
         //注册屏幕广播接收者
         registerScreenChangeReceiver();
+
+        boolean networkOnline = NetWorkUtils.isNetworkOnline();
+
     }
 
 
@@ -218,7 +228,7 @@ public class MainActivity extends BaseVoiceActivity {
                                 handler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
-                                        if (devices.size() > 0) {
+                                        if (devices.size()  > 0) {
                                             for (int i = 0; i < devices.size(); i++) {
                                                 Device device = devices.get(i);
                                                 if (device.getDid() != 0) {//0代表这个设备是群组
@@ -284,7 +294,7 @@ public class MainActivity extends BaseVoiceActivity {
             if (devices.size() > 0) {
                 for (int i = 0; i < devices.size(); i++) {
                     Device device = devices.get(i);
-//                    device.setIsOnline(false);
+                    device.setIsOnline(false);
                     try {
                         DBUtil.getInstance(MainActivity.this).update(device, WhereBuilder.b("userName", "=", Constant.userName).and("did", "=", device.getDid()));
                     } catch (DbException e1) {
@@ -395,6 +405,7 @@ public class MainActivity extends BaseVoiceActivity {
         if (screenChangeReceiver != null) {
             unregisterReceiver(screenChangeReceiver);
         }
+        EventBus.getDefault().unregister(this);
         handler.removeCallbacksAndMessages(null);
         mLocationClient.stopLocation();//停止定位后，本地定位服务并不会被销毁
         mLocationClient.onDestroy();//销毁定位客户端，同时销毁本地定位服务。
@@ -880,31 +891,44 @@ public class MainActivity extends BaseVoiceActivity {
 //        moveTaskToBack(true);//不退出，直接运行到后台
     }
 
-    /**
-     * 观察者，观察网络变化
-     *
-     * @param observable
-     * @param data
-     */
-    @Override
-    protected void netChange(Observable observable, Object data) {
-        super.netChange(observable, data);
-        Log.e("net","main net change ");
-        boolean networkOnline = NetWorkUtils.isNetworkOnline();
-        if (NetWorkUtils.isNetworkConnected(MainActivity.this)) {
-            if (networkOnline) {
-                Log.e("网络在线", "网络在线的吧");
-                if (Constant.KEY_A2S == null){
-                    //网络发生变化的时候，如果之前没有key，则重新尝试从服务器验证用户信息进行获取key，成功后就可以使用互联网通信
-                    reCheckUserInfo();
-                }else {
-                    initDevice(true);
-                }
-            } else {
-                Log.e("网络不在线", "网络不在线的吧");
-                initDevice(false);
+
+    //定义处理接收的方法
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void userEventBus(MessageEvent userEvent) {
+        Log.e("接收者", userEvent.getMsg());
+        if (userEvent.getMsg().contains("切换到wifi了")) {
+            CheckConnectTask checkConnectTask = new CheckConnectTask(MainActivity.this);
+            WeakReference<CheckConnectTask> udpAsyncTaskWeakReference = new WeakReference<>(checkConnectTask);
+            CheckConnectTask task = udpAsyncTaskWeakReference.get();
+            if (task == null) {
+                return;
             }
-        } else {
+            task.setNetWorkListener(new NetWorkListener() {
+                @Override
+                public void onSuccess(int state) {
+                    if (state == -1) {
+                        Log.e("网络不在线", "网络不在线的吧");
+                        initDevice(false);
+                    } else if (state == -2) {
+                        Log.e("网络不在线", "网络不在线的吧");
+                        initDevice(false);
+                    } else if (state == 0) {
+                        if (Constant.KEY_A2S == null){
+                            //网络发生变化的时候，如果之前没有key，则重新尝试从服务器验证用户信息进行获取key，成功后就可以使用互联网通信
+                            reCheckUserInfo();
+                        }else {
+                            initDevice(true);
+                        }
+                    }
+                }
+
+                @Override
+                public void onFaile() {
+
+                }//通过ping来检测是否可以连接到外网
+            });
+
+        } else if (userEvent.getMsg().contains("切换到别的网络了")) {
             if (Constant.KEY_A2S == null){
                 //网络发生变化的时候，如果之前没有key，则重新尝试从服务器验证用户信息进行获取key，成功后就可以使用互联网通信
                 reCheckUserInfo();
@@ -913,7 +937,6 @@ public class MainActivity extends BaseVoiceActivity {
             }
         }
     }
-
 
     /**
      * 监听极光推送来的自定义消息
@@ -1017,8 +1040,8 @@ public class MainActivity extends BaseVoiceActivity {
                 @Override
                 public void run() {
                     long currentTimeMillis = System.currentTimeMillis();
-                    if (currentTimeMillis - lastControlTimeStamp > 1000){//距离最后一次控制的时间大于3s才进行状态查询
-                        initDevice(true);
+                    if (currentTimeMillis - lastControlTimeStamp > 5000){//距离最后一次控制的时间大于3s才进行状态查询
+
                     }else {
                         Log.i(TAG,"---------控制不执行-------------");
                     }

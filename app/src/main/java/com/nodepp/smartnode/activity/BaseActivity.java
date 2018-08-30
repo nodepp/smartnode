@@ -29,6 +29,8 @@ import com.nodepp.smartnode.utils.Log;
 import com.nodepp.smartnode.utils.NetWorkUtils;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.HashMap;
 import java.util.Observable;
 import java.util.Observer;
@@ -75,6 +77,8 @@ public class BaseActivity extends AppCompatActivity implements Observer {
         netWorkObservable.addObserver(this);
         //添加极光推送自定义消失变化观察者
         pushObservable.addObserver(this);
+
+
 
 
 

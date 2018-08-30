@@ -105,4 +105,6 @@ dependencies {
 
     compile 'cn.hugeterry.coordinatortablayout:coordinatortablayout:1.2.2'
 
+    compile 'org.greenrobot:eventbus:3.0.0'
+
 }
