@@ -125,7 +125,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         if (deviceModel.getDeviceType() == 4) {
             setContentView(R.layout.activity_four_switch);
         } else if (deviceModel.getDeviceType() == 2) {
-            setContentView(R.layout.activity_eight_switch);
+            setContentView(R.layout.activity_six_switch);
         } else if (deviceModel.getDeviceType() == 10) {
             setContentView(R.layout.activity_two_switch);
         } else if (deviceModel.getDeviceType() == 13) {
@@ -135,8 +135,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
 //            deviceValue  = 14;
         } else if (deviceModel.getDeviceType() == 15) {
             setContentView(R.layout.activity_eight_switch);
-        } else if (deviceModel.getDeviceType() == 17) {
-        setContentView(R.layout.activity_eight_switch);
+//        } else if (deviceModel.getDeviceType() == 17) {
+//        setContentView(R.layout.activity_eight_switch);
     }
         initView();
 
@@ -577,8 +577,10 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                             break;
                         case 7:
                             switchValue = isChecked ? 64 : 0;
+                            break;
                         case 8:
                             switchValue = isChecked ? 128 : 0;
+                            break;
                     }
                     changeState(switchValue);
                 } else {

@@ -35,7 +35,25 @@
             android:text="无法连接到互联网，请检查网络"
             android:textColor="@color/text_color" />
     </LinearLayout>
+<RelativeLayout
+    android:id="@+id/pg_rl"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone"
+    android:layout_gravity="center">
 
+    <ProgressBar
+        android:id="@+id/pg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:layout_below="@+id/pg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="切换网络中..."/>
+</RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

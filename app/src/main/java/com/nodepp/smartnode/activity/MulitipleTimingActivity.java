@@ -133,20 +133,21 @@ public class MulitipleTimingActivity extends BaseActivity implements View.OnClic
     private void sendTimeTask(List<TimeTask> lists) {
         if (NetWorkUtils.isNetworkConnected(this)) {
             if (lists != null) {//确认有定时任务才进行操作，lists 为0代表取消所有定时任务
-                Log.i(TAG, "list===" + lists.toString());
+                Log.e(TAG, "list===" + lists.toString());
                 long uid = Long.parseLong(Constant.userName);
                 final Nodepp.Msg msg = PbDataUtils.setTimeTaskRequestParam(uid, deviceModel.getDid(), deviceModel.getTid(), Constant.usig, lists);
-                Log.i(TAG, "msg==" + msg.toString());
+                Log.e(TAG, "msg==" + msg.toString());
                 Socket.send(MulitipleTimingActivity.this, deviceModel.getConnetedMode(), deviceModel.getIp(), msg,clientKeys.get(deviceModel.getTid()), new ResponseListener() {
                     @Override
                     public void onSuccess(Nodepp.Msg msg) {
                         int result = msg.getHead().getResult();
                         if (result == 0) {
+                            Log.e(TAG, "sendTimeTask==" + msg.toString());
                             JDJToast.showMessage(MulitipleTimingActivity.this, getString(R.string.send_task_success));
                         } else if (result == 404){
                             JDJToast.showMessage(MulitipleTimingActivity.this, getString(R.string.send_task_fail));
                         }
-                        Log.i(TAG, "sendTimeTask==" + msg.toString());
+                        Log.e(TAG, "sendTimeTask==" + msg.toString());
                     }
 
                     @Override
@@ -353,9 +354,9 @@ public class MulitipleTimingActivity extends BaseActivity implements View.OnClic
         Socket.send(this, deviceModel.getConnetedMode(), deviceModel.getIp(), msg, clientKeys.get(deviceModel.getTid()), new ResponseListener() {
             @Override
             public void onSuccess(Nodepp.Msg msg) {
-                Log.i(TAG, "queryTimeTask==msg==" + msg.toString());
                 int result = msg.getHead().getResult();
                 if (result == 0) {
+                    Log.e(TAG, "查询定时收到的指令==msg==" + msg.toString());
                     List<TimeTask> timeTasks = Utils.convertTimerTask(msg, deviceModel.getId(), deviceModel.getDid(), deviceModel.getTid());
                     if (null != timeTasks){
                         if (timeTasks.size() > 0){

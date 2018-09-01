@@ -196,6 +196,7 @@ public class SceneFragment extends BaseFragment {
         super.onHiddenChanged(hidden);
     }
 
+    //改变背景色状态
     private void changSelect(int index) {
         for (int i = 0; i < 8; i++) {
             if (i == index) {

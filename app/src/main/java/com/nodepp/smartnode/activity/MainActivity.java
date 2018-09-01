@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
@@ -102,7 +103,6 @@ public class MainActivity extends BaseVoiceActivity {
     private LinearLayout llLogout;
     private LinearLayout llScanning;
     private CircleImageView ivHeadPhoto;
-    private ProgressBar pg;
     private TextView tvNickName;
     //声明AMapLocationClient类对象
     public AMapLocationClient mLocationClient = null;
@@ -123,6 +123,7 @@ public class MainActivity extends BaseVoiceActivity {
     private MyTasks myTask;
     private Timer timer;
 
+    RelativeLayout pg_rl;
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -160,7 +161,6 @@ public class MainActivity extends BaseVoiceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EventBus.getDefault().register(this);
         setContentView(R.layout.activity_main);
         String username = SharedPreferencesUtils.getString(this, "username", "0");
         String uidSig = SharedPreferencesUtils.getString(this, "uidSig", "0");
@@ -175,6 +175,9 @@ public class MainActivity extends BaseVoiceActivity {
         initDevice(true);
         //注册屏幕广播接收者
         registerScreenChangeReceiver();
+
+
+
 
         boolean networkOnline = NetWorkUtils.isNetworkOnline();
 
@@ -504,6 +507,7 @@ public class MainActivity extends BaseVoiceActivity {
         ivHeadPhoto = (CircleImageView) findViewById(R.id.civ_head_photo);
         tvNickName = (TextView) findViewById(R.id.tv_nick_name);
         llRefresh = (PullToRefreshLayout) findViewById(R.id.refresh_view);
+        pg_rl = findViewById(R.id.pg_rl);
 //        llLoading = (LinearLayout) findViewById(R.id.ll_loading);
         btnAddDevice.setOnClickListener(onClickListener);
         llScanning.setOnClickListener(onClickListener);
@@ -893,7 +897,7 @@ public class MainActivity extends BaseVoiceActivity {
 
 
     //定义处理接收的方法
-    @Subscribe(threadMode = ThreadMode.MAIN)
+    @Subscribe
     public void userEventBus(MessageEvent userEvent) {
         Log.e("接收者", userEvent.getMsg());
         if (userEvent.getMsg().contains("切换到wifi了")) {
@@ -928,13 +932,26 @@ public class MainActivity extends BaseVoiceActivity {
                 }//通过ping来检测是否可以连接到外网
             });
 
-        } else if (userEvent.getMsg().contains("切换到别的网络了")) {
-            if (Constant.KEY_A2S == null){
-                //网络发生变化的时候，如果之前没有key，则重新尝试从服务器验证用户信息进行获取key，成功后就可以使用互联网通信
-                reCheckUserInfo();
-            }else {
-                initDevice(true);
-            }
+        }else if(userEvent.getMsg().contains("切换到其他网络中")){
+            Log.e("执行了吗","切换中");
+            handler.sendEmptyMessage(REFRESH_UI);
+            pg_rl.setVisibility(View.VISIBLE);
+            llRefresh.setVisibility(View.INVISIBLE);
+            Log.e("执行了吗","111111");
+        }
+        else if (userEvent.getMsg().contains("切换到别的网络了")) {
+
+//            if (Constant.KEY_A2S == null){
+//                //网络发生变化的时候，如果之前没有key，则重新尝试从服务器验证用户信息进行获取key，成功后就可以使用互联网通信
+//                reCheckUserInfo();
+//            }else {
+//                initDevice(true);
+//            }
+            pg_rl.setVisibility(View.GONE);
+            llRefresh.setVisibility(View.VISIBLE);
+            handler.sendEmptyMessage(REFRESH_WAN);
+            Log.e("执行了吗","22222");
+
         }
     }
 

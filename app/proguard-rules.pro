@@ -110,3 +110,10 @@
 
 -dontwarn cn.jiguang.**
 -keep class cn.jiguang.** { *; }
+
+-keepclassmembers class * {
+public void onEvent*(**);
+}
+-keepclassmembers class **{
+public void userEventBus(**);
+}

@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/ddd"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="160dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -75,23 +75,23 @@
 
     <ImageView
         android:id="@+id/btn_switch_off1"
-        android:layout_width="40dp"
+        android:layout_width="30dp"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="66dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="40dp"
         android:textAlignment="center"
 
        android:background="@mipmap/control_4" />
 
         <ImageView
             android:id="@+id/btn_switch_off2"
-            android:layout_width="40dp"
+            android:layout_width="30dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="40dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="66dp"
             android:textAlignment="center"
@@ -111,7 +111,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="5dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="100dp" />
+            android:layout_marginLeft="80dp" />
 
         <TextView
             android:id="@+id/tv_one"
@@ -120,7 +120,7 @@
             android:layout_below="@+id/tb_switch_one"
             android:text="通道一"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="80dp"
             android:gravity="center_horizontal"
             android:textSize="15sp"
             android:textColor="@color/black"
@@ -132,7 +132,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="100dp"
+            android:layout_marginRight="80dp"
 
             />
 
@@ -142,7 +142,7 @@
             android:layout_marginTop="5dp"
             android:text="通道二"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="100dp"
+            android:layout_marginRight="80dp"
             android:layout_below="@id/tb_switch_two"
             android:textSize="15sp"
             android:gravity="center_horizontal"
@@ -155,7 +155,7 @@
             style="@style/multiple_switch"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/tv_one"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="80dp"
 
             />
 
@@ -165,7 +165,7 @@
             android:layout_marginTop="5dp"
             android:text="通道三"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="80dp"
             android:layout_below="@id/tb_switch_three"
             android:textSize="15sp"
             android:gravity="center_horizontal"
@@ -178,7 +178,7 @@
             android:layout_marginTop="5dp"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/tv_two"
-            android:layout_marginRight="100dp"
+            android:layout_marginRight="80dp"
             />
 
         <TextView
@@ -187,7 +187,7 @@
             android:layout_marginTop="5dp"
             android:text="通道四"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="100dp"
+            android:layout_marginRight="80dp"
             android:layout_below="@id/tb_switch_four"
             android:textSize="15sp"
             android:gravity="center_horizontal"
@@ -199,7 +199,7 @@
             style="@style/multiple_switch"
             android:layout_alignParentLeft="true"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="80dp"
             android:layout_below="@+id/tv_three" />
 
         <TextView
@@ -208,7 +208,7 @@
             android:layout_marginTop="5dp"
             android:text="通道五"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="80dp"
             android:layout_below="@id/tb_switch_five"
             android:textSize="15sp"
             android:gravity="center_horizontal"
@@ -221,18 +221,18 @@
             style="@style/multiple_switch"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/tv_four"
-            android:layout_marginRight="100dp"
+            android:layout_marginRight="80dp"
             android:layout_marginTop="5dp" />
 
         <TextView
             android:id="@+id/tv_six"
             style="@style/multiple_switch_text"
             android:layout_alignBaseline="@+id/tv_five"
-            android:layout_alignBottom="@+id/tv_five"
-            android:layout_alignEnd="@+id/tb_switch_eight"
-            android:layout_alignRight="@+id/tb_switch_eight"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80dp"
             android:gravity="center_horizontal"
             android:text="通道六"
+            android:layout_marginTop="5dp"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="15sp" />
@@ -242,7 +242,7 @@
             style="@style/multiple_switch"
             android:layout_alignParentLeft="true"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="80dp"
             android:layout_below="@+id/tv_six" />
 
         <TextView
@@ -252,11 +252,12 @@
             android:text="通道七"
             android:paddingBottom="20dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="80dp"
             android:layout_below="@id/tb_switch_seven"
             android:textSize="15sp"
             android:textColor="@color/black"
             android:gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
             android:layout_alignParentBottom="true"
             android:textAlignment="center" />
 
@@ -265,7 +266,7 @@
             style="@style/multiple_switch"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/tv_six"
-            android:layout_marginRight="100dp"
+            android:layout_marginRight="80dp"
             android:layout_marginTop="5dp" />
 
         <TextView
@@ -276,9 +277,10 @@
             android:paddingBottom="20dp"
             android:gravity="center_horizontal"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="100dp"
+            android:layout_marginRight="80dp"
             android:layout_below="@id/tb_switch_eight"
             android:textSize="15sp"
+            android:layout_marginBottom="5dp"
             android:layout_alignParentBottom="true"
             android:textColor="@color/black"
             android:textAlignment="center" />

@@ -17,7 +17,6 @@ import com.lidroid.xutils.db.sqlite.WhereBuilder;
 import com.lidroid.xutils.exception.DbException;
 import com.nodepp.smartnode.Constant;
 import com.nodepp.smartnode.R;
-import com.nodepp.smartnode.activity.AddDeviceActivity;
 import com.nodepp.smartnode.activity.BathHeaterActivity;
 import com.nodepp.smartnode.activity.ColorControlActivity;
 import com.nodepp.smartnode.activity.CusSixteenchannelControlActivity;
@@ -37,7 +36,6 @@ import com.nodepp.smartnode.utils.Log;
 import com.nodepp.smartnode.utils.PbDataUtils;
 import com.nodepp.smartnode.utils.SharedPreferencesUtils;
 import com.nodepp.smartnode.utils.Utils;
-import com.nodepp.smartnode.view.PopupWindow.ClientInfoPopup;
 import com.nodepp.smartnode.view.SelectDialog;
 import com.nodepp.smartnode.view.loadingdialog.LoadingDialog;
 
@@ -153,17 +151,17 @@ public class DeviceAdapter extends BaseAdapter {
 //                break;
             case 15:
                 //八路
-                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_six_online:R.mipmap.ic_control_six_unline);
-                holer.tvDeviceTypeDame.setText("八路测试");
+                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.control_8_2x :R.mipmap.control_8_un_2x);
+                holer.tvDeviceTypeDame.setText("八路");
                 break;
             case 16:
                 //16路
-                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.icsixteen:R.mipmap.icsixteen);
-                holer.tvDeviceTypeDame.setText("十六路测试");
+                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.control_16_2x :R.mipmap.control_16_un_2x);
+                holer.tvDeviceTypeDame.setText("十六路");
                 break;
             case 17:
                 //八路
-                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.ic_control_six_online:R.mipmap.ic_control_six_unline);
+                holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.control_8_2x :R.mipmap.control_8_un_2x);
                 holer.tvDeviceTypeDame.setText("八路定制");
                 break;
 

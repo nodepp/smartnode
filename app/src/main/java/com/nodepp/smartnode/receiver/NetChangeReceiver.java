@@ -41,12 +41,15 @@ public class NetChangeReceiver extends BroadcastReceiver {
             switch (wifiState) {
                 case WifiManager.WIFI_STATE_DISABLED:
                     EventBus.getDefault().post(new MessageEvent("切换到别的网络了"));
+                    Log.e("广播执行","切换到4g网络");
                     break;
                 case WifiManager.WIFI_STATE_DISABLING:
                     EventBus.getDefault().post(new MessageEvent("切换到其他网络中"));
+                    Log.e("广播执行","切换4g网络中");
                     break;
                 case WifiManager.WIFI_STATE_ENABLING:
                     EventBus.getDefault().post(new MessageEvent("切换到wifi中"));
+                    Log.e("广播执行","切换wifi网络中");
                     break;
                 case WifiManager.WIFI_STATE_ENABLED:
                     EventBus.getDefault().post(new MessageEvent("切换到wifi了"));

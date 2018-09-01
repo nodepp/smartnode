@@ -14,7 +14,7 @@ public class Constant {
     // TLS SDK
     public static long SDK_APPID = 1400016653;
     public static int ACCOUNT_TYPE = 7865;
-    public static boolean isDebug = true ;//是否是调试模式
+    public static boolean isDebug = false ;//是否是调试模式
     public static int DB_VERSION = 20;
     public static String DB_NAME = "nodepp.db";//当前数据库的名称
     public static String MAP_KEY = "8842bdbbd91e0aba1f5bed3458b40ae6";//高德地图的key
