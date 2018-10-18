@@ -60,6 +60,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignBaseline="@+id/sixteen_turn_on"
         android:layout_marginRight="20dp"
-        android:text="100"/>
+        android:text="0"/>
 
 </RelativeLayout>

@@ -414,10 +414,11 @@ public class BathHeaterActivity extends BaseVoiceActivity implements View.OnClic
             public void onSuccess(Nodepp.Msg msg) {
                 int result = msg.getHead().getResult();
                 if (result == 0){
-
+                    JDJToast.showMessage(BathHeaterActivity.this,"查询返回成功");
                     byte receiveByte [] = msg.getUserData().toByteArray();
                     Utils.bytesToHexString(receiveByte);
                     String receive_data = Utils.bytesToHexString(receiveByte);
+                    android.util.Log.e(TAG, "receiveByte: "+ receiveByte);
                     for(int i = 0;i<receiveByte.length;i++) {
 
                         if (receiveByte.length == 7) {

@@ -102,7 +102,7 @@ public abstract class BaseVoiceActivity extends BaseActivity{
     /**
      * 更新设备热词
      */
-    protected  void updateUserWord(String word){
+    public void updateUserWord(String word){
         int i = mIat.updateLexicon("userword", updateWordWithJson(word), new LexiconListener() {
             @Override
             public void onLexiconUpdated(String s, SpeechError speechError) {

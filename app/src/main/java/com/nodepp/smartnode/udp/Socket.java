@@ -23,6 +23,7 @@ public class Socket {
         } else {
             if (NetWorkUtils.isWifiConnected(context)) {
                 UDPSocket.send(context, ip, msg, random, responseListener);
+                android.util.Log.e("数据发送", "发送成功 " );
             } else {
                 Log.i("socket", "wifi没连接不能发");
             }

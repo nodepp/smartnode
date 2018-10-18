@@ -101,8 +101,10 @@ public class MulitipleTimingActivity extends BaseActivity implements View.OnClic
         EventBus.getDefault().register(this);
         operate = getIntent().getIntExtra("operate", 0);
         deviceModel = (Device) getIntent().getSerializableExtra("device");
+        if (deviceModel.getDeviceType() !=8){
         memoNames = getIntent().getStringArrayListExtra("memoName");
-        Log.e("查询初始化的时候的",memoNames.toString());
+//        Log.e("查询初始化的时候的",memoNames.toString());
+    }
         initView();
     }
 

@@ -159,8 +159,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         tbSwitchFour = (ToggleButton) findViewById(R.id.tb_switch_four);
         tbSwitchFive = (ToggleButton) findViewById(R.id.tb_switch_five);
         tbSwitchSix = (ToggleButton) findViewById(R.id.tb_switch_six);
-        tbSwicthSeven = findViewById(R.id.tb_switch_seven);
-        tbSwitchEight = findViewById(R.id.tb_switch_eight);
+        tbSwicthSeven = (ToggleButton)findViewById(R.id.tb_switch_seven);
+        tbSwitchEight = (ToggleButton)findViewById(R.id.tb_switch_eight);
 
         llTiming = (LinearLayout) findViewById(R.id.ll_timing);
         tvOne = (TextView) findViewById(R.id.tv_one);
@@ -169,8 +169,8 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         tvFour = (TextView) findViewById(R.id.tv_four);
         tvFive = (TextView) findViewById(R.id.tv_five);
         tvSix = (TextView) findViewById(R.id.tv_six);
-        tvSeven = findViewById(R.id.tv_seven);
-        tvEight = findViewById(R.id.tv_eight);
+        tvSeven = (TextView)findViewById(R.id.tv_seven);
+        tvEight = (TextView)findViewById(R.id.tv_eight);
 
         llTiming.setOnClickListener(onClickListener);
 

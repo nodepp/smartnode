@@ -1,15 +1,29 @@
 package com.nodepp.smartnode.adapter;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputFilter;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.lidroid.xutils.db.sqlite.WhereBuilder;
+import com.lidroid.xutils.exception.DbException;
+import com.nodepp.smartnode.Constant;
 import com.nodepp.smartnode.R;
+import com.nodepp.smartnode.activity.BaseVoiceActivity;
 import com.nodepp.smartnode.activity.CusSixteenchannelControlActivity;
+import com.nodepp.smartnode.utils.DBUtil;
+import com.nodepp.smartnode.utils.JDJToast;
+import com.nodepp.smartnode.utils.Log;
+import com.nodepp.smartnode.utils.SharedPreferencesUtils;
 
 import java.util.List;
 
@@ -29,9 +43,6 @@ public class SixteenRecyleAdapter extends RecyclerView.Adapter<SixteenRecyleAdap
     }
 
 
-
-
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -42,257 +53,13 @@ public class SixteenRecyleAdapter extends RecyclerView.Adapter<SixteenRecyleAdap
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder viewHolder, final int i) {
-        viewHolder.sixteen_channen_name.setText("通道"+mDatas.get(i));
-        if(CusSixteenchannelControlActivity.f1 == 1){
-
-        }
-        switch (i){
-            case 0:
-                if(CusSixteenchannelControlActivity.f1 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f1 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f1 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b1+"");
-            case 1:
-                if(CusSixteenchannelControlActivity.f2 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f2 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f2 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b2+"");
-            case 2:
-                if(CusSixteenchannelControlActivity.f3 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f3 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f3 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b3+"");
-            case 3:
-                if(CusSixteenchannelControlActivity.f4 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f4 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f4 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b4+"");
-            case 4:
-                if(CusSixteenchannelControlActivity.f5 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f5 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f5 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b5+"");
-            case 5:
-                if(CusSixteenchannelControlActivity.f6 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f6 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f6 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b6+"");
-            case 6:
-                if(CusSixteenchannelControlActivity.f7 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f7 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f7 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b2+"");
-            case 7:
-                if(CusSixteenchannelControlActivity.f8 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f8 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f8 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b2+"");
-            case 8:
-                if(CusSixteenchannelControlActivity.f9 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f9 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f9 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b9+"");
-            case 9:
-                if(CusSixteenchannelControlActivity.f10 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f10 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f10 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b10+"");
-            case 10:
-                if(CusSixteenchannelControlActivity.f11 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f11 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f11 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b11+"");
-            case 11:
-                if(CusSixteenchannelControlActivity.f12 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f12 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f12 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b12+"");
-            case 12:
-                if(CusSixteenchannelControlActivity.f13 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f13 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f13 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b13+"");
-            case 13:
-                if(CusSixteenchannelControlActivity.f14 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f14 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f14 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b13+"");
-            case 14:
-                if(CusSixteenchannelControlActivity.f15 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f15 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f15 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b15+"");
-            case 15:
-                if(CusSixteenchannelControlActivity.f16 == 1){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f16 == 2){
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
-                }else if(CusSixteenchannelControlActivity.f16 == 3) {
-                    viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
-                    viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
-                    viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
-                }
-                viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.b16+"");
-        }
+    public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
+        viewHolder.sixteen_channen_name.setText("通道" + mDatas.get(position));
+        updateData(viewHolder, position);
         viewHolder.turn_on.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.contronturnon(i);
+                context.contronturnon(position);
                 viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
                 viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
                 viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
@@ -301,7 +68,7 @@ public class SixteenRecyleAdapter extends RecyclerView.Adapter<SixteenRecyleAdap
         viewHolder.turn_off.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.contronturnoff(i);
+                context.contronturnoff(position);
                 viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
                 viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
                 viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
@@ -310,7 +77,7 @@ public class SixteenRecyleAdapter extends RecyclerView.Adapter<SixteenRecyleAdap
         viewHolder.turn_stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.contronturnstop(i);
+                context.contronturnstop(position);
                 viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
                 viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
                 viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
@@ -318,6 +85,23 @@ public class SixteenRecyleAdapter extends RecyclerView.Adapter<SixteenRecyleAdap
         });
     }
 
+    private void updateData(final ViewHolder viewHolder, final int position) {
+        if (CusSixteenchannelControlActivity.arrayF[position] == 1) {
+            viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
+            viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
+            viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
+        } else if (CusSixteenchannelControlActivity.arrayF[position] == 2) {
+            viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
+            viewHolder.turn_off.setBackgroundResource(R.drawable.shapeblue_sixteen_centercorner);
+            viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_sixteen_rightcorner);
+        } else if (CusSixteenchannelControlActivity.arrayF[position] == 3) {
+            viewHolder.turn_on.setBackgroundResource(R.drawable.shape_sixteen_leftcorner);
+            viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
+            viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
+        }
+        viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.arrayB[position] + "");
+        android.util.Log.e(TAG, "b: -->" + CusSixteenchannelControlActivity.arrayB[position]);
+    }
 
 
     @Override

@@ -4,7 +4,7 @@ android {
     signingConfigs {
         config {
             keyAlias 'nodepp'
-            storeFile file('/Users/nodepp/Documents/workspace/android/nodepp.jks')
+            storeFile file('E:/workspace/workspace/android/nodepp.jks')
             storePassword 'uewqneo.190'
             keyPassword 'uewqneo.190'
         }
@@ -57,6 +57,7 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
+
         }
     }
 //    externalNativeBuild {
@@ -100,11 +101,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:multidex:1.0.0'
     testCompile 'junit:junit:4.12'
-
     compile 'com.android.support:recyclerview-v7:26.1.0'
-
     compile 'cn.hugeterry.coordinatortablayout:coordinatortablayout:1.2.2'
-
     compile 'org.greenrobot:eventbus:3.0.0'
-
 }

@@ -242,7 +242,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="80dp"
-            android:layout_below="@+id/tv_six" />
+            android:layout_below="@+id/tv_five" />
 
         <TextView
             android:id="@+id/tv_seven"
