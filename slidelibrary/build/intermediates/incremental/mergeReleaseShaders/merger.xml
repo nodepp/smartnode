@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\workspace\workspace\android\smartplug\slidelibrary\src\main\shaders"/></dataSet><dataSet config="release"><source path="E:\workspace\workspace\android\smartplug\slidelibrary\src\release\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="E:\workspace\workspace\smartnode\slidelibrary\src\main\shaders"/></dataSet><dataSet config="release"><source path="E:\workspace\workspace\smartnode\slidelibrary\src\release\shaders"/></dataSet></merger>

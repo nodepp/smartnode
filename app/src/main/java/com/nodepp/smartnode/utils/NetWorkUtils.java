@@ -72,16 +72,18 @@ public class NetWorkUtils {
         }
         return -1;
     }
+
     // 获得所连路由器的MAC地址
     public static String getRouterMac(Context context) {//be:9f:ef:cd:ba:3f
         String mac = "";
         WifiManager wifiMan = (WifiManager) context.getSystemService(context.WIFI_SERVICE);
         WifiInfo info = wifiMan.getConnectionInfo();
-        if (info != null){
+        if (info != null) {
             mac = info.getBSSID();
         }
         return mac;
     }
+
     public static ArrayList<String> getAllIp(Context context) {
         ArrayList<String> IPs = new ArrayList<String>();
         WifiManager wm = (WifiManager) context.getSystemService(context.WIFI_SERVICE);
@@ -103,18 +105,20 @@ public class NetWorkUtils {
         Log.i("ff", "ipSum=" + ipSum);
         return IPs;
     }
-    public static long getCurrentIp(Context context){
+
+    public static long getCurrentIp(Context context) {
         context = context.getApplicationContext();
         WifiManager wm = (WifiManager) context.getSystemService(context.WIFI_SERVICE);
         WifiInfo wifiInfo = wm.getConnectionInfo();
-        if (wifiInfo != null){
+        if (wifiInfo != null) {
             int ipAddress = wifiInfo.getIpAddress();
             return reverseInt(ipAddress);
-        }else {
+        } else {
             return 0;//空的情况直接返回0
         }
 
     }
+
     public static String long2ip(long ip) {
         StringBuffer sb = new StringBuffer();
         sb.append(String.valueOf((int) ((ip >> 24) & 0xff)));
@@ -138,16 +142,18 @@ public class NetWorkUtils {
         sb.append(String.valueOf((int) ((ip >> 24) & 0xff)));
         return sb.toString();
     }
+
     public static long reverseInt(int value) {
         long temp = value & 0xff;
         for (int i = 0; i < 3; i++) {
             value = (value >> 8);
             int n = value & 0xff;
             temp = (temp << 8) | n;
-            Log.i("www","temp-"+temp);
+            Log.i("www", "temp-" + temp);
         }
         return temp;
     }
+
     public static long reverseLong(long value) {
         long temp = value & 0xff;
         for (int i = 0; i < 3; i++) {
@@ -157,13 +163,22 @@ public class NetWorkUtils {
         }
         return temp;
     }
+
     public static boolean isNetworkOnline() {
         Runtime runtime = Runtime.getRuntime();
         try {
             Process ipProcess = runtime.exec("ping -c 2 -w 2 114.114.114.114");
             int status = ipProcess.waitFor();
             EventBus.getDefault().post(new MessageEvent("网络可用"));
-            return (status == 0);
+            if (status == 0) {
+                return (status == 0);
+            } else {
+                ipProcess = runtime.exec("ping -c 2 -w 2 114.114.114.115");
+                status =ipProcess.waitFor();
+                EventBus.getDefault().post(new MessageEvent("网络可用"));
+                return (status == 0);
+            }
+
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
             return false;

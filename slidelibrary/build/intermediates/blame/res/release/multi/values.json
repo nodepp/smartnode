@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\workspace\\workspace\\android\\smartplug\\slidelibrary\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+        "outputFile": "E:\\workspace\\workspace\\smartnode\\slidelibrary\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 1046
                 },
                 "from": {
-                    "file": "E:\\workspace\\workspace\\android\\smartplug\\slidelibrary\\src\\main\\res\\values\\ids.xml",
+                    "file": "E:\\workspace\\workspace\\smartnode\\slidelibrary\\src\\main\\res\\values\\ids.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

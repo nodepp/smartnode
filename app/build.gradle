@@ -15,8 +15,8 @@ android {
         applicationId "com.nodepp.smartnode"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 20038
-        versionName "2.0.38"
+        versionCode 21000
+        versionName "2.1.0"
         multiDexEnabled true //分包
         resConfigs "en"//只保留中文字符串
         externalNativeBuild {
