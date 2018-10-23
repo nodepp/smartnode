@@ -3,6 +3,7 @@ package com.nodepp.smartnode.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -61,8 +62,9 @@ public class CusSixteenchannelControlActivity extends BaseVoiceActivity {
     private RecyclerView recyclerView;
 
     private long lastControlTimeStamp = 0;
-    private long currentTimeMillis = System.currentTimeMillis();
-    private Boolean isSendDate = false;
+    private int SendCount =0;
+    private Boolean isReceiveSucceed = false;
+
 
 
     @Override
@@ -151,9 +153,9 @@ public class CusSixteenchannelControlActivity extends BaseVoiceActivity {
             @Override
             public void onSuccess(Nodepp.Msg msg) {
                 int result = msg.getHead().getResult();
-                android.util.Log.e(TAG, "result: " + result);
-                if (result == 0) {
-                    byte receiveByte[] = msg.getUserData().toByteArray();
+                byte receiveByte[] = msg.getUserData().toByteArray();
+                if (result == 0 && receiveByte.length == 25) {
+                    android.util.Log.e(TAG, "result: " + result);
                     for (int i = 0; i < receiveByte.length; i++) {
                         if (receiveByte.length == 25) {
                             one_keybyte = receiveByte[3];
@@ -303,9 +305,9 @@ public class CusSixteenchannelControlActivity extends BaseVoiceActivity {
                 } else if (result == 404) {
                     JDJToast.showMessage(CusSixteenchannelControlActivity.this, "查询服务器返回失败");
                 } else if (result == 204) {
-//                    JDJToast.showMessage(CusSixteenchannelControlActivity.this, "查询请求超时===" + result);
+                    JDJToast.showMessage(CusSixteenchannelControlActivity.this, "查询请求超时===" + result);
                 } else {
-                    JDJToast.showMessage(CusSixteenchannelControlActivity.this, "返回值错误");
+                    JDJToast.showMessage(CusSixteenchannelControlActivity.this, "返回值不是查询返回值");
                 }
             }
 
@@ -372,6 +374,7 @@ public class CusSixteenchannelControlActivity extends BaseVoiceActivity {
             send_data4 = 0x02;
         }
         sendData(send_data1, send_data2, send_data3, send_data4);
+        sendDataControl();
     }
 
     public void contronturnoff(int pos) {
@@ -425,6 +428,7 @@ public class CusSixteenchannelControlActivity extends BaseVoiceActivity {
             send_data4 = 0x01;
         }
         sendData(send_data1, send_data2, send_data3, send_data4);
+        sendDataControl();
     }
 
     public void contronturnstop(int pos) {
@@ -477,7 +481,34 @@ public class CusSixteenchannelControlActivity extends BaseVoiceActivity {
         if (pos == 15) {
             send_data4 = 0x03;
         }
+
         sendData(send_data1, send_data2, send_data3, send_data4);
+        sendDataControl();
+    }
+
+    private void sendDataControl(){
+        if (isReceiveSucceed == true){
+            android.util.Log.e("ddddd", "1 " );
+            JDJToast.showMessage(CusSixteenchannelControlActivity.this, "数据成功返回");
+        }else {
+            for (int i = 0; i < 3; i++) {
+                if (isReceiveSucceed == false || SendCount > 3) {
+                    sendData(send_data1, send_data2, send_data3, send_data4);
+                    SendCount++;
+                    android.util.Log.e("ddddd", "4 " );
+                    if (SendCount == 4) {
+                        android.util.Log.e("ddddd", "5 " );
+                        JDJToast.showMessage(CusSixteenchannelControlActivity.this, "请求超时");
+                        SendCount = 0;
+                        break;
+                    }
+                } else if (isReceiveSucceed == true) {
+                    android.util.Log.e("ddddd", "2 " );
+                    JDJToast.showMessage(CusSixteenchannelControlActivity.this, "数据成功返回");
+                    break;
+                }
+            }
+        }
     }
 
     private void sendData(byte send_data1, byte send_data2, byte send_data3, byte send_data4) {
@@ -508,9 +539,11 @@ public class CusSixteenchannelControlActivity extends BaseVoiceActivity {
         Socket.send(this, deviceModel.getConnetedMode(), deviceModel.getIp(), msg, clientKeys.get(deviceModel.getTid()), new ResponseListener() {
             @Override
             public void onSuccess(Nodepp.Msg msg) {
+                Log.e("M_tag", "发送成功");
                 Log.e("M_tag", "sendData=result=" + msg.toString());
                 int result = msg.getHead().getResult();
                 Log.e("M_tag", "返回的head头包" + result);
+//
                 if (result == 0) {
                     byte receiveByte[] = msg.getUserData().toByteArray();
                     Utils.bytesToHexString(receiveByte);
@@ -519,57 +552,32 @@ public class CusSixteenchannelControlActivity extends BaseVoiceActivity {
                         Log.i(TAG, "接收的控制返回结果" + receiveByte[i]);
                     }
                     //服务器返回
-
+                    isReceiveSucceed = true;
+                    JDJToast.showMessage(CusSixteenchannelControlActivity.this, "接受成功");
                 } else if (result == 404) {
                     JDJToast.showMessage(CusSixteenchannelControlActivity.this, "服务器返回失败");
                 } else if (result == 204) {
-                    JDJToast.showMessage(CusSixteenchannelControlActivity.this, "请求超时");
+//                    JDJToast.showMessage(CusSixteenchannelControlActivity.this, "请求超时");
                 }
             }
-
             @Override
             public void onTimeout(Nodepp.Msg msg) {
                 Log.i(TAG, "接收的控制返回结果" + 111);
-
             }
 
             @Override
             public void onFaile() {
-
+                Log.e(TAG, "数据发送发送失败");
             }
         });
-
         lastControlTimeStamp = System.currentTimeMillis();
-        stopTimer();
-        new Thread() {
-            @Override
-            public void run() {
-                super.run();
-                try {
-                    Thread.sleep(3000);//休眠3秒
-                    startTimer();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }.start();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        Log.e(TAG, "onResume—>startTimer启动");
         startTimer();
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-//        if (currentTimeMillis - lastControlTimeStamp >= 3000 && isSendDate ==true){
-//            startTimer();
-//            isSendDate = false;
-//            android.util.Log.e(TAG, "重新启动startTimer "+(currentTimeMillis - lastControlTimeStamp)+isSendDate );
-//        }
     }
 
     @Override
@@ -579,18 +587,18 @@ public class CusSixteenchannelControlActivity extends BaseVoiceActivity {
     }
 
     private void startTimer() {
-        Log.i(TAG, "startTimer");
+
         if (timer == null) {
             timer = new Timer();
         }
         if (myTask == null) {
             myTask = new MyTasks();
         }
-        timer.schedule(myTask, 1000, 3000);  //定时器从进入页面1秒开始，每隔2s执行一次
+        timer.schedule(myTask, 1000, 2000);  //定时器从进入页面1秒开始，每隔2s执行一次
     }
 
     private void stopTimer() {
-        Log.i(TAG, "stopTimer");
+        Log.e(TAG, "stopTimer");
         if (timer != null) {
             timer.cancel();
             timer = null;
@@ -605,20 +613,27 @@ public class CusSixteenchannelControlActivity extends BaseVoiceActivity {
 
         @Override
         public void run() {
-            Log.i(TAG, "执行");
+            Log.i("run执行", "执行");
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-
-                    android.util.Log.e(TAG, "currentTimeMillis " + currentTimeMillis);
-                    if (currentTimeMillis - lastControlTimeStamp > 3000) {//距离最后一次控制的时间大于3s才进行状态查询
+                    long currentTimeMillis = System.currentTimeMillis();
+                    if (lastControlTimeStamp == 0) {
+                        android.util.Log.e(TAG, "正常请求刷新");
                         queryall();
                         adapter.notifyDataSetChanged();
+                    } else if (lastControlTimeStamp != 0) {
+                        if (currentTimeMillis - lastControlTimeStamp >= 3000) {//距离最后一次控制的时间大于3s才进行状态查询
+                            android.util.Log.e("run执行", "currentTimeMillis--lastControlTimeStamp " + currentTimeMillis + "--" + lastControlTimeStamp);
+                            Log.e("run执行", "3s重启数据请求");
+                            queryall();
+                            adapter.notifyDataSetChanged();
+                            lastControlTimeStamp = 0;
+                        }
                     } else {
-                        Log.i(TAG, "---------控制不执行-------------");
+                        Log.e("run执行", "---------控制不执行-------------");
                     }
                 }
-
             });
         }
     }
