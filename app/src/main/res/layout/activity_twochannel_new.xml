@@ -131,6 +131,36 @@
             android:layout_marginTop="95dp"
             android:layout_marginRight="10dp"
             />
+        <ToggleButton
+            android:id="@+id/tb_switch_seven"
+            style="@style/multiple_switch"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="28dp"
+            android:layout_marginRight="36dp"
+            android:background="@drawable/selector_multiple_switch_four" />
+        <TextView
+            android:id="@+id/tv_seven"
+            style="@style/multiple_switch_text"
+            android:text="通道六"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="95dp"
+            android:layout_marginRight="10dp"
+            />
+        <ToggleButton
+            android:id="@+id/tb_switch_eight"
+            style="@style/multiple_switch"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="28dp"
+            android:layout_marginRight="36dp"
+            android:background="@drawable/selector_multiple_switch_four" />
+        <TextView
+            android:id="@+id/tv_eight"
+            style="@style/multiple_switch_text"
+            android:text="通道六"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="95dp"
+            android:layout_marginRight="10dp"
+            />
     </RelativeLayout>
 
     <TextView

@@ -152,12 +152,12 @@ public class DeviceAdapter extends BaseAdapter {
             case 15:
                 //八路
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.control_8_2x :R.mipmap.control_8_un_2x);
-                holer.tvDeviceTypeDame.setText("八路");
+//                holer.tvDeviceTypeDame.setText("八路");
                 break;
             case 16:
                 //16路
                 holer.ivDeviceLogo.setBackgroundResource(device.isOnline()?R.mipmap.control_16_2x :R.mipmap.control_16_un_2x);
-                holer.tvDeviceTypeDame.setText("十六路");
+//                holer.tvDeviceTypeDame.setText("十六路");
                 break;
             case 17:
                 //八路
