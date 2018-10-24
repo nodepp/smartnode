@@ -25,7 +25,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@mipmap/bg_top2_16" />
+                android:background="@mipmap/title_pic1" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"

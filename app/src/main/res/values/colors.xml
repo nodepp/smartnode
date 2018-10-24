@@ -458,6 +458,7 @@
     <color name="black">#000000</color>
     <color name="grey_deep">#8a8a8a</color>
     <color name="title_bar">#46B2FF</color>
+    <color name="Enough_electricity">#43BE48</color>
 
     <color name="bath_heater">#6D69FF</color>
     <color name="btn_press">#278AD0</color>

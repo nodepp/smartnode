@@ -108,7 +108,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="80dp"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="7dp" />
 
         <TextView
             android:id="@+id/tv_one"
@@ -128,7 +128,7 @@
             style="@style/multiple_switch"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="7dp"
             android:layout_marginRight="80dp" />
 
         <TextView
@@ -150,7 +150,7 @@
             android:layout_below="@+id/tv_one"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="80dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="7dp"
 
             />
 
@@ -194,7 +194,7 @@
             android:layout_below="@+id/tv_three"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="80dp"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="7dp" />
 
         <TextView
             android:id="@+id/tv_five"
@@ -221,7 +221,7 @@
         <TextView
             android:id="@+id/tv_six"
             style="@style/multiple_switch_text"
-            android:layout_alignBaseline="@+id/tv_five"
+            android:layout_below="@id/tb_switch_six"
             android:layout_alignParentRight="true"
             android:layout_marginTop="5dp"
             android:layout_marginRight="80dp"
@@ -237,7 +237,7 @@
             android:layout_below="@+id/tv_five"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="80dp"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="7dp" />
 
         <TextView
             android:id="@+id/tv_seven"
@@ -258,7 +258,8 @@
             android:layout_below="@+id/tv_six"
             android:layout_alignParentRight="true"
             android:layout_marginTop="7dp"
-            android:layout_marginRight="80dp" />
+            android:layout_marginRight="80dp"
+            android:layout_alignParentEnd="true"/>
 
         <TextView
             android:id="@+id/tv_eight"
