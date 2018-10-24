@@ -1,29 +1,17 @@
 package com.nodepp.smartnode.adapter;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.text.InputFilter;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.lidroid.xutils.db.sqlite.WhereBuilder;
-import com.lidroid.xutils.exception.DbException;
-import com.nodepp.smartnode.Constant;
 import com.nodepp.smartnode.R;
-import com.nodepp.smartnode.activity.BaseVoiceActivity;
 import com.nodepp.smartnode.activity.CusSixteenchannelControlActivity;
-import com.nodepp.smartnode.utils.DBUtil;
-import com.nodepp.smartnode.utils.JDJToast;
-import com.nodepp.smartnode.utils.Log;
-import com.nodepp.smartnode.utils.SharedPreferencesUtils;
 
 import java.util.List;
 
@@ -85,6 +73,7 @@ public class SixteenRecyleAdapter extends RecyclerView.Adapter<SixteenRecyleAdap
         });
     }
 
+    @SuppressLint("ResourceAsColor")
     private void updateData(final ViewHolder viewHolder, final int position) {
         if (CusSixteenchannelControlActivity.arrayF[position] == 1) {
             viewHolder.turn_on.setBackgroundResource(R.drawable.shapeblue_sixteen_leftcorner);
@@ -99,7 +88,13 @@ public class SixteenRecyleAdapter extends RecyclerView.Adapter<SixteenRecyleAdap
             viewHolder.turn_off.setBackgroundResource(R.drawable.shape_sixteen_centercorner);
             viewHolder.turn_stop.setBackgroundResource(R.drawable.shape_blue_rightcorner);
         }
-        viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.arrayB[position] + "");
+        viewHolder.battle_tv.setText(CusSixteenchannelControlActivity.arrayB[position] + "%");
+        Integer c = CusSixteenchannelControlActivity.arrayB[position];
+        if (c>10){
+            viewHolder.battle_tv.setTextColor(0xFF43BE48);
+        }else {
+            viewHolder.battle_tv.setTextColor(Color.RED);
+        }
         android.util.Log.e(TAG, "b: -->" + CusSixteenchannelControlActivity.arrayB[position]);
     }
 
