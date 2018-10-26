@@ -287,7 +287,6 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
         }
     }
 
-
     View.OnTouchListener onTouchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
@@ -316,6 +315,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                             break;
                         case R.id.tb_switch_seven:
                             tbSwicthSeven.setChecked(true);
+                            break;
                         case R.id.tb_switch_eight:
                             tbSwitchEight.setChecked(true);
                             break;
@@ -346,6 +346,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                             break;
                         case R.id.tb_switch_eight:
                             tbSwitchEight.setChecked(false);
+
                             break;
                     }
                     break;
@@ -733,7 +734,7 @@ public class MultichannelControlActivity extends BaseVoiceActivity implements Vi
                                     changeState(state);
                                 } else {
                                     //点动模式的时候直接重置按钮监听（可能是多人分享一个设备，一个人切换了模式，查询到模式变了立即改变）
-                                    resetDeviceMode();
+//                                    resetDeviceMode();
                                 }
                                 deviceModel.setDeviceMode(deviceMode);
                                 Log.i("jjjj", "query设置界面");
